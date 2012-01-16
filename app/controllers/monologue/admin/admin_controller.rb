@@ -1,8 +1,4 @@
-module Monologue
-  module Admin
-    class AdminController < BaseController
-      def index
-      end
-    end
+class Monologue::Admin::AdminController < BaseController
+  def index
   end
 end
