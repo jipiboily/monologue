@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monologue</title>
+  <%= stylesheet_link_tag    "monologue/application" %>
+  <%= javascript_include_tag "monologue/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><%= link_to "Log out", admin_logout_path %></li>
+    </ul>
+  </nav>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+  
+  <%= yield %>
+
+</body>
+</html>
