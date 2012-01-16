@@ -1,4 +1,4 @@
-class Monologue::Admin::SessionsController < BaseController
+class Monologue::Admin::SessionsController < Monologue::Admin::BaseController
   skip_before_filter :authenticate_user!
   
   def new
