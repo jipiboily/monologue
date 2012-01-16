@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.1.3"
+  s.add_dependency "bcrypt-ruby"
+  
   # s.add_dependency "jquery-rails"
   s.add_development_dependency "rspec-rails", "~> 2.8"
   s.add_development_dependency 'factory_girl_rails', '~> 1.4.0'
