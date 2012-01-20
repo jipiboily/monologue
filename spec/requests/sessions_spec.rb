@@ -1,12 +1,7 @@
 require 'spec_helper'
 describe "sessions" do
   it "can log if password provided is valid" do
-    user = Factory(:user)
-    visit admin_login_path
-    fill_in "email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
-    page.should have_content("Logged in!")
+    log_in
   end
   
   it "won't log if bad credentials are provided" do
@@ -19,6 +14,7 @@ describe "sessions" do
   end
 
   it "can log out" do
+    log_in
     user = Factory(:user)
     visit admin_path
     click_link "Log out"

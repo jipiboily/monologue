@@ -9,7 +9,16 @@
 <body>
   <nav>
     <ul>
-      <li><%= link_to "Log out", admin_logout_path %></li>
+      <% if current_user %>
+        <li>
+          Logged in as <%= current_user.email %>.
+          <%= link_to "Log out", admin_logout_path %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "log in", admin_login_path %>
+        </li>
+      <% end %>
     </ul>
   </nav>
   <% flash.each do |name, msg| %>
