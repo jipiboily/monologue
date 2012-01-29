@@ -17,7 +17,7 @@ describe Monologue::PostsRevision do
   end
     
   describe "validations" do
-    ["url", "title", "content", "post_id", "user_id", "published_at"].each do |req|
+    ["url", "title", "content", "user_id", "published_at"].each do |req|
       it "requires a #{req}" do
         eval("@post.posts_revisions.first.#{req} = nil")
         @post.should_not be_valid
