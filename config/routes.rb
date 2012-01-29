@@ -4,6 +4,6 @@ Monologue::Engine.routes.draw do
     get "logout" => "sessions#destroy"
     get "login" => "sessions#new"
     resources :sessions
-    resources :posts_revisions, path: "posts"
+    resources :posts
   end
 end

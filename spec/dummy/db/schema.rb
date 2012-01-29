@@ -14,13 +14,11 @@
 ActiveRecord::Schema.define(:version => 20120120193907) do
 
   create_table "monologue_posts", :force => true do |t|
-    t.string   "url"
+    t.integer  "posts_revision_id"
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "monologue_posts", ["url"], :name => "index_monologue_posts_on_url", :unique => true
 
   create_table "monologue_posts_revisions", :force => true do |t|
     t.string   "title"

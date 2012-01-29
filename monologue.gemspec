@@ -24,6 +24,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara"
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "mysql2"
+
+  # s.add_development_dependency "linecache19"
+  # s.add_development_dependency "ruby-debug-base19"
+  # s.add_development_dependency 'ruby-debug19'
   
 
   s.add_development_dependency "sqlite3"

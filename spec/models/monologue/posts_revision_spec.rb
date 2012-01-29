@@ -23,9 +23,5 @@ describe Monologue::PostsRevision do
         @post.should_not be_valid
       end
     end
-    
-    it "is not possible to have twice the same posts_revision_id" do
-      expect { Factory(:post) }.to raise_error(ActiveRecord::RecordInvalid)
-    end
   end
 end

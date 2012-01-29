@@ -15,7 +15,6 @@ Somewhat basic mountable blogging engine in Rails built to be easily mounted in 
 	- keywords
 	- categories
 	- content
-	- excerpt
 	- an author (logged user)
 - pages
 	- title

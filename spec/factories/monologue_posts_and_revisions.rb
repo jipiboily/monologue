@@ -3,18 +3,19 @@
 
 FactoryGirl.define do
   factory :post, class: Monologue::Post do
-    id 1
-    url "/my/post/url"
+#    id 1
     published true
-    posts_revision_id 1
+#    posts_revision_id 1
+#    association :posts_revisions, factory: :posts_revision
   end
   
   factory :posts_revision, class: Monologue::PostsRevision do
-    sequence(:id) {|i| i }
+#    sequence(:id) {|i| i }
     title "my title"
     content "this is some text with french accents éàöûù and so on...even html tags like <br />"
     url "/my/url"
     user_id 1
+#    association :posts, factory: :post
     post_id 1
     published_at "2012-01-20 14:38:58"
   end

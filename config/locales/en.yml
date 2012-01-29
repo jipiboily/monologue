@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    errors:
+      format: "%{message}"
+    errors:
+      full_messages: "%{message}"
+    errors:
+      models:
+        full_messages: "%{message}"
+        monologue/posts_revision:
+          blank:
+            "%{attribute} is required"
+          attributes:
+            published_at:
+              blank:
+                "'Published at' is required"
