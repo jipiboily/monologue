@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <% revision = post.posts_revisions.first %>
+  <h2><%= link_to revision.title, revision.url %></h2>
+  <div class="published">Published on <%= revision.published_at.to_formatted_s(:long_ordinal) %> by <%= revision.user.name %></div>
+  <p><%= truncate(strip_tags(revision.content), length: 1000) %></p>
+  <%= link_to "Read more", revision.url %>
+<% end %>

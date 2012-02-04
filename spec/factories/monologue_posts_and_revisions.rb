@@ -13,7 +13,7 @@ FactoryGirl.define do
 #    sequence(:id) {|i| i }
     title "my title"
     content "this is some text with french accents éàöûù and so on...even html tags like <br />"
-    url "/my/url"
+    url "/monologue/my/url"
     user_id 1
 #    association :posts, factory: :post
 #    post_id 1

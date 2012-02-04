@@ -2,7 +2,8 @@ module Monologue
   class PostsRevision < ActiveRecord::Base
     after_save :latest_revision_is_current
     
-    belongs_to :posts
+    belongs_to :post
+    belongs_to :user
     
     validates :title, presence: true
     validates :content, presence: true

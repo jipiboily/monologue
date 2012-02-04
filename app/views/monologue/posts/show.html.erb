@@ -1,0 +1,3 @@
+<h1><%= @revision.title %></h1>
+<div class="published">Published on <%= @revision.published_at.to_formatted_s(:long_ordinal) %> by <%= @revision.user.name %></div>
+<p><%= raw @revision.content %></p>
