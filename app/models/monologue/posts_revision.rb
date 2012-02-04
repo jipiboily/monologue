@@ -1,5 +1,7 @@
 module Monologue
   class PostsRevision < ActiveRecord::Base
+    after_save :latest_revision_is_current
+    
     belongs_to :posts
     
     validates :title, presence: true
@@ -9,5 +11,10 @@ module Monologue
 #    validates :post_id, presence: true # TODO: do something about this validation on the first creation of a POST
     validates :published_at, presence: true
     
+    def latest_revision_is_current
+      post = Monologue::Post.find(self.post_id)
+      post.posts_revision_id = self.id
+      post.save!
+    end
   end
 end

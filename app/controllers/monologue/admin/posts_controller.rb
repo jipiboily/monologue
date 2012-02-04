@@ -32,6 +32,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   
   def update
     @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
+    @post.published = params[:post][:published]
     @revision = @post.posts_revisions.build(params[:post][:posts_revision])
     @revision.user_id = current_user.id
     if @post.save

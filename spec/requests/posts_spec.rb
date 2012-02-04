@@ -21,11 +21,8 @@ describe "posts" do
       click_button "save"
       page.should have_content "Monologue created"
     end
-    
-    # it "adds a revision each time you save"
-    # end
-    
-    it "can edit a post" do
+
+    it "can edit a post and adds a revision when doing" do
       # TODO: remove this duplicated code. Should be a working factory
         visit new_admin_post_path
         page.should have_content "New monologue"
@@ -34,7 +31,7 @@ describe "posts" do
         fill_in "Url", with: "/2012/this-is-a-monologue"
         fill_in "Published at", with: DateTime.now
         click_button "save"
-      # / TODO      
+      # / TODO
       visit admin_posts_path
       click_on "my title"
       page.should have_content "Edit \""
@@ -42,7 +39,9 @@ describe "posts" do
       fill_in "Content", with: "New content here..."
       fill_in "Url", with: "/new-title-and-url"
       fill_in "Published at", with: DateTime.now
+      nbr_posts_revisions = Monologue::PostsRevision.all.count
       click_button "save"
+      (nbr_posts_revisions + 1).should equal(Monologue::PostsRevision.all.count)
       page.should have_content "Monologue saved"
     end
     
