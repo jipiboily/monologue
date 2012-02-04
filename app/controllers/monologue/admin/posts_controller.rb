@@ -1,32 +1,43 @@
 class Monologue::Admin::PostsController < Monologue::Admin::BaseController
+  respond_to :html
+  
   def index
+    @posts = Monologue::Post.includes(:posts_revisions).joins(:posts_revisions).all
   end
   
   def new
     @post = Monologue::Post.new
-    @post.posts_revisions.build
-    
+    @revision = @post.posts_revisions.build
   end
   
   def create
+    params[:post][:posts_revisions_attributes] = {}
+    params[:post][:posts_revisions_attributes][0] = params[:post][:posts_revision]
+    params[:post].delete("posts_revision")
     @post = Monologue::Post.new(params[:post])
-    @post.posts_revisions.first.user_id = current_user.id
-        
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to ["admin", @post], :notice => 'Monologue created' }
-        format.json { render :json => ["admin", @post], :status => :created, :location => ["admin", @post] }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @post.errors, :status => :unprocessable_entity }
-      end
+    @revision = @post.posts_revisions.first
+    @revision.user_id = current_user.id
+ 
+    if @post.save
+      redirect_to edit_admin_post_path(@post), :notice => 'Monologue created'
+    else
+      render :action => "new"
     end
   end
   
   def edit
+    @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
+    @revision = @post.posts_revisions.last
   end
   
   def update
-    render :edit
+    @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
+    @revision = @post.posts_revisions.build(params[:post][:posts_revision])
+    @revision.user_id = current_user.id
+    if @post.save
+      redirect_to edit_admin_post_path(@post), :notice => 'Monologue saved'
+    else
+      render :edit
+    end
   end
 end

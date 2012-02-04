@@ -25,6 +25,27 @@ describe "posts" do
     # it "adds a revision each time you save"
     # end
     
+    it "can edit a post" do
+      # TODO: remove this duplicated code. Should be a working factory
+        visit new_admin_post_path
+        page.should have_content "New monologue"
+        fill_in "Title", with: "my title"
+        fill_in "Content", with: "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
+        fill_in "Url", with: "/2012/this-is-a-monologue"
+        fill_in "Published at", with: DateTime.now
+        click_button "save"
+      # / TODO      
+      visit admin_posts_path
+      click_on "my title"
+      page.should have_content "Edit \""
+      fill_in "Title", with: "This is a new title"
+      fill_in "Content", with: "New content here..."
+      fill_in "Url", with: "/new-title-and-url"
+      fill_in "Published at", with: DateTime.now
+      click_button "save"
+      page.should have_content "Monologue saved"
+    end
+    
     it "will output error messages if error(s) there is" do
       visit new_admin_post_path
       page.should have_content "New monologue"

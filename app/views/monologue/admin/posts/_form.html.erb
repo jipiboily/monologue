@@ -1,0 +1,10 @@
+<%= post.error_messages %>
+<%= post.fields_for @revision do |revision| %>
+  <%= revision.text_field :title %>
+  <%= revision.text_area :content %>
+  <%= revision.text_field :url %>
+  <%= revision.text_field :published_at %>
+<% end %>
+<%= post.check_box :published %>
+
+<%= post.submit :save %>

@@ -1,1 +1,5 @@
 Add a monologue
+
+<% @posts.each do |post|%>
+  <%= link_to post.posts_revisions.first.title, edit_admin_post_path(post) %>
+<% end %>

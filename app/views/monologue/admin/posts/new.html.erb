@@ -1,13 +1,4 @@
 <h1>New monologue</h1>
 <%= monologue_admin_form_for ["admin", @post] do |post| %>
-  <%= post.error_messages %>
-  <%= post.fields_for :posts_revisions do |revision| %>
-    <%= revision.text_field :title %>
-    <%= revision.text_area :content %>
-    <%= revision.text_field :url %>
-    <%= revision.text_field :published_at %>
-  <% end %>
-  <%= post.check_box :published %>
-  
-  <%= post.submit :save %>
+  <%= render partial: 'form', locals: {post: post} %>
 <% end %>
