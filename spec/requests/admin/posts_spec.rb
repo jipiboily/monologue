@@ -68,7 +68,9 @@ describe "posts" do
     end
     
     it "can NOT edit posts" do
-      pr = Factory(:posts_revision)
+      post = Factory(:post)
+      pr = Factory(:posts_revision, post_id: post.id)
+#      , posts_revisions: [Factory(:posts_revision)])
       visit edit_admin_post_path(pr)
       page.should have_content "You must first log in"
     end
