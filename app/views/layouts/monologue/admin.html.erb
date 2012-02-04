@@ -2,30 +2,20 @@
 <html>
 <head>
   <title>Monologue</title>
-  <%= stylesheet_link_tag    "monologue/application" %>
-  <%= javascript_include_tag "monologue/application" %>
+  <%= stylesheet_link_tag    "monologue/admin/application" %>
+  <%= javascript_include_tag "monologue/admin/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <nav>
-    <ul>
-      <% if current_user %>
-        <li>
-          Logged in as <%= current_user.email %>.
-          <%= link_to "Log out", admin_logout_path %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "log in", admin_login_path %>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<body> 
+  <% if current_user %>
+    <%= render "layouts/monologue/admin/nav_bar" %>
   <% end %>
-  
-  <%= yield %>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: (name == :notice ? "alert alert-info" : "alert alert-error") %>
+    <% end %>
 
+    <%= yield %>
+  </div>
 </body>
 </html>

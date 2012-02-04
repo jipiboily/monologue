@@ -1,0 +1,24 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Monologue", admin_path, class: "brand" %>
+      <ul class="nav pull-left">
+
+        <li class="<%= request.fullpath === new_admin_post_path ? "active":"" %>">
+          <a href="<%= new_admin_post_path %>">Add a monologue</a>
+        </li>
+        <li class="<%= request.fullpath === admin_posts_path || request.fullpath === admin_path ? "active":"" %>">
+          <a href="<%= admin_posts_path %>">List of monologues</a>
+        </li>
+        <li>
+          <a href="#">Comments</a>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><a href="#">Logged in as <%= current_user.email %>.</a></li>
+        <li><%= link_to "Log out", admin_logout_path %></li>          
+      </ul>
+
+    </div>
+  </div>
+</div>
