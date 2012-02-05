@@ -35,4 +35,9 @@ describe "posts" do
     page.should_not have_content("post 3 | revision 2")
     page.should have_content("post 3 | revision 3")
   end
+  
+  it "should return 404 on non existent post" do
+    visit "/monologue/ok/this/is/a/404/url"
+    page.status_code.should be 404
+  end
 end

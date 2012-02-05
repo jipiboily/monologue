@@ -6,6 +6,10 @@ class Monologue::PostsController < Monologue::ApplicationController
   def show
     logger.debug root_path.to_s
     post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {url: root_path + params[:post_url]}).first
+    if post.nil?
+      not_found
+      return
+    end
     @revision = post.posts_revisions.first
   end
   
