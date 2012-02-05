@@ -29,4 +29,10 @@ describe "posts" do
     page.should have_content("this is some text with french accents")
     page.should_not have_content("post 3 | revision 2")
   end
+  
+  it "has a feed" do
+    visit feed_path
+    page.should_not have_content("post 3 | revision 2")
+    page.should have_content("post 3 | revision 3")
+  end
 end

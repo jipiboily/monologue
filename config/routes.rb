@@ -1,5 +1,6 @@
 Monologue::Engine.routes.draw do
   root to: "posts#index"
+  match "/feed" => "posts#feed", as: "feed", defaults: {format: :rss}
   
   namespace :admin do
     get "/" => "posts#index", as: "" # responds to admin_url and admin_path
