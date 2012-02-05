@@ -1,7 +1,7 @@
 <%= post.error_messages %>
 <%= post.fields_for @revision do |revision| %>
   <%= revision.text_field :title, class: "span6" %>
-  <%= revision.text_area :content, class: "span12" %>
+  <%= revision.text_area :content, class: "span12 ckeditor" %>
   <%= revision.text_field :url %>
   <%= revision.text_field :published_at, data: {datepicker:"datepicker"}, value: revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
 <% end %>
