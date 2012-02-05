@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Monologue</title>
+  <title><%= Monologue.site_name %></title>
+  <meta charset="utf-8" />
+  <meta name="description" content="<%= Monologue.meta_description %>" />
+  <meta name="keyword" content="<%=Monologue.meta_keyword%>">
+    
   <%= stylesheet_link_tag    "monologue/blog/application" %>
   <%= javascript_include_tag "monologue/blog/application" %>
   <%= csrf_meta_tags %>
