@@ -1,3 +1,11 @@
+<% content_for :title do %>
+  <%= @revision.title %>
+<% end %>
+
+<% content_for :meta_description do %>
+  <%= truncate(strip_tags(@revision.content), length: 155) %>
+<% end %>
+
 <h1><%= @revision.title %></h1>
 <div class="published">Published on <%= @revision.published_at.to_formatted_s(:long_ordinal) %> by <%= @revision.user.name %></div>
 <p><%= raw @revision.content %></p>

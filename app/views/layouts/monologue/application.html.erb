@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= Monologue.site_name %></title>
+  <title>
+    <%= content_for?(:title) ? ((yield :title) + " | #{Monologue.site_name}") : Monologue.site_name  %>
+  </title>
   <meta charset="utf-8" />
-  <meta name="description" content="<%= Monologue.meta_description %>" />
+  <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : Monologue.meta_description  %>" />
   <meta name="keyword" content="<%=Monologue.meta_keyword%>">
     
   <%= stylesheet_link_tag    "monologue/blog/application" %>
