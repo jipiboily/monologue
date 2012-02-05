@@ -18,7 +18,7 @@ describe "posts" do
       fill_in "Content", with: "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
       fill_in "Url", with: "/2012/this-is-a-monologue"
       fill_in "Published at", with: DateTime.now
-      click_button "save"
+      click_button "Save"
       page.should have_content "Monologue created"
     end
 
@@ -30,7 +30,7 @@ describe "posts" do
         fill_in "Content", with: "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
         fill_in "Url", with: "/2012/this-is-a-monologue"
         fill_in "Published at", with: DateTime.now
-        click_button "save"
+        click_button "Save"
       # / TODO
       visit admin_posts_path
       click_on "my title"
@@ -40,7 +40,7 @@ describe "posts" do
       fill_in "Url", with: "/new-title-and-url"
       fill_in "Published at", with: DateTime.now
       nbr_posts_revisions = Monologue::PostsRevision.all.count
-      click_button "save"
+      click_button "Save"
       (nbr_posts_revisions + 1).should equal(Monologue::PostsRevision.all.count)
       page.should have_content "Monologue saved"
     end
@@ -48,7 +48,7 @@ describe "posts" do
     it "will output error messages if error(s) there is" do
       visit new_admin_post_path
       page.should have_content "New monologue"
-      click_button "save"
+      click_button "Save"
       page.should have_content "Title is required"
       page.should have_content "Content is required"
       page.should have_content "Url is required"
