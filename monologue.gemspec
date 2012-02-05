@@ -7,11 +7,11 @@ require "monologue/version"
 Gem::Specification.new do |s|
   s.name        = "monologue"
   s.version     = Monologue::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Monologue."
-  s.description = "TODO: Description of Monologue."
+  s.authors     = ["Jean-Philippe Boily | @jipiboily"]
+  s.email       = ["j@jipi.ca"]
+  s.homepage    = "http://github.com/jipiboily/monologue"
+  s.summary     = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
+  s.description = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "linecache19"
   # s.add_development_dependency "ruby-debug-base19"
   # s.add_development_dependency 'ruby-debug19'
-  
 
   s.add_development_dependency "sqlite3"
 end
