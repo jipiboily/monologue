@@ -11,7 +11,7 @@
       <tr>
         <td><%= link_to post.posts_revisions.first.title, edit_admin_post_path(post) %></td>
         <td><%= link_to "Edit", edit_admin_post_path(post), class: "btn btn-small" %></td>
-        <td><%= link_to "Delete", "#", class: "btn btn-small btn-danger" %></td>
+        <td><%= link_to "Delete", ["admin", post], confirm: 'Are you sure?', method: :delete, class: "btn btn-small btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -19,7 +19,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @revision.user_id = current_user.id
  
     if @post.save
-      redirect_to edit_admin_post_path(@post), :notice => 'Monologue created'
+      redirect_to edit_admin_post_path(@post), notice: 'Monologue created'
     else
       render :action => "new"
     end
@@ -36,9 +36,18 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @revision = @post.posts_revisions.build(params[:post][:posts_revision])
     @revision.user_id = current_user.id
     if @post.save
-      redirect_to edit_admin_post_path(@post), :notice => 'Monologue saved'
+      redirect_to edit_admin_post_path(@post), notice: 'Monologue saved'
     else
       render :edit
+    end
+  end
+  
+  def destroy
+    post = Monologue::Post.find(params[:id])
+    if post.destroy
+      redirect_to admin_posts_path, notice: "Monologue removed"
+    else
+      redirect_to admin_posts_path, alert: "Failed to remove monologue!"
     end
   end
 end
