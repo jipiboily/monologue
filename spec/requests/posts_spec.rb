@@ -37,7 +37,8 @@ describe "posts" do
   end
   
   it "should return 404 on non existent post" do
-    visit "/monologue/ok/this/is/a/404/url"
-    page.status_code.should be 404
+    lambda {
+      visit "/monologue/this/is/a/404/url"
+    }.should raise_error(ActionController::RoutingError)
   end
 end

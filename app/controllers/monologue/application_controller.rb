@@ -1,7 +1,7 @@
 class Monologue::ApplicationController < ApplicationController
   
   def not_found
-    render :file => "#{Rails.root}/public/404.html", :status => :not_found
+    raise ActionController::RoutingError.new('Not Found')
   end
   
   
