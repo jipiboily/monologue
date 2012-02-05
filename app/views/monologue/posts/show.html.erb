@@ -10,6 +10,7 @@
 <div class="published">Published on <%= @revision.published_at.to_formatted_s(:long_ordinal) %> by <%= @revision.user.name %></div>
 <p><%= raw @revision.content %></p>
 
+<%= render "social_sharing" %>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

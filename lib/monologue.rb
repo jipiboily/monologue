@@ -5,5 +5,8 @@ module Monologue
                  :site_name,
                  :site_url,
                  :meta_description,
-                 :meta_keyword
+                 :meta_keyword,
+                 :twitter_username,
+                 :twitter_locale,
+                 :facebook_like_locale
 end
