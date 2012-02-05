@@ -13,12 +13,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-  
-  <%= yield %>
-
+  <div class="container">
+    <a href="<%= root_path %>"><h1><%=Monologue.site_name%></h1></a>
+    <h6><%=Monologue.site_subtitle%></h6>
+    <%= yield %>
+  </div>
 </body>
 </html>

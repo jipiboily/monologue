@@ -7,7 +7,7 @@
 <% end %>
 
 <h1><%= @revision.title %></h1>
-<div class="published">Published on <%= @revision.published_at.to_formatted_s(:long_ordinal) %> by <%= @revision.user.name %></div>
+<div class="published"><%= @revision.published_at.to_date.to_formatted_s(:long_ordinal) %> | <%= @revision.user.name %></div>
 <p><%= raw @revision.content %></p>
 
 <%= render "social_sharing" %>
