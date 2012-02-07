@@ -1,60 +1,37 @@
 # MONOLOGUE
 
-Somewhat basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
+Monologue is a somewhat basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 ## Features
 - Rails mountable engine
 - fully named spaced
 - well tested
-- as less external dependencies as possible (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails apps we add this engine in.
-
-- posts
-	- title
-	- publish date
-	- revisions (Choosing currently online revision with a "save & publish" button. Can rollback to a desired version)
-	- keywords
-	- categories
-	- content
-	- an author (logged user)
-- pages
-	- title
-	- revisions
-	- content
-- social sharing widgets (twitter, facebook and +1) in posts
-- preview mode
-- managing the menu (or turning it off) (from partials at first maybe?)
-
+- as less external dependencies as possible (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.
 - comments handled by disqus
-- some configurations in the env file (with Settingslogic probably)
-	- web site title
-	- web site url
-	- meta description
-	- social accounts (facebook, twitter, LinkedIn, etc)
-	- API keys for social sharing
-
 - using [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance
-
 - runs on Heroku (must disable caching in main_app)
 
 
 ## Installation
 
-## Technology
-- Rails 3.2
-- RSpec (+ travis CI), Factories, Guard, Capybara
-- MySQL & Postgres support (SQLite?)
-- Twitter Bootstrap for now...
+1. add gem
+  gem "monologue"
+2. bundle install
+3. add this to your route file
+  mount Monologue::Engine, :at => '/' # or whatever path, be it "/blog" or "/monologue"
+4. bundle exec rake monologue:install:migrations
+5. Create a user
+  rails c
+  Monologue::User.create(name: "jipiboily", email:"j@jipi.ca", password:"password", password_confirmation: "password")
 
-### Bonbons
-- PJAX (pour l'admin, et p-e pour le front)
-- BatmanJS (pour l'admin)
+## Customization
 
-## Models
-### posts
-### posts_revisions
-### keywords
-### categories
+- RSS feed URL is "/feed"
 
+
+## Requirements
+- Rails 3.1.3 +
+- Database: MySQL & Postgres support (SQLite?)
 
 ## Ideas for the future
 
@@ -70,3 +47,5 @@ Somewhat basic mountable blogging engine in Rails built to be easily mounted in 
 - multiple sites with only one intance
 
 ## Contribute
+
+Fork it, the pull request. Please add tests for your feature or bug fix.
