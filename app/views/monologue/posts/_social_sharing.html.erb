@@ -1,34 +1,46 @@
 <div class="monologue-social-sharing">
   <div class="monologue-facebook-sharing">
 		<!-- FACEBOOK LIKE -->
-    <div id="fb-root"></div>
-    <script>(function(d){
-      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-      js = d.createElement('script'); js.id = id; js.async = true;
-      js.src = "//connect.facebook.net/<%= Monologue.facebook_like_locale || "en_US" %>/all.js#appId=288133081204194&xfbml=1";
-      d.getElementsByTagName('head')[0].appendChild(js);
-    }(document));</script>
-    <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="verdana"></div>
+		
+		<div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/<%= Monologue.facebook_like_locale || "en_US" %>/all.js#xfbml=1&appId=288133081204194";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
     <!-- /FACEBOOK LIKE -->
   </div>
   <div class="monologue-twitter-sharing">
     <!-- TWITTER -->
-    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-    <a href="http://twitter.com/share?url=http://<%= request.fullpath %>&lang=<%= Monologue.twitter_locale || "en" %>&via=<%=Monologue.twitter_username%>&text=<%=@revision.title%>" class="twitter-share-button">Tweet</a>
-    <!-- /TWITTER -->
+    <a href="https://twitter.com/share" class="twitter-share-button" 
+        data-lang="<%= Monologue.twitter_locale || "en" %>"
+        data-url="<%= request.url %>"
+        data-via="<%=Monologue.twitter_username%>"
+        data-text="<%=@revision.title%>"
+        data-count="vertical"
+    >Tweet</a>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <!-- /TWITTER -->
   </div>
   <div class="monologue-google-plus-sharing">
 		<!-- GOOGLE +1 -->
-			<script type="text/javascript">
-			  window.___gcfg = {lang: 'fr'};
+    <!-- Placez cette balise là où vous souhaitez positionner le bouton +1. -->
+    <g:plusone size="tall"></g:plusone>
 
-			  (function() {
-			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			    po.src = 'https://apis.google.com/js/plusone.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-			  })();
-			</script>
-			<g:plusone size="medium" annotation="none" href="<%= request.fullpath %>"></g:plusone>
+    <!-- Placez cet appel d'affichage à l'endroit approprié. -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: '<%=Monologue.google_plusone_locale || "en" %>'};
+
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
 		<!-- /GOOGLE +1 -->
 	</div>
 </div>

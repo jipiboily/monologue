@@ -9,5 +9,6 @@ module Monologue
                  :meta_keyword,
                  :twitter_username,
                  :twitter_locale,
-                 :facebook_like_locale
+                 :facebook_like_locale,
+                 :google_plusone_locale
 end
