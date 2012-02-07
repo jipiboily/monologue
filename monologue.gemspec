@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
   s.description = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", ">= 3.1.3"
   s.add_dependency "bcrypt-ruby"
