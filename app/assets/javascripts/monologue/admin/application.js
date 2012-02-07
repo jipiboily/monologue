@@ -8,5 +8,6 @@
 //= require jquery_ujs
 //= require monologue/bootstrap/bootstrap.min
 //= require monologue/bootstrap/bootstrap-datepicker
+//= require monologue/ckeditor/basepath
 //= require monologue/ckeditor/ckeditor
 //= require_tree .

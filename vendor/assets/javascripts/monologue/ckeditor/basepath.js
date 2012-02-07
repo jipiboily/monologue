@@ -1,0 +1,1 @@
+var CKEDITOR_BASEPATH = '/assets/monologue/ckeditor/';
