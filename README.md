@@ -1,5 +1,7 @@
 # MONOLOGUE
 
+## WARNING: THIS IS A WORK IN PROGRESS. DO NOT USE FOR NOW. THANKS!
+
 Monologue is a somewhat basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 ## Features
