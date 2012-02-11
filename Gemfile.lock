@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    monologue (0.0.1.alpha3)
+    monologue (0.0.1.alpha6)
       bcrypt-ruby
       rails (>= 3.1.3)
       tinymce-rails

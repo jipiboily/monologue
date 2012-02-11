@@ -2,7 +2,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   respond_to :html
   
   def index
-    @posts = Monologue::Post.includes(:posts_revisions).joins(:posts_revisions).all
+    @posts = Monologue::Post.includes(:posts_revisions).joins(:posts_revisions).order("published_at DESC").all
   end
   
   def new

@@ -1,5 +1,5 @@
-<div class="monologue-social-sharing">
-  <div class="monologue-facebook-sharing">
+<div class="monologue-social-sharing well">
+  <p>Loved what you just read? Share it!</p>
 		<!-- FACEBOOK LIKE -->
 		
 		<div id="fb-root"></div>
@@ -10,23 +10,20 @@
       js.src = "//connect.facebook.net/<%= Monologue.facebook_like_locale || "en_US" %>/all.js#xfbml=1&appId=288133081204194";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
+    <div class="fb-like" data-layout="box_count" data-show-faces="true" data-font="verdana"></div>
     <!-- /FACEBOOK LIKE -->
-  </div>
-  <div class="monologue-twitter-sharing">
+    
     <!-- TWITTER -->
     <a href="https://twitter.com/share" class="twitter-share-button" 
         data-lang="<%= Monologue.twitter_locale || "en" %>"
         data-url="<%= request.url %>"
         data-via="<%=Monologue.twitter_username%>"
         data-text="<%=@revision.title%>"
-        data-count="vertical"
-    >Tweet</a>
+        data-count="vertical">Tweet</a>
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       <!-- /TWITTER -->
-  </div>
-  <div class="monologue-google-plus-sharing">
+
 		<!-- GOOGLE +1 -->
     <!-- Placez cette balise là où vous souhaitez positionner le bouton +1. -->
     <g:plusone size="tall"></g:plusone>
@@ -42,5 +39,4 @@
       })();
     </script>
 		<!-- /GOOGLE +1 -->
-	</div>
 </div>
