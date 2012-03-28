@@ -11,5 +11,5 @@ Monologue::Engine.routes.draw do
     resources :posts
   end
   
-  match "*post_url" => "posts#show"
+  match "*post_url" => "posts#show", as: "post"
 end

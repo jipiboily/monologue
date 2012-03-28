@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    monologue (0.0.1.alpha6)
+    monologue (0.0.1.beta1)
       bcrypt-ruby
       rails (>= 3.1.3)
       tinymce-rails
@@ -136,7 +136,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.31)
+    tzinfo (0.3.32)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 

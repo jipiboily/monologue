@@ -1,5 +1,6 @@
 class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   respond_to :html
+  cache_sweeper Monologue::PostsSweeper, only: [:create, :update, :destroy]
   
   def index
     @posts = Monologue::Post.includes(:posts_revisions).joins(:posts_revisions).order("published_at DESC").all

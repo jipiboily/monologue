@@ -1,4 +1,6 @@
 class Monologue::PostsController < Monologue::ApplicationController
+  caches_page :index, :show, :feed
+
   def index
     @posts = Monologue::Post.published
   end
