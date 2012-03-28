@@ -2,6 +2,6 @@
   <% revision = post.posts_revisions.first %>
   <h2><%= link_to revision.title, revision.url %></h2>
   <div class="published"><strong><%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %> | <%= revision.user.name %></strong></div>
-  <p><%= truncate(strip_tags(revision.content), length: 1000) %></p>
+  <p><%= raw truncate(strip_tags(revision.content), length: 1000) %></p>
   <%= link_to "Read more", revision.url %>
 <% end %>
