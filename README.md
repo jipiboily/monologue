@@ -14,6 +14,7 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 - runs on Heroku (must disable caching in main_app)
 
 ### missing features
+- pagination (!)
 - categories
 - keywords
 - much more…see issues!
