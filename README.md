@@ -1,58 +1,62 @@
 # MONOLOGUE
-
-## WARNING: THIS IS A WORK IN PROGRESS. DO NOT USE FOR NOW. THANKS!
-
+---
 Monologue is a somewhat basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 ## Features
+---
+- it has post revisions (no UI to choose published revision yet)- 
 - Rails mountable engine
 - fully named spaced
 - well tested
-- as less external dependencies as possible (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.
+- few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments handled by disqus
 - using [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance
 - runs on Heroku (must disable caching in main_app)
 
+### missing features
+- categories
+- keywords
+- much more…see issues!
 
 ## Installation
+---
+1. add gem to your `Gemfile`
 
-1. add gem
-  gem "monologue"
-2. bundle install
-3. add this to your route file
-  mount Monologue::Engine, :at => '/' # or whatever path, be it "/blog" or "/monologue"
-4. bundle exec rake monologue:install:migrations
+	    gem "monologue"    
+2. run
+
+		$ bundle install
+3. add this to your route file (`config/route.rb`)
+  
+  		mount Monologue::Engine, :at => '/' # or whatever path, be it "/blog" or "/monologue"
+  		
+4. run
+
+		bundle exec rake monologue:install:migrations
 5. Create a user
-  rails c
-  Monologue::User.create(name: "jipiboily", email:"j@jipi.ca", password:"password", password_confirmation: "password")
 
-### Enable caching
+	  	rails c
+	  	Monologue::User.create(name: "jipiboily", email:"j@jipi.ca", password:"password", password_confirmation: "password")
+
+## Enable caching
+---
 Just turn perform_caching to true in your environment config file (`config/environment/{environment}.rb):
     
     config.action_controller.perform_caching = true
 
 ## Customization
+---
 
 - RSS feed URL is "/feed"
 
 
 ## Requirements
+---
 - Rails 3.1.3 +
 - Database: MySQL & Postgres support (SQLite?)
 
-## Ideas for the future
-
-- use [jQuery Waypoints](http://imakewebthings.github.com/jquery-waypoints/) to suggest another article (might be chosen from and?) once the article is read.
-	- An example: [See the "recommended story" once you reach the bottom of article](http://www.readwriteweb.com/archives/the_other_1_people_who_still_use_ie6.php)
-
-- plugins
-- themes (with Deface)
-
-- easy contact form for an about page
-- configurations in the database
-
-- multiple sites with only one intance
 
 ## Contribute
+---
 
-Fork it, the pull request. Please add tests for your feature or bug fix.
+Fork it, then pull request. Please add tests for your feature or bug fix.
