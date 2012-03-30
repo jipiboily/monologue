@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
   <title>
     <%= content_for?(:title) ? ((yield :title) + " | #{Monologue.site_name}") : Monologue.site_name  %>
@@ -8,14 +11,49 @@
   <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : Monologue.meta_description  %>" />
   <meta name="keyword" content="<%=Monologue.meta_keyword%>">
     
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <%= stylesheet_link_tag    "monologue/blog/application" %>
   <%= javascript_include_tag "monologue/blog/application" %>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="/feed" rel="alternate" title="RSS" type="application/rss+xml" >
 </head>
 <body>
   <div class="container">
-    <h1><a href="<%= root_path %>"><%=Monologue.site_name%></a></h1>
-    <h6><%=Monologue.site_subtitle%></h6>
-    <%= yield %>
+    <header class="main-header sixteen columns clearfix">
+      <h1><a href="<%= root_path %>"><%=Monologue.site_name%></a></h1>
+      <h2><%=Monologue.site_subtitle%></h2>
+    </header>
+
+    <div class="content sixteen columns">
+      <%= yield %>
+    </div> 
   </div>
+  <footer>
+    <%= yield :footer %>
+  </footer>
+
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = '<%= Monologue.disqus_shortname%>'; // required: replace example with your forum shortname
+
+      <% if Rails.env.development?  %>
+        var disqus_developer = 1; // developer mode is on
+      <% end %>
+
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+  </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+.main{
+  margin: 20px 0 0 0;  
+}
+
+#pagination {
+  margin: 20px 0 0 0;
+  border-top: 3px solid #000;
+  font-size: 20px;
+}
+
+#pagination .older_posts {
+  float: left;
+}
+
+#pagination .newer_posts {
+  float: right;
+}
+
+.content article h2, .content article h3, .content article h4, .content article h5, .content article h6 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+ }
+
+.content h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section header {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+
+section header h1 {
+  margin: 0 0 0 0;
+}

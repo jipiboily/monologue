@@ -3,12 +3,9 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
 
- *= require monologue/bootstrap/bootstrap.min
- *= require monologue/bootstrap/bootstrap-responsive.min
- *= require_self
+ *= require monologue/blog/skeleton/base
+ *= require monologue/blog/skeleton/skeleton
+ *= require monologue/blog/skeleton/layout
  *= require_tree . 
+ *= require_self
 */
-
-#monologue-facebook-sharing, #monologue-twitter-sharing, #monologue-google-plus-sharing {
-  float: left;
-}

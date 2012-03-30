@@ -1,8 +1,18 @@
 <% @posts.each do |post| %>
   <% revision = post.posts_revisions.first %>
-  <h2><%= link_to revision.title, revision.url %></h2>
-  <div class="published"><strong><%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %> | <%= revision.user.name %></strong></div>
-  <p><%= raw truncate(strip_tags(revision.content), length: 1000) %></p>
-  <%= link_to "Read more", revision.url %>
+  
+  <section>
+    <header>
+      <h1><%= link_to revision.title, revision.url %></h1>
+      <time datetime="<%= revision.published_at %>">
+        <%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
+      </time>&nbsp;&nbsp;|&nbsp;&nbsp;<%= revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= revision.url + "#disqus_thread" %>"></a>
+    </header>
+    
+    <p><%= raw truncate(strip_tags(revision.content), length: 1000) %></p>
+    
+    <%= link_to "Read more", revision.url, class: "btn alignleft" %>
+  </section>
 <% end %>
+
 <%= render "pagination" %>
