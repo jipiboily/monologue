@@ -1,5 +1,6 @@
 class Monologue::Admin::BaseController < Monologue::ApplicationController
   before_filter :authenticate_user!
+  force_ssl if Monologue.admin_force_ssl # TODO: find an great way to that with capybara
   
   layout "layouts/monologue/admin"
   

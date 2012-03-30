@@ -10,5 +10,6 @@ module Monologue
                  :twitter_username,
                  :twitter_locale,
                  :facebook_like_locale,
-                 :google_plusone_locale
+                 :google_plusone_locale,
+                 :admin_force_ssl
 end
