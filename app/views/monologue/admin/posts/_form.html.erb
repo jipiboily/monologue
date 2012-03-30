@@ -7,4 +7,4 @@
 <% end %>
 <%= post.check_box :published, label: "Published" %>
 
-<%= post.submit "Save", class: "btn btn-large btn-primary" %>
+<%= post.submit "Save", class: "btn btn-large btn-primary" %> <a href="<%= @revision.url %>" target="_blank" class="btn btn-large">Preview</a>
