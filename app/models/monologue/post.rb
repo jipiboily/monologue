@@ -8,7 +8,7 @@ module Monologue
     validates :posts_revision_id, uniqueness: true
 
     def self.page p
-      per_page = 2 # TODO: this should be a setting
+      per_page = 10 # TODO: this should be a setting
       set_total_pages(per_page)
       p = (p.nil? ? 0 : p.to_i - 1)
       offset =  (p==0 ? 0 : p * per_page)
