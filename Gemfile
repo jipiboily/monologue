@@ -16,3 +16,8 @@ gem "jquery-rails"
 # To use debugger
 #gem 'ruby-debug'
 #gem 'ruby-debug19'
+
+group :development do 
+  gem "thin"
+  gem 'rails', '3.2.2'
+end
