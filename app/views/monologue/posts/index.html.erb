@@ -5,3 +5,4 @@
   <p><%= raw truncate(strip_tags(revision.content), length: 1000) %></p>
   <%= link_to "Read more", revision.url %>
 <% end %>
+<%= render "pagination" %>

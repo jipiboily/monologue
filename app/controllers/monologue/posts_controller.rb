@@ -2,7 +2,8 @@ class Monologue::PostsController < Monologue::ApplicationController
   caches_page :index, :show, :feed
 
   def index
-    @posts = Monologue::Post.published
+    @page = params[:page].nil? ? 1 : params[:page]
+    @posts = Monologue::Post.published.page(@page)
   end
   
   def show

@@ -1,4 +1,10 @@
 en:
+  monologue:
+    posts:
+      older_posts:
+        "Older posts"
+      newer_posts:
+        "Newer posts"
   activerecord:
     errors:
       format: "%{message}"
