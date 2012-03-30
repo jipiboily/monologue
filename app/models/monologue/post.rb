@@ -3,7 +3,8 @@ module Monologue
     has_many :posts_revisions, dependent: :destroy
     accepts_nested_attributes_for :posts_revisions
     
-    scope :published, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").where(published: true).order("published_at DESC")
+    scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC")
+    scope :published, default.where(published: true)
 
     validates :posts_revision_id, uniqueness: true
 
