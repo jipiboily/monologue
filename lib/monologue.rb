@@ -11,5 +11,6 @@ module Monologue
                  :twitter_locale,
                  :facebook_like_locale,
                  :google_plusone_locale,
-                 :admin_force_ssl
+                 :admin_force_ssl,
+                 :posts_per_page
 end
