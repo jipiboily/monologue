@@ -4,7 +4,7 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 
 ## Features
 ---
-- it has post revisions (no UI to choose published revision yet)- 
+- it has post revisions (no UI to choose published revision yet)
 - Rails mountable engine
 - fully named spaced
 - well tested
