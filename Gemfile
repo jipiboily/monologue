@@ -19,5 +19,5 @@ gem "jquery-rails"
 
 group :development do 
   gem "thin"
-  gem 'rails', '3.2.2'
+  gem 'rails', '3.2.3'
 end
