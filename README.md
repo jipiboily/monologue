@@ -41,7 +41,7 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 	  	rails c
 	  	Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
 	  	
-6. Configure Monologue. This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki](https://github.com/jipiboily/monologue/wiki/Configuration).
+6. Configure Monologue. This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
 
 		
 		
@@ -60,7 +60,7 @@ Just turn perform_caching to true in your environment config file (`config/envir
 ## Customization
 ---
 
-- RSS feed URL is "/feed"
+See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
 
 
 ## Requirements
