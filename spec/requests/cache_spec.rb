@@ -4,13 +4,15 @@ describe "cache" do
   before(:each) do
     user = Factory(:user)
     posts = 0
+    published_at = DateTime.now - 30.days
     25.times do
       revisions = 0
       posts+=1
       @post = Factory(:post)
       3.times do 
-        revisions+=1
-        @post.posts_revisions.build(Factory.attributes_for(:posts_revision, user_id: user.id, url: "/monologue/post/#{posts}" , title: "post #{posts} | revision #{revisions}"))
+        revisions += 1
+        published_at = published_at + 1.day
+        @post.posts_revisions.build(Factory.attributes_for(:posts_revision, user_id: user.id, url: "/monologue/post/#{posts}" , title: "post #{posts} | revision #{revisions}", published_at: published_at ))
       end
       @post.save
     end
@@ -24,23 +26,23 @@ describe "cache" do
     clear_cache
   end
 
-  describe "cache creation" do
-    it "creates post's index cache" do
-      assert_create_cache(root_path, "post 2")
+  describe "creates" do
+    it "post's index cache" do
+      assert_create_cache("/monologue", "post 22")
     end
-
-    it "creates post's show cache" do
+  
+    it "post's show cache" do
       assert_create_cache("/monologue/post/2", "post 2")
     end
 
-    it "creates feed cache" do
-      assert_create_cache(feed_path, "post 2", "rss")
+    it "feed cache" do
+      assert_create_cache(feed_path, "post 22", "rss")
     end
   end
 
-  describe "cache sweeping" do 
+  describe "sweeper" do 
     before(:each) do
-      @test_paths = [root_path, "/monologue/post/2", "/monologue/post/3"]
+      @test_paths = ["/monologue", "/monologue/post/2", "/monologue/post/3"]
       @test_paths.each do |path|
         assert_create_cache(path)
       end
@@ -49,19 +51,23 @@ describe "cache" do
 
     it "should clear cache on create" do
       post = Factory(:post)
-      cache_sweeped?(@test_paths).should be_true
+      cache_sweeped?(["/monologue"]).should be_true
+      cache_sweeped?(["/monologue/post/2", "/monologue/post/3"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
 
     it "should clear cache on update" do
       @post.save!
-      cache_sweeped?(@test_paths).should be_true
+      cache_sweeped?([@post.latest_revision.url]).should be_true
+      cache_sweeped?(["/monologue/"]).should be_true
+      cache_sweeped?(["/monologue/post/2", "/monologue/post/3"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
 
     it "should clear cache on destroy" do
       @post.destroy
-      cache_sweeped?(@test_paths).should be_true
+      cache_sweeped?(["/monologue/"]).should be_true
+      cache_sweeped?(["/monologue/post/2", "/monologue/post/3"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
   end

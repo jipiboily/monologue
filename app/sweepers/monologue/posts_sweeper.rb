@@ -9,8 +9,14 @@ class Monologue::PostsSweeper < ActionController::Caching::Sweeper
       current_post_path = "#{page_cache_directory}#{post.just_the_revision_one_before.url}.html" 
       File.delete current_post_path if File.exists? current_post_path
     end
-    expire_page root_path
-    FileUtils.rm_rf "#{page_cache_directory}/page"
+
+    feed_file_path = "#{page_cache_directory}#{root_path}feed.rss"
+    File.delete feed_file_path if File.exists? feed_file_path
+
+    root_file_path = "#{page_cache_directory}#{root_path.chomp("/")}.html"
+    File.delete root_file_path if File.exists? root_file_path
+
+    FileUtils.rm_rf "#{page_cache_directory}/page" # remove pages
   end
 
   alias_method :after_create, :sweep
