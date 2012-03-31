@@ -7,7 +7,7 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 - it has post revisions (no UI to choose published revision yet)
 - Rails mountable engine
 - fully named spaced
-- well tested
+- tested
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments handled by disqus
 - using [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance
