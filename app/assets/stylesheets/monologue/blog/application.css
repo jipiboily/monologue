@@ -6,6 +6,8 @@
  *= require monologue/blog/skeleton/base
  *= require monologue/blog/skeleton/skeleton
  *= require monologue/blog/skeleton/layout
+ *= require monologue/blog/custom
+ *= require monologue/blog/fonts
  *= require_tree . 
  *= require_self
 */
