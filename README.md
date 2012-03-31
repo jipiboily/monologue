@@ -33,16 +33,29 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 4. run
 
 		bundle exec rake monologue:install:migrations
+		bundle exec rake db:create # only this is a new project
+		bundle exec rake db:migrate
+		
 5. Create a user
 
 	  	rails c
-	  	Monologue::User.create(name: "jipiboily", email:"j@jipi.ca", password:"password", password_confirmation: "password")
+	  	Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
+	  	
+6. Configure Monologue. This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki](https://github.com/jipiboily/monologue/wiki/Configuration).
+
+		
+		
+
 
 ## Enable caching
 ---
 Just turn perform_caching to true in your environment config file (`config/environment/{environment}.rb):
     
     config.action_controller.perform_caching = true
+    
+**IMPORTANT**: if monologue is mounted at root ("/"), you must also add that in your `routes.rb` file, before the monologue mount:
+
+	root :to => 'monologue/posts#index'
 
 ## Customization
 ---
