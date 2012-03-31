@@ -8,3 +8,5 @@ spec/dummy/tmp/
 .rvmrc
 .DS_Store
 .dropbox
+
+Gemfile.lock
