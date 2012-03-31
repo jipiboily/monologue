@@ -16,7 +16,7 @@ describe "posts" do
       page.should have_content "New monologue"
       fill_in "Title", with: "This is a monologue"
       fill_in "Content", with: "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-      fill_in "Url", with: "/2012/this-is-a-monologue"
+      fill_in "URL", with: "/2012/this-is-a-monologue"
       fill_in "Published at", with: DateTime.now
       click_button "Save"
       page.should have_content "Monologue created"
@@ -28,7 +28,7 @@ describe "posts" do
         page.should have_content "New monologue"
         fill_in "Title", with: "my title"
         fill_in "Content", with: "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-        fill_in "Url", with: "/2012/this-is-a-monologue"
+        fill_in "URL", with: "/2012/this-is-a-monologue"
         fill_in "Published at", with: DateTime.now
         click_button "Save"
       # / TODO
@@ -37,7 +37,7 @@ describe "posts" do
       page.should have_content "Edit \""
       fill_in "Title", with: "This is a new title"
       fill_in "Content", with: "New content here..."
-      fill_in "Url", with: "/new-title-and-url"
+      fill_in "URL", with: "/new-title-and-url"
       fill_in "Published at", with: DateTime.now
       nbr_posts_revisions = Monologue::PostsRevision.all.count
       click_button "Save"
@@ -51,7 +51,6 @@ describe "posts" do
       click_button "Save"
       page.should have_content "Title is required"
       page.should have_content "Content is required"
-      page.should have_content "Url is required"
       page.should have_content "'Published at' is required"
     end
   end
