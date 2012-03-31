@@ -1,5 +1,8 @@
 module Monologue
   class PostsRevision < ActiveRecord::Base
+    attr_accessible :title, :content, :url, :published_at
+
+
     after_save :latest_revision_is_current
     
     belongs_to :post

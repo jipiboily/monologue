@@ -1,7 +1,12 @@
 module Monologue
   class Post < ActiveRecord::Base
     has_many :posts_revisions, dependent: :destroy
+
     accepts_nested_attributes_for :posts_revisions
+    attr_accessible :posts_revisions_attributes
+    attr_accessible :published
+
+    
     
     scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC")
     scope :published, default.where(published: true)
