@@ -2,6 +2,8 @@ module Monologue
   class PostsRevision < ActiveRecord::Base
     attr_accessible :title, :content, :url, :published_at
 
+    before_validation :generate_url
+
 
     after_save :latest_revision_is_current
     
@@ -20,5 +22,12 @@ module Monologue
       post.posts_revision_id = self.id
       post.save!
     end
+
+    private 
+
+      def generate_url
+        year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
+        self.url = "/#{year}/#{self.title.parameterize}" if self.url.strip == ""
+      end
   end
 end
