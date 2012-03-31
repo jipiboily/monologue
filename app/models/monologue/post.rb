@@ -8,6 +8,14 @@ module Monologue
 
     validates :posts_revision_id, uniqueness: true
 
+    def just_the_revision_one_before
+      self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").offset(1).limit(1).first
+    end
+
+    def latest_revision
+      self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
+    end
+
     def self.page p
       per_page = Monologue.posts_per_page || 10
       set_total_pages(per_page)
