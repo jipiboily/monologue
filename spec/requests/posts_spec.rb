@@ -20,7 +20,6 @@ describe "posts" do
     page.should have_content("post 3 | revision 3")
     page.should_not have_content("post 3 | revision 2")
     page.should_not have_content("post 3 | revision 1")
-    page.should_not have_content("post 20")
   end
   
   it "should route to a post" do
