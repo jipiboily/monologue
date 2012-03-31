@@ -9,5 +9,5 @@
     Monologue.facebook_like_locale = "en_US" # "fr_CA"
     Monologue.google_plusone_locale = "en"
     Monologue.admin_force_ssl       = false
-    Monologue.posts_per_page      = 3
+    Monologue.posts_per_page      = 10
     # Monologue.google_analytics_id = "YOUR GA CODE"

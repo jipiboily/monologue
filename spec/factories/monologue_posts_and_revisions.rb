@@ -17,6 +17,6 @@ FactoryGirl.define do
     user_id 1
 #    association :posts, factory: :post
 #    post_id 1
-    published_at "2012-01-20 14:38:58"
+    sequence(:published_at) {|i| "2012-01-20 14:38:#{i}" }
   end
 end

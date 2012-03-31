@@ -17,22 +17,22 @@ describe "posts" do
   
   it "lists posts" do
     visit root_path
-    page.should have_content("post 3 | revision 3")
-    page.should_not have_content("post 3 | revision 2")
-    page.should_not have_content("post 3 | revision 1")
+    page.should have_content("post 23 | revision 3")
+    page.should_not have_content("post 23 | revision 2")
+    page.should_not have_content("post 23 | revision 1")
   end
   
   it "should route to a post" do
     visit root_path
-    click_on "post 3 | revision 3"
+    click_on "post 23 | revision 3"
     page.should have_content("this is some text with french accents")
-    page.should_not have_content("post 3 | revision 2")
+    page.should_not have_content("post 23 | revision 2")
   end
   
   it "has a feed" do
     visit feed_path
-    page.should_not have_content("post 3 | revision 2")
-    page.should have_content("post 3 | revision 3")
+    page.should_not have_content("post 23 | revision 2")
+    page.should have_content("post 23 | revision 3")
   end
   
   it "should return 404 on non existent post" do
