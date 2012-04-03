@@ -1,9 +1,9 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe Monologue::PostsRevision do
   before(:each) do
-    @post = Factory(:post)
-    @post.posts_revisions.build(Factory.attributes_for(:posts_revision))
+    @post = Factory(:post_with_multiple_revisions)
   end
 
   it "is valid with valid attributes" do

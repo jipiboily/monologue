@@ -1,12 +1,9 @@
 require 'spec_helper'
 describe "preview" do
   before(:each) do
-    @user = Factory(:user)
     @post_path = "/monologue/post/1"
-    @post = Factory(:post, published: false)
     @post_title = "post 1 | revision 1"
-    @post.posts_revisions.build(Factory.attributes_for(:posts_revision, user_id: @user.id, url: @post_path , title: @post_title))
-    @post.save
+    Factory(:posts_revision, title: @post_title, url: @post_path)
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -18,9 +15,10 @@ describe "preview" do
   
   it "verify unpublished posts are not public" do
     visit root_path
-    page.should_not have_content("post 1 | revision 1")
+    Factory(:unpublished_post)
+    page.should_not have_content("unpublished")
     lambda {
-      visit post_path(@post)
+      visit "/monologue/unpublished"
     }.should raise_error(ActionController::RoutingError)
   end
   

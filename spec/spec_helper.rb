@@ -6,6 +6,7 @@ require 'capybara/rspec'
 require 'rspec/autorun'
 require "factory_girl_rails"
 require 'database_cleaner'
+require 'shoulda'
 
 
 ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
