@@ -6,9 +6,7 @@ describe Monologue::PostsRevision do
     @post = Factory(:post_with_multiple_revisions)
   end
 
-  it "is valid with valid attributes" do
-    @post.posts_revisions.first.should be_valid
-  end
+  it { should_not allow_mass_assignment_of(:user_id) }
   
   it "can have more than one revision" do
     attr = Factory.attributes_for(:posts_revision)
@@ -23,13 +21,10 @@ describe Monologue::PostsRevision do
     post = Monologue::Post.last
     post.posts_revision_id.should equal(post.posts_revisions.last.id)
   end
+
+  it { validate_presence_of(:title) }
+  it { validate_presence_of(:content) }
+  it { validate_presence_of(:user_id) }
+  it { validate_presence_of(:published_at) }
     
-  describe "validations" do
-    ["title", "content", "user_id", "published_at"].each do |req|
-      it "requires a #{req}" do
-        eval("@post.posts_revisions.first.#{req} = nil")
-        @post.should_not be_valid
-      end
-    end
-  end
 end
