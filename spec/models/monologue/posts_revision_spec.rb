@@ -25,7 +25,7 @@ describe Monologue::PostsRevision do
   it "should create permalink (url) automaticly with title and year if none is provided" do
     title = "this is a great title!!!"
     post = Factory(:posts_revision, url:"", title:title, published_at: "2012-02-02")
-    post.url.should == "/2012/#{title.parameterize}"
+    post.url.should == "/2012/this-is-a-great-title"
   end
 
   it { validate_presence_of(:title) }
