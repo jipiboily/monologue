@@ -5,8 +5,6 @@ development:
   database: monologue_development
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
 
 test:
   adapter: mysql2
@@ -15,11 +13,3 @@ test:
   database: monologue_test
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
-
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000

@@ -11,8 +11,8 @@ describe Monologue::Post do
     
   describe "validations" do    
     it "is not possible to have twice the same posts_revision_id" do
-      Factory(:post, posts_revision_id: 1)
-      expect { Factory(:post, posts_revision_id: 1) }.to raise_error(ActiveRecord::RecordInvalid)
+      Factory(:post, :posts_revision_id => 1)
+      expect { Factory(:post, :posts_revision_id => 1) }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 end

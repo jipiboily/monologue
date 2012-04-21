@@ -20,4 +20,9 @@ gem "jquery-rails"
 group :development do 
   gem "thin"
   gem 'rails', '3.2.3'
+
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
 end
