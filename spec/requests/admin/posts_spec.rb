@@ -23,15 +23,7 @@ describe "posts" do
     end
 
     it "can edit a post and adds a revision when doing" do
-      # TODO: remove this duplicated code. Should be a working factory
-        visit new_admin_post_path
-        page.should have_content "New monologue"
-        fill_in "Title", :with =>  "my title"
-        fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-        fill_in "URL", :with =>  "/2012/this-is-a-monologue"
-        fill_in "Published at", :with =>  DateTime.now
-        click_button "Save"
-      # / TODO
+      Factory(:posts_revision, :title => "my title")
       visit admin_posts_path
       click_on "my title"
       page.should have_content "Edit \""
@@ -69,7 +61,6 @@ describe "posts" do
     it "can NOT edit posts" do
       post = Factory(:post)
       pr = Factory(:posts_revision, :post_id => post.id)
-#      , posts_revisions: [Factory(:posts_revision)])
       visit edit_admin_post_path(pr)
       page.should have_content "You must first log in"
     end
