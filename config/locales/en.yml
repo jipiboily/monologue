@@ -12,6 +12,11 @@ en:
       index:
         readmore:
           "Read more"
+      "404":
+        title:
+          "The page you were looking for doesn't exist."
+        message:
+          "You may have mistyped the address or the page may have moved."
     admin:
       posts:
         index:

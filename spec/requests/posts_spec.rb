@@ -25,8 +25,7 @@ describe "posts" do
   end
   
   it "should return 404 on non existent post" do
-    lambda {
-      visit "/monologue/this/is/a/404/url"
-    }.should raise_error(ActionController::RoutingError)
+    visit "/monologue/this/is/a/404/url"
+    page.should have_content("You may have mistyped the address or the page may have moved")
   end
 end

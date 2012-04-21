@@ -12,6 +12,11 @@ fr:
       index:
         readmore:
           "Lire"
+      "404":
+        title:
+          "La page que vous cherchiez n'existe pas."
+        message:
+          "You pourriez avoir mal tappé l'adresse ou la page pourrait avoir été déplacée."
     admin:
       posts:
         index:

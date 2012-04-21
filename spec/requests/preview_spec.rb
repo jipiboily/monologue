@@ -17,17 +17,14 @@ describe "preview" do
     visit root_path
     Factory(:unpublished_post)
     page.should_not have_content("unpublished")
-    lambda {
-      visit "/monologue/unpublished"
-    }.should raise_error(ActionController::RoutingError)
+    visit "/monologue/unpublished"
+    page.should have_content("You may have mistyped the address or the page may have moved")
   end
   
   it "admin users should be able to see the preview" do
-    lambda {
-      log_in
-      visit @post_path
-      page.should be_success
-    }.should_not raise_error(ActionController::RoutingError)
+    log_in
+    visit @post_path
+    page.should_not have_content("You may have mistyped the address or the page may have moved")
   end
   
   it "should not cache pages for admin" do
