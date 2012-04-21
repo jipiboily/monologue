@@ -5,18 +5,18 @@
       <ul class="nav pull-left">
 
         <li class="<%= request.fullpath === new_admin_post_path ? "active":"" %>">
-          <a href="<%= new_admin_post_path %>">Add a monologue</a>
+          <a href="<%= new_admin_post_path %>"><%=t(".add_a_monologue")%></a>
         </li>
         <li class="<%= request.fullpath === admin_posts_path || request.fullpath === admin_path ? "active":"" %>">
-          <a href="<%= admin_posts_path %>">List of monologues</a>
+          <a href="<%= admin_posts_path %>"><%=t(".list_monologues")%></a>
         </li>
         <li>
-          <a href="#">Comments</a>
+          <a href="#"><%=t(".comments")%></a>
         </li>
       </ul>
       <ul class="nav pull-right">
-        <li><a href="#">Logged in as <%= current_user.email %>.</a></li>
-        <li><%= link_to "Log out", admin_logout_path %></li>          
+        <li><a href="#"><%=t(".logged_in_as")%> <%= current_user.email %>.</a></li>
+        <li><%= link_to t(".log_out"), admin_logout_path %></li>          
       </ul>
 
     </div>

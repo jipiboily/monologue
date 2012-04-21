@@ -1,78 +1,78 @@
-en:
+fr:
   monologue:
     posts:
       pagination:
         older_posts:
-          "Older posts"
+          "Articles précédents"
         newer_posts:
-          "Newer posts"
+          "Articles plus récents"
       social_sharing:
         tagline:
-          "Loved what you just read? Share it!"
+          "Vous avez ce que vous avez lu? Partagez le!"
       index:
         readmore:
-          "Read more"
+          "Lire"
     admin:
       posts:
         index:
           title:
-            "Title"
+            "Titre"
           edit:
-            "Edit"
+            "Modifier"
           delete:
-            "Delete"
+            "Effacer"
         new:
           header:
-            "New monologue"
+            "Nouveau monologue"
         edit:
           header:
-            "Edit"
+            "Modifier"
         form:
           title:
-            "Title"
+            "Titre"
           content:
-            "Content"
+            "Contenu"
           url:
-            "URL <br /><i> This will be filled by default with '/2012/your-post-title'. You can choose your own URL. </i>"
+            "Adresse URL <br /><i> Ce sera rempli par défaut avec '/2012/nom-de-votre-article'. Vous pouvez aussi choisir votre propre adresse URL. </i>"
           published_at:
-            "Published at"
+            "Publié le"
           published:
-            "Published"
+            "Publié"
           save:
-            "Save"
+            "Sauvegarder"
           preview:
-            "Preview"
+            "Aperçu"
       sessions:
         new:
           title:
-            "Sign in"
+            "Authentification"
           email:
-            "Email"
+            "Courriel"
           password:
-            "Password"
+            "Mot de passe"
           button:
-            "Log in"
+            "Connexion"
         messages:
           invalid:
-            "Invalid email or password"
+            "Courriel ou mot de passe invalide"
           logged_in:
-            "Logged in!"
+            "Connecté!"
           logged_out:
-            "Logged out!"
+            "Déconnecté!"
   layouts:
     monologue:
       admin:
         nav_bar:
           add_a_monologue:
-            "Add a monologue"
+            "Ajouter un monologue"
           list_monologues:
-            "List of monologues"
+            "Liste des monologues"
           comments:
-            "Comments"
+            "Commentaires"
           logged_in_as:
-            "Logged in as"
+            "Connecté en tant que"
           log_out:
-            "Log out"
+            "Déconnexion"
   activerecord:
     errors:
       format: "%{message}"
@@ -83,8 +83,8 @@ en:
         full_messages: "%{message}"
         monologue/posts_revision:
           blank:
-            "%{attribute} is required"
+            "%{attribute} est requis"
           attributes:
             published_at:
               blank:
-                "'Published at' is required"
+                "'Publié le' est requis"

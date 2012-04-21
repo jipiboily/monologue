@@ -1,10 +1,10 @@
 <%= post.error_messages %>
 <%= post.fields_for @revision do |revision| %>
-  <%= revision.text_field :title, class: "span6" %>
-  <%= revision.text_area :content, class: "span12 ckeditor" %>
-  <%= revision.text_field :url, label: raw("URL <br /><i> This will be filled by default with '/#{DateTime.now.year}/your-post-title'. You can choose your own URL. </i>") %>
-  <%= revision.text_field :published_at, data: {datepicker:"datepicker"}, value: revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
+  <%= revision.text_field :title, label: t(".title"), class: "span6" %>
+  <%= revision.text_area :content, label: t(".content"), class: "span12 ckeditor" %>
+  <%= revision.text_field :url, label: raw(t(".url")) %>
+  <%= revision.text_field :published_at, label: t(".published_at"), data: {datepicker:"datepicker"}, value: revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
 <% end %>
-<%= post.check_box :published, label: "Published" %>
+<%= post.check_box :published, label: t(".published") %>
 
-<%= post.submit "Save", class: "btn btn-large btn-primary" %> <a href="<%= @revision.url %>" target="_blank" class="btn btn-large">Preview</a>
+<%= post.submit t(".save"), class: "btn btn-large btn-primary" %> <a href="<%= @revision.url %>" target="_blank" class="btn btn-large"><%= t(".preview") %></a>
