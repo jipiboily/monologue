@@ -1,10 +1,17 @@
 en:
   monologue:
     posts:
-      older_posts:
-        "Older posts"
-      newer_posts:
-        "Newer posts"
+      pagination:
+        older_posts:
+          "Older posts"
+        newer_posts:
+          "Newer posts"
+      social_sharing:
+        tagline:
+          "Loved what you just read? Share it!"
+      index:
+        readmore:
+          "Read more"
   activerecord:
     errors:
       format: "%{message}"
