@@ -1,0 +1,13 @@
+language: ruby
+before_script: 
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - mv spec/dummy/config/database-travis.yml spec/dummy/config/database.yml
+  - bundle exec rake db:create db:migrate
+rvm:
+  - 1.8.7
+  - 1.9.2
+  - 1.9.3
+env:
+  - DB=mysql DB_USERNAME=root
+  - DB=postgresql DB_USERNAME=postgres

@@ -3,7 +3,7 @@ describe "preview" do
   before(:each) do
     @post_path = "/monologue/post/1"
     @post_title = "post 1 | revision 1"
-    Factory(:posts_revision, title: @post_title, url: @post_path)
+    Factory(:posts_revision, :title => @post_title, :url => @post_path)
     ActionController::Base.perform_caching = true
     clear_cache
   end

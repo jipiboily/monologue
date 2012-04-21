@@ -19,8 +19,8 @@ describe "sessions" do
     it "won't log if bad credentials are provided" do
       user = Factory(:user)
       visit admin_login_path
-      fill_in "email", with: user.email
-      fill_in "Password", with: "whatever"
+      fill_in "email", :with =>  user.email
+      fill_in "Password", :with =>  "whatever"
       click_button "Log in"
       page.should have_content("Invalid email or password")
     end

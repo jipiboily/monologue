@@ -5,7 +5,7 @@ describe "cache" do
     @post_1 = Factory(:posts_revision).post
     @post_2 = Factory(:posts_revision).post
     @post_3 = Factory(:posts_revision).post
-    25.times { |i| Factory(:posts_revision, title: "post #{i}", url: "/monologue/post/#{i}") }
+    25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "/monologue/post/#{i}") }
     ActionController::Base.perform_caching = true # TODO: make that work. This does not seem to work flawlessly, so it's set in dummy's config/environments/test.rb too...
     clear_cache
   end
