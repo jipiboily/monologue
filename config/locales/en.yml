@@ -12,6 +12,24 @@ en:
       index:
         readmore:
           "Read more"
+    admin:
+      sessions:
+        new:
+          title:
+            "Sign in"
+          email:
+            "Email"
+          password:
+            "Password"
+          button:
+            "Log in"
+        messages:
+          invalid:
+            "Invalid email or password"
+          logged_in:
+            "Logged in!"
+          logged_out:
+            "Logged out!"
   activerecord:
     errors:
       format: "%{message}"
