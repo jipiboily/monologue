@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "pagination" do
   before(:each) do
     41.times { |i| Factory(:posts_revision, title: "post #{i}") }
-    @posts_per_page = 10 # TODO: should be set the same as the model's per_page
+    @posts_per_page = Monologue.posts_per_page
   end
 
   it "should not show all posts" do
