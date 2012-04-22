@@ -12,11 +12,8 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
   
   def create
-    params[:post][:posts_revisions_attributes] = {}
-    params[:post][:posts_revisions_attributes][0] = params[:post][:posts_revision]
-    params[:post].delete("posts_revision")
     @post = Monologue::Post.new(params[:post])
-    @revision = @post.posts_revisions.first
+    @revision = @post.posts_revisions.build(params[:post][:posts_revision])
     @revision.user_id = current_user.id
  
     if @post.save
