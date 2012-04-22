@@ -20,6 +20,7 @@ gem "jquery-rails"
 group :development do 
   gem "thin"
   gem 'rails', '3.2.3'
+  gem 'pry'
 
   if RUBY_PLATFORM.downcase.include?("darwin")
     gem 'rb-fsevent'
