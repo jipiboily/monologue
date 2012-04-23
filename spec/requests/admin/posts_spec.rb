@@ -16,7 +16,6 @@ describe "posts" do
       page.should have_content "New monologue"
       fill_in "Title", :with =>  "my title"
       fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-      fill_in "URL", :with =>  "/2012/this-is-a-monologue"
       fill_in "Published at", :with =>  DateTime.now
       click_button "Save"
       page.should have_content "Monologue created"
@@ -29,7 +28,6 @@ describe "posts" do
       page.should have_content "Edit \""
       fill_in "Title", :with =>  "This is a new title"
       fill_in "Content", :with =>  "New content here..."
-      fill_in "URL", :with =>  "/new-title-and-url"
       fill_in "Published at", :with =>  DateTime.now
       nbr_posts_revisions = Monologue::PostsRevision.all.count
       click_button "Save"
