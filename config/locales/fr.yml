@@ -38,7 +38,12 @@ fr:
           content:
             "Contenu"
           url:
-            "Adresse URL <br /><i> Ce sera rempli par défaut avec '/2012/nom-de-votre-article'. Vous pouvez aussi choisir votre propre adresse URL. </i>"
+            before_generated_url:
+              "Adresse URL <br /><i> Ce sera rempli par défaut avec "
+            after_generated_url:
+              ". Vous pouvez aussi choisir votre propre adresse URL. </i>"
+            generated_title:
+              "nom-de-votre-article"
           published_at:
             "Publié le"
           published:
