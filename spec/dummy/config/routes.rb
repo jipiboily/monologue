@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Monologue::Engine => "/monologue"
+  mount Monologue::Engine, :at => "/monologue"
 end
