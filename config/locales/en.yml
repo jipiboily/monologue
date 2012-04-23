@@ -26,6 +26,12 @@ en:
             "Edit"
           delete:
             "Delete"
+          published:
+            "Yes"
+          not_published:
+            "Not published"
+          status:
+            "Published ?"
         new:
           header:
             "New monologue"
