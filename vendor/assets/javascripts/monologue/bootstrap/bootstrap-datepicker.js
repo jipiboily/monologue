@@ -164,7 +164,7 @@
 
             // The date= attribute is used here to provide relatively fast
             // selectors for setting certain date cells.
-            this.update($targ.attr("date"));
+            this.update($targ.get(0).getAttribute("date"));
 
             // Don't consider this selection final if we're just going to an
             // adjacent month.
