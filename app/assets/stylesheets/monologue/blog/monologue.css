@@ -35,3 +35,8 @@ section header {
 section header h1 {
   margin: 0 0 0 0;
 }
+
+ul {
+  list-style: square;
+  margin-left: 30px;
+}
