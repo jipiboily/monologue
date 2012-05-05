@@ -15,6 +15,7 @@ class Monologue::PostsSweeper < ActionController::Caching::Sweeper
     File.delete feed_file_path if File.exists? feed_file_path
 
     root_file_path = "#{page_cache_directory}#{root_path.chomp("/")}.html"
+    root_file_path = "#{page_cache_directory}/index.html" if root_path.chomp("/") == "" # TODO: add test for that? It would need another dummy app mounted at root...?
     File.delete root_file_path if File.exists? root_file_path
 
     FileUtils.rm_rf "#{page_cache_directory}/page" # remove pages
