@@ -1,6 +1,6 @@
 # MONOLOGUE
 ---
-Monologue is a somewhat basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
+Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 
@@ -8,17 +8,19 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 ## Features
 ---
 - Rails mountable engine (fully named spaced)
-- back to basics: few features
-- it has post revisions (no UI to choose published revision yet)
 - tested
+- back to basics: few features
+- it has post revisions (no UI to choose published revision yet, but it keeps your modification history)
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments handled by disqus
-- using [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance
-- runs on Heroku (must disable caching in main_app)
+- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now)
+- runs on Heroku
 
 ### missing features
 - categories
+- UI for posts revisions and to manage user
 - much more…see issues!
+
 
 ## Installation
 ---
@@ -35,7 +37,7 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 4. run
 
 		bundle exec rake monologue:install:migrations
-		bundle exec rake db:create # only this is a new project
+		bundle exec rake db:create # only if this is a new project
 		bundle exec rake db:migrate
 		
 5. Create a user
@@ -44,10 +46,6 @@ Monologue is a somewhat basic mountable blogging engine in Rails built to be eas
 	  	Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
 	  	
 6. Configure Monologue. This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
-
-		
-		
-
 
 ## Enable caching
 ---
@@ -64,12 +62,10 @@ Just turn perform_caching to true in your environment config file (`config/envir
 
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
 
-
 ## Requirements
 ---
-- Rails 3.1.3 +
-- Database: MySQL & Postgres support (SQLite?)
-
+- Rails 3.1 +
+- Database: MySQL & Postgres are supported but other databases might work too.
 
 ## Contribute
 ---
