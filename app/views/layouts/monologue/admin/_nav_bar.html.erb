@@ -5,13 +5,13 @@
       <ul class="nav pull-left">
 
         <li class="<%= request.fullpath === new_admin_post_path ? "active":"" %>">
-          <a href="<%= new_admin_post_path %>"><%=t(".add_a_monologue")%></a>
+          <%= link_to t(".add_a_monologue"), new_admin_post_path%>
         </li>
         <li class="<%= request.fullpath === admin_posts_path || request.fullpath === admin_path ? "active":"" %>">
-          <a href="<%= admin_posts_path %>"><%=t(".list_monologues")%></a>
+          <%= link_to t(".list_monologues"), admin_posts_path %>
         </li>
-        <li>
-          <a href="#"><%=t(".comments")%></a>
+        <li class="<%= request.fullpath === admin_comments_path ? "active":"" %>">
+          <%= link_to t(".comments"), admin_comments_path %></a>
         </li>
       </ul>
       <ul class="nav pull-right">

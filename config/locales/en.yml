@@ -58,6 +58,10 @@ en:
             "Save"
           preview:
             "Preview"
+      comments:
+        show:
+          recent_comments:
+            "Recent comments"
       sessions:
         new:
           title:

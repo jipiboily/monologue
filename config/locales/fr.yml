@@ -58,6 +58,10 @@ fr:
             "Sauvegarder"
           preview:
             "Aperçu"
+      comments:
+        show:
+          recent_comments:
+            "Commentaires récents"
       sessions:
         new:
           title:

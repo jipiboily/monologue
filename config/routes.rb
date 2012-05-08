@@ -9,6 +9,7 @@ Monologue::Engine.routes.draw do
     get "login" => "sessions#new"
     resources :sessions
     resources :posts
+    get "comments" => "comments#show", :as => "comments"
   end
   
   match "*post_url" => "posts#show", :as =>  "post"
