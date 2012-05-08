@@ -47,6 +47,8 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 	  	
 6. Configure Monologue. This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
 
+7. Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
+
 ## Enable caching
 ---
 Just turn perform_caching to true in your environment config file (`config/environment/{environment}.rb):
