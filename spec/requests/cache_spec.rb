@@ -59,5 +59,14 @@ describe "cache" do
       cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
+
+    it "won't clean cache if saving a not yet published post" do
+      @post_1.published = false
+      @post_1.save!
+      cache_sweeped?([@post_1.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/"]).should be_false
+      cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
+      cache_sweeped?([feed_path], "rss").should be_false
+    end
   end
 end
