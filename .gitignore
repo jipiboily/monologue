@@ -10,3 +10,5 @@ spec/dummy/tmp/
 .dropbox
 
 Gemfile.lock
+.idea
+.idea/**/*
