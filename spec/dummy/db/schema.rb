@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120193907) do
+ActiveRecord::Schema.define(:version => 20120514164158) do
 
   create_table "monologue_posts", :force => true do |t|
     t.integer  "posts_revision_id"
@@ -35,12 +35,22 @@ ActiveRecord::Schema.define(:version => 20120120193907) do
   add_index "monologue_posts_revisions", ["post_id"], :name => "index_monologue_posts_revisions_on_post_id"
   add_index "monologue_posts_revisions", ["published_at"], :name => "index_monologue_posts_revisions_on_published_at"
 
+  create_table "monologue_tags", :force => true do |t|
+    t.string "name"
+  end
+
   create_table "monologue_users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
