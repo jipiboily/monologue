@@ -58,6 +58,8 @@ fr:
             "Sauvegarder"
           preview:
             "Aperçu"
+          tags:
+            "Categories"
       comments:
         show:
           recent_comments:

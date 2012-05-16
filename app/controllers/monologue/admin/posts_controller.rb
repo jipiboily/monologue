@@ -66,7 +66,7 @@ private
   def tag_list_for(tags)
 
     if tags
-       tags.collect {|tag| tag.name}.join(",")
+       tags.collect {|tag| tag.name}.join(", ")
     end
 
   end

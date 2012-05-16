@@ -58,6 +58,8 @@ en:
             "Save"
           preview:
             "Preview"
+          tags:
+            "Tags"
       comments:
         show:
           recent_comments:

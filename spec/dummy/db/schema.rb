@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120514194459) do
 
-  create_table "monologue_post_revisions_tags", :id => false, :force => true do |t|
-    t.integer "monologue_post_revision_id"
-    t.integer "tag_id"
-  end
-
   create_table "monologue_posts", :force => true do |t|
     t.integer  "posts_revision_id"
     t.boolean  "published"
@@ -55,6 +50,12 @@ ActiveRecord::Schema.define(:version => 20120514194459) do
   create_table "posts_revisions_tags", :id => false, :force => true do |t|
     t.integer "posts_revision_id"
     t.integer "tag_id"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
