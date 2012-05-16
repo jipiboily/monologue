@@ -49,6 +49,12 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 
 7. Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
+### Note to Heroku users 
+Additionnal step: turn caching off in `config/environments/production.rb`: 
+```ruby
+config.action_controller.perform_caching = true
+```
+
 ## Enable caching
 ---
 Just turn perform_caching to true in your environment config file (`config/environment/{environment}.rb):
