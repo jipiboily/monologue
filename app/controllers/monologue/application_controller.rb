@@ -1,5 +1,7 @@
 class Monologue::ApplicationController < ApplicationController
   
+  layout Monologue.layout if Monologue.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
+
   def not_found
     # fallback to the default 404.html page from main_app.
     file = Rails.root.join('public', '404.html')
