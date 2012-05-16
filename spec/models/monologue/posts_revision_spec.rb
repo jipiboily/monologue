@@ -34,3 +34,4 @@ describe Monologue::PostsRevision do
   it { validate_presence_of(:published_at) }
     
 end
+

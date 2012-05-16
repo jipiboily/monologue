@@ -29,3 +29,16 @@ describe "posts" do
     page.should have_content("You may have mistyped the address or the page may have moved")
   end
 end
+
+describe "Viewing a post with tags" do
+  before(:each) do
+    Factory(:post_with_tags)
+  end
+
+  it "should display the tags for the post" do
+    visit "/monologue"
+    click_on "post X | revision 2"
+    page.should have_content("rails")
+  end
+
+end

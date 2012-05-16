@@ -17,6 +17,7 @@ describe "posts" do
       fill_in "Title", :with =>  "my title"
       fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
       fill_in "Published at", :with =>  DateTime.now
+      fill_in "Tags",:with => "rails, ruby"
       click_button "Save"
       page.should have_content "Monologue created"
     end
