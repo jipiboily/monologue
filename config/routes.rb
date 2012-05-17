@@ -11,6 +11,12 @@ Monologue::Engine.routes.draw do
     resources :posts
     get "comments" => "comments#show", :as => "comments"
   end
-  
+
+  resources :posts do
+    collection do
+      get :search
+    end
+  end
+
   match "*post_url" => "posts#show", :as =>  "post"
 end

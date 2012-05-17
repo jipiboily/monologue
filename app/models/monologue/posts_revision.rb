@@ -1,6 +1,5 @@
 class Monologue::PostsRevision < ActiveRecord::Base
-  has_and_belongs_to_many :tags
-  attr_accessible :title, :content, :url, :published_at ,:tags
+  attr_accessible :title, :content, :url, :published_at
 
   before_validation :generate_url
 
@@ -8,6 +7,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
   belongs_to :post
   belongs_to :user
+  has_and_belongs_to_many :tags
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -29,6 +29,11 @@ class Monologue::PostsRevision < ActiveRecord::Base
     end
 
     self.tags = tags
+  end
+
+  def is_active?
+    post = Monologue::Post.find(self.post_id)
+    post.posts_revision_id == self.id
   end
 
   private

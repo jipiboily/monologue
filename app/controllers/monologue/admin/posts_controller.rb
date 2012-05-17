@@ -64,11 +64,9 @@ private
   helper_method :tag_list_for
 
   def tag_list_for(tags)
-
     if tags
-       tags.collect {|tag| tag.name}.join(", ")
+       tags.map {|tag| tag.name}.join(", ")
     end
-
   end
 
 end

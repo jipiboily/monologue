@@ -35,10 +35,10 @@ describe "Viewing a post with tags" do
     Factory(:post_with_tags)
   end
 
-  it "should display the tags for the post" do
+  it "should display the tags for the post as a link" do
     visit "/monologue"
     click_on "post X | revision 2"
-    page.should have_content("rails")
+    page.should have_link("rails")
   end
 
 end
