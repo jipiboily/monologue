@@ -40,3 +40,13 @@ ul {
   list-style: square;
   margin-left: 30px;
 }
+
+#tags {
+    margin-top: 20px;
+}
+
+.tag {
+    background: #eeeeee;
+    padding: 8px;
+}
+

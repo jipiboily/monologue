@@ -28,7 +28,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
   
   def edit
-    @revision = @post.posts_revisions.last
+    @revision = @post.active_revision
   end
   
   def update

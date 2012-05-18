@@ -1,6 +1,5 @@
 <% @posts.each do |post| %>
-  <% revision = post.posts_revisions.first %>
-  
+  <% revision = post.active_revision %>
   <section>
     <header>
       <h1><%= link_to revision.title, revision.url %></h1>
@@ -13,8 +12,6 @@
     <div id='tags'>
       <%= render revision.tags %>
     </div>
-
-
     <%= link_to t(".readmore"), revision.url, :class => "btn alignleft" %>
   </section>
 <% end %>

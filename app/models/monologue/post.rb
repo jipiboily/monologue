@@ -19,6 +19,10 @@ class Monologue::Post < ActiveRecord::Base
     self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
   end
 
+  def active_revision
+    Monologue::PostsRevision.find(posts_revision_id)
+  end
+
   def self.page p
     per_page = Monologue.posts_per_page || 10
     set_total_pages(per_page)

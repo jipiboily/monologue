@@ -16,7 +16,7 @@ class Monologue::PostsController < Monologue::ApplicationController
       not_found
       return
     end
-    @revision = post.posts_revisions.first
+    @revision = post.active_revision
   end
   
   def feed
@@ -26,18 +26,28 @@ class Monologue::PostsController < Monologue::ApplicationController
   def search()
     search = params[:search]
     if search.nil?
-      redirect_to posts_path :notice =>  "tag empty"
+      redirect_to posts_path
     else
       tag= Monologue::Tag.find_by_name(search)
-      #not sure what to do with this page yet
-      @page = params[:page].nil? ? 1 : params[:page]
-      @posts = tag.posts_revisions.map do |rev|
-        if rev.post.published
-          #to do only for active revision and for some reason, rev.is_active? does not work.
-          rev.post
-        end
+      unless tag
+        redirect_to posts_path
+      else
+        #not sure what to do with this page yet
+        @page =nil
+        @posts = post_using(tag)
+        render :index
       end
-      render :index
     end
+  end
+
+private
+  def post_using(tag)
+    posts = tag.posts_revisions.map do |rev|
+      #to do only for active revision and for some reason, rev.is_active? does not work.
+      if rev.post.published #&& rev.is_active?
+        rev.post
+      end
+    end
+    posts.uniq!
   end
 end

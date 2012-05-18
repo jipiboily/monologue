@@ -16,6 +16,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
 #    validates :post_id, :presence =>  true # TODO: do something about this validation on the first creation of a POST
   validates :published_at, :presence => true
 
+  #isn't it post concern?'
   def latest_revision_is_current
     post = Monologue::Post.find(self.post_id)
     post.posts_revision_id = self.id
@@ -29,11 +30,11 @@ class Monologue::PostsRevision < ActiveRecord::Base
     end
 
     self.tags = tags
+    #TODO need to call save? seems to work without it but why
   end
 
   def is_active?
-    post = Monologue::Post.find(self.post_id)
-    post.posts_revision_id == self.id
+    self.post.active_revision ==self;
   end
 
   private
