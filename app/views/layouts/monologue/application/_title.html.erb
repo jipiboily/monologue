@@ -1,0 +1,3 @@
+<title>
+  <%= content_for?(:title) ? ((yield :title) + " | #{Monologue.site_name}") : Monologue.site_name  %>
+</title>

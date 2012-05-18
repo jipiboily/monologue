@@ -4,25 +4,7 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-  <title>
-    <%= content_for?(:title) ? ((yield :title) + " | #{Monologue.site_name}") : Monologue.site_name  %>
-  </title>
-  <meta charset="utf-8" />
-  <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : Monologue.meta_description  %>" />
-  <meta name="keyword" content="<%=Monologue.meta_keyword%>">
-    
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <%= stylesheet_link_tag    "monologue/blog/application" %>
-  <%= javascript_include_tag "monologue/blog/application" %>
-
-  <!-- Mobile Specific Metas
-  ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <link href="/feed" rel="alternate" title="RSS" type="application/rss+xml" >
-  <%= render "layouts/monologue/google_analytics" %>
+  <%= render "layouts/monologue/application/head" %>
 </head>
 <body>
   <div class="container">
