@@ -24,8 +24,7 @@ FactoryGirl.define do
   end
 
   factory :post_with_tags, :class => Monologue::Post, :parent => :post_with_multiple_revisions do |post|
-    tag = Monologue::Tag.find_or_create_by_name("rails")
-    post.after_create { |p| p.posts_revisions.first().tags<<tag }
+    post.after_create { |p| p.posts_revisions.each{|r| r.tag!(%w(rails))}}
   end
 
 end
