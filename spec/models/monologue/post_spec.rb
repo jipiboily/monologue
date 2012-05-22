@@ -17,12 +17,11 @@ describe Monologue::Post do
   end
 
 end
-
-#TODO
+#
 #describe "Post with revisions" do
 #  #WHY???
 #  before(:each) do
-#      @post = Factory(:post_with_multiple_revisions)
+#    @post = Factory(:post_with_multiple_revisions)
 #  end
 #
 #  it "should be able to retrieve the active revision" do

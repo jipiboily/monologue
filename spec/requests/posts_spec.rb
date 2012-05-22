@@ -30,15 +30,3 @@ describe "posts" do
   end
 end
 
-describe "Viewing a post with tags" do
-  before(:each) do
-    Factory(:post_with_tags)
-  end
-
-  it "should display the tags for the post as a link" do
-    visit "/monologue"
-    click_on "post X | revision 2"
-    page.should have_link("rails")
-  end
-
-end

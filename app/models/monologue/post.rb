@@ -1,5 +1,6 @@
 class Monologue::Post < ActiveRecord::Base
   has_many :posts_revisions, :dependent => :destroy
+  has_and_belongs_to_many :tags
 
   accepts_nested_attributes_for :posts_revisions
   attr_accessible :posts_revisions_attributes
@@ -21,6 +22,15 @@ class Monologue::Post < ActiveRecord::Base
 
   def active_revision
     Monologue::PostsRevision.find(posts_revision_id)
+  end
+
+  def tag!(tags)
+    tags = tags.map do |tag|
+      tag.strip!
+      Monologue::Tag.find_or_create_by_name(tag)
+    end
+
+    self.tags = tags
   end
 
   def self.page p

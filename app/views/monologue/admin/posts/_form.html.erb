@@ -4,9 +4,9 @@
   <%= revision.text_area :content, :label =>  t(".content"), :class =>  "span12 ckeditor" %>
   <%= revision.text_field :url, :label =>  raw("#{t(".url.before_generated_url")} '#{monologue.root_path}#{DateTime.now.year}/#{t(".url.generated_title")}'#{t(".url.after_generated_url")}") %>
   <%= revision.text_field :published_at, :label =>  t(".published_at"), :data => {:datepicker => "datepicker"}, :value => revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
-  <%= revision.text_field :tag_list, :label =>  t(".tags"),  :value => tag_list_for(revision.object.tags)%>
 <% end %>
 
+<%= post.text_field :tag_list, :label =>  t(".tags"),  :value => tag_list_for(post.object.tags)%>
 <%= post.check_box :published, :label =>  t(".published") %>
 <%= post.submit t(".save"), :class =>  "btn btn-large btn-primary" %> <a href="<%= @revision.url %>" target="_blank" class="btn btn-large"><%= t(".preview") %></a>
 

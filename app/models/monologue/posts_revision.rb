@@ -7,7 +7,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
   belongs_to :post
   belongs_to :user
-  has_and_belongs_to_many :tags
+
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -21,21 +21,6 @@ class Monologue::PostsRevision < ActiveRecord::Base
     post = Monologue::Post.find(self.post_id)
     post.posts_revision_id = self.id
     post.save!
-  end
-
-  def tag!(tags)
-    tags = tags.map do |tag|
-      tag.strip!
-      Monologue::Tag.find_or_create_by_name(tag)
-    end
-
-    self.tags = tags
-    #TODO need to call save? seems to work without it but why
-    save!
-  end
-
-  def is_active?
-    self.post.active_revision ==self;
   end
 
   private
