@@ -31,6 +31,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
     self.tags = tags
     #TODO need to call save? seems to work without it but why
+    save!
   end
 
   def is_active?

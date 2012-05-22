@@ -22,32 +22,4 @@ class Monologue::PostsController < Monologue::ApplicationController
   def feed
     @posts = Monologue::Post.published.limit(25)
   end
-
-  def search()
-    search = params[:search]
-    if search.nil?
-      redirect_to posts_path
-    else
-      tag= Monologue::Tag.find_by_name(search)
-      unless tag
-        redirect_to posts_path
-      else
-        #not sure what to do with this page yet
-        @page =nil
-        @posts = post_using(tag)
-        render :index
-      end
-    end
-  end
-
-private
-  def post_using(tag)
-    posts = tag.posts_revisions.map do |rev|
-      #to do only for active revision and for some reason, rev.is_active? does not work.
-      if rev.post.published #&& rev.is_active?
-        rev.post
-      end
-    end
-    posts.uniq!
-  end
 end

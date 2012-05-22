@@ -8,7 +8,6 @@
 
 <article>
   <header><h1><%= link_to @revision.title, @revision.url %></h1></header>
-  Is Active <%= @revision.is_active?%>
   <div class="posted">
     <time datetime="<%= @revision.published_at %>">
       <%= @revision.published_at.to_date.to_formatted_s(:long_ordinal) %>

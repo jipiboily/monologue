@@ -47,6 +47,9 @@ ul {
 
 .tag {
     background: #eeeeee;
+    /*-moz-border-radius: 8px;*/
+    -webkit-border-radius: 8px;
     padding: 8px;
+    margin-right: 2px;
 }
 
