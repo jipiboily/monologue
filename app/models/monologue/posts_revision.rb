@@ -23,12 +23,16 @@ module Monologue
       post.save!
     end
 
+    def full_url
+      "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+    end
+
     private 
 
       def generate_url
         year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
         self.title = "" if self.title.nil?
-        self.url = "#{Monologue::Engine.routes.url_helpers.root_path}#{year}/#{self.title.parameterize}" if self.url.nil? || self.url.strip == ""
+        self.url = "#{year}/#{self.title.parameterize}" if self.url.nil? || self.url.strip == ""
       end
   end
 end
