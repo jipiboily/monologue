@@ -5,7 +5,7 @@ describe "cache" do
     @post_1 = Factory(:posts_revision).post
     @post_2 = Factory(:posts_revision).post
     @post_3 = Factory(:posts_revision).post
-    25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "/monologue/post/#{i}") }
+    25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "post/#{i}") }
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -31,7 +31,7 @@ describe "cache" do
 
   describe "sweeper" do 
     before(:each) do
-      @test_paths = ["/monologue", @post_1.latest_revision.url, @post_2.latest_revision.url, @post_3.latest_revision.url]
+      @test_paths = ["/monologue","/monologue/#{@post_1.latest_revision.url}", "/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]
       @test_paths.each do |path|
         assert_create_cache(path)
       end
@@ -41,7 +41,7 @@ describe "cache" do
     it "should clear cache on create" do
       post = Factory(:post)
       cache_sweeped?(["/monologue"]).should be_true
-      cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end 
 
@@ -49,23 +49,23 @@ describe "cache" do
       @post_1.save!
       cache_sweeped?([@post_1.latest_revision.url]).should be_true
       cache_sweeped?(["/monologue/"]).should be_true
-      cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
 
     it "should clear cache on destroy" do
       @post_1.destroy
       cache_sweeped?(["/monologue/"]).should be_true
-      cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
     end
 
     it "won't clean cache if saving a not yet published post" do
       @post_1.published = false
       @post_1.save!
-      cache_sweeped?([@post_1.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/#{@post_1.latest_revision.url}"]).should be_false
       cache_sweeped?(["/monologue/"]).should be_false
-      cache_sweeped?([@post_2.latest_revision.url, @post_3.latest_revision.url]).should be_false
+      cache_sweeped?(["/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_false
     end
   end

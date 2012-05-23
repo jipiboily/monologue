@@ -1,9 +1,10 @@
 require 'spec_helper'
 describe "preview" do
   before(:each) do
-    @post_path = "/monologue/post/1"
+    url ="post/1"
+    @post_path = "/monologue/#{url}"
     @post_title = "post 1 | revision 1"
-    Factory(:posts_revision, :title => @post_title, :url => @post_path)
+    Factory(:posts_revision, :title => @post_title, :url => url)
     ActionController::Base.perform_caching = true
     clear_cache
   end

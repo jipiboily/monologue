@@ -9,4 +9,8 @@ spec/dummy/tmp/
 .DS_Store
 .dropbox
 
+.idea/
+
+.idea/**/*
+
 Gemfile.lock
