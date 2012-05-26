@@ -113,3 +113,5 @@ fr:
             url:
               start_with_slash:
                 "L'adresse URL ne peut débuter par un slash ('/')"
+              unique:
+                "L'adresse URL est déjà utilisée par un autre article"
