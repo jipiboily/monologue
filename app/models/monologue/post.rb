@@ -9,7 +9,7 @@ module Monologue
     
     
     scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC")
-    scope :published, default.where(:published => true)
+    scope :published, default.where(:published => true).where("published_at <= ?", DateTime.now)
 
     validates :posts_revision_id, :uniqueness => true
 

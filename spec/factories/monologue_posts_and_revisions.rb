@@ -10,7 +10,7 @@ FactoryGirl.define do
     sequence(:url) { |i| "post/#{i}" }
     association :user
     association :post
-    sequence(:published_at) {|i| DateTime.new(2012,1,1,12,0,17) + i.days }
+    sequence(:published_at) {|i| DateTime.new(2011,1,1,12,0,17) + i.days }
   end
 
   factory :unpublished_post, :class =>  Monologue::Post, :parent => :post do |post|
