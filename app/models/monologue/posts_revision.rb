@@ -13,6 +13,7 @@ module Monologue
     validates :title, :presence =>  true
     validates :content, :presence =>  true
     validates :url, :presence =>  true
+    validate :url_do_not_start_with_slash
     validates :user_id, :presence =>  true
 #    validates :post_id, :presence =>  true # TODO: do something about this validation on the first creation of a POST
     validates :published_at, :presence =>  true
@@ -25,6 +26,10 @@ module Monologue
 
     def full_url
       "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+    end
+
+    def url_do_not_start_with_slash
+      errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.start_with_slash")) if self.url.start_with?("/")
     end
 
     private 

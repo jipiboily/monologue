@@ -110,3 +110,6 @@ en:
             published_at:
               blank:
                 "'Published at' is required"
+            url:
+              start_with_slash:
+                "URL can't start with a slash ('/')"
