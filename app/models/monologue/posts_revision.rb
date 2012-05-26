@@ -34,7 +34,7 @@ module Monologue
     end
 
     def url_is_unique
-      errors.add(:url, "URL must be unique") if Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
+      errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.unique")) if Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
     end
 
     private 

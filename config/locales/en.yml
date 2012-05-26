@@ -113,3 +113,5 @@ en:
             url:
               start_with_slash:
                 "URL can't start with a slash ('/')"
+              unique:
+                "URL is already used by another post"
