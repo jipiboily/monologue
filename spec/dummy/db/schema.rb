@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120193907) do
+ActiveRecord::Schema.define(:version => 20120526131841) do
 
   create_table "monologue_posts", :force => true do |t|
     t.integer  "posts_revision_id"
