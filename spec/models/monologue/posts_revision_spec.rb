@@ -28,6 +28,10 @@ describe Monologue::PostsRevision do
     post.url.should == "2012/this-is-a-great-title"
   end
 
+  it "should not let you create a post with a url starting with a '/'" do
+    expect { Factory(:posts_revision,  :url => "/whatever") }.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
   it { validate_presence_of(:title) }
   it { validate_presence_of(:content) }
   it { validate_presence_of(:user_id) }
