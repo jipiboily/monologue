@@ -32,6 +32,13 @@ describe Monologue::PostsRevision do
     expect { Factory(:posts_revision,  :url => "/whatever") }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
+  it "should validate that URLs are unique to a post" do
+    post_1 = Factory(:posts_revision, :url => "unique/url").post
+    post_1.posts_revisions.build(Factory.attributes_for(:posts_revision, :url => "unique/url"))
+    post_1.save.should_not raise_error(ActiveRecord::RecordInvalid)
+    expect { Factory(:posts_revision,  :url => "unique/url") }.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
   it { validate_presence_of(:title) }
   it { validate_presence_of(:content) }
   it { validate_presence_of(:user_id) }
