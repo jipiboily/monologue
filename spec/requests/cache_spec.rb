@@ -5,7 +5,7 @@ describe "cache" do
     @post_1 = Factory(:posts_revision).post
     @post_2 = Factory(:posts_revision).post
     @post_3 = Factory(:posts_revision).post
-    25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "post/#{i}") }
+    25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "post/#{i*100}") }
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -21,7 +21,7 @@ describe "cache" do
     end
   
     it "post's show cache" do
-      assert_create_cache("/monologue/post/2", "post 2")
+      assert_create_cache("/monologue/post/200", "post 2")
     end
 
     it "feed cache" do
