@@ -2,9 +2,11 @@
 (for upgrade informations, see UPGRADE.md)
 
 ## 0.1.1
-- changed URL pattern (fix for https://github.com/jipiboily/monologue/issues/64 by https://github.com/jipiboily/monologue/issues/59)
-- you can now use your main_app layout with Monologue (https://github.com/jipiboily/monologue/issues/54)
-- 
+
+- the "comment" link in admin now works as expected and shows all comments from your Disqus account;
+- changed URL pattern (fix for https://github.com/jipiboily/monologue/issues/64 by https://github.com/jipiboily/monologue/issues/59);
+- you can now use your main_app layout with Monologue (https://github.com/jipiboily/monologue/issues/54) (use config: Monologue.layout. See wiki for more information);
+
 
 ## 0.1.0: initial release (May 5, 2012)
 
