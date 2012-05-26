@@ -1,1 +1,1 @@
-rvm use 1.9.3@monologue
+rvm use 1.9.3@monologue --create
