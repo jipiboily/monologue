@@ -34,7 +34,15 @@ module Monologue
     end
 
     def url_is_unique
-      errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.unique")) if Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
+      errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.unique")) if self.url_exists?
+    end
+
+    def url_exists?
+      if self.post_id.nil?
+        return Monologue::PostsRevision.where("url = ?", self.url).count > 0
+      else
+        return Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
+      end
     end
 
     private 
@@ -42,7 +50,14 @@ module Monologue
       def generate_url
         year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
         self.title = "" if self.title.nil?
-        self.url = "#{year}/#{self.title.parameterize}" if self.url.nil? || self.url.strip == ""
+        base_title = "#{year}/#{self.title.parameterize}"
+        url_empty = self.url.nil? || self.url.strip == ""
+        self.url = base_title if url_empty
+        while self.url_exists? && url_empty
+          i ||= 1
+          self.url = "#{base_title}-#{i}"
+          i += 1
+        end
       end
   end
 end

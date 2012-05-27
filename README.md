@@ -31,7 +31,12 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 
 		$ bundle install
 3. add this to your route file (`config/route.rb`)
-  
+
+      	# This line mounts Monologue's routes at the root of your application.
+		# This means, any requests to URLs such as /my-post, will go to Monologue::PostsController.
+        # If you would like to change where this engine is mounted, simply change the :at option to something different.
+        #
+        # We ask that you don't use the :as option here, as Monologue relies on it being the default of "monologue"
   		mount Monologue::Engine, :at => '/' # or whatever path, be it "/blog" or "/monologue"
   		
 4. run
