@@ -40,8 +40,8 @@ describe Monologue::PostsRevision do
   end
 
   it "should generate unique URL" do
-    Factory(:posts_revision, :url => nil, :title => "unique title")
-    pr = Factory(:posts_revision, :url => nil, :title => "unique title")
+    Factory(:posts_revision, :url => nil, :title => "unique title", :published_at => DateTime.new(2011))
+    pr = Factory(:posts_revision, :url => nil, :title => "unique title", :published_at => DateTime.new(2011))
     pr.url.should == "2011/unique-title-1"
   end
 
