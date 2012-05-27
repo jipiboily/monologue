@@ -39,6 +39,12 @@ describe Monologue::PostsRevision do
     expect { Factory(:posts_revision,  :url => "unique/url") }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
+  it "should generate unique URL" do
+    Factory(:posts_revision, :url => nil, :title => "unique title")
+    pr = Factory(:posts_revision, :url => nil, :title => "unique title")
+    pr.url.should == "2011/unique-title-1"
+  end
+
   it { validate_presence_of(:title) }
   it { validate_presence_of(:content) }
   it { validate_presence_of(:user_id) }
