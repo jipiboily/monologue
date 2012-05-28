@@ -62,7 +62,7 @@ Start your server and head on [http://localhost:3000/monologue](http://localhost
 ### Note to Heroku users 
 Additionnal step: turn caching off in `config/environments/production.rb`:
 ```ruby
-config.action_controller.perform_caching = true
+config.action_controller.perform_caching = false
 ```
 
 ## Enable caching
