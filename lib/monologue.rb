@@ -13,5 +13,6 @@ module Monologue
                  :google_plusone_locale,
                  :admin_force_ssl,
                  :posts_per_page,
-                 :google_analytics_id
+                 :google_analytics_id,
+                 :layout
 end

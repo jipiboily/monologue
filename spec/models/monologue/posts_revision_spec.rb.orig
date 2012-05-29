@@ -26,6 +26,8 @@ describe Monologue::PostsRevision do
     title = "this is a great title!!!"
     post = Factory(:posts_revision, :url => "", :title => title, :published_at => "2012-02-02")
     post.url.should == "2012/this-is-a-great-title"
+<<<<<<< HEAD
+=======
   end
 
   it "should not let you create a post with a url starting with a '/'" do
@@ -43,6 +45,7 @@ describe Monologue::PostsRevision do
     Factory(:posts_revision, :url => nil, :title => "unique title", :published_at => DateTime.new(2011))
     pr = Factory(:posts_revision, :url => nil, :title => "unique title", :published_at => DateTime.new(2011))
     pr.url.should == "2011/unique-title-1"
+>>>>>>> upstream/master
   end
 
   it { validate_presence_of(:title) }

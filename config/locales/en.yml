@@ -48,6 +48,8 @@ en:
               "URL <br /><i> This will be filled by default with "
             after_generated_url:
               ". You can choose your own URL. </i>"
+            do_not_add_mount_point:
+              "Do not add at the beginning of your URL :"
             generated_title:
               "your-post-title"
           published_at:
@@ -108,3 +110,8 @@ en:
             published_at:
               blank:
                 "'Published at' is required"
+            url:
+              start_with_slash:
+                "URL can't start with a slash ('/')"
+              unique:
+                "URL is already used by another post"

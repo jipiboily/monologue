@@ -10,4 +10,5 @@
     Monologue.google_plusone_locale = "en"
     Monologue.admin_force_ssl       = false
     Monologue.posts_per_page      = 10
+    # Monologue.layout               = "layouts/application"
     # Monologue.google_analytics_id = "YOUR GA CODE"

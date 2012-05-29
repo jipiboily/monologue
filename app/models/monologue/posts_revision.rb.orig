@@ -29,6 +29,8 @@ module Monologue
       "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
     end
 
+<<<<<<< HEAD
+=======
     def url_do_not_start_with_slash
       errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.start_with_slash")) if self.url.start_with?("/")
     end
@@ -45,11 +47,15 @@ module Monologue
       end
     end
 
-    private
+>>>>>>> upstream/master
+    private 
 
       def generate_url
         year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
         self.title = "" if self.title.nil?
+<<<<<<< HEAD
+        self.url = "#{year}/#{self.title.parameterize}" if self.url.nil? || self.url.strip == ""
+=======
         base_title = "#{year}/#{self.title.parameterize}"
         url_empty = self.url.nil? || self.url.strip == ""
         self.url = base_title if url_empty
@@ -58,6 +64,7 @@ module Monologue
           self.url = "#{base_title}-#{i}"
           i += 1
         end
+>>>>>>> upstream/master
       end
   end
 end
