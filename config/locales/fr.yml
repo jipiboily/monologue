@@ -44,12 +44,8 @@ fr:
           content:
             "Contenu"
           url:
-            before_generated_url:
-              "Adresse URL <br /><i> Ce sera rempli par défaut avec "
-            after_generated_url:
-              ". Vous pouvez aussi choisir votre propre adresse URL. </i>"
-            do_not_add_mount_point:
-              "N'ajoutez pas au début de l'adresse URL:"
+            caption:
+              "Adresse URL<br/><i> Ce sera rempli par défaut avec '%s'. Vous pouvez aussi choisir votre propre adresse URL. N'ajoutez pas '%s' au début de l'adresse URL.</i>"
             generated_title:
               "nom-de-votre-article"
           published_at:
