@@ -21,7 +21,7 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def active_revision
-    Monologue::PostsRevision.find(posts_revision_id)
+    Monologue::PostsRevision.find(self.posts_revision_id)
   end
 
   def tag!(tags)

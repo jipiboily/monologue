@@ -59,7 +59,7 @@ fr:
           preview:
             "Aperçu"
           tags:
-            "Categories"
+            "Catégories<br/><i>Séparer les catégories par des virgules</i>"
       comments:
         show:
           recent_comments:

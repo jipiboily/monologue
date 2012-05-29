@@ -8,7 +8,6 @@ class Monologue::PostsRevision < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
 
-
   validates :title, :presence => true
   validates :content, :presence => true
   validates :url, :presence => true
@@ -18,13 +17,12 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
   #isn't it post concern?'
   def latest_revision_is_current
-    post = Monologue::Post.find(self.post_id)
-    post.posts_revision_id = self.id
-    post.save!
+    #post = Monologue::Post.find(self.post_id)
+    self.post.posts_revision_id = self.id
+    self.post.save!
   end
 
   private
-
     def generate_url
       year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
       self.title = "" if self.title.nil?

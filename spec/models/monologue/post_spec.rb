@@ -18,7 +18,7 @@ describe Monologue::Post do
 
 end
 #
-#describe "Post with revisions" do
+#describe "Post with revisions tototototo" do
 #  #WHY???
 #  before(:each) do
 #    @post = Factory(:post_with_multiple_revisions)
@@ -28,7 +28,8 @@ end
 #    #WHY do I have to do that
 #     attr = Factory.attributes_for(:posts_revision)
 #     attr[:id] = 2
+#     attr[:post_id] = @post.id
 #     rev = @post.posts_revisions.create(attr)
-#     @post.active_revision should == rev
+#     @post.active_revision.should eq rev
 #   end
 #end
