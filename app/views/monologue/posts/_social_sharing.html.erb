@@ -16,7 +16,7 @@
     <!-- TWITTER -->
     <a href="https://twitter.com/share" class="twitter-share-button" 
         data-lang="<%= Monologue.twitter_locale || "en" %>"
-        data-url="<%= request.url %>"
+        data-url="http://<%= request.host_with_port %><%= request.path.gsub("//","/") %>"
         data-via="<%=Monologue.twitter_username%>"
         data-text="<%=@revision.title%>"
         data-count="vertical">Tweet</a>
