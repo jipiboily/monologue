@@ -8,11 +8,11 @@
 <% end %>
 
 <article>
-  <header><h1><%= link_to @revision.title, @revision.url %></h1></header>
+  <header><h1><%= link_to @revision.title, @revision.full_url %></h1></header>
         <div class="posted">
         <time datetime="<%= @revision.published_at %>">
           <%= @revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
-        </time>&nbsp;&nbsp;|&nbsp;&nbsp;<%= @revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= @revision.url + "#disqus_thread" %>"></a>
+        </time>&nbsp;&nbsp;|&nbsp;&nbsp;<%= @revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= @revision.full_url + "#disqus_thread" %>"></a>
       </div>
   <p><%= raw @revision.content %></p>
 
