@@ -82,6 +82,8 @@ describe "cache" do
       check "Published"
       click_button "Save"
       page.should have_content I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
+      click_button "Save"
+      page.should have_content I18n.t("monologue.admin.posts.update.saved_with_future_date_and_cache")
     end
 
     it "should NOT display a warning after saving a post published at a future date when cache is OFF" do
@@ -94,6 +96,8 @@ describe "cache" do
       check "Published"
       click_button "Save"
       page.should have_content I18n.t("monologue.admin.posts.create.created")
+      click_button "Save"
+      page.should have_content I18n.t("monologue.admin.posts.update.saved")
     end
   end
 end

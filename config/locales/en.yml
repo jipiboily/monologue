@@ -47,6 +47,8 @@ en:
           header:
             "Edit"
         update:
+          saved_with_future_date_and_cache:
+            "Monologue saved: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
           saved:
             "Monologue saved"
         delete:
