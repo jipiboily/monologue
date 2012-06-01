@@ -47,6 +47,8 @@ fr:
           header:
             "Modifier"
         update:
+          saved_with_future_date_and_cache:
+            "Monologue sauvegardé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
           saved:
             "Monologue sauvegardé"
         delete:

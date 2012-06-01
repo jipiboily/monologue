@@ -6,9 +6,9 @@
 - the "comment" link in admin now works as expected and shows all comments from your Disqus account;
 - changed URL pattern (fix for https://github.com/jipiboily/monologue/issues/64 by https://github.com/jipiboily/monologue/issues/59);
 - you can now use your main_app layout with Monologue (https://github.com/jipiboily/monologue/issues/54) (use config: Monologue.layout. See wiki for more information);
-- added Open Graph tags
-- posts published to a later date are not displayed
-- multiple bug fixes
+- added Open Graph tags;
+- posts published with a date in the future are not displayed anymore;
+- multiple bug fixes;
 
 
 ## 0.1.0: initial release (May 5, 2012)
