@@ -18,6 +18,9 @@ fr:
         message:
           "You pourriez avoir mal tappé l'adresse ou la page pourrait avoir été déplacée."
     admin:
+      login:
+        need_auth:
+          "Vous devez d'abord vous connectez à la section d'administration."
       posts:
         index:
           title:
@@ -35,9 +38,22 @@ fr:
         new:
           header:
             "Nouveau monologue"
+        create:
+          created:
+            "Monologue créé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
+          created_with_future_date_and_cache:
+            "Monologue créé avec succès."
         edit:
           header:
             "Modifier"
+        update:
+          saved:
+            "Monologue sauvegardé"
+        delete:
+          removed:
+            "Monologue effacé"
+          fail:
+            "Le monologue n'as pas pu être effacé!"
         form:
           title:
             "Titre"

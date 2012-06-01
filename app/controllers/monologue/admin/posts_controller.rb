@@ -20,7 +20,12 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @revision.user_id = current_user.id
  
     if @post.save
-      redirect_to edit_admin_post_path(@post), :notice =>  'Monologue created'
+      if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
+        flash[:warning] = I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
+        redirect_to edit_admin_post_path(@post)
+      else
+        redirect_to edit_admin_post_path(@post), :notice =>  I18n.t("monologue.admin.posts.create.created")
+      end
     else
       render :action => "new"
     end
@@ -37,7 +42,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @revision = @post.posts_revisions.build(params[:post][:posts_revision])
     @revision.user_id = current_user.id
     if @post.save
-      redirect_to edit_admin_post_path(@post), :notice =>  'Monologue saved'
+      redirect_to edit_admin_post_path(@post), :notice =>  I18n.t("monologue.admin.posts.update.saved")
     else
       render :edit
     end
@@ -46,9 +51,9 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   def destroy
     post = Monologue::Post.find(params[:id])
     if post.destroy
-      redirect_to admin_posts_path, :notice =>  "Monologue removed"
+      redirect_to admin_posts_path, :notice =>  I18n.t("monologue.admin.posts.delete.removed")
     else
-      redirect_to admin_posts_path, :alert => "Failed to remove monologue!"
+      redirect_to admin_posts_path, :alert => I18n.t("monologue.admin.posts.delete.failed")
     end
   end
 end
