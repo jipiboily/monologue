@@ -18,6 +18,9 @@ en:
         message:
           "You may have mistyped the address or the page may have moved."
     admin:
+      login:
+        need_auth:
+          "You must first log in to access admin section."
       posts:
         index:
           title:
@@ -35,9 +38,22 @@ en:
         new:
           header:
             "New monologue"
+        create:
+          created:
+            "Monologue created"
+          created_with_future_date_and_cache:
+            "Monologue created: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
         edit:
           header:
             "Edit"
+        update:
+          saved:
+            "Monologue saved"
+        delete:
+          removed:
+            "Monologue removed"
+          fail:
+            "Failed to remove monologue!"
         form:
           title:
             "Title"

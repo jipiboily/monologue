@@ -68,5 +68,32 @@ describe "cache" do
       cache_sweeped?(["/monologue/#{@post_2.latest_revision.url}", "/monologue/#{@post_3.latest_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_false
     end
+
+  end
+
+  context "admin" do
+    it "should display a warning after saving a post published at a future date when cache is ON" do
+      ActionController::Base.perform_caching = true
+      log_in
+      visit new_admin_post_path
+      fill_in "Title", :with =>  "my title"
+      fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
+      fill_in "Published at", :with =>  DateTime.now + 2.days
+      check "Published"
+      click_button "Save"
+      page.should have_content I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
+    end
+
+    it "should NOT display a warning after saving a post published at a future date when cache is OFF" do
+      ActionController::Base.perform_caching = false
+      log_in
+      visit new_admin_post_path
+      fill_in "Title", :with =>  "my title"
+      fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
+      fill_in "Published at", :with =>  DateTime.now + 2.days
+      check "Published"
+      click_button "Save"
+      page.should have_content I18n.t("monologue.admin.posts.create.created")
+    end
   end
 end
