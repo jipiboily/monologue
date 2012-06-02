@@ -45,7 +45,7 @@ module Monologue
       end
     end
 
-    private 
+    private
 
       def generate_url
         year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
