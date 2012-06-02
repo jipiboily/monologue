@@ -78,6 +78,8 @@ en:
             "Save"
           preview:
             "Preview"
+          tags:
+            "Tags <br/><i>Separate tags by commas</i>"
       comments:
         show:
           recent_comments:

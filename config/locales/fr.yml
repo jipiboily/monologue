@@ -78,6 +78,8 @@ fr:
             "Sauvegarder"
           preview:
             "Aperçu"
+          tags:
+            "Catégories<br/><i>Séparer les catégories par des virgules</i>"
       comments:
         show:
           recent_comments:

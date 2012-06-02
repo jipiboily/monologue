@@ -10,8 +10,6 @@ spec/dummy/tmp/
 .dropbox
 
 .idea/
-
 .idea/**/*
 
 Gemfile.lock
-.rvmrc

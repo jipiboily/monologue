@@ -5,8 +5,9 @@
   <%= revision.text_field :url, :label =>  raw("#{t(".url.before_generated_url")} '#{DateTime.now.year}/#{t(".url.generated_title")}'#{t(".url.after_generated_url")}. #{t(".url.do_not_add_mount_point")} <i>'#{monologue.root_path}'.</i>") %>
   <%= revision.text_field :published_at, :label =>  t(".published_at"), :data => {:datepicker => "datepicker"}, :value => revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
 <% end %>
-<%= post.check_box :published, :label =>  t(".published") %>
 
+<%= post.text_field :tag_list, :label =>  raw(t(".tags")),  :value => tag_list_for(post.object.tags)%>
+<%= post.check_box :published, :label =>  t(".published") %>
 <%= post.submit t(".save"), :class =>  "btn btn-large btn-primary" %> <a href="<%= @revision.full_url %>" target="_blank" class="btn btn-large"><%= t(".preview") %></a>
 
 <script>

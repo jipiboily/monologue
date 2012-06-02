@@ -43,6 +43,25 @@ describe "posts" do
       page.should have_content "Content is required"
       page.should have_content "'Published at' is required"
     end
+
+    it "can create a new post with tags removing the empty spaces" do
+      visit new_admin_post_path
+      fill_in "Title", :with =>  "title"
+      fill_in "Content", :with =>  "content"
+      fill_in "Published at", :with =>  DateTime.now
+      fill_in "Tags",:with => "  rails, ruby,    one great tag"
+      click_button "Save"
+      page.should have_field :tag_list ,with: "rails, ruby, one great tag"
+    end
+
+    it "can update the tags of an edited post" do
+      Factory(:posts_revision, :title => "my title")
+      visit admin_posts_path
+      click_on "my title"
+      fill_in "Tags",:with => "ruby, spree"
+      click_button "Save"
+      page.should have_field :tag_list ,with: "ruby, spree"
+    end
   end
   
   context "NOT logged in user" do

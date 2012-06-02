@@ -1,0 +1,17 @@
+<% revision = post.active_revision %>
+<section>
+  <header>
+    <h1><%= link_to revision.title, revision.full_url %></h1>
+    <time datetime="<%= revision.published_at %>">
+      <%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
+    </time>
+    &nbsp;&nbsp;|&nbsp;&nbsp;<%= revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= revision.full_url + "#disqus_thread" %>"></a>
+  </header>
+
+  <p><%= raw truncate(strip_tags(revision.content), :length => 1000) %></p>
+
+  <div id='tags'>
+    <%= render post.tags %>
+  </div>
+  <%= link_to t(".readmore"), revision.full_url, :class => "btn alignleft" %>
+</section>

@@ -7,16 +7,16 @@ class Monologue::PostsController < Monologue::ApplicationController
   end
   
   def show
-    unless current_user
-      post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
-    else
+    if current_user
       post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
+    else
+      post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
     end
     if post.nil?
       not_found
       return
     end
-    @revision = post.posts_revisions.first
+    @revision = post.active_revision
   end
   
   def feed

@@ -40,3 +40,30 @@ ul {
   list-style: square;
   margin-left: 30px;
 }
+
+#tags {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: #eeeeee;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border:1px solid #d4d4d4;
+    border-radius:4px;
+    padding: 4px;
+    margin-right: 2px;
+}
+
+.tag-search{
+    padding:8px 35px 8px 14px;
+    margin-bottom:18px;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color:#eeeeee;
+    border:1px solid #d4d4d4;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
