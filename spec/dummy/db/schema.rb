@@ -12,11 +12,12 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20120526195147) do
+
   create_table "monologue_posts", :force => true do |t|
     t.integer  "posts_revision_id"
     t.boolean  "published"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "monologue_posts_revisions", :force => true do |t|
@@ -26,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20120526195147) do
     t.integer  "user_id"
     t.integer  "post_id"
     t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "monologue_posts_revisions", ["id"], :name => "index_monologue_posts_revisions_on_id", :unique => true
@@ -43,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20120526195147) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts_tags", :id => false, :force => true do |t|
