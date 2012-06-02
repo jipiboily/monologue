@@ -5,3 +5,5 @@
  	
 1. $`bundle exec rake monologue:install:migrations # this will remove mount point`
 2. $`bundle exec rake db:migrate`
+
+If you made changes in Monologue's post views, you will want to change all `@revision.url` to `@revision.full_url` and `revision.url` to `revision.full_url`.
