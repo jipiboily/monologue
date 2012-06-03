@@ -3,14 +3,9 @@ class Monologue::TagsController < Monologue::ApplicationController
     @tag = Monologue::Tag.find_by_name(params[:tag])
     if @tag
       @page = nil
-      @posts = posts_with(@tag)
+      @posts = @tag.posts_with_tag
     else
       redirect_to :root
     end
   end
-
-  private
-    def posts_with(tag)
-      tag.posts.published
-    end
 end
