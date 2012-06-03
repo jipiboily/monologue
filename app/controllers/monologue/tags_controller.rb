@@ -11,6 +11,6 @@ class Monologue::TagsController < Monologue::ApplicationController
 
   private
     def posts_with(tag)
-      tag.posts.where(:published => true)
+      tag.posts.published
     end
 end
