@@ -23,7 +23,7 @@ describe "tags" do
       Factory(:posts_revision, :title => "post Z")
     end
 
-    it "it should only display posts with the given tag" do
+    it "should only display posts with the given tag" do
       visit "/monologue"
       page.should have_content("post Z")
       click_on "rails"
