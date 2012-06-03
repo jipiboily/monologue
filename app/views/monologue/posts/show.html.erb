@@ -16,7 +16,7 @@
   </div>
   <p><%= raw @revision.content %></p>
 	<div id='tags'>
-    <%= render @post.tags %>
+    <%= render @revision.post.tags %>
   </div>
   <%= render "social_sharing" %>
 
