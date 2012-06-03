@@ -51,7 +51,7 @@ describe "posts" do
       fill_in "Published at", :with =>  DateTime.now
       fill_in "Tags",:with => "  rails, ruby,    one great tag"
       click_button "Save"
-      page.should have_field :tag_list ,with: "rails, ruby, one great tag"
+      page.should have_field :tag_list ,:with => "rails, ruby, one great tag"
     end
 
     it "can update the tags of an edited post" do
@@ -60,7 +60,7 @@ describe "posts" do
       click_on "my title"
       fill_in "Tags",:with => "ruby, spree"
       click_button "Save"
-      page.should have_field :tag_list ,with: "ruby, spree"
+      page.should have_field :tag_list ,:with => "ruby, spree"
     end
   end
   
