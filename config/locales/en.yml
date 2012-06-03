@@ -62,12 +62,8 @@ en:
           content:
             "Content"
           url:
-            before_generated_url:
-              "URL <br /><i> This will be filled by default with "
-            after_generated_url:
-              ". You can choose your own URL. </i>"
-            do_not_add_mount_point:
-              "Do not add at the beginning of your URL :"
+            caption:
+              "URL<br/><i> This will be filled by default with '%s'. You can choose your own URL. Do not add '%s' at the beginning of your URL.</i>"
             generated_title:
               "your-post-title"
           published_at:
