@@ -1,6 +1,12 @@
 # Monologue: the changelog!
 (for upgrade informations, see UPGRADE.md)
 
+## 0.1.3
+- a bug fix due to the new URL pattern
+
+## 0.1.2
+- there was a regression with RSS feed URLs. It is now fixed and there is a test assuring this bug will never come back. It is part of the new 0.1.2 version. Sorry!
+
 ## 0.1.1
 
 - the "comment" link in admin now works as expected and shows all comments from your Disqus account;
