@@ -1,7 +1,9 @@
-<section>
-  <header><h1>Latest tweets</h1></header>
-  <ul id="latest_tweets">
-    <li id="tweet_template" style="display:none;">{{text}}</li>
-  </ul>
-  <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/jipiboily.json?callback=TwitterWidget.callback&amp;count=5"></script>
-</section>
+<% unless Monologue.twitter_username.nil? %>
+  <section>
+    <header><h1>Latest tweets</h1></header>
+    <ul id="latest_tweets">
+      <li id="tweet_template" style="display:none;">{{text}}</li>
+    </ul>
+    <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/<%= Monologue.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
+  </section>
+<% end %>
