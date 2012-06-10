@@ -1,6 +1,12 @@
 class Monologue::ApplicationController < ApplicationController
-  
+
   layout Monologue.layout if Monologue.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
+
+  before_filter :recent_posts
+
+  def recent_posts
+    @recent_posts = Monologue::Post.published.limit(3)
+  end
 
   def not_found
     # fallback to the default 404.html page from main_app.

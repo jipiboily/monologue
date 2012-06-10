@@ -1,0 +1,6 @@
+<section>
+  <header><h1>Latest posts</h1></header>
+  <% @recent_posts.each do |post| %>
+    <%= link_to post.active_revision.title, post.active_revision.full_url %><br/>
+  <% end %>
+<section>
