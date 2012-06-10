@@ -13,4 +13,4 @@
     # Monologue.layout               = "layouts/application"
     # Monologue.google_analytics_id = "YOUR GA CODE"
 
-    Monologue.sidebar = ["recent_posts", "twitter"]
+    Monologue.sidebar = ["latests_posts", "latests_tweets"]
