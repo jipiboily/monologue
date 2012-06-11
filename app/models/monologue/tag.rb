@@ -7,4 +7,9 @@ class Monologue::Tag < ActiveRecord::Base
   def posts_with_tag
     self.posts.published
   end
+
+  def frequency
+    posts.size
+  end
+
 end

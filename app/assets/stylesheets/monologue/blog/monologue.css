@@ -67,3 +67,22 @@ ul {
     border-radius:4px;
 }
 
+.label-size-1 {
+    font-size: 80%;
+    opacity: .8;
+}
+
+.label-size-2 {
+    font-size: 90%;
+    opacity: .9;
+}
+.label-size-3 {
+    font-size: 100%;
+}
+.label-size-4 {
+    font-size: 130%;
+}
+.label-size-5 {
+    font-size: 160%;
+}
+

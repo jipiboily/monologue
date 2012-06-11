@@ -17,7 +17,7 @@
       <%= yield %>
     </div>
 
-    <aside class="sidebar three columns">
+    <aside class="sidebar four columns">
       <% Monologue.sidebar.each do |ext| %>
         <%= render :partial => "monologue/sidebar/#{ext}" %>
       <% end %>
