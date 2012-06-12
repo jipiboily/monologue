@@ -9,7 +9,7 @@ en:
       social_sharing:
         tagline:
           "Loved what you just read? Share it!"
-      index:
+      post:
         readmore:
           "Read more"
       "404":
@@ -17,6 +17,25 @@ en:
           "The page you were looking for doesn't exist."
         message:
           "You may have mistyped the address or the page may have moved."
+    sidebar:
+      categories:
+        title:
+          "Categories"
+      latest_posts:
+        title:
+          "Latest posts"
+      latest_tweets:
+        title:
+          "Latest tweets"
+      tag_cloud:
+        title:
+          "Tags"
+    tags:
+      show:
+        showing_post_with_tag:
+          "Showing posts with label"
+        show_all_posts:
+          "Show all posts"
     admin:
       login:
         need_auth:

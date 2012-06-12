@@ -1,5 +1,5 @@
 <% unless Monologue.twitter_username.nil? %>
-  <%= sidebar_section_for('Latest tweets') do %>
+  <%= sidebar_section_for(t(".title")) do %>
     <ul id="latest_tweets">
       <li id="tweet_template" style="display:none;">{{text}}</li>
     </ul>

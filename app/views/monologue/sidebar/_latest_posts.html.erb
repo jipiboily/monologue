@@ -1,4 +1,4 @@
-<%= sidebar_section_for('Latest posts') do  %>
+<%= sidebar_section_for(t(".title")) do  %>
   <% @recent_posts.each do |post| %>
     <%= link_to post.active_revision.title, post.active_revision.full_url %><br/>
   <% end %>
