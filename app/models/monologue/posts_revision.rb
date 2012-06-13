@@ -48,14 +48,15 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
     def generate_url
       year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
-      self.title = "" if self.title.nil?
-      base_title = "#{year}/#{self.title.parameterize}"
-      url_empty = self.url.nil? || self.url.strip == ""
-      self.url = base_title if url_empty
-      while self.url_exists? && url_empty
-        i ||= 1
-        self.url = "#{base_title}-#{i}"
-        i += 1
+      unless self.title.blank?
+        base_title = "#{year}/#{self.title.parameterize}"
+        url_empty = self.url.nil? || self.url.strip == ""
+        self.url = base_title if url_empty
+        while self.url_exists? && url_empty
+          i ||= 1
+          self.url = "#{base_title}-#{i}"
+          i += 1
+        end
       end
     end
 end
