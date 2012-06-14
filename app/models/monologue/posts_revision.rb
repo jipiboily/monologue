@@ -48,8 +48,8 @@ module Monologue
     private 
 
       def generate_url
+        return if self.title.blank?
         year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
-        self.title = "" if self.title.nil?
         base_title = "#{year}/#{self.title.parameterize}"
         url_empty = self.url.nil? || self.url.strip == ""
         self.url = base_title if url_empty
