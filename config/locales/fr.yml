@@ -9,7 +9,7 @@ fr:
       social_sharing:
         tagline:
           "Vous avez aimé ce que vous avez lu? Partagez le!"
-      index:
+      post:
         readmore:
           "Lire"
       "404":
@@ -17,6 +17,25 @@ fr:
           "La page que vous cherchiez n'existe pas."
         message:
           "You pourriez avoir mal tappé l'adresse ou la page pourrait avoir été déplacée."
+    sidebar:
+      categories:
+        title:
+          "Catégories"
+      latest_posts:
+        title:
+          "Derniers articles"
+      latest_tweets:
+        title:
+          "Derniers tweets"
+      tag_cloud:
+        title:
+          "Labels"
+    tags:
+      show:
+        showing_post_with_tag:
+          "Articles ayant le label"
+        show_all_posts:
+          "Voir tous les articles"
     admin:
       login:
         need_auth:

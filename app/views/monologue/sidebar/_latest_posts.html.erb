@@ -1,6 +1,5 @@
-<section>
-  <header><h1>Latest posts</h1></header>
+<%= sidebar_section_for(t(".title")) do  %>
   <% @recent_posts.each do |post| %>
     <%= link_to post.active_revision.title, post.active_revision.full_url %><br/>
   <% end %>
-<section>
+<% end %>
