@@ -4,7 +4,7 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-  <%= render "layouts/monologue/application/head" %>
+  <%= render 'layouts/monologue/application/head' %>
 </head>
 <body>
   <div class="container">
@@ -17,34 +17,12 @@
       <%= yield %>
     </div>
 
-    <aside class="sidebar four columns">
-      <% Monologue.sidebar.each do |ext| %>
-        <%= render :partial => "monologue/sidebar/#{ext}" %>
-      <% end %>
-    </aside>
-
-
+      <%= render 'layouts/monologue/application/sidebar' %>
   </div>
   <footer>
     <%= yield :footer %>
   </footer>
 
-  <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = '<%= Monologue.disqus_shortname%>'; // required: replace example with your forum shortname
-
-      <% if Rails.env.development?  %>
-        var disqus_developer = 1; // developer mode is on
-      <% end %>
-
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-  </script>
+  <%= render 'layouts/monologue/application/disqus' %>
 </body>
 </html>
