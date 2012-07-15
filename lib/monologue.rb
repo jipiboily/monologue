@@ -14,5 +14,6 @@ module Monologue
                  :admin_force_ssl,
                  :posts_per_page,
                  :google_analytics_id,
-                 :layout
+                 :layout,
+                 :sidebar
 end

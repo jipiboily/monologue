@@ -13,9 +13,17 @@
       <h2><%=Monologue.site_subtitle%></h2>
     </header>
 
-    <div class="content sixteen columns">
+    <div class="content twelve columns">
       <%= yield %>
-    </div> 
+    </div>
+
+    <aside class="sidebar three columns">
+      <% Monologue.sidebar.each do |ext| %>
+        <%= render :partial => "monologue/sidebar/#{ext}" %>
+      <% end %>
+    </aside>
+
+
   </div>
   <footer>
     <%= yield :footer %>
