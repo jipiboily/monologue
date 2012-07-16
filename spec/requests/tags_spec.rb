@@ -39,5 +39,6 @@ describe "tags" do
       page.should have_content("post X | revision 2")
       page.should_not have_content("we need to reach 88 miles per hour")
     end
+
   end
 end

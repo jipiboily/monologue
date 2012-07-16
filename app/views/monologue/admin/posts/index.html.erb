@@ -13,7 +13,7 @@
         <td><%= link_to post.posts_revisions.last.title, edit_admin_post_path(post) %></td>
         <td><span class="label label-<%= post.published ? "success" : "important" %>"><%= post.published ? t(".published") : t(".not_published") %></span></td>
         <td><%= link_to t(".edit"), edit_admin_post_path(post), :class => "btn btn-small" %></td>
-        <td><%= link_to t(".delete"), ["admin", post], :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-small btn-danger" %></td>
+        <td><%= link_to t(".delete"), ["admin", post],:data => {:confirm => 'Are you sure?'}, :method => :delete, :class => "btn btn-small btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -18,5 +18,4 @@ describe Monologue::Tag do
       expect { Factory(:tag,:name=>nil) }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
-
 end

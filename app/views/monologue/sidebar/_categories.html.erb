@@ -1,0 +1,7 @@
+<%= sidebar_section_for(t(".title")) do %>
+   <ul>
+     <% @tags.each do |tag| %>
+       <li id="tag"><%=link_to "#{tag.name} (#{tag.frequency})", tag_url(tag) %> </li>
+     <% end %>
+   </ul>
+ <% end %>

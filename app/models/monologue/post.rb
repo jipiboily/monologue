@@ -1,6 +1,7 @@
 class Monologue::Post < ActiveRecord::Base
   has_many :posts_revisions, :dependent => :destroy
-  has_and_belongs_to_many :tags ,:join_table => :monologue_posts_tags
+  has_many :taggings
+  has_many :tags ,:through=> :taggings,:dependent => :destroy
 
   accepts_nested_attributes_for :posts_revisions
   attr_accessible :posts_revisions_attributes
@@ -8,6 +9,8 @@ class Monologue::Post < ActiveRecord::Base
 
   scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC")
   scope :published, default.where(:published => true).where("published_at <= ?", DateTime.now)
+
+  default_scope includes(:tags)
 
   validates :posts_revision_id, :uniqueness => true
 

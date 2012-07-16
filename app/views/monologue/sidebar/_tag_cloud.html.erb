@@ -1,0 +1,5 @@
+<%= sidebar_section_for(t(".title")) do  %>
+  <% @tags.each do |tag| %>
+    <%=link_to tag.name, tag_url(tag), :class =>label_for_tag(tag,@tags_frequency_min,@tags_frequency_max) %>
+  <% end %>
+<% end  %>
