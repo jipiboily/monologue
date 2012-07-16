@@ -27,8 +27,8 @@ describe "tags" do
       visit "/monologue"
       page.should have_content("post Z")
       click_on "rails"
-      page.should have_content("post X | revision 2")
-      page.should_not have_content("post Z")
+      find(".content").should have_content("post X | revision 2")
+      find(".content").should_not have_content("post Z")
     end
 
     it "should not display posts with tags with future publication date" do

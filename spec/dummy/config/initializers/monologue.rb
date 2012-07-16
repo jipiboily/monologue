@@ -12,3 +12,5 @@
     Monologue.posts_per_page      = 10
     # Monologue.layout               = "layouts/application"
     # Monologue.google_analytics_id = "YOUR GA CODE"
+
+    Monologue.sidebar = ["latests_posts", "latests_tweets"]
