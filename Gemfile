@@ -17,9 +17,9 @@ gem "jquery-rails"
 #gem 'ruby-debug'
 #gem 'ruby-debug19'
 
-group :development do 
+group :development do
   gem "thin"
-  gem 'rails', '3.2.6'
+  gem 'rails', '3.2.8'
   gem 'pry'
 
   if RUBY_PLATFORM.downcase.include?("darwin")
