@@ -1,8 +1,8 @@
 <div class="navbar">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container" data-monologue="nav-bar">
       <%= link_to "Monologue", admin_path, :class => "brand" %>
-      <ul class="nav pull-left">
+      <ul class="nav pull-left" data-monologue="nav-bar-left">
 
         <li class="<%= request.fullpath === new_admin_post_path ? "active":"" %>">
           <%= link_to t(".add_a_monologue"), new_admin_post_path%>
@@ -14,9 +14,9 @@
           <%= link_to t(".comments"), admin_comments_path %>
         </li>
       </ul>
-      <ul class="nav pull-right">
+      <ul class="nav pull-right" data-monologue="nav-bar-right">
         <li><a href="#"><%=t(".logged_in_as")%> <%= current_user.email %>.</a></li>
-        <li><%= link_to t(".log_out"), admin_logout_path %></li>          
+        <li><%= link_to t(".log_out"), admin_logout_path %></li>
       </ul>
 
     </div>
