@@ -5,7 +5,7 @@ class Monologue::TagsController < Monologue::ApplicationController
       @page = nil
       @posts = @tag.posts_with_tag
     else
-      redirect_to :root
+      redirect_to :root ,:notice => "No post found with label \"#{params[:tag]}\""
     end
   end
 end

@@ -56,7 +56,8 @@ ul {
     margin-right: 2px;
 }
 
-.tag-search{
+.tag-search,
+.flash-notice {
     padding:8px 35px 8px 14px;
     margin-bottom:18px;
     text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
