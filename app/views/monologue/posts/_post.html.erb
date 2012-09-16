@@ -8,7 +8,9 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;<%= revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= revision.full_url + "#disqus_thread" %>"></a>
   </header>
 
-  <p><%= raw truncate(strip_tags(revision.content), :length => 1000) %></p>
+  <p>
+    <%= truncate_html(revision.content, :length => 1000, :omission => '...') %>
+  </p>
 
   <div id='tags'>
     <%= render post.tags %>
