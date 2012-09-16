@@ -17,7 +17,7 @@ gem "jquery-rails"
 #gem 'ruby-debug'
 #gem 'ruby-debug19'
 
-group :development do 
+group :development, :test do
   gem "thin"
   gem 'rails', '3.2.8'
   gem 'pry'
@@ -27,3 +27,5 @@ group :development do
     gem 'growl'
   end
 end
+
+gem 'pg'
