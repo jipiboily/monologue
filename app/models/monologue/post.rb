@@ -3,8 +3,8 @@ class Monologue::Post < ActiveRecord::Base
   has_and_belongs_to_many :tags ,:join_table => :monologue_posts_tags
 
   accepts_nested_attributes_for :posts_revisions
-  attr_accessible :posts_revisions_attributes
-  attr_accessible :published
+  attr_accesor :tag_list
+  attr_accessible :posts_revisions_attributes, :published, :tag_list
 
   scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC")
   scope :published, default.where(:published => true).where("published_at <= ?", DateTime.now)
