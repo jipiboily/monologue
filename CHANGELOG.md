@@ -1,6 +1,13 @@
 # Monologue: the changelog!
 (for upgrade informations, see UPGRADE.md)
 
+## 0.2.0.beta
+- add tags (or labels)
+- there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now.
+- front page articles are now more cleverly truncated
+- a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
+- lot of bug fixed
+
 ## 0.1.3
 - a bug fix due to the new URL pattern
 
