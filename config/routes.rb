@@ -3,7 +3,7 @@ Monologue::Engine.routes.draw do
   match "/page/:page", :to =>  "posts#index", :as =>  "posts_page"
   match "/feed" => "posts#feed", :as =>  "feed", :defaults => {:format => :rss}
 
-  match "/tags/:tag" =>"tags#show"
+  match "/tags/:tag" =>"tags#show", :as => "tags_page"
 
   namespace :admin, :path => "monologue" do
     get "/" => "posts#index", :as =>  "" # responds to admin_url and admin_path
