@@ -6,6 +6,7 @@ describe "cache" do
     @post_2 = Factory(:posts_revision).post
     @post_3 = Factory(:posts_revision).post
     25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "post/#{i*100}") }
+    @post_with_tag = Factory(:post_with_tags)
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -27,6 +28,10 @@ describe "cache" do
     it "feed cache" do
       assert_create_cache(feed_path, "post 22", "rss")
     end
+
+    it "tag cache" do
+      assert_create_cache(tags_page_path(@post_with_tag.tags.first.name), @post_with_tag.tags.first.name)
+    end
   end
 
   describe "sweeper" do
@@ -36,6 +41,8 @@ describe "cache" do
         assert_create_cache(path)
       end
       assert_create_cache(feed_path,nil,"rss")
+      assert_create_cache(tags_page_path(@post_with_tag.tags.first.name), @post_with_tag.tags.first.name)
+      @tags_file_path = "#{Rails.public_path}/monologue/tags"
     end
 
     it "should clear cache on create" do
@@ -43,6 +50,7 @@ describe "cache" do
       cache_sweeped?(["/monologue"]).should be_true
       cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
+      File.exists?(@tags_file_path).should be_false
     end
 
     it "should clear cache on update" do
@@ -51,6 +59,7 @@ describe "cache" do
       cache_sweeped?(["/monologue/"]).should be_true
       cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
+      File.exists?(@tags_file_path).should be_false
     end
 
     it "should clear cache on destroy" do
@@ -58,6 +67,7 @@ describe "cache" do
       cache_sweeped?(["/monologue/"]).should be_true
       cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_true
+      File.exists?(@tags_file_path).should be_false
     end
 
     it "won't clean cache if saving a not yet published post" do
@@ -67,6 +77,7 @@ describe "cache" do
       cache_sweeped?(["/monologue/"]).should be_false
       cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
       cache_sweeped?([feed_path], "rss").should be_false
+      File.exists?(@tags_file_path).should be_true
     end
 
   end

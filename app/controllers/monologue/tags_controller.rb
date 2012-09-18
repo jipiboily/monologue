@@ -1,4 +1,5 @@
 class Monologue::TagsController < Monologue::ApplicationController
+  caches_page :show , :if => Proc.new { current_user.nil? }
   def show
     @tag = Monologue::Tag.find_by_name(params[:tag])
     if @tag
