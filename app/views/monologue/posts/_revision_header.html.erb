@@ -1,4 +1,6 @@
-<header><h1><%= link_to revision.title, revision.full_url %></h1></header>
+<header class="revision-header">
+  <h1><%= link_to revision.title, revision.full_url %></h1>
+</header>
 <div class="posted">
   <time datetime="<%= revision.published_at %>">
     <%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
