@@ -8,9 +8,11 @@
 
 <article>
   <%= render :partial => 'monologue/posts/revision_header', :locals => {:revision=>@revision}%>
-  <p><%= raw @revision.content %></p>
+  <div id="content" data-monologue="content">
+    <%= raw @revision.content %>
+  </div>
 
-	<div id='tags'>
+	<div id="tags" data-monologue="tags">
     <%= render @revision.post.tags %>
   </div>
 
