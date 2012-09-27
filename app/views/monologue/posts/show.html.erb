@@ -7,36 +7,17 @@
 <% end %>
 
 <article>
-  <header><h1><%= link_to @revision.title, @revision.full_url %></h1></header>
-  <div class="posted">
-    <time datetime="<%= @revision.published_at %>">
-      <%= @revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
-    </time>
-    &nbsp;&nbsp;|&nbsp;&nbsp;<%= @revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= @revision.full_url + "#disqus_thread" %>"></a>
-  </div>
+  <%= render :partial => 'monologue/posts/revision_header', :locals => {:revision=>@revision}%>
   <p><%= raw @revision.content %></p>
+
 	<div id='tags'>
     <%= render @revision.post.tags %>
   </div>
+
   <%= render "social_sharing" %>
 
   <div id="disqus_thread"></div>
-  <script type="text/javascript">
-	  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	  var disqus_shortname = '<%= Monologue.disqus_shortname%>'; // required: replace example with your forum shortname
-
-	  <% if Rails.env.development?  %>
-	  var disqus_developer = 1; // developer mode is on
-	  <% end %>
-
-	  /* * * DON'T EDIT BELOW THIS LINE * * */
-	  (function () {
-		  var dsq = document.createElement('script');
-		  dsq.type = 'text/javascript';
-		  dsq.async = true;
-		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	  })();
-  </script>
+  <%= render 'layouts/monologue/application/disqus_embed' %>
   <noscript>Please enable JavaScript to view the comments.</noscript>
 </article>
+
