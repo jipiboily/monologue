@@ -3,7 +3,7 @@
 </header>
 <div class="posted">
   <time datetime="<%= revision.published_at %>">
-    <%= revision.published_at.to_date.to_formatted_s(:long_ordinal) %>
+    <%= I18n.localize(revision.published_at.to_date, :format => :long) %>
   </time>
   &nbsp;&nbsp;|&nbsp;&nbsp;<%= revision.user.name %>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%= revision.full_url + "#disqus_thread" %>"></a>
 </div>
