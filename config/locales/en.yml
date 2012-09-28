@@ -40,6 +40,14 @@ en:
       login:
         need_auth:
           "You must first log in to access admin section."
+      users:
+        edit:
+          header: "Edit your account"
+          email: "Email"
+          name: "Name"
+          password: "Password"
+          confirmation: "Password confirmation"
+          save: "Save"
       posts:
         index:
           title:
@@ -126,8 +134,8 @@ en:
             "List of monologues"
           comments:
             "Comments"
-          logged_in_as:
-            "Logged in as"
+          edit_user_info: "My account"
+          settings: "Settings"
           log_out:
             "Log out"
   activerecord:
@@ -150,3 +158,9 @@ en:
                 "URL can't start with a slash ('/')"
               unique:
                 "URL is already used by another post"
+        monologue/user:
+          blank:
+            "%{attribute} is required"
+          attributes:
+            password:
+              confirmation: "Password and confirmation doesn't match."

@@ -40,6 +40,14 @@ fr:
       login:
         need_auth:
           "Vous devez d'abord vous connectez à la section d'administration."
+      users:
+        edit:
+          header: "Modifier mon compte"
+          email: "Courriel"
+          name: "Nom"
+          password: "Mot de passe"
+          confirmation: "Confirmation du mot de passe"
+          save: "Sauvegarder"
       posts:
         index:
           title:
@@ -126,8 +134,8 @@ fr:
             "Liste des monologues"
           comments:
             "Commentaires"
-          logged_in_as:
-            "Connecté en tant que"
+          edit_user_info: "Mon compte"
+          settings: "Paramètres"
           log_out:
             "Déconnexion"
   activerecord:
@@ -150,3 +158,9 @@ fr:
                 "L'adresse URL ne peut débuter par un slash ('/')"
               unique:
                 "L'adresse URL est déjà utilisée par un autre article"
+        monologue/user:
+          blank:
+            "%{attribute} est requis"
+          attributes:
+            password:
+              confirmation: "Le mot de passe et sa confirmation doivent concorder."

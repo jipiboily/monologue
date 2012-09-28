@@ -3,9 +3,11 @@
 
 ## 0.2.0.beta
 - add tags (or labels)
+- add a UI to manage current user's account
 - there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now.
 - front page articles are now more cleverly truncated
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
+- update admin UI with newest Twitter Boostrap (v2.1.1)
 - lot of bug fixed
 
 ## 0.1.3

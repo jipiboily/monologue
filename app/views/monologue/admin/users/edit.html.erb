@@ -1,0 +1,9 @@
+<h1><%= t(".header") %></h1>
+<%= monologue_admin_form_for ["admin", @user], :method => :put do |user| %>
+  <%= user.error_messages %>
+  <%= user.text_field :name, :label =>  t(".name"), :class =>  "span6" %>
+  <%= user.text_field :email, :label =>  t(".email"), :class =>  "span6" %>
+  <%= user.password_field :password, :label =>  t(".password"), :class =>  "span6" %>
+  <%= user.password_field :password_confirmation, :label =>  t(".password_confirmation"), :class =>  "span6" %>
+  <%= user.submit t(".save"), :class =>  "btn btn-large btn-primary" %>
+<% end %>
