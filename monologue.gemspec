@@ -36,4 +36,8 @@ Gem::Specification.new do |s|
   # s.add_development_dependency 'ruby-debug19'
 
   s.add_development_dependency "sqlite3"
+
+  if File.exists?('DEPRECATIONS')
+    s.post_install_message = File.read("DEPRECATIONS")
+  end
 end
