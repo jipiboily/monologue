@@ -3,5 +3,5 @@
     <% @recent_posts.each do |post| %>
       <li><%= link_to post.active_revision.title, post.active_revision.full_url %></li>
     <% end %>
-</ul>
+  </ul>
 <% end %>
