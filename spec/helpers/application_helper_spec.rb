@@ -35,27 +35,27 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate rss icon" do
-        helper.rss_icon.should eq "<a class=\"social\" href=\"http://test.host/monologue/feed\"><i class=\"foundicon-rss\"></i></a>"
+        helper.rss_icon.should eq "<a class=\"social\" href=\"http://test.host/monologue/feed\" target=\"_blank\"><i class=\"foundicon-rss\"></i></a>"
       end
 
       it "generate github" do
-        helper.github_icon.should eq "<a class=\"social\" href=\"http://github.com/#{Monologue.github_username}\"><i class=\"foundicon-github\"></i></a>"
+        helper.github_icon.should eq "<a class=\"social\" href=\"http://github.com/#{Monologue.github_username}\" target=\"_blank\"><i class=\"foundicon-github\"></i></a>"
       end
 
       it "generate twitter" do
-        helper.twitter_icon.should eq "<a class=\"social\" href=\"http://twitter.com/#{Monologue.twitter_username}\"><i class=\"foundicon-twitter\"></i></a>"
+        helper.twitter_icon.should eq "<a class=\"social\" href=\"http://twitter.com/#{Monologue.twitter_username}\" target=\"_blank\"><i class=\"foundicon-twitter\"></i></a>"
       end
 
       it "generate linkedin" do
-        helper.linkedin_icon.should eq "<a class=\"social\" href=\"#{Monologue.linkedin_url}\"><i class=\"foundicon-linkedin\"></i></a>"
+        helper.linkedin_icon.should eq "<a class=\"social\" href=\"#{Monologue.linkedin_url}\" target=\"_blank\"><i class=\"foundicon-linkedin\"></i></a>"
       end
 
       it "generate googleplus" do
-        helper.googleplus_icon.should eq "<a class=\"social\" href=\"#{Monologue.google_plus_account_url}\"><i class=\"foundicon-google-plus\"></i></a>"
+        helper.googleplus_icon.should eq "<a class=\"social\" href=\"#{Monologue.google_plus_account_url}\" target=\"_blank\"><i class=\"foundicon-google-plus\"></i></a>"
       end
 
       it "generate facebook" do
-        helper.facebook_icon.should eq "<a class=\"social\" href=\"#{Monologue.facebook_url}\"><i class=\"foundicon-facebook\"></i></a>"
+        helper.facebook_icon.should eq "<a class=\"social\" href=\"#{Monologue.facebook_url}\" target=\"_blank\"><i class=\"foundicon-facebook\"></i></a>"
       end
     end
 
