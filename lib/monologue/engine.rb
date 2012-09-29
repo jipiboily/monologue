@@ -8,5 +8,9 @@ module Monologue
     config.generators.stylesheets     false
     config.generators.fixture_replacement :factory_girl
     config.generators.integration_tool :rspec
+
+    initializer :assets do |config|
+      Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    end
   end
 end
