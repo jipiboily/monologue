@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency "tinymce-rails"
   s.add_dependency "coffee-rails"
   s.add_dependency "truncate_html"
+  s.add_dependency "jquery-rails"
 
-  # s.add_dependency "jquery-rails"
   s.add_development_dependency "rspec-rails", "~> 2.8"
   s.add_development_dependency 'factory_girl_rails', '~> 1.4.0'
   s.add_development_dependency "capybara"
@@ -31,13 +31,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "mysql2"
 
-  # s.add_development_dependency "linecache19"
-  # s.add_development_dependency "ruby-debug-base19"
-  # s.add_development_dependency 'ruby-debug19'
-
   s.add_development_dependency "sqlite3"
-
-  if File.exists?('DEPRECATIONS')
-    s.post_install_message = File.read("DEPRECATIONS")
-  end
 end
