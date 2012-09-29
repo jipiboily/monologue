@@ -7,10 +7,22 @@ module Monologue
                  :site_url,
                  :meta_description,
                  :meta_keyword,
+
+                 :show_rss_icon,
+
                  :twitter_username,
                  :twitter_locale,
+
                  :facebook_like_locale,
+                 :facebook_url,
+
+                 :google_plus_account_url,
                  :google_plusone_locale,
+
+                 :linkedin_url,
+
+                 :github_username,
+
                  :admin_force_ssl,
                  :posts_per_page,
                  :google_analytics_id,

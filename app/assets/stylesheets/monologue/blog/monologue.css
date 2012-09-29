@@ -1,6 +1,40 @@
-.main-header{
-  margin: 20px 0 30px 0;
+/* general */
+a:hover {
+  color: #05C5FF;
 }
+
+ul {
+  list-style: square;
+  margin-left: 30px;
+}
+
+/* header */
+.main-header{
+  margin: 20px 0 0 0;
+}
+
+.main-header .social:first-of-type i {
+  float:right;
+  padding: 20px 0 0 0;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.main-header .social {
+  float: right;
+  margin: 0 2px 0 2px;
+}
+
+a.social {
+  text-decoration: none;
+}
+
+.social i {
+  font-size: 30px;
+}
+
+
+/* pagination */
 
 #pagination {
   margin: 20px 0 0 0;
@@ -15,6 +49,8 @@
 #pagination .newer_posts {
   float: right;
 }
+
+/* content */
 
 .content article h2, .content article h3, .content article h4, .content article h5, .content article h6,
 .content section h2, .content section h3, .content section h4, .content section h5, .content section h6 {
@@ -51,13 +87,10 @@
   font-size: 12;
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 10px
 }
 
-ul {
-  list-style: square;
-  margin-left: 30px;
-}
-
+/* tags */
 #tags {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -104,6 +137,7 @@ ul {
     font-size: 160%;
 }
 
+/* sidebar */
 .widget header {
   padding: 8px 35px 0 14px;
   margin: 10px 0 10px 0;
@@ -117,4 +151,10 @@ ul {
 
 .widget header:first-child {
   margin-top: 0;
+}
+
+.widget header h1 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 4px;
 }
