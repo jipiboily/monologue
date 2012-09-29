@@ -12,6 +12,7 @@
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
 - update admin UI with newest Twitter Boostrap (v2.1.1)
 - visual look has been slightly updated (hey, designers, want to help on Monologue next design? You're "hired"!)
+- deprecate ruby 1.8
 - lot of bug fixed
 
 ## 0.1.3
