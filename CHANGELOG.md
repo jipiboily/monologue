@@ -2,17 +2,17 @@
 (for upgrade informations, see UPGRADE.md)
 
 ## 0.2.0.beta
-- add tags (or labels)
-- add a UI to manage current user's account
+- add tags
+- add a UI to manage current user's account (welcome in 2012, you can now change your password!)
 - add RSS icon
 - add social icons
 - add Gauge (http://gaug.es) for analytics
-- there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now.
+- there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now. Included: tag cloud, categories (tag), latest posts and tweets.
 - front page articles are now more cleverly truncated
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
 - update admin UI with newest Twitter Boostrap (v2.1.1)
-- visual look has been slightly updated (hey, designers, want to help on Monologue next design? You're "hired"!)
-- deprecate ruby 1.8
+- visual look has been slightly updated **(Hey, designers, want to help on Monologue next design? You're "hired"!)**  [Preview](http://screencast.com/t/6Ua49p2TdqP)
+- deprecate Ruby 1.8 (you should really upgrade, 2.0 is about to get real and Rails 4 won't run on Ruby 1.8)
 - lot of bug fixed
 
 ## 0.1.3
