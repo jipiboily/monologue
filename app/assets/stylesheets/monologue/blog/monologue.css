@@ -158,3 +158,28 @@ a.social {
   line-height: 32px;
   margin-bottom: 4px;
 }
+
+/* footer */
+
+.content article footer h1 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.monologue-social-sharing {
+  padding: 0 0 0 0;
+  border-top: solid black 1px;
+}
+
+#social-share {
+  text-align: center;
+  width: 100%;
+}
+
+#facebook, #twitter, #google-plus {
+  display: inline;
+  margin: 0 40px 0 40px;
+  padding: 0 0 0 0;
+}
