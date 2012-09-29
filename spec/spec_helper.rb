@@ -52,6 +52,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.start
+    ActionController::Base.perform_caching = false
   end
 
   config.after(:each) do

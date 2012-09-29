@@ -6,6 +6,7 @@
 - add a UI to manage current user's account
 - add RSS icon
 - add social icons
+- add Gauge (http://gaug.es) for analytics
 - there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now.
 - front page articles are now more cleverly truncated
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)

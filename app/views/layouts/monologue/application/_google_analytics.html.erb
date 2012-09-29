@@ -1,4 +1,4 @@
-<% if defined? Monologue.google_analytics_id %>
+<% unless Monologue.google_analytics_id.nil? %>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];

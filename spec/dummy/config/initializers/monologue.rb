@@ -16,6 +16,9 @@ Monologue.facebook_like_locale = "en_US" # "fr_CA"
 Monologue.google_plusone_locale = "en"
 
 # Monologue.layout               = "layouts/application"
+
+# ANALYTICS
+# Monologue.gauge_analytics_site_id = "YOUR COGE FROM GAUG.ES"
 # Monologue.google_analytics_id = "YOUR GA CODE"
 
 Monologue.sidebar = ["latest_posts", "latest_tweets","categories","tag_cloud"]
