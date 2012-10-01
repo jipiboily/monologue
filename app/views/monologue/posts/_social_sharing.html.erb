@@ -1,6 +1,37 @@
 <footer class="monologue-social-sharing" data-monologue="monologue-social-sharing">
   <h1><%= t(".tagline") %></h1>
   <div id="social-share">
+    <div id="google-plus">
+     		<!-- GOOGLE +1 -->
+         <!-- Placez cette balise là où vous souhaitez positionner le bouton +1. -->
+         <g:plusone size="medium"></g:plusone>
+
+         <!-- Placez cet appel d'affichage à l'endroit approprié. -->
+         <script type="text/javascript">
+           window.___gcfg = {lang: '<%=Monologue.google_plusone_locale || "en" %>'};
+
+           (function() {
+             var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+             po.src = 'https://apis.google.com/js/plusone.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+           })();
+         </script>
+     		<!-- /GOOGLE +1 -->
+       </div>
+    <div id="twitter">
+      <!-- TWITTER -->
+      <a href="https://twitter.com/share" class="twitter-share-button"
+          data-lang="<%= Monologue.twitter_locale || "en" %>"
+          data-url="http://<%= request.host_with_port %><%= request.path.gsub("//","/") %>"
+          data-via="<%=Monologue.twitter_username%>"
+          data-text="<%=@revision.title%>"
+          data-count="horizontal">Tweet</a>
+
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <!-- /TWITTER -->
+    </div>
+
+
     <div id="facebook">
       <!-- FACEBOOK LIKE -->
   		<div id="fb-root"></div>
@@ -11,39 +42,10 @@
         js.src = "//connect.facebook.net/<%= Monologue.facebook_like_locale || "en_US" %>/all.js#xfbml=1&appId=288133081204194";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-layout="box_count" data-show-faces="true" data-font="verdana"></div>
+      <div class="fb-like" data-send="false" data-width="450" data-show-faces="false"></div>
       <!-- /FACEBOOK LIKE -->
     </div>
 
-    <div id="twitter">
-      <!-- TWITTER -->
-      <a href="https://twitter.com/share" class="twitter-share-button"
-          data-lang="<%= Monologue.twitter_locale || "en" %>"
-          data-url="http://<%= request.host_with_port %><%= request.path.gsub("//","/") %>"
-          data-via="<%=Monologue.twitter_username%>"
-          data-text="<%=@revision.title%>"
-          data-count="vertical">Tweet</a>
 
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <!-- /TWITTER -->
-    </div>
-
-    <div id="google-plus">
-  		<!-- GOOGLE +1 -->
-      <!-- Placez cette balise là où vous souhaitez positionner le bouton +1. -->
-      <g:plusone size="tall"></g:plusone>
-
-      <!-- Placez cet appel d'affichage à l'endroit approprié. -->
-      <script type="text/javascript">
-        window.___gcfg = {lang: '<%=Monologue.google_plusone_locale || "en" %>'};
-
-        (function() {
-          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-          po.src = 'https://apis.google.com/js/plusone.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();
-      </script>
-  		<!-- /GOOGLE +1 -->
-    </div>
   </div>
 </footer>
