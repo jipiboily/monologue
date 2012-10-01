@@ -50,7 +50,7 @@ module Monologue
 
     # TODO: That should be move in TagHelper if I manage to get that loaded
     def tag_url(tag)
-      "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{tag.name}"
+      "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{tag.name.downcase}"
     end
 
     def label_for_tag(tag, min, max)
