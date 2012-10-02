@@ -1,1 +1,21 @@
-<td><%= link_to t(".delete"), admin_cache_path, :data => {:confirm => 'Are you sure you want to competely clear cache??'}, :method => :delete, :class => "btn btn-large btn-danger" %></td>
+<h1><%= t(".title") %></h1>
+
+<p><%= t(".description") %></p>
+
+<hr>
+
+<h2><%= t(".delete") %></h2>
+<%= link_to t(".delete"), admin_cache_path, :data => {:confirm => t(".confirm")}, :method => :delete, :class => "btn btn-large btn-danger" %>
+
+<hr>
+
+<h2><%= t(".files_in_cache") %></h2>
+<% files = Dir.glob("#{ActionController::Base.page_cache_directory}/**/*") %>
+<% if files.any? %>
+  <ul>
+    <% Dir.glob("#{ActionController::Base.page_cache_directory}/**/*").each do |file| %>
+      <% next if File.directory?(file) %>
+      <li><%= file.gsub(ActionController::Base.page_cache_directory,"") %></li>
+    <% end %>
+  </ul>
+<% end %>
