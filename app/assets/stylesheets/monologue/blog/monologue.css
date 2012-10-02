@@ -158,7 +158,7 @@ a.social {
   line-height: 32px;
   margin-bottom: 4px;
 }
-
+                                      none
 /* footer */
 
 .content article footer h1 {
@@ -174,12 +174,12 @@ a.social {
 }
 
 #social-share {
-  text-align: center;
+  /*text-align: center;*/
   width: 100%;
 }
 
 #facebook, #twitter, #google-plus {
   display: inline;
-  margin: 0 40px 0 40px;
-  padding: 0 0 0 0;
+  /*margin: 0 40px 0 40px;*/
+  /*padding: 0 0 0 0;*/
 }
