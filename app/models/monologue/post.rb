@@ -1,7 +1,7 @@
 class Monologue::Post < ActiveRecord::Base
   has_many :posts_revisions, :dependent => :destroy
   has_many :taggings
-  has_many :tags ,:through=> :taggings,:dependent => :destroy
+  has_many :tags, :through => :taggings, :dependent => :destroy
 
   accepts_nested_attributes_for :posts_revisions
   attr_writer :tag_list
@@ -28,7 +28,7 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def tag!(tags)
-    self.tags = tags.map do |tag|
+    self.tags = tags.select { |t| t.present? }.map do |tag|
       tag.strip!
       Monologue::Tag.find_or_create_by_name(tag)
     end
