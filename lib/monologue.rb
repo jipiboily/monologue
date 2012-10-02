@@ -30,3 +30,7 @@ module Monologue
                  :layout,
                  :sidebar
 end
+
+module Monologue::PageCache
+    mattr_accessor :enabled, :wipe_enabled, :wipe_after_save
+end

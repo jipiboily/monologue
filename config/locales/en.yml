@@ -107,6 +107,13 @@ en:
         show:
           recent_comments:
             "Recent comments"
+      cache:
+        show:
+          delete: "Completely wipe cache?"
+          cache_wiped: "Cache was wiped!"
+        how_to_enable:
+          warning: "You can't manage cache!"
+          explanations: "There are certain settings that are not set correctly to be able to use Monologue's basic cache"
       sessions:
         new:
           title:
@@ -134,6 +141,7 @@ en:
             "List of monologues"
           comments:
             "Comments"
+          cache: "Manage cache"
           edit_user_info: "My account"
           settings: "Settings"
           log_out:

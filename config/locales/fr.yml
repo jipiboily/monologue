@@ -103,6 +103,13 @@ fr:
             "Aperçu"
           tags:
             "Catégories<br/><i>Séparer les catégories par des virgules</i>"
+      cache:
+        show:
+          delete: "Effacer complètement la cache?"
+          cache_wiped: "La cache a été effacée!"
+        how_to_enable:
+          warning: "Vous ne pouvez gérer la cache!"
+          explanations: "Il y a certaines configurations à effectuer pour utiliser la gestion de cache de base de Monologue"
       comments:
         show:
           recent_comments:
@@ -134,6 +141,7 @@ fr:
             "Liste des monologues"
           comments:
             "Commentaires"
+          cache: "Gérer la cache"
           edit_user_info: "Mon compte"
           settings: "Paramètres"
           log_out:

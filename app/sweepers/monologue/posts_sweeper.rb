@@ -1,8 +1,15 @@
 class Monologue::PostsSweeper < ActionController::Caching::Sweeper
   observe Monologue::Post
 
-
   def sweep(post)
+    if ActionController::Base.perform_caching && Monologue::PageCache.enabled && Monologue::PageCache.wipe_enabled && Monologue::PageCache.wipe_after_save && (ActionController::Base.page_cache_directory != Rails.public_path)
+      Monologue::TotalSweeper.wipe_all
+    else
+      sweep_for_single_post post
+    end
+  end
+
+  def sweep_for_single_post post
     return unless post.published
     root_path = Monologue::Engine.routes.url_helpers.root_path if root_path.nil? # TODO: why do I have to do this to make tests pass? There must be something much more clean to make tests pass
     page_cache_directory = Rails.public_path if page_cache_directory.nil? # TODO: we should not need this either...
