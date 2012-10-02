@@ -30,7 +30,9 @@ class Monologue::Post < ActiveRecord::Base
   def tag!(tags)
     self.tags = tags.map do |tag|
       tag.strip!
-      Monologue::Tag.find_or_create_by_name(tag)
+      if tag.present?
+        Monologue::Tag.find_or_create_by_name(tag)
+      end
     end
   end
 
