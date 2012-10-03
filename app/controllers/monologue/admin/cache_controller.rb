@@ -1,10 +1,7 @@
 class Monologue::Admin::CacheController < Monologue::Admin::BaseController
+  before_filter :prepare_file_list
+
   def show
-    @wipe_after_save = Monologue::PageCache.wipe_after_save
-    # puts "ActionController::Base.perform_caching #{ActionController::Base.perform_caching}"
-    # puts "Monologue::PageCache.enabled #{Monologue::PageCache.enabled}"
-    # puts "Monologue::PageCache.wipe_enabled #{Monologue::PageCache.wipe_enabled}"
-    # puts "ActionController::Base.page_cache_directory #{ActionController::Base.page_cache_directory} || Rails.public_path #{Rails.public_path}"
     if ActionController::Base.perform_caching && Monologue::PageCache.enabled && Monologue::PageCache.wipe_enabled &&  ActionController::Base.page_cache_directory != Rails.public_path
       render :show
     else
@@ -16,5 +13,15 @@ class Monologue::Admin::CacheController < Monologue::Admin::BaseController
     Monologue::TotalSweeper.wipe_all
     flash.notice = I18n.t("monologue.admin.cache.show.cache_wiped")
     render :show
+  end
+
+  private
+  def prepare_file_list
+    @files = []
+    Dir.glob("#{ActionController::Base.page_cache_directory}/**/*").each do |file|
+      next if File.directory?(file)
+      @files << file.gsub(ActionController::Base.page_cache_directory,"")
+    end
+    @files
   end
 end

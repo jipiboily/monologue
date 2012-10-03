@@ -110,8 +110,9 @@ en:
       cache:
         show:
           title: "Manage cache"
-          description: "You can wompletely wipe cache here."
+          description: "You can completely wipe cache here."
           files_in_cache: "Here are the files actually cached:"
+          no_files_are_cached: "There are actually no file in cache."
           delete: "Completely wipe cache?"
           confirm: 'Are you sure you want to competely clear cache?'
           cache_wiped: "Cache was wiped!"

@@ -2,7 +2,7 @@
 (for upgrade informations, see UPGRADE.md)
 
 ## 0.2.0.beta
-- **IMPORTANT: add cache management config and UI. Please review the new config options!**
+- **IMPORTANT: add cache management config and UI. [Please review the new config options](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache)!**
 - add tags
 - add a UI to manage current user's account (welcome in 2012, you can now change your password!)
 - add RSS icon
