@@ -3,11 +3,12 @@
 
 ## 0.2.0.beta
 - **IMPORTANT: add cache management config and UI. [Please review the new config options](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache)!**
+- first extension available: [monologue-markdown](https://github.com/jipiboily/monologue-markdown)
 - add tags
 - add a UI to manage current user's account (welcome in 2012, you can now change your password!)
 - add RSS icon
 - add social icons
-- add Gauge (http://gaug.es) for analytics
+- add [Gaug.es](http://gaug.es) tags
 - there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now. Included: tag cloud, categories (tag), latest posts and tweets.
 - front page articles are now more cleverly truncated
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)

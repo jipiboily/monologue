@@ -4,20 +4,24 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 
 
-## Features
-- Rails mountable engine (fully named spaced)
+## Here are a few features
+- Rails mountable engine (fully named spaced and mountable in an already existing app)
 - tested
 - back to basics: few features
 - it has post revisions (no UI to choose published revision yet, but it keeps your modification history)
+- tags (or categories)
+- RSS
+- support for Google Analytics and Gaug.es tags
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
-- comments handled by disqus
-- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now)
-- runs on Heroku
+- comments are handled by [disqus](http://disqus.com/)
+- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
+- more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
+
+- bonus: there is a `[monologue-markdown](https://github.com/jipiboily/monologue-markdown)` extension
 
 ### missing features
-- categories
 - UI for posts revisions and to manage user
-- much more…see issues!
+- see [roadmap](https://github.com/jipiboily/monologue/wiki/Roadmap)!
 
 
 ## Installation
@@ -46,36 +50,27 @@ Run these commands:
 2. $`bundle exec rake db:create` (only if this is a new project)
 3. $`bundle exec rake db:migrate`
 
-		
+
 ### 4. Create a user
 Open your development console with `rails c`, then:
 ```ruby
 Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
 ```
 
-### 5. Configure Monologue. 
+### 5. Configure Monologue.
 This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
 
 ### 6. Ready
 Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
-### Note to Heroku users 
+### Note to Heroku users
 Additionnal step: turn caching off in `config/environments/production.rb`:
 ```ruby
 config.action_controller.perform_caching = false
 ```
 
 ## Enable caching
-Just turn perform_caching to true in your environment config file (`config/environment/{environment}.rb):
-```ruby
-config.action_controller.perform_caching = true
-```
-    
-**IMPORTANT**: if monologue is mounted at root ("/"), you must also add that in your `routes.rb` file, before the monologue mount:
-
-```ruby
-root to: 'monologue/posts#index'
-```
+[See full caching doc here.](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache)
 
 ## Customization
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
@@ -86,3 +81,10 @@ See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Cust
 
 ## Contribute
 Fork it, then pull request. Please add tests for your feature or bug fix.
+
+You will need to install this before running the test suite:
+  - https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+
+## Thanks to
+
+Zurb for the "social foundicons".
