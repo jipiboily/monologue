@@ -2,3 +2,6 @@
 <meta property="og:type" content="<%= controller.action_name == "show" ? "article" : "blog" %>"/>
 <meta property="og:url" content="http://<%= request.host_with_port %><%= request.path.gsub("//","/") %>"/>
 <meta property="og:site_name" content="<%= Monologue.site_name %>"/>
+<% if Monologue.facebook_logo%>
+   <meta property="og:image" content="<%= absolute_image_url(image_path(Monologue.facebook_logo)) %>" />
+<% end  %>

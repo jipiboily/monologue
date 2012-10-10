@@ -11,6 +11,18 @@ describe Monologue::ApplicationHelper do
     end
   end
 
+  describe "resolving the absolute image url" do
+    it "should create the fully qualified url for a relative url" do
+      controller.request.host = 'www.domain.com'
+      helper.absolute_image_url('/image.png').should eq "http://www.domain.com/image.png"
+    end
+
+    it "should returns the url for an absolute url" do
+      url ='https://mydomain.com/image.png'
+      helper.absolute_image_url(url).should eq url
+    end
+  end
+
   describe "creating the sidebar section for a title and a block" do
     before(:each) do
       @content = "this is the content"
