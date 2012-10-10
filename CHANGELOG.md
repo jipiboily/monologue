@@ -12,6 +12,7 @@
 - a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
 - update admin UI with newest Twitter Boostrap (v2.1.1)
 - visual look has been slightly updated **(Hey, designers, want to help on Monologue next design? You're "hired"!)**  [Preview](http://screencast.com/t/6Ua49p2TdqP)
+- add support for Twitter Cards (https://dev.twitter.com/docs/cards)
 - deprecate Ruby 1.8 (you should really upgrade, 2.0 is about to get real and Rails 4 won't run on Ruby 1.8)
 - lot of bug fixed
 
