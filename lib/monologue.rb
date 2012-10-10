@@ -15,6 +15,7 @@ module Monologue
 
                  :facebook_like_locale,
                  :facebook_url,
+                 :facebook_logo, #used in the open graph protocol to display an image when a post is liked
 
                  :google_plus_account_url,
                  :google_plusone_locale,
