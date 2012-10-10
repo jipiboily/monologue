@@ -48,6 +48,11 @@ module Monologue
       social_icon("facebook", Monologue.facebook_url, Monologue.facebook_url)
     end
 
+    def absolute_image_url(url)
+       return url if url.starts_with? "http"
+       request.protocol + request.host + url
+    end
+
     # TODO: That should be move in TagHelper if I manage to get that loaded
     def tag_url(tag)
       "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{tag.name.downcase}"
