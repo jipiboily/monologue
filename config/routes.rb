@@ -13,6 +13,9 @@ Monologue::Engine.routes.draw do
     resources :posts
     resources :users
     get "comments" => "comments#show", :as => "comments"
+
+    get "cache" => "cache#show", :as => "cache"
+    delete "cache" => "cache#destroy"
   end
 
   match "*post_url" => "posts#show", :as =>  "post"

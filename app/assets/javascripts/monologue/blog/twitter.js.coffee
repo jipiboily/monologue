@@ -4,7 +4,6 @@ class window.TwitterWidget
     @latest_tweets = $("#latest_tweets")
   @callback: (data) ->
     @dom_cache()
-    console.log data
     for tweet in data
       @add_tweet(tweet)
   @add_tweet: (tweet) ->

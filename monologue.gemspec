@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 3.1.3"
   s.add_dependency "bcrypt-ruby"
-  s.add_dependency "tinymce-rails"
+  s.add_dependency "tinymce-rails", "<= 3.5.6"
   s.add_dependency "coffee-rails"
   s.add_dependency "truncate_html"
   s.add_dependency "jquery-rails"

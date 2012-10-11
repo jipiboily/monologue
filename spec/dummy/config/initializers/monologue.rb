@@ -27,7 +27,15 @@ Monologue.sidebar = ["latest_posts", "latest_tweets","categories","tag_cloud"]
 #SOCIAL
 Monologue.twitter_username        = "jipiboily"
 Monologue.facebook_url            = "https://www.facebook.com/jipiboily"
+Monologue.facebook_logo           = 'logo.png'
 Monologue.google_plus_account_url = "https://plus.google.com/u/1/115273180419164295760/posts"
 Monologue.linkedin_url            = "http://www.linkedin.com/in/jipiboily"
 Monologue.github_username         = "jipiboily"
 Monologue.show_rss_icon           = true
+
+
+# CACHE
+  # ActionController::Base.perform_caching = true
+  # ActionController::Base.page_cache_directory =  = Rails.public_path + "/my-cache-dir"
+Monologue::PageCache.enabled = true
+Monologue::PageCache.wipe_enabled = true

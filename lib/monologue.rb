@@ -15,6 +15,7 @@ module Monologue
 
                  :facebook_like_locale,
                  :facebook_url,
+                 :facebook_logo, #used in the open graph protocol to display an image when a post is liked
 
                  :google_plus_account_url,
                  :google_plusone_locale,
@@ -29,4 +30,8 @@ module Monologue
                  :gauge_analytics_site_id,
                  :layout,
                  :sidebar
+end
+
+module Monologue::PageCache
+    mattr_accessor :enabled, :wipe_enabled, :wipe_after_save
 end
