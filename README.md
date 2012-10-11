@@ -4,6 +4,12 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 
 
+## Questions? Problems? Documentation?
+
+[Questions here please](http://groups.google.com/forum/#!forum/monologue-rb)
+[Issues and bugs](http://github.com/jipiboily/monologue/issues)
+[Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
+
 ## Features
 - Rails mountable engine (fully named spaced)
 - tested
@@ -46,20 +52,20 @@ Run these commands:
 2. $`bundle exec rake db:create` (only if this is a new project)
 3. $`bundle exec rake db:migrate`
 
-		
+
 ### 4. Create a user
 Open your development console with `rails c`, then:
 ```ruby
 Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
 ```
 
-### 5. Configure Monologue. 
+### 5. Configure Monologue.
 This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
 
 ### 6. Ready
 Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
-### Note to Heroku users 
+### Note to Heroku users
 Additionnal step: turn caching off in `config/environments/production.rb`:
 ```ruby
 config.action_controller.perform_caching = false
@@ -70,7 +76,7 @@ Just turn perform_caching to true in your environment config file (`config/envir
 ```ruby
 config.action_controller.perform_caching = true
 ```
-    
+
 **IMPORTANT**: if monologue is mounted at root ("/"), you must also add that in your `routes.rb` file, before the monologue mount:
 
 ```ruby
@@ -86,3 +92,10 @@ See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Cust
 
 ## Contribute
 Fork it, then pull request. Please add tests for your feature or bug fix.
+
+You will need to install this before running the test suite:
+  - [https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+## Thanks to
+
+Zurb for the "social foundicons".
