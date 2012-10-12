@@ -11,7 +11,7 @@
 - add [Gaug.es](http://gaug.es) tags
 - there is now a sidebar: you can put the latest posts, tweets or whatever you want! Kinda simple system but efficient enough for now. Included: tag cloud, categories (tag), latest posts and tweets.
 - front page articles are now more cleverly truncated
-- a few Deface hooks (data-monologue attribute) were added to the admin layout (for the menu)
+- a few [Deface](https://github.com/spree/deface) hooks (data-monologue attribute) were added to the admin layout (for the menu)
 - update admin UI with newest Twitter Boostrap (v2.1.1)
 - visual look has been slightly updated **(Hey, designers, want to help on Monologue next design? You're "hired"!)**  [Preview](http://screencast.com/t/6Ua49p2TdqP)
 - add support for Twitter Cards (https://dev.twitter.com/docs/cards)
