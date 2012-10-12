@@ -6,9 +6,9 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 
 ## Questions? Problems? Documentation?
 
-[Questions here please](http://groups.google.com/forum/#!forum/monologue-rb)
-[Issues and bugs](http://github.com/jipiboily/monologue/issues)
-[Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
+- [Questions here please](http://groups.google.com/forum/#!forum/monologue-rb)
+- [Issues and bugs](http://github.com/jipiboily/monologue/issues)
+- [Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
 
 ## Here are a few features
 - Rails mountable engine (fully named spaced and mountable in an already existing app)
