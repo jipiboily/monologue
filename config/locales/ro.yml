@@ -1,0 +1,43 @@
+ro:
+  monologue:
+    admin:
+      posts:
+        update:
+          saved: "Articolul a fost actualizat."
+        index:
+          title: "Titlu"
+          status: "Stare"
+          edit: "Modificati"
+          delete: "Stergeti"
+        edit:
+          header: "Titlu"
+        new:
+          header: "Titlu"
+        form:
+          title: "Titlu"
+          content: "Continut"
+          url:
+            caption: "Scurta descriere"
+          published_at: "Publicat la data de:"
+          tags: "Tag-uri"
+          published: "Publicat"
+          save: "Salvati"
+          preview: "Vizualizare"
+
+      comments:
+        show:
+          recent_comments: "Comentarii recente"
+    posts:
+      post:
+        readmore: "Cititi Articolul"
+      social_sharing:
+        tagline: "Tag-uri"
+
+  layouts:
+    monologue:
+      admin:
+        nav_bar:
+          list_monologues: "Lista Articole"
+          comments: "Comentarii"
+          add_a_monologue: "Articol Nou"
+
