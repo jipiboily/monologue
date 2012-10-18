@@ -16,6 +16,7 @@
 - visual look has been slightly updated **(Hey, designers, want to help on Monologue next design? You're "hired"!)**  [Preview](http://screencast.com/t/6Ua49p2TdqP)
 - add support for Twitter Cards (https://dev.twitter.com/docs/cards)
 - deprecate Ruby 1.8 (you should really upgrade, 2.0 is about to get real and Rails 4 won't run on Ruby 1.8)
+- Romanian translations were added, thanks to [mixandgo](https://github.com/mixandgo). You can now use Monologue in either French, English or Romanian!
 - lot of bug fixed
 
 ## 0.1.3
