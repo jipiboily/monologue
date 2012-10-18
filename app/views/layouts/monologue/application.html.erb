@@ -27,10 +27,11 @@
 
       <%= render 'layouts/monologue/application/sidebar' %>
   </div>
-  <footer>
-    <%= yield :footer %>
-  </footer>
-
+  <% if content_for?(:footer) %>
+    <footer>
+      <%= yield :footer %>
+    </footer>
+  <% end %>
   <%= render 'layouts/monologue/application/disqus' %>
   <%= render 'layouts/monologue/application/gauge_analytics' %>
 </body>
