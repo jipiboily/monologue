@@ -161,7 +161,7 @@ a.social {
                                       none
 /* footer */
 
-.content article footer h1 {
+.content article footer .social-tagline {
   margin-bottom: 10px;
   font-size: 16px;
   text-transform: uppercase;
