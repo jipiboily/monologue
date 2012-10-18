@@ -166,6 +166,11 @@ a.social {
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  color: #181818;
+  font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+  display: block;
 }
 
 .monologue-social-sharing {
