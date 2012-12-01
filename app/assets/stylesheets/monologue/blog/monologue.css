@@ -32,8 +32,21 @@ a.social {
 .social i {
   font-size: 30px;
 }
+.revision-header ul{
+    text-align: center;
+}
+.revision-header span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
+.revision-header span:after{
+    content: "|";
+}
 
+.revision-header span:last-child:after {
+    content: "";
+}
 /* pagination */
 
 #pagination {
@@ -91,7 +104,7 @@ a.social {
 }
 
 /* tags */
-#tags {
+.tags {
     margin-top: 20px;
     margin-bottom: 20px;
 }
