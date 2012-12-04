@@ -7,7 +7,7 @@
  *= require monologue/blog/skeleton/skeleton
  *= require monologue/blog/skeleton/layout
  *= require monologue/foundation_icons/social_foundicons
- *= require_tree .
+ *= require monologue/blog/monologue
  *= require monologue/blog/fonts
  *= require monologue/blog/custom
 */
