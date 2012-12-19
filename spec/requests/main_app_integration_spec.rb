@@ -12,6 +12,7 @@ describe "main_app_integration" do
   end
 
   describe "viewing the default root_url" do
+    # backup original sidebar config and restore after test
     original_sidebar_config = nil
     before(:each) do
       original_sidebar_config = Monologue.sidebar
@@ -21,13 +22,11 @@ describe "main_app_integration" do
     after do
       Monologue.sidebar = original_sidebar_config
     end
-    # old_sidebar_config = Monologue.sidebar
-    # Monologue.sidebar = nil
+
     it "should return HTTP 200 when viewing the root url with no sidebars" do
       visit root_path
 
       page.status_code.should be 200
-      # Monologue.sidebar = old_sidebar_config
     end
   end
 end
