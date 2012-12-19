@@ -11,10 +11,23 @@ describe "main_app_integration" do
     # page.should have_content("dummy app layout file!")
   end
 
-  it "should use default layout" do
-    Monologue.sidebar = nil
-    visit root_path
+  describe "viewing the default root_url" do
+    original_sidebar_config = nil
+    before(:each) do
+      original_sidebar_config = Monologue.sidebar
+      Monologue.sidebar = nil
+    end
 
-    page.status_code.should be 200
+    after do
+      Monologue.sidebar = original_sidebar_config
+    end
+    # old_sidebar_config = Monologue.sidebar
+    # Monologue.sidebar = nil
+    it "should return HTTP 200 when viewing the root url with no sidebars" do
+      visit root_path
+
+      page.status_code.should be 200
+      # Monologue.sidebar = old_sidebar_config
+    end
   end
 end
