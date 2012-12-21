@@ -14,7 +14,7 @@ describe "main_app_integration" do
   describe "viewing the default root_url" do
     # backup original sidebar config and restore after test
     original_sidebar_config = nil
-    before(:each) do
+    before do
       original_sidebar_config = Monologue.sidebar
       Monologue.sidebar = nil
     end
