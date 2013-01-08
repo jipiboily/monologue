@@ -3,6 +3,8 @@
 
 ## 0.3.0.beta
  - move the user_id column from Monologue::PostRevision to Monologue::Post.
+ - Portuguese translations were added, thanks to [jvortmann](https://github.com/jvortmann). You can now use Monologue in either French, English, Romanian or Portuguese!
+ - bug fixes & cleanup
 
 ## 0.2.0
  - all the previsous features from 0.2.0.beta
