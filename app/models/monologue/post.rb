@@ -3,6 +3,8 @@ class Monologue::Post < ActiveRecord::Base
   has_many :taggings
   has_many :tags, :through => :taggings, :dependent => :destroy
 
+  belongs_to :user
+
   accepts_nested_attributes_for :posts_revisions
   attr_writer :tag_list
   attr_accessible :posts_revisions_attributes, :published, :tag_list
@@ -13,6 +15,7 @@ class Monologue::Post < ActiveRecord::Base
   default_scope includes(:tags)
 
   validates :posts_revision_id, :uniqueness => true
+  validates :user_id, presence:  true
 
   # TODO: move that in a spec helper as it only used by tests
   def just_the_revision_one_before

@@ -18,8 +18,8 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     params[:post].delete("posts_revision")
     tags = params[:post].delete(:tag_list)
     @post = Monologue::Post.new(params[:post])
+    @post.user_id = current_user.id
     @revision = @post.posts_revisions.first
-    @revision.user_id = current_user.id
     save_tags(tags)
     if @post.save
       if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
@@ -40,7 +40,6 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   def update
     @post.published = params[:post][:published]
     @revision = @post.posts_revisions.build(params[:post][:posts_revision])
-    @revision.user_id = current_user.id
     save_tags(params[:post][:tag_list])
     if @post.save
       if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching

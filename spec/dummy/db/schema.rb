@@ -11,20 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612020023) do
+ActiveRecord::Schema.define(:version => 20130108123111) do
 
   create_table "monologue_posts", :force => true do |t|
     t.integer  "posts_revision_id"
     t.boolean  "published"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "user_id"
   end
 
   create_table "monologue_posts_revisions", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "url"
-    t.integer  "user_id"
     t.integer  "post_id"
     t.datetime "published_at"
     t.datetime "created_at",   :null => false

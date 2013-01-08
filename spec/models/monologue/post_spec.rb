@@ -5,6 +5,10 @@ describe Monologue::Post do
     @post = Factory(:post)
   end
 
+  it { should_not allow_mass_assignment_of(:user_id) }
+
+  it { validate_presence_of(:user_id) }
+
   it "is valid with valid attributes" do
     @post.should be_valid
   end

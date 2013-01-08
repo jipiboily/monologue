@@ -7,7 +7,7 @@
 <% end %>
 
 <article>
-  <%= render :partial => 'monologue/posts/revision_header', :locals => {:revision=>@revision}%>
+  <%= render :partial => 'monologue/posts/revision_header', :locals => {revision: @revision, post: @post }%>
   <div class="content" data-monologue="content">
     <%= raw @revision.content %>
   </div>

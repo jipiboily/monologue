@@ -1,6 +1,6 @@
 <% revision = post.active_revision %>
 <section>
-  <%= render :partial => 'monologue/posts/revision_header', :locals => {:revision=>revision} %>
+  <%= render :partial => 'monologue/posts/revision_header', :locals => {revision: revision, post: post} %>
 
   <div class="content" data-monologue="content">
     <%= truncate_html(revision.content, :length => 1000, :omission => '...') %>

@@ -8,15 +8,15 @@ class Monologue::PostsController < Monologue::ApplicationController
 
   def show
     if current_user
-      post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
+      @post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
     else
-      post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
+      @post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
     end
-    if post.nil?
+    if @post.nil?
       not_found
       return
     end
-    @revision = post.active_revision
+    @revision = @post.active_revision
   end
 
   def feed

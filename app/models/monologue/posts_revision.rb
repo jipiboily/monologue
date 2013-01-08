@@ -4,16 +4,14 @@ class Monologue::PostsRevision < ActiveRecord::Base
   before_validation :generate_url
 
   after_save :latest_revision_is_current
-    
+
   belongs_to :post
-  belongs_to :user
   
   validates :title, :presence =>  true
   validates :content, :presence =>  true
   validates :url, :presence =>  true
   validate :url_do_not_start_with_slash
   validate :url_is_unique
-  validates :user_id, :presence =>  true
 #    validates :post_id, :presence =>  true # TODO: do something about this validation on the first creation of a POST
   validates :published_at, :presence =>  true
   

@@ -6,8 +6,6 @@ describe Monologue::PostsRevision do
     @post = Factory(:post_with_multiple_revisions)
   end
 
-  it { should_not allow_mass_assignment_of(:user_id) }
-  
   it "can have more than one revision" do
     attr = Factory.attributes_for(:posts_revision)
     attr[:id] = 2
@@ -47,7 +45,6 @@ describe Monologue::PostsRevision do
 
   it { validate_presence_of(:title) }
   it { validate_presence_of(:content) }
-  it { validate_presence_of(:user_id) }
   it { validate_presence_of(:published_at) }
     
 end

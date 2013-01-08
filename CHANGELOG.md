@@ -1,6 +1,9 @@
 # Monologue: the changelog!
 (for upgrade informations, see UPGRADE.md)
 
+## 0.3.0.beta
+ - move the user_id column from Monologue::PostRevision to Monologue::Post.
+
 ## 0.2.0
  - all the previsous features from 0.2.0.beta
  - Romanian translations were added, thanks to [mixandgo](https://github.com/mixandgo). You can now use Monologue in either French, English or Romanian!
