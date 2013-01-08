@@ -13,14 +13,9 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   def create
-    params[:post][:posts_revisions_attributes] = {}
-    params[:post][:posts_revisions_attributes][0] = params[:post][:posts_revision]
-    params[:post].delete("posts_revision")
-    tags = params[:post].delete(:tag_list)
     @post = Monologue::Post.new(params[:post])
     @post.user_id = current_user.id
     @revision = @post.posts_revisions.first
-    save_tags(tags)
     if @post.save
       if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
         flash[:warning] = I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
@@ -35,12 +30,12 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
 
   def edit
     @revision = @post.active_revision
+    @revision.id = nil # make sure we create a new revision and not update that one. TODO: find something cleaner
   end
 
   def update
-    @post.published = params[:post][:published]
-    @revision = @post.posts_revisions.build(params[:post][:posts_revision])
-    save_tags(params[:post][:tag_list])
+    @post.update_attributes! params[:post]
+    @revision = @post.posts_revisions.last
     if @post.save
       if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
         flash[:warning] =  I18n.t("monologue.admin.posts.update.saved_with_future_date_and_cache")
@@ -63,18 +58,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   private
-  def save_tags(tags)
-    @post.tag!(tags.split(","))
-  end
-
   def load_post_and_revisions
     @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
   end
-
-  helper_method :tag_list_for
-
-  def tag_list_for(tags)
-    tags.map { |tag| tag.name }.join(", ") if tags
-  end
-
 end

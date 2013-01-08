@@ -1,20 +1,20 @@
 class Monologue::Post < ActiveRecord::Base
-  has_many :posts_revisions, :dependent => :destroy
+  has_many :posts_revisions, dependent: :destroy
   has_many :taggings
-  has_many :tags, :through => :taggings, :dependent => :destroy
+  has_many :tags, through: :taggings, dependent: :destroy
 
   belongs_to :user
 
   accepts_nested_attributes_for :posts_revisions
-  attr_writer :tag_list
+
   attr_accessible :posts_revisions_attributes, :published, :tag_list
 
   scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
-  scope :published, lambda { default.where(:published => true).where("published_at <= ?", DateTime.now) }
+  scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
   default_scope includes(:tags)
 
-  validates :posts_revision_id, :uniqueness => true
+  validates :posts_revision_id, uniqueness: true
   validates :user_id, presence:  true
 
   # TODO: move that in a spec helper as it only used by tests
@@ -30,12 +30,22 @@ class Monologue::Post < ActiveRecord::Base
     Monologue::PostsRevision.find(self.posts_revision_id)
   end
 
-  def tag!(tags)
-    self.tags = tags.select { |t| t.present? }.map do |tag|
-      tag.strip!
-      if tag.present?
-        Monologue::Tag.find_or_create_by_name(tag)
-      end
+  def tag_list= tags_attr
+    self.tag!(tags_attr.split(","))
+  end
+
+  def tag_list
+    self.tags.map { |tag| tag.name }.join(", ") if self.tags
+  end
+
+  def tag!(tags_attr)
+    # clean tags from removed tags
+    self.tags.map { |tag| self.taggings.find_by_tag_id(tag.id).destroy unless tags_attr.include?(tag.name) }
+    self.reload unless self.new_record?
+    # add tags
+    tags_attr.map { |t| t.strip }.reject(&:blank?).map do |tag|
+      t = Monologue::Tag.find_or_create_by_name(tag)
+      self.tags << t unless self.tags.include?(t)
     end
   end
 

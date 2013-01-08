@@ -6,15 +6,12 @@ class Monologue::PostsRevision < ActiveRecord::Base
   after_save :latest_revision_is_current
 
   belongs_to :post
-  
-  validates :title, :presence =>  true
-  validates :content, :presence =>  true
-  validates :url, :presence =>  true
+
+  validates :title, :content, :url, :published_at, presence: true
   validate :url_do_not_start_with_slash
   validate :url_is_unique
 #    validates :post_id, :presence =>  true # TODO: do something about this validation on the first creation of a POST
-  validates :published_at, :presence =>  true
-  
+
   #isn't it post concern?'
   def latest_revision_is_current
     #post = Monologue::Post.find(self.post_id)
@@ -42,7 +39,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
     end
   end
 
-  private 
+  private
 
     def generate_url
       year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year

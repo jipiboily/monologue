@@ -12,5 +12,4 @@ class Monologue::Tag < ActiveRecord::Base
   def frequency
     posts_with_tag.size
   end
-
 end
