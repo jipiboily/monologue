@@ -17,12 +17,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post.user_id = current_user.id
     @revision = @post.posts_revisions.first
     if @post.save
-      if @post.published_in_future? && ActionController::Base.perform_caching
-        flash[:warning] = I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
-      else
-        flash[:notice] =  I18n.t("monologue.admin.posts.create.created")
-      end
-      redirect_to edit_admin_post_path(@post)
+      prepare_flash_and_redirect_to_edit()
     else
       render :new
     end
@@ -37,12 +32,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post.update_attributes! params[:post]
     @revision = @post.posts_revisions.last
     if @post.save
-      if @post.published_in_future? && ActionController::Base.perform_caching
-        flash[:warning] =  I18n.t("monologue.admin.posts.update.saved_with_future_date_and_cache")
-      else
-        flash[:notice] =  I18n.t("monologue.admin.posts.update.saved")
-      end
-      redirect_to edit_admin_post_path(@post)
+      prepare_flash_and_redirect_to_edit()
     else
       render :edit
     end
@@ -57,8 +47,17 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     end
   end
 
-  private
+private
   def load_post_and_revisions
     @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
+  end
+
+  def prepare_flash_and_redirect_to_edit
+    if @post.published_in_future? && ActionController::Base.perform_caching
+      flash[:warning] = I18n.t("monologue.admin.posts.#{params[:action]}.saved_with_future_date_and_cache")
+    else
+      flash[:notice] =  I18n.t("monologue.admin.posts.#{params[:action]}.saved")
+    end
+    redirect_to edit_admin_post_path(@post)
   end
 end

@@ -66,9 +66,9 @@ ro:
           header:
             "Articol nou"
         create:
-          created:
+          saved:
             "Articol creeat"
-          created_with_future_date_and_cache:
+          saved_with_future_date_and_cache:
             "Articol creeat: articolele cu data publicarii in viitor nu vor aparea decat daca stergeti cache-ul in acea zi. Cache-ul va fi generat mai devreme si nu va fi actualizat automat."
         edit:
           header:

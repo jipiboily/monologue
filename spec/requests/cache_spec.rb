@@ -94,7 +94,7 @@ describe "cache" do
         fill_in "Published at", with:  DateTime.now + 2.days
         check "Published"
         click_button "Save"
-        page.should have_content I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
+        page.should have_content I18n.t("monologue.admin.posts.create.saved_with_future_date_and_cache")
         click_button "Save"
         page.should have_content I18n.t("monologue.admin.posts.update.saved_with_future_date_and_cache")
       end
@@ -108,7 +108,7 @@ describe "cache" do
         fill_in "Published at", with:  DateTime.now + 2.days
         check "Published"
         click_button "Save"
-        page.should have_content I18n.t("monologue.admin.posts.create.created")
+        page.should have_content I18n.t("monologue.admin.posts.create.saved")
         click_button "Save"
         page.should have_content I18n.t("monologue.admin.posts.update.saved")
       end

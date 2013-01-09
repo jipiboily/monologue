@@ -46,8 +46,8 @@ pt_BR:
         new:
           header: "Novo blog post"
         create:
-          created: "Post criado com sucesso"
-          created_with_future_date_and_cache: "Post criado com sucesso: posts com data de publicação no futuro não irão ser mostrados a menos que a cache seja limpa naquele mesmo dia. A cache provavelmente será gerada antes disso e não será atualizada automaticamente."
+          saved: "Post criado com sucesso"
+          saved_with_future_date_and_cache: "Post criado com sucesso: posts com data de publicação no futuro não irão ser mostrados a menos que a cache seja limpa naquele mesmo dia. A cache provavelmente será gerada antes disso e não será atualizada automaticamente."
         edit:
           header: "Editar"
         update:

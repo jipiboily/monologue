@@ -66,9 +66,9 @@ en:
           header:
             "New monologue"
         create:
-          created:
+          saved:
             "Monologue created"
-          created_with_future_date_and_cache:
+          saved_with_future_date_and_cache:
             "Monologue created: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
         edit:
           header:
