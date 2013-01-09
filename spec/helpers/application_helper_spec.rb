@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Monologue::ApplicationHelper do
   describe "creating the url for a given tag" do
     before(:each) do
-      @tag= Factory(:tag, :name => 'my_tag')
+      @tag= Factory(:tag, name: 'my_tag')
     end
 
     it "should return a well formed url for the tag" do
@@ -121,27 +121,27 @@ describe Monologue::ApplicationHelper do
 
   describe "calculating the label size for a tag" do
     it "should return 1 if the min value is inferior to the max" do
-      tag = mock_model(Monologue::Tag, :frequency=> 5)
+      tag = mock_model(Monologue::Tag, frequency: 5)
       helper.size_for_tag(tag, 5, 4).should eq 1
     end
 
     it "should return 1 if the min value is equal to the max" do
-      tag = mock_model(Monologue::Tag, :frequency=> 3)
+      tag = mock_model(Monologue::Tag, frequency: 3)
       helper.size_for_tag(tag, 3, 3).should eq 1
     end
 
     it "should return 1 for a value equal to min" do
-      tag = mock_model(Monologue::Tag, :frequency=> 3)
+      tag = mock_model(Monologue::Tag, frequency: 3)
       helper.size_for_tag(tag, 3, 7).should eq 1
     end
 
     it "should return number of label sizes for a value equal to max" do
-      tag = mock_model(Monologue::Tag, :frequency=> 7)
+      tag = mock_model(Monologue::Tag, frequency: 7)
       helper.size_for_tag(tag, 3, 7).should eq 5
     end
 
     it "should return a logarithmic scaling between min and max for a value strictly in the given interval" do
-      tag = mock_model(Monologue::Tag, :frequency=> 6)
+      tag = mock_model(Monologue::Tag, frequency: 6)
       helper.size_for_tag(tag, 3, 7).should > 1
       helper.size_for_tag(tag, 3, 7).should < 5 #helper.NUMBER_OF_LABEL_SIZES
     end

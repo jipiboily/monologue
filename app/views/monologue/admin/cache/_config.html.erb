@@ -1,5 +1,5 @@
 <h1>Current config</h1>
-<p>Want to know more about those configs? See here: <%= link_to "Configure Monologue's cache (english only)", "https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache", :target => "_blank" %></p>
+<p>Want to know more about those configs? See here: <%= link_to "Configure Monologue's cache (english only)", "https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache", target: "_blank" %></p>
 
 <div class="alert alert-<%= ActionController::Base.perform_caching ? "success" : "error" %>">
   ActionController::Base.perform_caching = <%= ActionController::Base.perform_caching %>

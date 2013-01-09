@@ -1,9 +1,9 @@
 class Monologue::Tag < ActiveRecord::Base
   attr_accessible :name
 
-  validates :name, :uniqueness => true,:presence => true
+  validates :name, uniqueness: true,presence: true
   has_many :taggings
-  has_many :posts,:through=> :taggings
+  has_many :posts,through: :taggings
 
   def posts_with_tag
     self.posts.published

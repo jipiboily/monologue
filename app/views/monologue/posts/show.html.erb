@@ -3,11 +3,11 @@
 <% end %>
 
 <% content_for :meta_description do %>
-  <%= truncate(strip_tags(@revision.content), :length => 155) %>
+  <%= truncate(strip_tags(@revision.content), length: 155) %>
 <% end %>
 
 <article>
-  <%= render :partial => 'monologue/posts/revision_header', :locals => {revision: @revision, post: @post }%>
+  <%= render partial: 'monologue/posts/revision_header', locals: {revision: @revision, post: @post }%>
   <div class="content" data-monologue="content">
     <%= raw @revision.content %>
   </div>

@@ -9,7 +9,7 @@ class Monologue::ApplicationController < ApplicationController
   end
 
   def all_tags
-    @tags = Monologue::Tag.all(:order => "name").select{|t| t.frequency>0}
+    @tags = Monologue::Tag.all(order: "name").select{|t| t.frequency>0}
     #could use minmax here but it's only supported with ruby > 1.9'
     @tags_frequency_min = @tags.map{|t| t.frequency}.min
     @tags_frequency_max = @tags.map{|t| t.frequency}.max
@@ -19,10 +19,10 @@ class Monologue::ApplicationController < ApplicationController
     # fallback to the default 404.html page from main_app.
     file = Rails.root.join('public', '404.html')
     if file.exist?
-      render :file => file.cleanpath.to_s.gsub(%r{#{file.extname}$}, ''),
-         :layout => false, :status => 404, :formats => [:html]
+      render file: file.cleanpath.to_s.gsub(%r{#{file.extname}$}, ''),
+         layout: false, status: 404, formats: [:html]
     else
-      render :action => "404", :status => 404, :formats => [:html]
+      render action: "404", status: 404, formats: [:html]
     end
   end
 

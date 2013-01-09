@@ -30,8 +30,8 @@ describe "posts" do
   end
 
   it "should not show post with published date in the future" do
-    # Factory(:post_with_multiple_revisions, :title => "I am Marty McFly", :published_at => DateTime.new(3000))
-    Factory(:posts_revision, :published_at => DateTime.new(3000), :title => "I am Marty McFly")
+    # Factory(:post_with_multiple_revisions, title: "I am Marty McFly", published_at: DateTime.new(3000))
+    Factory(:posts_revision, published_at: DateTime.new(3000), title: "I am Marty McFly")
     visit root_path
     page.should_not have_content "I am Marty McFly"
   end

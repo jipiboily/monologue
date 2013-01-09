@@ -1,7 +1,7 @@
 namespace :monologue do
   namespace :cache do
     desc "Completely wipe Monologue's cache"
-    task :wipe => :environment do
+    task wipe: :environment do
       puts "********************************************************************************"
       puts "**********       Monologue, your blogging engine: rake edition      ************"
       puts "********************************************************************************"

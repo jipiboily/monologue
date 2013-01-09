@@ -11,7 +11,7 @@ class CreateMonologuePostsRevisions < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :monologue_posts_revisions, :id, :unique => true
+    add_index :monologue_posts_revisions, :id, unique: true
     add_index :monologue_posts_revisions, :published_at
     add_index :monologue_posts_revisions, :post_id    
   end

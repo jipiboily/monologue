@@ -20,7 +20,7 @@ describe "tags" do
   describe "filtering by a given tag" do
     before(:each) do
       @post = Factory(:post_with_tags)
-      Factory(:posts_revision, :title => "post Z")
+      Factory(:posts_revision, title: "post Z")
     end
 
     it "should only display posts with the given tag" do
@@ -32,7 +32,7 @@ describe "tags" do
     end
 
     it "should not display posts with tags with future publication date" do
-      post = Factory(:posts_revision, :title => "we need to reach 88 miles per hour", :published_at => DateTime.new(3000)).post
+      post = Factory(:posts_revision, title: "we need to reach 88 miles per hour", published_at: DateTime.new(3000)).post
       post.tag!(["rails","another tag"])
       visit "/monologue"
       click_on "rails"

@@ -10,7 +10,7 @@ class Monologue::PostsRevision < ActiveRecord::Base
   validates :title, :content, :url, :published_at, presence: true
   validate :url_do_not_start_with_slash
   validate :url_is_unique
-#    validates :post_id, :presence =>  true # TODO: do something about this validation on the first creation of a POST
+#    validates :post_id, presence:  true # TODO: do something about this validation on the first creation of a POST
 
   #isn't it post concern?'
   def latest_revision_is_current

@@ -6,7 +6,7 @@ class Monologue::Admin::BaseController < Monologue::ApplicationController
   
   def authenticate_user!
     if current_user.nil?
-      redirect_to admin_login_url, :alert => I18n.t("monologue.admin.login.need_auth")
+      redirect_to admin_login_url, alert: I18n.t("monologue.admin.login.need_auth")
     end
   end
 end

@@ -1,7 +1,7 @@
 class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   respond_to :html
-  cache_sweeper Monologue::PostsSweeper, :only => [:create, :update, :destroy]
-  before_filter :load_post_and_revisions, :only => [:edit, :update]
+  cache_sweeper Monologue::PostsSweeper, only: [:create, :update, :destroy]
+  before_filter :load_post_and_revisions, only: [:edit, :update]
 
   def index
     @posts = Monologue::Post.default
@@ -51,9 +51,9 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   def destroy
     post = Monologue::Post.find(params[:id])
     if post.destroy
-      redirect_to admin_posts_path, :notice =>  I18n.t("monologue.admin.posts.delete.removed")
+      redirect_to admin_posts_path, notice:  I18n.t("monologue.admin.posts.delete.removed")
     else
-      redirect_to admin_posts_path, :alert => I18n.t("monologue.admin.posts.delete.failed")
+      redirect_to admin_posts_path, alert: I18n.t("monologue.admin.posts.delete.failed")
     end
   end
 

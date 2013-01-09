@@ -8,7 +8,7 @@ describe "tag cloud" do
 
     before(:each) do
       Factory(:post_with_tags)
-      post = Factory(:posts_revision, :title => "Future post", :published_at => DateTime.new(3000)).post
+      post = Factory(:posts_revision, title: "Future post", published_at: DateTime.new(3000)).post
       post.tag!(["rails", "another tag"])
     end
 

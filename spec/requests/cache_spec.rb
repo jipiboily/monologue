@@ -6,7 +6,7 @@ describe "cache" do
       @post_1 = Factory(:posts_revision).post
       @post_2 = Factory(:posts_revision).post
       @post_3 = Factory(:posts_revision).post
-      25.times { |i| Factory(:posts_revision, :title => "post #{i}", :url => "post/#{i*100}") }
+      25.times { |i| Factory(:posts_revision, title: "post #{i}", url: "post/#{i*100}") }
       @post_with_tag = Factory(:post_with_tags)
       ActionController::Base.perform_caching = true
       Monologue::PageCache.enabled = true
@@ -89,9 +89,9 @@ describe "cache" do
         ActionController::Base.perform_caching = true
         log_in
         visit new_admin_post_path
-        fill_in "Title", :with =>  "my title"
-        fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-        fill_in "Published at", :with =>  DateTime.now + 2.days
+        fill_in "Title", with:  "my title"
+        fill_in "Content", with:  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
+        fill_in "Published at", with:  DateTime.now + 2.days
         check "Published"
         click_button "Save"
         page.should have_content I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
@@ -103,9 +103,9 @@ describe "cache" do
         ActionController::Base.perform_caching = false
         log_in
         visit new_admin_post_path
-        fill_in "Title", :with =>  "my title"
-        fill_in "Content", :with =>  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
-        fill_in "Published at", :with =>  DateTime.now + 2.days
+        fill_in "Title", with:  "my title"
+        fill_in "Content", with:  "C'est l'histoire d'un gars comprends tu...and finally it has some french accents àèùöûç...meh!"
+        fill_in "Published at", with:  DateTime.now + 2.days
         check "Published"
         click_button "Save"
         page.should have_content I18n.t("monologue.admin.posts.create.created")

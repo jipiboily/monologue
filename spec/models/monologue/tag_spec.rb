@@ -15,7 +15,7 @@ describe Monologue::Tag do
     end
 
     it "should require the name to be set" do
-      expect { Factory(:tag,:name=>nil) }.to raise_error(ActiveRecord::RecordInvalid)
+      expect { Factory(:tag,name:nil) }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 end

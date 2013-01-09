@@ -36,12 +36,12 @@ module CacheHelper
     index_cache_file = "#{show_cache_dir}.html"
     FileUtils.rm_rf "#{Rails.root}/tmp/cache"
     FileUtils.rm_rf show_cache_dir
-    FileUtils.rm index_cache_file, :force => true
+    FileUtils.rm index_cache_file, force: true
   end
 end
 
 ActionDispatch::TestResponse.send(:include, ResponseHelper)
 
 RSpec.configure do |c|
-  c.include CacheHelper, :type => :request
+  c.include CacheHelper, type: :request
 end

@@ -3,8 +3,8 @@ module LoginHelpers
   def log_in
     user = Factory(:user)
     visit admin_login_path
-    fill_in "email", :with =>  user.email
-    fill_in "Password", :with =>  user.password
+    fill_in "email", with:  user.email
+    fill_in "Password", with:  user.password
     click_button "Log in"
     page.should have_content("Logged in!")
   end
@@ -17,5 +17,5 @@ module LoginHelpers
 end
 
 RSpec.configure do |c|
-  c.include LoginHelpers, :type => :request
+  c.include LoginHelpers, type: :request
 end

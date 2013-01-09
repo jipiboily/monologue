@@ -1,5 +1,5 @@
 class Monologue::PostsController < Monologue::ApplicationController
-  caches_page :index, :show, :feed , :if => Proc.new { monologue_page_cache_enabled? }
+  caches_page :index, :show, :feed , if: Proc.new { monologue_page_cache_enabled? }
 
   def index
     @page = params[:page].nil? ? 1 : params[:page]
@@ -8,9 +8,9 @@ class Monologue::PostsController < Monologue::ApplicationController
 
   def show
     if current_user
-      @post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
+      @post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {url: params[:post_url]}).first
     else
-      @post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {:url => params[:post_url]}).first
+      @post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {url: params[:post_url]}).first
     end
     if @post.nil?
       not_found

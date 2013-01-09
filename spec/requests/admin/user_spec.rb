@@ -7,7 +7,7 @@ describe "users" do
 
   end
 
-  it "make sure the link to user edit screen is present", :js => true, :driver => :webkit do
+  it "make sure the link to user edit screen is present", js: true, driver: :webkit do
     click_link I18n.t("layouts.monologue.admin.nav_bar.edit_user_info")
   end
 
@@ -17,19 +17,19 @@ describe "users" do
     end
 
     it "validates user name is present" do
-      fill_in "user_name", :with => ""
+      fill_in "user_name", with: ""
       click_button "Save"
       page.should have_content("Name is required")
     end
 
     it "validates email is present" do
-      fill_in "user_email", :with => ""
+      fill_in "user_email", with: ""
       click_button "Save"
       page.should have_content("Email is required")
     end
     it "validates user password and confirmation match" do
-      fill_in "user_password", :with => "password"
-      fill_in "user_password", :with => "password2"
+      fill_in "user_password", with: "password"
+      fill_in "user_password", with: "password2"
       click_button "Save"
       page.should have_content(I18n.t("activerecord.errors.models.monologue/user.attributes.password.confirmation"))
     end
