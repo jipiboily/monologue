@@ -17,7 +17,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post.user_id = current_user.id
     @revision = @post.posts_revisions.first
     if @post.save
-      if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
+      if @post.published_in_future? && ActionController::Base.perform_caching
         flash[:warning] = I18n.t("monologue.admin.posts.create.created_with_future_date_and_cache")
       else
         flash[:notice] =  I18n.t("monologue.admin.posts.create.created")
@@ -37,7 +37,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post.update_attributes! params[:post]
     @revision = @post.posts_revisions.last
     if @post.save
-      if @revision.published_at > DateTime.now && @post.published && ActionController::Base.perform_caching
+      if @post.published_in_future? && ActionController::Base.perform_caching
         flash[:warning] =  I18n.t("monologue.admin.posts.update.saved_with_future_date_and_cache")
       else
         flash[:notice] =  I18n.t("monologue.admin.posts.update.saved")

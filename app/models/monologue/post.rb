@@ -49,6 +49,10 @@ class Monologue::Post < ActiveRecord::Base
     end
   end
 
+  def published_in_future?
+    self.published && self.posts_revisions.last.published_at > DateTime.now
+  end
+
   def self.page p
     per_page = Monologue.posts_per_page || 10
     set_total_pages(per_page)
