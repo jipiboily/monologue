@@ -2,8 +2,12 @@
 
 FactoryGirl.define do
   factory :user, class: Monologue::User do
-    name "John Doe"
-    email "jdoe@example.com"
-    password "secret"
+    sequence(:name){|n| "test #{n}"}
+    sequence(:email){ |n| "test#{n}@example.com"}
+    password "password"
+  end
+
+  factory :user_with_post, class: Monologue::User, parent: :user do |user|
+    user.after_create { |u| Factory(:post, user: u) }
   end
 end

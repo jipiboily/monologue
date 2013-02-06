@@ -1,7 +1,7 @@
 require 'spec_helper'
 module LoginHelpers
-  def log_in
-    user = Factory(:user)
+  def log_in (user=nil)
+    user ||= Factory(:user)
     visit admin_login_path
     fill_in "email", with:  user.email
     fill_in "Password", with:  user.password
