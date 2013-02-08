@@ -5,11 +5,11 @@ module Monologue
     # +li+ tag with the 'active' class added if the url is the current one.
     # Eg.:
     #
-    #   <%= activatable_li_tag users_path do  %>
+    #   <%= activable_li_tag users_path do  %>
     #     <%= link_to "Users", users_path %>
     #   <% end %>
     #
-    def activatable_li_tag(*url, &block)
+    def activable_li_tag(*url, &block)
       content_tag :li, capture(&block), :class => ("active" if url.any?{|u| current_page?(u)})
     end
 
@@ -18,8 +18,8 @@ module Monologue
     #
     #   <%= activatable_li_tag_with_link "Users", users_path %>
     #
-    def activatable_li_tag_with_link(title, *url)
-      activatable_li_tag *url do
+    def activable_li_tag_with_link(title, *url)
+      activable_li_tag *url do
         link_to(title, url.first)
       end
     end

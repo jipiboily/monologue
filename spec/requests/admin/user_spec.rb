@@ -43,13 +43,8 @@ describe "users" do
   end
 
   context "Logged in" do
-    let(:user_without_post) { Factory(:user) }
-    let(:user_with_post) { Factory(:user_with_post) }
-
-    before do
-      user_without_post.save
-      user_with_post.save
-    end
+    let!(:user_without_post) { Factory(:user) }
+    let!(:user_with_post) { Factory(:user_with_post) }
 
     it "should be able to see the list of available users" do
       visit admin_users_path
