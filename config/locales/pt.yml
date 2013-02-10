@@ -28,13 +28,28 @@ pt_BR:
       login:
         need_auth: "É necessário estar logado"
       users:
-        edit:
-          header: "Editar configurações de usuário"
+        form:
           email: "Email"
           name: "Nome"
           password: "Senha"
           password_confirmation: "Confirmação de senha"
+        edit:
+          header: "Editar configurações de usuário"
           save: "Salvar"
+        new:
+          create: "TODO Create"
+          header: "TODO Add a user"
+        create:
+          success: "TODO User created"
+        delete:
+          removed: "TODO User '%{user}' removed successfully"
+          failed: "TODO Could not remove user '%{user}'"
+        index:
+          email: "Email"
+          name: "Nome"
+          edit: "Editar"
+          delete: "Deletar"
+          create: "TODO Create"
       posts:
         index:
           title: "Título"
@@ -60,7 +75,7 @@ pt_BR:
           title: "Título"
           content: "Conteúdo"
           url:
-            caption: "URL<br/><i> Esse campo será preenchido automaticamente com '%s'. Você pode escolher a sua própria URL. Não adicione '%s' no início da sua URL.</i>"
+            caption: "URL<br/><i> Esse campo será preenchido automaticamente com '%{default_url}'. Você pode escolher a sua própria URL. Não adicione '%{root}' no início da sua URL.</i>"
             generated_title: "seu-titulo-de-post"
           published_at: "Data de publicação"
           published: "Publicado"
@@ -103,7 +118,11 @@ pt_BR:
           edit_user_info: "Minha conta"
           settings: "Configurações"
           log_out: "Sair"
+          users: "TODO Users"
   activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "TODO Password confirmation"
     errors:
       format: "%{message}"
     errors:
@@ -121,6 +140,7 @@ pt_BR:
               unique: "URL já utilizada por outro post"
         monologue/user:
           blank: "%{attribute} é obrigatório"
+          taken: "TODO %{attribute} has already been taken"
           attributes:
             password:
               confirmation: "Senha e confirmação diferem."

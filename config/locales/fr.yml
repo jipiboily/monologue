@@ -2,107 +2,84 @@ fr:
   monologue:
     posts:
       pagination:
-        older_posts:
-          "Articles précédents"
-        newer_posts:
-          "Articles plus récents"
+        older_posts: "Articles précédents"
+        newer_posts: "Articles plus récents"
       social_sharing:
-        tagline:
-          "Vous avez aimé ce que vous avez lu? Partagez le!"
+        tagline: "Vous avez aimé ce que vous avez lu? Partagez le!"
       post:
-        readmore:
-          "Lire"
+        readmore: "Lire"
       "404":
-        title:
-          "La page que vous cherchiez n'existe pas."
-        message:
-          "You pourriez avoir mal tappé l'adresse ou la page pourrait avoir été déplacée."
+        title: "La page que vous cherchiez n'existe pas."
+        message: "You pourriez avoir mal tappé l'adresse ou la page pourrait avoir été déplacée."
     sidebar:
       categories:
-        title:
-          "Catégories"
+        title: "Catégories"
       latest_posts:
-        title:
-          "Derniers articles"
+        title: "Derniers articles"
       latest_tweets:
-        title:
-          "Derniers tweets"
+        title: "Derniers tweets"
       tag_cloud:
-        title:
-          "Labels"
+        title: "Labels"
     tags:
       show:
-        showing_post_with_tag:
-          "Articles ayant le label"
-        show_all_posts:
-          "Voir tous les articles"
+        showing_post_with_tag: "Articles ayant le label"
+        show_all_posts: "Voir tous les articles"
     admin:
       login:
-        need_auth:
-          "Vous devez d'abord vous connectez à la section d'administration."
+        need_auth: "Vous devez d'abord vous connectez à la section d'administration."
       users:
-        edit:
-          header: "Modifier mon compte"
+        form:
           email: "Courriel"
           name: "Nom"
           password: "Mot de passe"
-          confirmation: "Confirmation du mot de passe"
+          password_confirmation: "Confirmation du mot de passe"
+        edit:
+          header: "Modifier mon compte"
           save: "Sauvegarder"
+        new:
+          create: "Ajouter"
+          header: "Ajouter un utilisateur"
+        delete:
+          removed: "L'utilisateur '%{user}' a été supprimé"
+          failed: "L'utilisateur '%{user}' n'a pas pu être supprimé"
+        index:
+          email: "Courriel"
+          name: "Nom"
+          edit: "Modifier"
+          delete: "Supprimer"
+          create: "Ajouter"
       posts:
         index:
-          title:
-            "Titre"
-          edit:
-            "Modifier"
-          delete:
-            "Effacer"
-          published:
-            "Oui"
-          not_published:
-            "Non publié"
-          status:
-            "Publié ?"
+          title: "Titre"
+          edit: "Modifier"
+          delete: "Effacer"
+          published: "Oui"
+          not_published: "Non publié"
+          status: "Publié ?"
         new:
-          header:
-            "Nouveau monologue"
+          header: "Nouveau monologue"
         create:
-          saved:
-            "Monologue créé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
-          saved_with_future_date_and_cache:
-            "Monologue créé avec succès."
+          saved: "Monologue créé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
+          saved_with_future_date_and_cache: "Monologue créé avec succès."
         edit:
-          header:
-            "Modifier"
+          header: "Modifier"
         update:
-          saved_with_future_date_and_cache:
-            "Monologue sauvegardé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
-          saved:
-            "Monologue sauvegardé"
+          saved_with_future_date_and_cache: "Monologue sauvegardé: les articles avec une date de publication future ne seront pas affichés à moins que la cache soit vidée la même journée. La cache sera probablement générée avant ce moment et ne sera pas rafraichie automatiquement."
+          saved: "Monologue sauvegardé"
         delete:
-          removed:
-            "Monologue effacé"
-          fail:
-            "Le monologue n'as pas pu être effacé!"
+          removed: "Monologue effacé"
+          fail: "Le monologue n'as pas pu être effacé!"
         form:
-          title:
-            "Titre"
-          content:
-            "Contenu"
+          title: "Titre"
+          content: "Contenu"
           url:
-            caption:
-              "Adresse URL<br/><i> Ce sera rempli par défaut avec '%s'. Vous pouvez aussi choisir votre propre adresse URL. N'ajoutez pas '%s' au début de l'adresse URL.</i>"
-            generated_title:
-              "nom-de-votre-article"
-          published_at:
-            "Publié le"
-          published:
-            "Publié"
-          save:
-            "Sauvegarder"
-          preview:
-            "Aperçu"
-          tags:
-            "Catégories<br/><i>Séparer les catégories par des virgules</i>"
+            caption: "Adresse URL<br/><i> Ce sera rempli par défaut avec '%{default_url}'. Vous pouvez aussi choisir votre propre adresse URL. N'ajoutez pas '%{root}' au début de l'adresse URL.</i>"
+            generated_title: "nom-de-votre-article"
+          published_at: "Publié le"
+          published: "Publié"
+          save: "Sauvegarder"
+          preview: "Aperçu"
+          tags: "Catégories<br/><i>Séparer les catégories par des virgules</i>"
       cache:
         show:
           title: "Gérer la cache"
@@ -117,41 +94,33 @@ fr:
           explanations: "Il y a certaines configurations à effectuer pour utiliser la gestion de cache de base de Monologue. SVP voir la documentation ci-dessous (anglais seulement)."
       comments:
         show:
-          recent_comments:
-            "Commentaires récents"
+          recent_comments: "Commentaires récents"
       sessions:
         new:
-          title:
-            "Authentification"
-          email:
-            "Courriel"
-          password:
-            "Mot de passe"
-          button:
-            "Connexion"
+          title: "Authentification"
+          email: "Courriel"
+          password: "Mot de passe"
+          button: "Connexion"
         messages:
-          invalid:
-            "Courriel ou mot de passe invalide"
-          logged_in:
-            "Connecté!"
-          logged_out:
-            "Déconnecté!"
+          invalid: "Courriel ou mot de passe invalide"
+          logged_in: "Connecté!"
+          logged_out: "Déconnecté!"
   layouts:
     monologue:
       admin:
         nav_bar:
-          add_a_monologue:
-            "Ajouter un monologue"
-          list_monologues:
-            "Liste des monologues"
-          comments:
-            "Commentaires"
+          add_a_monologue: "Ajouter un monologue"
+          list_monologues: "Liste des monologues"
+          comments: "Commentaires"
           cache: "Gérer la cache"
           edit_user_info: "Mon compte"
           settings: "Paramètres"
-          log_out:
-            "Déconnexion"
+          log_out: "Déconnexion"
+          users: "Utilisateur"
   activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "Confirmation du mot de passe"
     errors:
       format: "%{message}"
     errors:
@@ -160,20 +129,16 @@ fr:
       models:
         full_messages: "%{message}"
         monologue/posts_revision:
-          blank:
-            "%{attribute} est requis"
+          blank: "%{attribute} est requis"
           attributes:
             published_at:
-              blank:
-                "'Publié le' est requis"
+              blank: "'Publié le' est requis"
             url:
-              start_with_slash:
-                "L'adresse URL ne peut débuter par un slash ('/')"
-              unique:
-                "L'adresse URL est déjà utilisée par un autre article"
+              start_with_slash: "L'adresse URL ne peut débuter par un slash ('/')"
+              unique: "L'adresse URL est déjà utilisée par un autre article"
         monologue/user:
-          blank:
-            "%{attribute} est requis"
+          blank: "%{attribute} est requis"
+          taken: "%{attribute} est déjà utilisé"
           attributes:
             password:
               confirmation: "Le mot de passe et sa confirmation doivent concorder."
