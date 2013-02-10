@@ -1,10 +1,8 @@
 module Monologue
   module ApplicationHelper
     include Monologue::Engine.routes.url_helpers if ENV["RAILS_ENV"] == "test" # TODO: try and see why this is needed for specs to pass
-    #Number of sizes defined in the css
-    NUMBER_OF_LABEL_SIZES = 5
 
-    def monologue_admin_form_for(object, options = {}, &block)
+    def monologue_admin_form_for(object, options = { }, &block)
       options[:builder] = MonologueAdminFormBuilder
       form_for(object, options, &block)
     end
@@ -13,12 +11,6 @@ module Monologue
       content_for?(:title) ? ((content_for :title) + " | #{Monologue.site_name}") : Monologue.site_name
     end
 
-    def sidebar_section_for(title, &block)
-      content_tag(:section, class: 'widget') do
-        content_tag(:header, content_tag(:h1, title)) +
-            capture(&block)
-      end
-    end
 
     def rss_head_link
       tag("link", href: feed_url, rel: "alternate", title: "RSS", type: "application/rss+xml")
@@ -49,29 +41,10 @@ module Monologue
     end
 
     def absolute_image_url(url)
-       return url if url.starts_with? "http"
-       request.protocol + request.host + url
+      return url if url.starts_with? "http"
+      request.protocol + request.host + url
     end
 
-    # TODO: That should be move in TagHelper if I manage to get that loaded
-    def tag_url(tag)
-      "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{tag.name.downcase}"
-    end
-
-    def label_for_tag(tag, min, max)
-      "label-size-#{size_for_tag(tag, min, max)}"
-    end
-
-    def size_for_tag(tag, min, max)
-      #logarithmic scaling based on the number of occurrences of each tag
-      if min<max && tag.frequency>0
-        1 + ((NUMBER_OF_LABEL_SIZES-1)*(log_distance_to_min(tag.frequency, min))/log_distance_to_min(max, min)).round
-      else
-        1
-      end
-    end
-
-    private
     def social_icon foundicon, url, setting
       return if setting.nil? || !setting
       content_tag :a, href: url, class: "social", target: "_blank" do
@@ -80,9 +53,6 @@ module Monologue
       end
     end
 
-    def log_distance_to_min(value, min)
-      Math.log(value)-Math.log(min)
-    end
 
   end
 end

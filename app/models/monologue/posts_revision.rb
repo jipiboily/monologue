@@ -33,9 +33,9 @@ class Monologue::PostsRevision < ActiveRecord::Base
 
   def url_exists?
     if self.post_id.nil?
-      return Monologue::PostsRevision.where("url = ?", self.url).count > 0
+      Monologue::PostsRevision.where("url = ?", self.url).count > 0
     else
-      return Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
+      Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
     end
   end
 

@@ -1,0 +1,5 @@
+<h1><%= t(".header") %></h1>
+<%= monologue_admin_form_for [:admin, @user], method: :post do |user| %>
+  <%= render :partial => 'form', :locals => { :user => user } %>
+  <%= user.submit t(".create"), class:  "btn btn-large btn-primary" %>
+<% end %>

@@ -2,111 +2,89 @@ ro:
   monologue:
     posts:
       pagination:
-        older_posts:
-          "Articole mai vechi"
-        newer_posts:
-          "Articole mai noi"
+        older_posts: "Articole mai vechi"
+        newer_posts: "Articole mai noi"
       social_sharing:
-        tagline:
-          "V-a placut articolul ? Dati mai departe."
+        tagline: "V-a placut articolul ? Dati mai departe."
       post:
-        readmore:
-          "Cititi articolul"
+        readmore: "Cititi articolul"
       "404":
-        title:
-          "Pagina pe care o cautati nu exista."
-        message:
-          "Este posibil sa fi gresit adresa sau pagina sa se fi mutat la alta adresa."
+        title: "Pagina pe care o cautati nu exista."
+        message: "Este posibil sa fi gresit adresa sau pagina sa se fi mutat la alta adresa."
     sidebar:
       categories:
-        title:
-          "Categorii"
+        title: "Categorii"
       latest_posts:
-        title:
-          "Ultimele articole"
+        title: "Ultimele articole"
       latest_tweets:
-        title:
-          "Ultimele tweet-uri"
+        title: "Ultimele tweet-uri"
       tag_cloud:
-        title:
-          "Tag-uri"
+        title: "Tag-uri"
     tags:
       show:
-        showing_post_with_tag:
-          "Articole cu tag-ul"
-        show_all_posts:
-          "Toate articolele"
+        showing_post_with_tag: "Articole cu tag-ul"
+        show_all_posts: "Toate articolele"
     admin:
       login:
-        need_auth:
-          "Pentru a accesa aceasta pagina, trebuie sa va autentificati."
+        need_auth: "Pentru a accesa aceasta pagina, trebuie sa va autentificati."
       users:
-        edit:
-          header: "Modificare cont"
+        form:
           email: "Email"
           name: "Nume"
           password: "Parola"
-          confirmation: "Confirmare parola"
+          password_confirmation: "Confirmare parola"
+        edit:
+          header: "Modificare cont"
           save: "Salvati"
+        new:
+          create: "TODO Create"
+          header: "TODO Add a user"
+        create:
+          success: "TODO User created"
+        delete:
+          removed: "TODO User '%{user}' removed successfully"
+          failed: "TODO Could not remove user '%{user}'"
+        index:
+          email: "Email"
+          name: "Nume"
+          edit: "Modificati"
+          delete: "Stergeti"
+          create: "TODO Create"
       posts:
         index:
-          title:
-            "Titlu"
-          edit:
-            "Modificati"
-          delete:
-            "Stergeti"
-          published:
-            "Da"
-          not_published:
-            "Nu e publicat"
-          status:
-            "Publicat ?"
+          title: "Titlu"
+          edit: "Modificati"
+          delete: "Stergeti"
+          published: "Da"
+          not_published: "Nu e publicat"
+          status: "Publicat ?"
         new:
-          header:
-            "Articol nou"
+          header: "Articol nou"
         create:
-          saved:
-            "Articol creeat"
-          saved_with_future_date_and_cache:
-            "Articol creeat: articolele cu data publicarii in viitor nu vor aparea decat daca stergeti cache-ul in acea zi. Cache-ul va fi generat mai devreme si nu va fi actualizat automat."
+          saved: "Articol creeat"
+          saved_with_future_date_and_cache: "Articol creeat: articolele cu data publicarii in viitor nu vor aparea decat daca stergeti cache-ul in acea zi. Cache-ul va fi generat mai devreme si nu va fi actualizat automat."
         edit:
-          header:
-            "Modificati"
+          header: "Modificati"
         update:
-          saved_with_future_date_and_cache:
-            "Articol salvat: articolele cu data publicarii in viitor nu vor aparea decat daca stergeti cache-ul in acea zi. Cache-ul va fi generat mai devreme si nu va fi actualizat automat."
-          saved:
-            "Articol salvat"
+          saved_with_future_date_and_cache: "Articol salvat: articolele cu data publicarii in viitor nu vor aparea decat daca stergeti cache-ul in acea zi. Cache-ul va fi generat mai devreme si nu va fi actualizat automat."
+          saved: "Articol salvat"
         delete:
-          removed:
-            "Articol sters"
-          fail:
-            "Articolul nu a putut fi sters!"
+          removed: "Articol sters"
+          fail: "Articolul nu a putut fi sters!"
         form:
-          title:
-            "Titlu"
-          content:
-            "Continut"
+          title: "Titlu"
+          content: "Continut"
           url:
-            caption:
-              "URL<br/><i> Va fi completat automat cu '%s'. Puteti alege un URL personalizat. Nu adaugati '%s' la inceputul URL-ului.</i>"
-            generated_title:
-              "titlul-articolului"
-          published_at:
-            "Publicat la data de"
-          published:
-            "Publicat"
-          save:
-            "Salvati"
-          preview:
-            "Vizualizare"
-          tags:
-            "Tag-uri <br/><i>Separate prin virgula</i>"
+            caption: "URL<br/><i> Va fi completat automat cu '%{default_url}'. Puteti alege un URL personalizat. Nu adaugati '%{root}' la inceputul URL-ului.</i>"
+            generated_title: "titlul-articolului"
+          published_at: "Publicat la data de"
+          published: "Publicat"
+          save: "Salvati"
+          preview: "Vizualizare"
+          tags: "Tag-uri <br/><i>Separate prin virgula</i>"
       comments:
         show:
-          recent_comments:
-            "Comentarii recente"
+          recent_comments: "Comentarii recente"
       cache:
         show:
           title: "Gestionare cache"
@@ -121,37 +99,30 @@ ro:
           explanations: "Anumite setari sunt incorecte pentru a putea folosi cache-ul din Monologue. Va rugam sa citit documentatia."
       sessions:
         new:
-          title:
-            "Autentificare"
-          email:
-            "Email"
-          password:
-            "Parola"
-          button:
-            "Autentificare"
+          title: "Autentificare"
+          email: "Email"
+          password: "Parola"
+          button: "Autentificare"
         messages:
-          invalid:
-            "Email sau parola gresita."
-          logged_in:
-            "Autentificat!"
-          logged_out:
-            "La revedere!"
+          invalid: "Email sau parola gresita."
+          logged_in: "Autentificat!"
+          logged_out: "La revedere!"
   layouts:
     monologue:
       admin:
         nav_bar:
-          add_a_monologue:
-            "Adaugati articol"
-          list_monologues:
-            "Lista articole"
-          comments:
-            "Comentarii"
+          add_a_monologue: "Adaugati articol"
+          list_monologues: "Lista articole"
+          comments: "Comentarii"
           cache: "Gestionati cache"
           edit_user_info: "Contul meu"
           settings: "Preferinte"
-          log_out:
-            "Iesire"
+          log_out: "Iesire"
+          users: "TODO Users"
   activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "TODO Password confirmation"
     errors:
       format: "%{message}"
     errors:
@@ -160,20 +131,16 @@ ro:
       models:
         full_messages: "%{message}"
         monologue/posts_revision:
-          blank:
-            "%{attribute} este necesar"
+          blank: "%{attribute} este necesar"
           attributes:
             published_at:
-              blank:
-                "'Published at' este necesar"
+              blank: "'Published at' este necesar"
             url:
-              start_with_slash:
-                "URL-ul nu poate incepe cu slash ('/')"
-              unique:
-                "URL-ul este deja folosit"
+              start_with_slash: "URL-ul nu poate incepe cu slash ('/')"
+              unique: "URL-ul este deja folosit"
         monologue/user:
-          blank:
-            "%{attribute} este necesar"
+          blank: "%{attribute} este necesar"
+          taken: "TODO %{attribute} has already been taken"
           attributes:
             password:
               confirmation: "Parola si confirmarea acesteia nu sunt identice."
