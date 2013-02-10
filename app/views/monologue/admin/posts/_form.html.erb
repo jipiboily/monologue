@@ -1,7 +1,9 @@
 <%= post.error_messages %>
 <%= post.fields_for :posts_revisions, @revision do |revision| %>
   <%= revision.text_field :title, label:  t(".title"), class:  "span6" %>
-  <%= revision.text_area :content, label:  t(".content"), class:  "span12 ckeditor" %>
+  <div id="content-editor">
+    <%= revision.text_area :content, label:  t(".content"), class:  "span12 tinymce" %>
+  </div>
   <%= revision.text_field :url, label:  raw(sprintf(t(".url.caption"), "#{DateTime.now.year}/#{t(".url.generated_title")}",monologue.root_path)) %>
   <%= revision.text_field :published_at, label:  t(".published_at"), data: {datepicker: "datepicker"}, value: revision.object.published_at.nil? ? "" : revision.object.published_at.strftime("%Y-%m-%d") %>
 <% end %>

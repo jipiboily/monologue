@@ -1,5 +1,5 @@
 $(function() {
-  $('textarea').tinymce({
+  $('textarea.tinymce').tinymce({
     theme: 'advanced',
     theme_advanced_buttons1 : "bold,italic,underline,strikethrough,separator,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,link,unlink",
     theme_advanced_buttons2 : "formatselect, removeformat, indent, outdent, image, code",
