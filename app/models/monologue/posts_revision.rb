@@ -31,12 +31,8 @@ class Monologue::PostsRevision < ActiveRecord::Base
     errors.add(:url, I18n.t("activerecord.errors.models.monologue/posts_revision.attributes.url.unique")) if self.url_exists?
   end
 
-  def url_exists?
-    if self.post_id.nil?
-      Monologue::PostsRevision.where("url = ?", self.url).count > 0
-    else
-      Monologue::PostsRevision.where("url = ? and post_id <> ?", self.url, self.post_id).count > 0
-    end
+  def last_urls_with_title(title)
+    Monologue::PostsRevision.where("title LIKE ? or title LIKE ?", "#{title}%", "#{title}-%").select(&:title).uniq
   end
 
   private
@@ -45,12 +41,12 @@ class Monologue::PostsRevision < ActiveRecord::Base
       year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
       return if self.title.blank?
       base_title = "#{year}/#{self.title.parameterize}"
-      url_empty = self.url.nil? || self.url.strip == ""
+      url_empty = self.url.blank?
       self.url = base_title if url_empty
-      while self.url_exists? && url_empty
-        i ||= 1
-        self.url = "#{base_title}-#{i}"
-        i += 1
+      past_urls = last_urls_with_title(self.url).map(&:title)
+      if past_urls.include?(self.url)
+        next_suffix = past_urls.sort.last.split("-").last.to_i + 1
+        self.url = "#{base_title}-#{next_suffix}"
       end
     end
 end
