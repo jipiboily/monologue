@@ -3,22 +3,15 @@
     <div class="container" data-monologue="nav-bar">
       <%= link_to "Monologue", admin_path, class: "brand" %>
       <ul class="nav pull-left" data-monologue="nav-bar-left">
-
-        <li class="<%= request.fullpath === new_admin_post_path ? "active":"" %>">
-          <%= link_to t(".add_a_monologue"), new_admin_post_path%>
-        </li>
-        <li class="<%= request.fullpath === admin_posts_path || request.fullpath === admin_path ? "active":"" %>">
-          <%= link_to t(".list_monologues"), admin_posts_path %>
-        </li>
-        <li class="<%= request.fullpath === admin_comments_path ? "active":"" %>">
-          <%= link_to t(".comments"), admin_comments_path %>
-        </li>
+        <%= activable_li_tag_with_link t(".add_a_monologue"), new_admin_post_path %>
+        <%= activable_li_tag_with_link t(".list_monologues"), admin_posts_path, admin_path %>
+        <%= activable_li_tag_with_link t(".comments"), admin_comments_path %>
       </ul>
+
       <ul class="nav pull-right" data-monologue="nav-bar-right">
+        <%= activable_li_tag_with_link t(".users"), admin_users_path %>
         <% if ActionController::Base.perform_caching %>
-          <li class="<%= request.fullpath === admin_cache_path ? "active":"" %>">
-            <%= link_to t(".cache"), admin_cache_path %>
-          </li>
+          <%= activable_li_tag_with_link t(".cache"), admin_cache_path %>
         <% end %>
         <li id="fat-menu" class="dropdown">
           <a href="#" id="settings" data-toggle="dropdown"><%= t(".settings") %> <b class="caret"></b></a>
@@ -27,7 +20,6 @@
           </ul>
         </li>
         <li><%= link_to t(".log_out"), admin_logout_path %></li>
-
       </ul>
 
     </div>

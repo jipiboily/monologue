@@ -2,111 +2,89 @@ en:
   monologue:
     posts:
       pagination:
-        older_posts:
-          "Older posts"
-        newer_posts:
-          "Newer posts"
+        older_posts: "Older posts"
+        newer_posts: "Newer posts"
       social_sharing:
-        tagline:
-          "Loved what you just read? Share it!"
+        tagline: "Loved what you just read? Share it!"
       post:
-        readmore:
-          "Read more"
+        readmore: "Read more"
       "404":
-        title:
-          "The page you were looking for doesn't exist."
-        message:
-          "You may have mistyped the address or the page may have moved."
+        title: "The page you were looking for doesn't exist."
+        message: "You may have mistyped the address or the page may have moved."
     sidebar:
       categories:
-        title:
-          "Categories"
+        title: "Categories"
       latest_posts:
-        title:
-          "Latest posts"
+        title: "Latest posts"
       latest_tweets:
-        title:
-          "Latest tweets"
+        title: "Latest tweets"
       tag_cloud:
-        title:
-          "Tags"
+        title: "Tags"
     tags:
       show:
-        showing_post_with_tag:
-          "Showing posts with label"
-        show_all_posts:
-          "Show all posts"
+        showing_post_with_tag: "Showing posts with label"
+        show_all_posts: "Show all posts"
     admin:
       login:
-        need_auth:
-          "You must first log in to access admin section."
+        need_auth: "You must first log in to access admin section."
       users:
-        edit:
-          header: "Edit your account"
+        form:
           email: "Email"
           name: "Name"
           password: "Password"
-          confirmation: "Password confirmation"
+          password_confirmation: "Password confirmation"
+        edit:
+          header: "Edit your account"
           save: "Save"
+        new:
+          create: "Create"
+          header: "Add a user"
+        create:
+          success: "User created"
+        delete:
+          removed: "User '%{user}' removed successfully"
+          failed: "Could not remove user '%{user}'"
+        index:
+          email: "Email"
+          name: "Name"
+          edit: "Edit"
+          delete: "Delete"
+          create: "Create"
       posts:
         index:
-          title:
-            "Title"
-          edit:
-            "Edit"
-          delete:
-            "Delete"
-          published:
-            "Yes"
-          not_published:
-            "Not published"
-          status:
-            "Published ?"
+          title: "Title"
+          edit: "Edit"
+          delete: "Delete"
+          published: "Yes"
+          not_published: "Not published"
+          status: "Published ?"
         new:
-          header:
-            "New monologue"
+          header: "New monologue"
         create:
-          saved:
-            "Monologue created"
-          saved_with_future_date_and_cache:
-            "Monologue created: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
+          saved: "Monologue created"
+          saved_with_future_date_and_cache: "Monologue created: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
         edit:
-          header:
-            "Edit"
+          header: "Edit"
         update:
-          saved_with_future_date_and_cache:
-            "Monologue saved: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
-          saved:
-            "Monologue saved"
+          saved_with_future_date_and_cache: "Monologue saved: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
+          saved: "Monologue saved"
         delete:
-          removed:
-            "Monologue removed"
-          fail:
-            "Failed to remove monologue!"
+          removed: "Monologue removed"
+          fail: "Failed to remove monologue!"
         form:
-          title:
-            "Title"
-          content:
-            "Content"
+          title: "Title"
+          content: "Content"
           url:
-            caption:
-              "URL<br/><i> This will be filled by default with '%s'. You can choose your own URL. Do not add '%s' at the beginning of your URL.</i>"
-            generated_title:
-              "your-post-title"
-          published_at:
-            "Published at"
-          published:
-            "Published"
-          save:
-            "Save"
-          preview:
-            "Preview"
-          tags:
-            "Tags <br/><i>Separate tags by commas</i>"
+            caption: "URL<br/><i> This will be filled by default with '%{default_url}'. You can choose your own URL. Do not add '%{root}' at the beginning of your URL.</i>"
+            generated_title: "your-post-title"
+          published_at: "Published at"
+          published: "Published"
+          save: "Save"
+          preview: "Preview"
+          tags: "Tags <br/><i>Separate tags by commas</i>"
       comments:
         show:
-          recent_comments:
-            "Recent comments"
+          recent_comments: "Recent comments"
       cache:
         show:
           title: "Manage cache"
@@ -114,44 +92,37 @@ en:
           files_in_cache: "Here are the files actually cached:"
           no_files_are_cached: "There are actually no file in cache."
           delete: "Completely wipe cache?"
-          confirm: 'Are you sure you want to competely clear cache?'
+          confirm: 'Are you sure you want to completely clear cache?'
           cache_wiped: "Cache was wiped!"
         how_to_enable:
           warning: "You can't manage cache!"
           explanations: "There are certain settings that are not set correctly to be able to use Monologue's basic cache. Please review configuration documentation."
       sessions:
         new:
-          title:
-            "Sign in"
-          email:
-            "Email"
-          password:
-            "Password"
-          button:
-            "Log in"
+          title: "Sign in"
+          email: "Email"
+          password: "Password"
+          button: "Log in"
         messages:
-          invalid:
-            "Invalid email or password"
-          logged_in:
-            "Logged in!"
-          logged_out:
-            "Logged out!"
+          invalid: "Invalid email or password"
+          logged_in: "Logged in!"
+          logged_out: "Logged out!"
   layouts:
     monologue:
       admin:
         nav_bar:
-          add_a_monologue:
-            "Add a monologue"
-          list_monologues:
-            "List of monologues"
-          comments:
-            "Comments"
+          add_a_monologue: "Add a monologue"
+          list_monologues: "List of monologues"
+          comments: "Comments"
           cache: "Manage cache"
           edit_user_info: "My account"
           settings: "Settings"
-          log_out:
-            "Log out"
+          log_out: "Log out"
+          users: "Users"
   activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "Password confirmation"
     errors:
       format: "%{message}"
     errors:
@@ -160,20 +131,16 @@ en:
       models:
         full_messages: "%{message}"
         monologue/posts_revision:
-          blank:
-            "%{attribute} is required"
+          blank: "%{attribute} is required"
           attributes:
             published_at:
-              blank:
-                "'Published at' is required"
+              blank: "'Published at' is required"
             url:
-              start_with_slash:
-                "URL can't start with a slash ('/')"
-              unique:
-                "URL is already used by another post"
+              start_with_slash: "URL can't start with a slash ('/')"
+              unique: "URL is already used by another post"
         monologue/user:
-          blank:
-            "%{attribute} is required"
+          blank: "%{attribute} is required"
+          taken: "%{attribute} has already been taken"
           attributes:
             password:
               confirmation: "Password and confirmation doesn't match."
