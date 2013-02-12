@@ -39,18 +39,22 @@ class Monologue::PostsRevision < ActiveRecord::Base
     end
   end
 
+  def last_urls_with_title(title)
+    Monologue::PostsRevision.where("title LIKE ? or title LIKE ?", "#{title}%", "#{title}-%").select(&:title).uniq
+  end
+
   private
 
     def generate_url
       year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
       return if self.title.blank?
       base_title = "#{year}/#{self.title.parameterize}"
-      url_empty = self.url.nil? || self.url.strip == ""
+      url_empty = self.url.blank?
       self.url = base_title if url_empty
-      while self.url_exists? && url_empty
-        i ||= 1
-        self.url = "#{base_title}-#{i}"
-        i += 1
+      past_urls = last_urls_with_title(self.title).map(&:title)
+      if past_urls.include?(self.title)
+        next_suffix = past_urls.sort.last.split("-").last.to_i + 1
+        self.url = "#{base_title}-#{next_suffix}"
       end
     end
 end
