@@ -1,8 +1,11 @@
 module Monologue
   module ApplicationHelper
     include Monologue::Engine.routes.url_helpers if ENV["RAILS_ENV"] == "test" # TODO: try and see why this is needed for specs to pass
+    #Why aren't they loaded by default?
+    include Monologue::HtmlHelper
+    include Monologue::TagsHelper
 
-    def monologue_admin_form_for(object, options = { }, &block)
+    def monologue_admin_form_for(object, options = {}, &block)
       options[:builder] = MonologueAdminFormBuilder
       form_for(object, options, &block)
     end
@@ -10,7 +13,6 @@ module Monologue
     def monologue_accurate_title
       content_for?(:title) ? ((content_for :title) + " | #{Monologue.site_name}") : Monologue.site_name
     end
-
 
     def rss_head_link
       tag("link", href: feed_url, rel: "alternate", title: "RSS", type: "application/rss+xml")
@@ -45,14 +47,12 @@ module Monologue
       request.protocol + request.host + url
     end
 
-    def social_icon foundicon, url, setting
+    def social_icon(foundicon, url, setting)
       return if setting.nil? || !setting
       content_tag :a, href: url, class: "social", target: "_blank" do
         content_tag :i, class: "foundicon-#{foundicon}" do # using an empty content tag for foundicons to appear. TODO: try to do otherwise and use only tag method
         end
       end
     end
-
-
   end
 end
