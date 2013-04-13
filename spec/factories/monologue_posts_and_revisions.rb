@@ -6,9 +6,9 @@ FactoryGirl.define do
   end
 
   factory :posts_revision, class: Monologue::PostsRevision do
-    sequence(:title) { |i| "post #{i} | revision 1" }
+    sequence(:title) { |i| "post title #{i} | revision 1" }
     content "this is some text with french accents éàöûù and so on...even html tags like <br />"
-    sequence(:url) { |i| "post/#{i}" }
+    sequence(:url) { |i| "post/ulr#{i}" }
     association :post
     sequence(:published_at) {|i| DateTime.new(2011,1,1,12,0,17) + i.days }
   end
