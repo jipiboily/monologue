@@ -7,7 +7,7 @@ class Monologue::PostsController < Monologue::ApplicationController
   end
 
   def show
-    if current_user
+    if monologue_current_user
       @post = Monologue::Post.default.where("monologue_posts_revisions.url = :url", {url: params[:post_url]}).first
     else
       @post = Monologue::Post.published.where("monologue_posts_revisions.url = :url", {url: params[:post_url]}).first
