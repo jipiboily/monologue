@@ -16,7 +16,7 @@
         <li id="fat-menu" class="dropdown">
           <a href="#" id="settings" data-toggle="dropdown"><%= t(".settings") %> <b class="caret"></b></a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="settings">
-            <li><%= link_to t(".edit_user_info"), edit_admin_user_path(current_user)%></li>
+            <li><%= link_to t(".edit_user_info"), edit_admin_user_path(monologue_current_user)%></li>
           </ul>
         </li>
         <li><%= link_to t(".log_out"), admin_logout_path %></li>
