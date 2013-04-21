@@ -14,13 +14,6 @@ module Monologue
     initializer :assets do |config|
       Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     end
-    #
-    #initializer 'monologue.action_controller' do |app|
-    #  ActiveSupport.on_load :action_controller do
-    #    helper Monologue::HtmlHelper
-    #    helper Monologue::TagsHelper
-    #  end
-    #end
 
     ENGINE_ROOT = File.join(File.dirname(__FILE__), '../..')
     require "#{ENGINE_ROOT}/deprecations"

@@ -28,13 +28,13 @@ class Monologue::ApplicationController < ApplicationController
 
   private
 
-    def current_user
+    def monologue_current_user
       @monologue_current_user ||= Monologue::User.find(session[:monologue_user_id]) if session[:monologue_user_id]
     end
 
     def monologue_page_cache_enabled?
-      current_user.nil? && Monologue::PageCache.enabled
+      monologue_current_user.nil? && Monologue::PageCache.enabled
     end
 
-  helper_method :current_user, :monologue_page_cache_enabled?
+  helper_method :monologue_current_user, :monologue_page_cache_enabled?
 end
