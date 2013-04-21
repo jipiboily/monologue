@@ -46,4 +46,11 @@ describe Monologue::PostsRevision do
     pr = Factory(:posts_revision, url: nil, title: "unique title", published_at: DateTime.new(2011))
     pr.url.should == "2011/unique-title-1"
   end
+
+  it "excludes the current post's revisions on URL uniqueness validation" do
+    pr = Factory(:posts_revision, url: nil, title: "unique title", published_at: DateTime.new(2011))
+    pr.content = "Something changed"
+    pr.save
+    pr.url.should == "2011/unique-title"
+  end
 end

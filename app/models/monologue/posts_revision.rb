@@ -39,8 +39,8 @@ class Monologue::PostsRevision < ActiveRecord::Base
     end
   end
 
-  def last_urls_with_title(title)
-    Monologue::PostsRevision.where("title LIKE ? or title LIKE ?", "#{title}%", "#{title}-%").select(&:title).uniq
+  def last_urls_with_title(title, post_id)
+    Monologue::PostsRevision.where("post_id <> ? AND title LIKE ? OR title LIKE ?", post_id, "#{title}%", "#{title}-%").select(&:title).uniq
   end
 
   private
@@ -51,8 +51,8 @@ class Monologue::PostsRevision < ActiveRecord::Base
       base_title = "#{year}/#{self.title.parameterize}"
       url_empty = self.url.blank?
       self.url = base_title if url_empty
-      past_urls = last_urls_with_title(self.title).map(&:title)
-      if past_urls.include?(self.title)
+      past_urls = last_urls_with_title(self.title, self.post_id).map(&:title)
+      if past_urls.present?
         next_suffix = past_urls.sort.last.split("-").last.to_i + 1
         self.url = "#{base_title}-#{next_suffix}"
       end
