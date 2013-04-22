@@ -14,7 +14,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
 
   def create
     @post = Monologue::Post.new(params[:post])
-    @post.user_id = current_user.id
+    @post.user_id = monologue_current_user.id
     @revision = @post.posts_revisions.first
     if @post.save
       prepare_flash_and_redirect_to_edit()
