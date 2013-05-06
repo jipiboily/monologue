@@ -16,6 +16,8 @@ Monologue::Engine.routes.draw do
 
     get "cache" => "cache#show", as: "cache"
     delete "cache" => "cache#destroy"
+    
+    match "/post/preview"=>"posts#preview", :as=>"post_preview", :via => [:put, :post]
   end
 
   match "*post_url" => "posts#show", as:  "post"

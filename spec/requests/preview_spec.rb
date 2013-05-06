@@ -4,7 +4,7 @@ describe "preview" do
     url ="post/1"
     @post_path = "/monologue/#{url}"
     @post_title = "post 1 | revision 1"
-    Factory(:posts_revision, title: @post_title, url: url)
+    @revision = Factory(:posts_revision, title: @post_title, url: url)
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -35,12 +35,46 @@ describe "preview" do
   end
 
   context "admin section" do
-    it "clicks preview link" do
+    it "clicks preview link", :js=>true do
       log_in
       visit admin_path
       click_on @post_title
+      
+      page.should have_selector("[data-toggle='post-preview']", visible: false)
+      
       click_on "Preview"
-      current_path.should == @post_path
+      page.should have_selector("[data-toggle='post-preview']", visible: true)
+      
+      
+      page.within_frame "preview" do
+        page.should have_content(@post_title)
+      end
     end
+    
+    it "Close Preview", :js=>true do
+      log_in
+      visit admin_path
+      click_on @post_title
+      
+      click_on "Preview"
+      page.should have_selector("[data-toggle='post-preview']", visible: true)
+      link = find("[data-toggle='post-preview'] a")
+      link.click
+      page.should have_selector("[data-toggle='post-preview']", visible: false)
+    end  
+    
+    it "clicking preview should not save" do
+      log_in
+      visit admin_path
+      click_on @post_title
+      new_content = "I'm modifying you but you shouldn't be saved"
+      fill_in "Content", with:  new_content
+      click_on "Preview"
+      visit admin_path
+      click_on @post_title
+      page.should_not have_content(new_content)
+      page.should have_content(@revision.content)
+    end
+    
   end
 end
