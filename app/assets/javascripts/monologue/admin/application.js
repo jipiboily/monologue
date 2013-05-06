@@ -10,5 +10,5 @@
 //= require monologue/bootstrap/bootstrap-datepicker
 //= require monologue/bootstrap/bootstrap-datepicker-fr
 //= require monologue/bootstrap/bootstrap-datepicker-pt
-//= require tinymce-jquery
-//= require_tree .
+//= require ckeditor/init
+//= require monologue/admin/ckeditor-config
