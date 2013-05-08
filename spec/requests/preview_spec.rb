@@ -35,23 +35,26 @@ describe "preview" do
   end
 
   context "admin section" do
-    it "clicks preview link", :js=>true, :driver => :webkit do
+    it "clicks preview link", :js=>true do
       log_in
       visit admin_path
       click_on @post_title
-      page.should have_selector("[data-toggle='post-preview']", visible: false)
+      
+      wait_until(60) do
+        page.should have_selector("[data-toggle='post-preview']", visible: false)
+      end
       
       click_on "Preview"
       page.should have_selector("[data-toggle='post-preview']", visible: true)
       
       page.within_frame "preview" do
-        wait_until(10) do
+        wait_until(60) do
           page.should have_content(@post_title)
         end  
       end
     end
     
-    it "Close Preview", :js=>true, :driver=> :webkit do
+    it "Close Preview", :js=>true do
       log_in
       visit admin_path
       click_on @post_title
