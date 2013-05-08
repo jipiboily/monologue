@@ -46,12 +46,13 @@ describe "preview" do
       
       click_on "Preview"
       page.should have_selector("[data-toggle='post-preview']", visible: true)
-      
-      page.within_frame "preview" do
-        wait_until(60) do
-          page.should have_content(@post_title)
-        end  
+
+
+      page.driver.browser.switch_to.frame "preview"
+      wait_until(360) do
+        page.should have_content(@post_title)
       end
+
     end
     
     it "Close Preview", :js=>true do
