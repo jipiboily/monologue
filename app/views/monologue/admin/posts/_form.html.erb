@@ -8,7 +8,22 @@
 
 <%= post.text_field :tag_list, label:  raw(t(".tags")) %>
 <%= post.check_box :published, label:  t(".published") %>
-<%= post.submit t(".save"), class:  "btn btn-large btn-primary" %> <a href="<%= @revision.full_url %>" target="_blank" class="btn btn-large"><%= t(".preview") %></a>
+<div class="form-actions">
+  <%= post.button t(".save"), class:  "btn btn-large btn-primary" %> 
+  <%= post.button t(".preview"), class: "btn btn-large", type: "button", value: "preview"%>
+</div>
+
+<div class="post-preview modal-backdrop hide" data-url="<%=admin_post_preview_url%>" data-toggle="post-preview" data-trigger="button[value='preview']">
+  <div class="post-preview-inner">
+    <div class="navbar pull-right">
+      <div class="navbar-inner">
+        <span class="brand"><%=t(".preview")%></span> 
+        <a class="btn btn-primary pull-right" data-dismiss="post-preview"><%=t(".close")%></a>
+      </div>
+    </div>
+  </div>
+  <iframe src="" name="preview"></iframe>
+</div>
 
 <script>
   if($.fn.datepicker.defaults_<%= I18n.locale %>){
