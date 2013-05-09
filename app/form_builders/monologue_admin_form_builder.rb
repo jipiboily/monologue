@@ -29,7 +29,7 @@ class MonologueAdminFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def submit(*args)
-    content_tag :div, class:  "actions" do
+    content_tag :div, class:  "form-actions" do
       super
     end
   end

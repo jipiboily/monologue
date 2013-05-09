@@ -81,6 +81,7 @@ en:
           published: "Published"
           save: "Save"
           preview: "Preview"
+          close: "Close"
           tags: "Tags <br/><i>Separate tags by commas</i>"
       comments:
         show:

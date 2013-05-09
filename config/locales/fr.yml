@@ -79,6 +79,7 @@ fr:
           published: "Publié"
           save: "Sauvegarder"
           preview: "Aperçu"
+          close: "Fermer"
           tags: "Catégories<br/><i>Séparer les catégories par des virgules</i>"
       cache:
         show:
