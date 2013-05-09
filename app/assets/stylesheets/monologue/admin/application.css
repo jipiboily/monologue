@@ -6,5 +6,5 @@
  *= require monologue/bootstrap/bootstrap.min
  *= require monologue/bootstrap/bootstrap-responsive.min
  *= require monologue/bootstrap/bootstrap-datepicker
- *= require_tree . 
+ *= require monologue/admin/posts
 */

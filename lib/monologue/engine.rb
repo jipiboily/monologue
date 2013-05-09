@@ -1,5 +1,5 @@
-require "tinymce-rails"
 require "truncate_html"
+require "ckeditor"
 
 module Monologue
   class Engine < Rails::Engine
