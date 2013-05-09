@@ -81,6 +81,7 @@ ro:
           published: "Publicat"
           save: "Salvati"
           preview: "Vizualizare"
+          close: "Inchide"
           tags: "Tag-uri <br/><i>Separate prin virgula</i>"
       comments:
         show:

@@ -2,7 +2,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   respond_to :html
   cache_sweeper Monologue::PostsSweeper, only: [:create, :update, :destroy]
   before_filter :load_post_and_revisions, only: [:edit, :update]
-
+  
   def index
     @posts = Monologue::Post.default
   end
@@ -11,7 +11,20 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post = Monologue::Post.new
     @revision = @post.posts_revisions.build
   end
-
+  
+  ## Preview a post without saving.
+  def preview
+    # mockup our models for preview.
+    @post = Monologue::Post.new(params[:post])
+    @post.user_id = monologue_current_user.id
+    @revision = @post.posts_revisions.first
+    @revision.post = @post
+    @revision.published_at = Time.zone.now
+    
+    # render it exactly as it would display when live.
+    render "/monologue/posts/show", layout: Monologue.layout || "/layouts/monologue/application"
+  end
+  
   def create
     @post = Monologue::Post.new(params[:post])
     @post.user_id = monologue_current_user.id

@@ -81,6 +81,7 @@ pt_BR:
           published: "Publicado"
           save: "Salvar"
           preview: "Visualizar"
+          close: "Fechar"
           tags: "Tags <br/><i>Separe as tags por vírgulas</i>"
       comments:
         show:
