@@ -12,3 +12,4 @@
 //= require monologue/bootstrap/bootstrap-datepicker-pt
 //= require ckeditor/init
 //= require monologue/admin/ckeditor-config
+//= require monologue/admin/posts
