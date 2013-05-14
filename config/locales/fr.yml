@@ -129,7 +129,7 @@ fr:
     errors:
       models:
         full_messages: "%{message}"
-        monologue/posts_revision:
+        monologue/post:
           blank: "%{attribute} est requis"
           attributes:
             published_at:

@@ -7,11 +7,11 @@ describe "Monologue::TotalSweeper" do
     Monologue::PageCache.wipe_enabled = true
     ActionController::Base.page_cache_directory = Rails.public_path + "/my-cache-dir"
 
-    @post_1 = Factory(:posts_revision).post
-    @post_2 = Factory(:posts_revision).post
+    @post_1 = Factory(:post)
+    @post_2 = Factory(:post)
     FileUtils.mkdir_p("#{ActionController::Base.page_cache_directory}/monologue/post")
-    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_1.active_revision.url}.html"
-    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_2.active_revision.url}.html"
+    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_1.url}.html"
+    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_2.url}.html"
   end
 
   after do
@@ -39,8 +39,8 @@ describe "Monologue::TotalSweeper" do
   it "do NOT wipe if public ActionController::Base.page_cache_directory == Rails.public_path" do
     ActionController::Base.page_cache_directory = Rails.public_path
     FileUtils.mkdir_p("#{ActionController::Base.page_cache_directory}/monologue/post")
-    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_1.active_revision.url}.html"
-    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_2.active_revision.url}.html"
+    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_1.url}.html"
+    FileUtils.touch "#{ActionController::Base.page_cache_directory}/monologue/#{@post_2.url}.html"
     Monologue::TotalSweeper.wipe_all
     Dir["#{ActionController::Base.page_cache_directory}/monologue/**/*"].length.should eq 3
   end

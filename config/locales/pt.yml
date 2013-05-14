@@ -131,7 +131,7 @@ pt_BR:
     errors:
       models:
         full_messages: "%{message}"
-        monologue/posts_revision:
+        monologue/post:
           blank: "%{attribute} é obrigatório"
           attributes:
             published_at:

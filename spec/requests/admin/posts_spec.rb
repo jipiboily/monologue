@@ -21,17 +21,15 @@ describe "posts" do
       page.should have_content "Monologue created"
     end
 
-    it "can edit a post and adds a revision when doing" do
-      Factory(:posts_revision, title: "my title")
+    it "can edit a post and then save the post" do
+      Factory(:post, title: "my title")
       visit admin_posts_path
       click_on "my title"
       page.should have_content "Edit \""
       fill_in "Title", with:  "This is a new title"
       fill_in "Content", with:  "New content here..."
       fill_in "Published at", with:  DateTime.now
-      nbr_posts_revisions = Monologue::PostsRevision.all.count
       click_button "Save"
-      (nbr_posts_revisions + 1).should equal(Monologue::PostsRevision.all.count)
       page.should have_content "Monologue saved"
     end
     
@@ -55,7 +53,7 @@ describe "posts" do
     end
 
     it "can update the tags of an edited post" do
-      Factory(:posts_revision, title: "my title")
+      Factory(:post, title: "my title")
       visit admin_posts_path
       click_on "my title"
       fill_in "Tags",with: "ruby, spree"
@@ -77,8 +75,7 @@ describe "posts" do
     
     it "can NOT edit posts" do
       post = Factory(:post)
-      pr = Factory(:posts_revision, post_id: post.id)
-      visit edit_admin_post_path(pr)
+      visit edit_admin_post_path(post)
       page.should have_content "You must first log in"
     end
   end  

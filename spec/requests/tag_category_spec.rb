@@ -8,7 +8,7 @@ describe "tag category" do
 
     before(:each) do
       Factory(:post_with_tags)
-      post = Factory(:posts_revision, title: "Future post", published_at: DateTime.new(3000)).post
+      post = Factory(:post, title: "Future post", published_at: DateTime.new(3000))
       post.tag!(["rails", "another tag"])
     end
 

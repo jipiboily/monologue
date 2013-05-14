@@ -131,7 +131,7 @@ ro:
     errors:
       models:
         full_messages: "%{message}"
-        monologue/posts_revision:
+        monologue/post:
           blank: "%{attribute} este necesar"
           attributes:
             published_at:

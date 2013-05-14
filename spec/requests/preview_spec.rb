@@ -3,8 +3,8 @@ describe "preview" do
   before(:each) do
     url ="post/1"
     @post_path = "/monologue/#{url}"
-    @post_title = "post 1 | revision 1"
-    @revision = Factory(:posts_revision, title: @post_title, url: url)
+    @post_title = "post 1"
+    @post = Factory(:post, title: @post_title, url: url)
     ActionController::Base.perform_caching = true
     clear_cache
   end
@@ -79,7 +79,7 @@ describe "preview" do
       visit admin_path
       click_on @post_title
       page.should_not have_content(new_content)
-      page.should have_content(@revision.content)
+      page.should have_content(@post.content)
     end
     
   end
