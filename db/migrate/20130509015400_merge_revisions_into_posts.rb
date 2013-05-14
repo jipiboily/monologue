@@ -9,7 +9,7 @@ class MergeRevisionsIntoPosts < ActiveRecord::Migration
     add_column :monologue_posts, :url, :string
     add_column :monologue_posts, :published_at, :datetime
     remove_column :monologue_posts, :posts_revision_id
-    #add_index :monologue_posts, :url, unique: true
+    add_index :monologue_posts, :url, unique: true
 
     Monologue::Post.reset_column_information
 
@@ -21,13 +21,12 @@ class MergeRevisionsIntoPosts < ActiveRecord::Migration
       post.published_at =latest_revision.published_at
       post.save!
     end
+
+    drop_table :monologue_posts_revisions
   end
 
   def down
-    remove_column :monologue_posts, :title
-    remove_column :monologue_posts, :content
-    remove_column :monologue_posts, :url
-    remove_column :monologue_posts, :published_at
+    raise ActiveRecord::IrreversibleMigration
   end
 
   private

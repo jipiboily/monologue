@@ -24,20 +24,7 @@ ActiveRecord::Schema.define(:version => 20130509015400) do
     t.datetime "published_at"
   end
 
-  create_table "monologue_posts_revisions", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.string   "url"
-    t.integer  "post_id"
-    t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "monologue_posts_revisions", ["id"], :name => "index_monologue_posts_revisions_on_id", :unique => true
-  add_index "monologue_posts_revisions", ["post_id"], :name => "index_monologue_posts_revisions_on_post_id"
-  add_index "monologue_posts_revisions", ["published_at"], :name => "index_monologue_posts_revisions_on_published_at"
-  add_index "monologue_posts_revisions", ["url"], :name => "index_monologue_posts_revisions_on_url"
+  add_index "monologue_posts", ["url"], :name => "index_monologue_posts_on_url", :unique => true
 
   create_table "monologue_taggings", :force => true do |t|
     t.integer "post_id"
