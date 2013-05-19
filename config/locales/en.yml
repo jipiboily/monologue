@@ -82,7 +82,7 @@ en:
           save: "Save"
           preview: "Preview"
           close: "Close"
-          tags: "Tags <br/><i>Separate tags by commas</i>"
+          tags: "Tags"
       comments:
         show:
           recent_comments: "Recent comments"
