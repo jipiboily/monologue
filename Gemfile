@@ -28,4 +28,6 @@ group :development, :test do
   end
 end
 
+gem 'coveralls', require: false
+
 gem 'pg'
