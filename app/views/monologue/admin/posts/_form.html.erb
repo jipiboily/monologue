@@ -7,6 +7,7 @@
 <% end %>
 
 <%= post.text_field :tag_list, label:  raw(t(".tags")) %>
+
 <%= post.check_box :published, label:  t(".published") %>
 <div class="form-actions">
   <%= post.button t(".save"), class:  "btn btn-large btn-primary" %> 
@@ -29,4 +30,5 @@
   if($.fn.datepicker.defaults_<%= I18n.locale %>){
     $.fn.datepicker.defaults = $.fn.datepicker.defaults_<%= I18n.locale %>;
   }
+  $("#post_tag_list").select2({tags: <%= Monologue::Tag.all.map{|t| t.name }.to_json.html_safe %> });
 </script>

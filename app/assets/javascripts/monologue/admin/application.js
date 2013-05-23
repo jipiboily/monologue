@@ -13,3 +13,4 @@
 //= require ckeditor/init
 //= require monologue/admin/ckeditor-config
 //= require monologue/admin/posts
+//= require select2
