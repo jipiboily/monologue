@@ -82,7 +82,7 @@ pt_BR:
           save: "Salvar"
           preview: "Visualizar"
           close: "Fechar"
-          tags: "Tags <br/><i>Separe as tags por vírgulas</i>"
+          tags: "Tags"
       comments:
         show:
           recent_comments: "Comentários recentes"

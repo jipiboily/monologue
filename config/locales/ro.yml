@@ -82,7 +82,7 @@ ro:
           save: "Salvati"
           preview: "Vizualizare"
           close: "Inchide"
-          tags: "Tag-uri <br/><i>Separate prin virgula</i>"
+          tags: "Tag-uri"
       comments:
         show:
           recent_comments: "Comentarii recente"
