@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara-webkit"
   s.add_development_dependency "shoulda"
   s.add_development_dependency "guard-rspec"
-  s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "database_cleaner", "~> 0.9.1"
   s.add_development_dependency "mysql2"
 
   s.add_development_dependency "sqlite3"
