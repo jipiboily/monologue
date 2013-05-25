@@ -87,6 +87,10 @@ See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Cust
 - Rails 3.1 +
 - Database: MySQL & Postgres are supported but other databases might work too.
 
+## Authors
+* Jean-Philippe Boily, [@jipiboily](https://github.com/jipiboily)
+* Michael Sevestre, [@msevestre](https://github.com/msevestre)
+
 ## Contribute
 Fork it, then pull request. Please add tests for your feature or bug fix.
 
