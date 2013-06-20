@@ -50,7 +50,7 @@ Add this to your route file (`config/route.rb`)
 # We ask that you don't use the :as option here, as Monologue relies on it being the default of "monologue"
 mount Monologue::Engine, at: '/' # or whatever path, be it "/blog" or "/monologue"
 ```
-For example, if you decide to mount it at : `/blog`, the admin section will be available at /blog/monologue.
+For example, if you decide to mount it at : `/blog`, the admin section will be available at `/blog/monologue`.
 Here we decide to use monologue as default route mounting it at: `/`, it means that the admin section will directly
 be available at: `/monologue`.
 
@@ -79,7 +79,7 @@ Start your server and head on [http://localhost:3000/monologue](http://localhost
 ```ruby
 config.action_controller.perform_caching = false
 ```
-2. If you use compiled assets, I recommend you to add `gem "tinymce-rails"` to your Gemfile otherwise you might not be able to post anything.
+2. If you use compiled assets, I recommend you to add `gem "tinymce-rails"` to your Gemfile otherwise you might not be able to post an article.
 
 ### Note to users
 Monologue is using his own tables. If you want to use your own tables with monologue (for example the User table)
