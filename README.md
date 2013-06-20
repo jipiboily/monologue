@@ -50,9 +50,9 @@ Add this to your route file (`config/route.rb`)
 # We ask that you don't use the :as option here, as Monologue relies on it being the default of "monologue"
 mount Monologue::Engine, at: '/' # or whatever path, be it "/blog" or "/monologue"
 ```
-For example, if you decide to mount it at : `/blog`, the admin section will be available at `/blog/monologue`.
-Here we decide to use monologue as default route mounting it at: `/`, it means that the admin section will directly
-be available at: `/monologue`.
+For example, if you decide to mount it at  `/blog`, the admin section will be available at `/blog/monologue`.
+Here we decide to use monologue as default route mounting it at `/`, it means that the admin section will directly
+be available at `/monologue`.
 
 ### 3. Migrate Monologue's database tables
 Run these commands:
