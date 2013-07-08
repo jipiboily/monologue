@@ -3,6 +3,6 @@
     <ul id="latest_tweets">
       <li id="tweet_template" style="display:none;">{{text}}</li>
     </ul>
-    <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline/<%= Monologue.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
+    <script type="text/javascript" src="https://api.twitter.com/1.1/statuses/user_timeline/<%= Monologue.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
   <% end %>
 <% end %>
