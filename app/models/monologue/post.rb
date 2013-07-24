@@ -14,15 +14,8 @@ class Monologue::Post < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, :content, :url, :published_at, presence: true
+  validates :url, uniqueness: true
   validate :url_do_not_start_with_slash
-  validate :url_is_unique
-  #def latest_revision
-  #  self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
-  #end
-  #
-  #def active_revision
-  #  Monologue::PostsRevision.find(self.posts_revision_id)
-  #end
 
   def tag_list= tags_attr
     self.tag!(tags_attr.split(","))
@@ -55,7 +48,7 @@ class Monologue::Post < ActiveRecord::Base
     per_page = Monologue.posts_per_page || 10
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
-    offset = (p==0 ? 0 : p * per_page)
+    offset =  p * per_page
     self.limit(per_page).offset(offset)
   end
 
@@ -70,35 +63,13 @@ class Monologue::Post < ActiveRecord::Base
   private
 
   def generate_url
+    return unless self.url.blank?
     year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
-    return if self.title.blank?
-    base_title = "#{year}/#{self.title.parameterize}"
-    url_empty = self.url.blank?
-    self.url = base_title if url_empty
-    past_urls = last_urls_with_title(self.title, self.id).map(&:title)
-    if past_urls.present?
-      next_suffix = past_urls.sort.last.split("-").last.to_i + 1
-      self.url = "#{base_title}-#{next_suffix}"
-ra    end
-  end
-
-  def last_urls_with_title(title, post_id)
-    Monologue::Post.where("id <> ? AND title LIKE ? OR title LIKE ?", post_id, "#{title}%", "#{title}-%").select(&:title).uniq
+    self.url = "#{year}/#{self.title.parameterize}"
   end
 
   def url_do_not_start_with_slash
     errors.add(:url, I18n.t("activerecord.errors.models.monologue/post.attributes.url.start_with_slash")) if self.url.start_with?("/")
   end
 
-  def url_is_unique
-    errors.add(:url, I18n.t("activerecord.errors.models.monologue/post.attributes.url.unique")) if url_exists?
-  end
-
-  def url_exists?
-    if self.id.nil?
-      Monologue::Post.where("url = ?", self.url).count > 0
-    else
-      Monologue::Post.where("url = ? and id <> ?", self.url, self.id).count > 0
-    end
-  end
 end

@@ -29,15 +29,10 @@ describe Monologue::Post do
 
   it "should validate that URLs are unique to a post" do
     post_1 = Factory(:post, url: "unique/url")
-    post_1.save.should_not raise_error(ActiveRecord::RecordInvalid)
-    expect { Factory(:post, url: "unique/url") }.to raise_error(ActiveRecord::RecordInvalid)
+    post_1.save.should_not raise_error(ActiveRecord::RecordNotUnique)
+    expect { Factory(:post, url: "unique/url") }.to raise_error(ActiveRecord::RecordNotUnique)
   end
 
-  it "should generate unique URL" do
-    post = Factory(:post, url: nil, title: "unique title", published_at: DateTime.new(2011))
-    pr = Factory(:post, url: nil, title: "unique title", published_at: DateTime.new(2011))
-    pr.url.should == "2011/unique-title-1"
-  end
 
   it "excludes the current post revision on URL uniqueness validation" do
     pr = Factory(:post, url: nil, title: "unique title", published_at: DateTime.new(2011))

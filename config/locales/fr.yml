@@ -131,12 +131,12 @@ fr:
         full_messages: "%{message}"
         monologue/post:
           blank: "%{attribute} est requis"
+          taken: "%{attribute} est déjà utilisé par un autre article"
           attributes:
             published_at:
               blank: "'Publié le' est requis"
             url:
               start_with_slash: "L'adresse URL ne peut débuter par un slash ('/')"
-              unique: "L'adresse URL est déjà utilisée par un autre article"
         monologue/user:
           blank: "%{attribute} est requis"
           taken: "%{attribute} est déjà utilisé"
