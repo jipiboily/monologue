@@ -7,7 +7,7 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
-gem "sass-rails"
+gem "sass-rails",'~> 3.2.3'
 gem "coffee-rails"
 
 # Declare any dependencies that are still in development here instead of in
