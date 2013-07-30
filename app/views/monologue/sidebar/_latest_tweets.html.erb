@@ -1,8 +1,9 @@
 <% unless Monologue.twitter_username.nil? %>
   <%= sidebar_section_for(t(".title")) do %>
     <ul id="latest_tweets">
-      <li id="tweet_template" style="display:none;">{{text}}</li>
+      <% get_time_line.each do |tweet| %>
+        <li><%= tweet['text'].truncate(100) %> </li>
+      <% end %>
     </ul>
-    <script type="text/javascript" src="https://api.twitter.com/1.1/statuses/user_timeline/<%= Monologue.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
   <% end %>
 <% end %>

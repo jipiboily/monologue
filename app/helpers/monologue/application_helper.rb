@@ -54,5 +54,25 @@ module Monologue
         end
       end
     end
+
+    def prepare_access_token(oauth_token, oauth_token_secret)
+      consumer = OAuth::Consumer.new(Monologue.twitter_consumer_key, Monologue.twitter_consumer_secret,
+                                     { :site => "http://api.twitter.com",
+                                       :scheme => :header
+                                     })
+
+      token_hash = { :oauth_token => oauth_token,
+                     :oauth_token_secret => oauth_token_secret
+      }
+
+      OAuth::AccessToken.from_hash(consumer, token_hash )
+    end
+
+    def get_time_line
+      access_token = prepare_access_token(Monologue.twitter_access_token, Monologue.twitter_access_token_secret)
+      response = access_token.request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?&count=5")
+      JSON.parse(response.body)
+    end
+
   end
 end
