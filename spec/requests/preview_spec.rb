@@ -50,10 +50,10 @@ describe "preview" do
       # Consistently failing with Ruby 2.0 on Travis CI -- can't find content. 
       # Selenium docs indicate support for Ruby 1.8.7 to 1.9.2 https://code.google.com/p/selenium/wiki/RubyBindings
       # Comment out for now until better support for Ruby 2
-      # page.driver.browser.switch_to.frame "preview"
-      # wait_until(360) do
-      #   page.should have_content(@post_title)
-      # end
+      page.driver.browser.switch_to.frame "preview"
+      wait_until(360) do
+        page.should have_content(@post_title)
+      end
 
     end
     

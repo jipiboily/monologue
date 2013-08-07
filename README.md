@@ -4,7 +4,7 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 [![Gem Version](https://badge.fury.io/rb/monologue.png)](http://badge.fury.io/rb/monologue)
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
-
+[![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
 
 ## Questions? Problems? Documentation?
 
@@ -50,6 +50,9 @@ Add this to your route file (`config/route.rb`)
 # We ask that you don't use the :as option here, as Monologue relies on it being the default of "monologue"
 mount Monologue::Engine, at: '/' # or whatever path, be it "/blog" or "/monologue"
 ```
+For example, if you decide to mount it at  `/blog`, the admin section will be available at `/blog/monologue`.
+Here we decide to use monologue as default route mounting it at `/`, it means that the admin section will directly
+be available at `/monologue`.
 
 ### 3. Migrate Monologue's database tables
 Run these commands:
@@ -72,10 +75,16 @@ This is all done in an initializer file, say `config/initializers/monologue.rb`.
 Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
 ### Note to Heroku users
-Additionnal step: turn caching off in `config/environments/production.rb`:
+1. Additionnal step: turn caching off in `config/environments/production.rb`:
 ```ruby
 config.action_controller.perform_caching = false
 ```
+2. If you use compiled assets, I recommend you to add `gem "tinymce-rails"` to your Gemfile otherwise you might not be able to post an article.
+
+### Note to users
+Monologue is using his own tables. If you want to use your own tables with monologue (for example the User table)
+this might help you to monkey patch [Monkey Patch](https://gist.github.com/jipiboily/776d907fc932640ac59a)
+
 
 ## Enable caching
 [See full caching doc here.](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache)
@@ -86,6 +95,10 @@ See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Cust
 ## Requirements
 - Rails 3.1 +
 - Database: MySQL & Postgres are supported but other databases might work too.
+
+## Authors
+* Jean-Philippe Boily, [@jipiboily](https://github.com/jipiboily)
+* Michael Sevestre, [@msevestre](https://github.com/msevestre)
 
 ## Contribute
 Fork it, then pull request. Please add tests for your feature or bug fix.

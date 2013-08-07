@@ -52,7 +52,11 @@ class MonologueAdminFormBuilder < ActionView::Helpers::FormBuilder
     def field_label(name, *args)
       options = args.extract_options!
       required = object.class.validators_on(name).any? { |v| v.kind_of? ActiveModel::Validations::PresenceValidator }
-      label(name, options[:label], class:  ("required" if required))
+      if options[:id]
+        label(name, options[:label], class:  ("required" if required), for: options[:id])
+      else  
+        label(name, options[:label], class:  ("required" if required))
+      end  
     end
 
     def objectify_options(options)
