@@ -7,8 +7,6 @@ class Monologue::Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :posts_revisions
 
-  attr_accessible :posts_revisions_attributes, :published, :tag_list
-
   scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
   scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
