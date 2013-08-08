@@ -1,6 +1,4 @@
 class Monologue::PostsController < Monologue::ApplicationController
-  caches_page :index, :show, :feed , if: Proc.new { monologue_page_cache_enabled? }
-
   def index
     @page = params[:page].nil? ? 1 : params[:page]
     @posts = Monologue::Post.published.page(@page)
