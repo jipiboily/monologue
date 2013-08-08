@@ -12,7 +12,7 @@ describe "tags" do
 
     it "should display the tags for the posts as a link" do
       visit "/monologue"
-      page.should have_link("rails")
+      page.should have_link("Rails")
       page.should have_link("a great tag")
     end
   end
@@ -26,7 +26,7 @@ describe "tags" do
     it "should only display posts with the given tag" do
       visit "/monologue"
       page.should have_content("post Z")
-      click_on "rails"
+      click_on "Rails"
       find(".content").should have_content("post X | revision 2")
       find(".content").should_not have_content("post Z")
     end
@@ -35,7 +35,7 @@ describe "tags" do
       post = Factory(:posts_revision, title: "we need to reach 88 miles per hour", published_at: DateTime.new(3000)).post
       post.tag!(["rails","another tag"])
       visit "/monologue"
-      click_on "rails"
+      click_on "Rails"
       page.should have_content("post X | revision 2")
       page.should_not have_content("we need to reach 88 miles per hour")
     end
