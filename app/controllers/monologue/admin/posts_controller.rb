@@ -61,7 +61,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
 
 private
   def load_post_and_revisions
-    @post = Monologue::Post.includes(:posts_revisions).find(params[:id]).references(:posts_revisions)
+    @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
   end
 
   def prepare_flash_and_redirect_to_edit
