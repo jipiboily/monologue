@@ -1,9 +1,9 @@
 Monologue::Engine.routes.draw do
   root to:  "posts#index"
-  match "/page/:page", to:  "posts#index", as:  "posts_page"
-  match "/feed" => "posts#feed", as:  "feed", defaults: {format: :rss}
+  get "/page/:page", to:  "posts#index", as:  "posts_page"
+  get "/feed" => "posts#feed", as:  "feed", defaults: {format: :rss}
 
-  match "/tags/:tag" =>"tags#show", as: "tags_page"
+  get "/tags/:tag" =>"tags#show", as: "tags_page"
 
   namespace :admin, path: "monologue" do
     get "/" => "posts#index", as:  "" # responds to admin_url and admin_path
@@ -20,5 +20,5 @@ Monologue::Engine.routes.draw do
     match "/post/preview"=>"posts#preview", :as=>"post_preview", :via => [:put, :post]
   end
 
-  match "*post_url" => "posts#show", as:  "post"
+  get "*post_url" => "posts#show", as:  "post"
 end

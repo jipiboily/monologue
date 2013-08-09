@@ -9,7 +9,7 @@ describe "tag cloud" do
     before(:each) do
       Factory(:post_with_tags)
       post = Factory(:post, title: "Future post", published_at: DateTime.new(3000))
-      post.tag!(["rails", "another tag"])
+      post.tag!(["Rails", "another tag"])
     end
 
     it "should not display tags that are referenced by posts in the future" do
@@ -19,7 +19,7 @@ describe "tag cloud" do
 
     it "should display tags that are referenced by published posts" do
       visit "/monologue"
-      page.should have_content("rails")
+      page.should have_content("Rails")
     end
 
   end

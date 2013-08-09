@@ -1,0 +1,147 @@
+it:
+  monologue:
+    posts:
+      pagination:
+        older_posts: "Post precedenti"
+        newer_posts: "Post successivi"
+      social_sharing:
+        tagline: "Ti è piaciuto quello che hai letto? Condividilo!"
+      post:
+        readmore: "Continua a leggere"
+      "404":
+        title: "La pagina che stavi cercando non esiste."
+        message: "Hai inserito un indirizzo errato o la pagina che stai cercando è stata spostata."
+    sidebar:
+      categories:
+        title: "Categorie"
+      latest_posts:
+        title: "Ultimi post"
+      latest_tweets:
+        title: "Ultimi tweet"
+      tag_cloud:
+        title: "Tag"
+    tags:
+      show:
+        showing_post_with_tag: "Lista dei post con etichetta"
+        show_all_posts: "Mostra tutti i post"
+    admin:
+      login:
+        need_auth: "Devi prima effettuare il login per accedere alla sezione admin."
+      users:
+        form:
+          email: "Email"
+          name: "Nome"
+          password: "Password"
+          password_confirmation: "Conferma password"
+        edit:
+          header: "Modifica il tuo account"
+          save: "Salva"
+        new:
+          create: "Create"
+          header: "Crea un utente"
+        create:
+          success: "Utente creato"
+        delete:
+          removed: "L'utente %{user}' è stato rimosso con successo"
+          failed: "È stato impossibile rimuovere '%{user}'"
+        index:
+          email: "Email"
+          name: "Nome"
+          edit: "Modifica"
+          delete: "Elimina"
+          create: "Crea"
+      posts:
+        index:
+          title: "Titolo"
+          edit: "Modifica"
+          delete: "Elimina"
+          published: "Sì"
+          not_published: "Non pubblicato"
+          status: "Pubblicato ?"
+        new:
+          header: "Nuovo monologue"
+        create:
+          saved: "Monologue creato"
+          saved_with_future_date_and_cache: "Monologue creato: i post con una data di pubblicazione futura non verranno mostrati a meno che la cache non venga svuotata quello stesso giorno. La cache verrà probabilmente generata prima di quella data e non verrà aggiornata automaticamente."
+        edit:
+          header: "Modifica"
+        update:
+          saved_with_future_date_and_cache: "Monologue salvato: i post con una data di pubblicazione futura non verranno mostrati a meno che la cache non venga svuotata quello stesso giorno. La cache verrà probabilmente generata prima di quella data e non verrà aggiornata automaticamente."
+          saved: "Monologue salvato"
+        delete:
+          removed: "Monologue rimosso"
+          fail: "È stato impossibile rimuovere il monologue!"
+        form:
+          title: "Titolo"
+          content: "Contenuto"
+          url:
+            caption: "URL<br/><i> Di default verrà usato il valore '%{default_url}'. Puoi scegliere una URL personalizzata. Non aggiungere '%{root}' all'inizio della tua URL.</i>"
+            generated_title: "titolo-del-post"
+          published_at: "Pubblicato il"
+          published: "Pubblicato"
+          save: "Salva"
+          preview: "Anteprima"
+          close: "Chiudi"
+          tags: "Tag <br/><i>Usa la virgola per separare i tag</i>"
+      comments:
+        show:
+          recent_comments: "Commenti recenti"
+      cache:
+        show:
+          title: "Gestisci cache"
+          description: "Qui puoi eliminare completamente la cache."
+          files_in_cache: "Questi sono i file effettivamente nella cache:"
+          no_files_are_cached: "Non ci sono file nella cache."
+          delete: "Svuotare la cache completamente?"
+          confirm: "Sei sicuro di voler eliminare la cache completamente?"
+          cache_wiped: "La cache è stata svuotata!"
+        how_to_enable:
+          warning: "Non puoi gestire la cache!"
+          explanations: "Ci sono alcune configurazioni errate che non permettono l'utilizzo della cache di Monologue. Per favore riguarda la documentazione delle configurazioni."
+      sessions:
+        new:
+          title: "Accedi"
+          email: "Email"
+          password: "Password"
+          button: "Log in"
+        messages:
+          invalid: "Email o password non validi"
+          logged_in: "Accesso effettuato!"
+          logged_out: "Sei uscito dal sistema!"
+  layouts:
+    monologue:
+      admin:
+        nav_bar:
+          add_a_monologue: "Aggiungi un monologue"
+          list_monologues: "Lista di monologues"
+          comments: "Commenti"
+          cache: "Gestisci cache"
+          edit_user_info: "Il mio account"
+          settings: "Impostazioni"
+          log_out: "Esci"
+          users: "Utenti"
+  activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "Conferma password"
+    errors:
+      format: "%{message}"
+    errors:
+      full_messages: "%{message}"
+    errors:
+      models:
+        full_messages: "%{message}"
+        monologue/posts_revision:
+          blank: "%{attribute} è richiesto"
+          attributes:
+            published_at:
+              blank: "'Pubblicato il' è richiesto"
+            url:
+              start_with_slash: "URL non può iniziare con slash ('/')"
+              unique: "URL è già in uso per un altro post"
+        monologue/user:
+          blank: "%{attribute} è richiesto"
+          taken: "%{attribute} è già stato preso"
+          attributes:
+            password:
+              confirmation: "La conferma non coincide con la password."

@@ -80,7 +80,7 @@ fr:
           save: "Sauvegarder"
           preview: "Aperçu"
           close: "Fermer"
-          tags: "Catégories<br/><i>Séparer les catégories par des virgules</i>"
+          tags: "Catégories"
       cache:
         show:
           title: "Gérer la cache"

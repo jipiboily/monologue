@@ -1,5 +1,6 @@
 require "truncate_html"
 require "ckeditor"
+require "select2-rails"
 
 module Monologue
   class Engine < Rails::Engine

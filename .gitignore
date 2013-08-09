@@ -5,6 +5,9 @@ spec/dummy/db/*.sqlite3
 spec/dummy/log/*.log
 spec/dummy/tmp/
 
+.sass-cache/
+coverage/
+
 .DS_Store
 .dropbox
 
