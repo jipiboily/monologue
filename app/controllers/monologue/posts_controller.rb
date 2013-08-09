@@ -20,16 +20,4 @@ class Monologue::PostsController < Monologue::ApplicationController
   def feed
     @posts = Monologue::Post.published.limit(25)
   end
-
-  private
-
-  def post_params
-    params.require(:post).permit(:published, :tag_list,
-				 :posts_revisions_attributes => [
-				    :title,
-				    :content,
-				    :url,
-				    :published_at
-				 ])
-  end
 end
