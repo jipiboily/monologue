@@ -7,10 +7,10 @@ class Monologue::Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :posts_revisions
 
-  scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
-  scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
+  scope :default,  -> { includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC").references(:posts_revisions) }
+  scope :published, -> { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
-  default_scope includes(:tags)
+  default_scope{includes(:tags)}
 
   validates :posts_revision_id, uniqueness: true
   validates :user_id, presence:  true
