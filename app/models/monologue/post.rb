@@ -42,7 +42,7 @@ class Monologue::Post < ActiveRecord::Base
     self.reload unless self.new_record?
     # add tags
     tags_attr.map { |t| t.strip }.reject(&:blank?).map do |tag|
-      t = Monologue::Tag.find_or_create_by_name(tag)
+      t = Monologue::Tag.find_or_create_by :name => tag
       self.tags << t unless self.tags.include?(t)
     end
   end
