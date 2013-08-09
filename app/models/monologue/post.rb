@@ -4,7 +4,6 @@ class Monologue::Post < ActiveRecord::Base
   before_validation :generate_url
   belongs_to :user
 
-
   attr_accessible :title, :content, :url, :published, :published_at, :tag_list
 
   scope :default, order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")

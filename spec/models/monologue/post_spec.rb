@@ -29,8 +29,8 @@ describe Monologue::Post do
 
   it "should validate that URLs are unique to a post" do
     post_1 = Factory(:post, url: "unique/url")
-    post_1.save.should_not raise_error(ActiveRecord::RecordNotUnique)
-    expect { Factory(:post, url: "unique/url") }.to raise_error(ActiveRecord::RecordNotUnique)
+    expect { post_1.save }.not_to raise_error()
+    expect { Factory(:post, url: "unique/url") }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
 
