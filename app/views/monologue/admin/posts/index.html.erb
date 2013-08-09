@@ -11,7 +11,7 @@
   <tbody>
     <% @posts.each do |post|%>
       <tr>
-        <td><%= link_to post.posts_revisions.last.title, edit_admin_post_path(post) %></td>
+        <td><%= link_to post.title, edit_admin_post_path(post) %></td>
         <td><span class="label label-<%= post.published ? "success" : "important" %>"><%= post.published ? t(".published") : t(".not_published") %></span></td>
         <td><span><%= post.user.name %></span> </td>
         <td><%= link_to t(".edit"), edit_admin_post_path(post), class: "btn btn-small" %></td>

@@ -15,11 +15,8 @@ class Monologue::PostsSweeper < ActionController::Caching::Sweeper
     page_cache_directory = Rails.public_path if page_cache_directory.nil? # TODO: we should not need this either...
 
     # post
-    if post.posts_revisions.count > 0
-      current_post_path = "#{page_cache_directory}#{root_path}#{post.just_the_revision_one_before.url}.html" unless post.just_the_revision_one_before.nil?
-      current_post_path = "#{page_cache_directory}#{root_path}#{post.posts_revisions.last.url}.html" if post.posts_revisions.count == 1
-      File.delete current_post_path if File.exists? current_post_path
-    end
+    current_post_path = "#{page_cache_directory}#{root_path}#{post.url}.html"
+    File.delete current_post_path if File.exists? current_post_path
 
     # tags
     tags_path = "#{page_cache_directory}#{root_path}tags"

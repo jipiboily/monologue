@@ -1,34 +1,20 @@
 class Monologue::Post < ActiveRecord::Base
-  has_many :posts_revisions, dependent: :destroy
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
-
+  before_validation :generate_url
   belongs_to :user
 
-  accepts_nested_attributes_for :posts_revisions
+  attr_accessible :title, :content, :url, :published, :published_at, :tag_list
 
-  attr_accessible :posts_revisions_attributes, :published, :tag_list
-
-  scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
+  scope :default, order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
   scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
   default_scope includes(:tags)
 
-  validates :posts_revision_id, uniqueness: true
-  validates :user_id, presence:  true
-
-  # TODO: move that in a spec helper as it only used by tests
-  def just_the_revision_one_before
-    self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").offset(1).limit(1).first
-  end
-
-  def latest_revision
-    self.posts_revisions.where("post_id = ?", self.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
-  end
-
-  def active_revision
-    Monologue::PostsRevision.find(self.posts_revision_id)
-  end
+  validates :user_id, presence: true
+  validates :title, :content, :url, :published_at, presence: true
+  validates :url, uniqueness: true
+  validate :url_do_not_start_with_slash
 
   def tag_list= tags_attr
     self.tag!(tags_attr.split(","))
@@ -49,15 +35,19 @@ class Monologue::Post < ActiveRecord::Base
     end
   end
 
+  def full_url
+    "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+  end
+
   def published_in_future?
-    self.published && self.posts_revisions.last.published_at > DateTime.now
+    self.published && self.published_at > DateTime.now
   end
 
   def self.page p
     per_page = Monologue.posts_per_page || 10
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
-    offset = (p==0 ? 0 : p * per_page)
+    offset =  p * per_page
     self.limit(per_page).offset(offset)
   end
 
@@ -68,4 +58,17 @@ class Monologue::Post < ActiveRecord::Base
   def self.set_total_pages per_page
     @number_of_pages = self.count / per_page + (self.count % per_page == 0 ? 0 : 1)
   end
+
+  private
+
+  def generate_url
+    return unless self.url.blank?
+    year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
+    self.url = "#{year}/#{self.title.parameterize}"
+  end
+
+  def url_do_not_start_with_slash
+    errors.add(:url, I18n.t("activerecord.errors.models.monologue/post.attributes.url.start_with_slash")) if self.url.start_with?("/")
+  end
+
 end

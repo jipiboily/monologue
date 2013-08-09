@@ -3,10 +3,10 @@ require 'spec_helper'
 describe "cache" do
   context "enabled" do
     before do
-      @post_1 = Factory(:posts_revision).post
-      @post_2 = Factory(:posts_revision).post
-      @post_3 = Factory(:posts_revision).post
-      25.times { |i| Factory(:posts_revision, title: "post #{i}", url: "post/#{i*100}") }
+      @post_1 = Factory(:post)
+      @post_2 = Factory(:post)
+      @post_3 = Factory(:post)
+      25.times { |i| Factory(:post, title: "post #{i}", url: "post/#{i*100}") }
       @post_with_tag = Factory(:post_with_tags)
       ActionController::Base.perform_caching = true
       Monologue::PageCache.enabled = true
@@ -38,7 +38,7 @@ describe "cache" do
 
     describe "sweeper" do
       before(:each) do
-        @test_paths = ["/monologue","/monologue/#{@post_1.active_revision.url}", "/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]
+        @test_paths = ["/monologue","/monologue/#{@post_1.url}", "/monologue/#{@post_2.url}", "/monologue/#{@post_3.url}"]
         @test_paths.each do |path|
           assert_create_cache(path)
         end
@@ -50,16 +50,16 @@ describe "cache" do
       it "should clear cache on create" do
         post = Factory(:post)
         cache_sweeped?(["/monologue"]).should be_true
-        cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
+        cache_sweeped?(["/monologue/#{@post_2.url}", "/monologue/#{@post_3.url}"]).should be_false
         cache_sweeped?([feed_path], "rss").should be_true
         File.exists?(@tags_file_path).should be_false
       end
 
       it "should clear cache on update" do
         @post_1.save!
-        cache_sweeped?(["/monologue/#{@post_1.active_revision.url}"]).should be_true
+        cache_sweeped?(["/monologue/#{@post_1.url}"]).should be_true
         cache_sweeped?(["/monologue/"]).should be_true
-        cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
+        cache_sweeped?(["/monologue/#{@post_2.url}", "/monologue/#{@post_3.url}"]).should be_false
         cache_sweeped?([feed_path], "rss").should be_true
         File.exists?(@tags_file_path).should be_false
       end
@@ -67,7 +67,7 @@ describe "cache" do
       it "should clear cache on destroy" do
         @post_1.destroy
         cache_sweeped?(["/monologue/"]).should be_true
-        cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
+        cache_sweeped?(["/monologue/#{@post_2.url}", "/monologue/#{@post_3.url}"]).should be_false
         cache_sweeped?([feed_path], "rss").should be_true
         File.exists?(@tags_file_path).should be_false
       end
@@ -75,9 +75,9 @@ describe "cache" do
       it "won't clean cache if saving a not yet published post" do
         @post_1.published = false
         @post_1.save!
-        cache_sweeped?(["/monologue/#{@post_1.active_revision.url}"]).should be_false
+        cache_sweeped?(["/monologue/#{@post_1.url}"]).should be_false
         cache_sweeped?(["/monologue/"]).should be_false
-        cache_sweeped?(["/monologue/#{@post_2.active_revision.url}", "/monologue/#{@post_3.active_revision.url}"]).should be_false
+        cache_sweeped?(["/monologue/#{@post_2.url}", "/monologue/#{@post_3.url}"]).should be_false
         cache_sweeped?([feed_path], "rss").should be_false
         File.exists?(@tags_file_path).should be_true
       end
@@ -130,8 +130,8 @@ describe "cache" do
       end
 
       it "do not cache pages" do
-        post_1 = Factory(:posts_revision).post
-        url = "/monologue/#{post_1.active_revision.url}"
+        post_1 = Factory(:post)
+        url = "/monologue/#{post_1.url}"
         visit url
         url.is_page_cached?.should be_false
       end
@@ -149,8 +149,8 @@ describe "cache" do
         ActionController::Base.perform_caching = true
         Monologue::PageCache.enabled = true
         Monologue::PageCache.wipe_enabled = true
-        @post_1 = Factory(:posts_revision).post
-        @post_2 = Factory(:posts_revision).post
+        @post_1 = Factory(:post)
+        @post_2 = Factory(:post)
       end
 
       context "wipe enabled" do
@@ -161,11 +161,11 @@ describe "cache" do
 
           it "wipe all cache after save if wipe_after_save is true" do
             Factory(:post_with_tags)
-            visit "/monologue/#{@post_1.active_revision.url}"
-            visit "/monologue/#{@post_2.active_revision.url}"
+            visit "/monologue/#{@post_1.url}"
+            visit "/monologue/#{@post_2.url}"
             @post_1.save!
-            "/monologue/#{@post_1.active_revision.url}.html".is_page_cached?.should be_false
-            "/monologue/#{@post_2.active_revision.url}.html".is_page_cached?.should be_false
+            "/monologue/#{@post_1.url}.html".is_page_cached?.should be_false
+            "/monologue/#{@post_2.url}.html".is_page_cached?.should be_false
           end
         end
 
@@ -173,11 +173,11 @@ describe "cache" do
           before { ActionController::Base.page_cache_directory = Rails.public_path }
 
           it "do NOT wipe cache if page_cache_directory == Rails.public_path" do
-            visit "/monologue/#{@post_1.active_revision.url}"
-            visit "/monologue/#{@post_2.active_revision.url}"
+            visit "/monologue/#{@post_1.url}"
+            visit "/monologue/#{@post_2.url}"
             @post_1.save!
-            "/monologue/#{@post_1.active_revision.url}.html".is_page_cached?.should be_false
-            "/monologue/#{@post_2.active_revision.url}.html".is_page_cached?.should be_true
+            "/monologue/#{@post_1.url}.html".is_page_cached?.should be_false
+            "/monologue/#{@post_2.url}.html".is_page_cached?.should be_true
           end
         end
       end
@@ -186,11 +186,11 @@ describe "cache" do
         before { Monologue::PageCache.wipe_after_save = nil }
 
         it "do NOT wipe cache if wipe_after_save is not true" do
-          visit "/monologue/#{@post_1.active_revision.url}"
-          visit "/monologue/#{@post_2.active_revision.url}"
+          visit "/monologue/#{@post_1.url}"
+          visit "/monologue/#{@post_2.url}"
           @post_1.save!
-          "/monologue/#{@post_1.active_revision.url}.html".is_page_cached?.should be_false
-          "/monologue/#{@post_2.active_revision.url}.html".is_page_cached?.should be_true
+          "/monologue/#{@post_1.url}.html".is_page_cached?.should be_false
+          "/monologue/#{@post_2.url}.html".is_page_cached?.should be_true
         end
       end
     end

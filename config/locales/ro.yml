@@ -131,14 +131,14 @@ ro:
     errors:
       models:
         full_messages: "%{message}"
-        monologue/posts_revision:
+        monologue/post:
           blank: "%{attribute} este necesar"
+          taken: "%{attribute}-ul este deja folosit"
           attributes:
             published_at:
               blank: "'Published at' este necesar"
             url:
               start_with_slash: "URL-ul nu poate incepe cu slash ('/')"
-              unique: "URL-ul este deja folosit"
         monologue/user:
           blank: "%{attribute} este necesar"
           taken: "TODO %{attribute} has already been taken"

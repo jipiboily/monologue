@@ -2,7 +2,7 @@
 require 'spec_helper'
 describe "pagination" do
   before(:each) do
-    41.times { |i| Factory(:posts_revision, title: "post #{i}") }
+    22.times { |i| Factory(:post, title: "post #{i}") }
   end
 
   it "should not show all posts" do
@@ -30,7 +30,7 @@ describe "pagination" do
   end
 
   it "should not show 'older posts' on last page" do
-    visit ("/monologue/page/5")
+    visit ("/monologue/page/3")
     page.should_not have_content("Older posts")
   end
 end
