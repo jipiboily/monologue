@@ -1,6 +1,4 @@
 class Monologue::PostsRevision < ActiveRecord::Base
-  attr_accessible :title, :content, :url, :published_at
-
   before_validation :generate_url
 
   after_save :latest_revision_is_current

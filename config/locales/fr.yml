@@ -81,18 +81,6 @@ fr:
           preview: "Aperçu"
           close: "Fermer"
           tags: "Catégories"
-      cache:
-        show:
-          title: "Gérer la cache"
-          description: "Vous pouvez complètement effacer la cache ici."
-          files_in_cache: "Voici les fichiers en cache:"
-          no_files_are_cached: "Il n'y a aucun fichier en cache."
-          delete: "Effacer complètement la cache?"
-          confirm: 'Voulez-vous vraiment effacer la cache?'
-          cache_wiped: "La cache a été effacée!"
-        how_to_enable:
-          warning: "Vous ne pouvez gérer la cache!"
-          explanations: "Il y a certaines configurations à effectuer pour utiliser la gestion de cache de base de Monologue. SVP voir la documentation ci-dessous (anglais seulement)."
       comments:
         show:
           recent_comments: "Commentaires récents"

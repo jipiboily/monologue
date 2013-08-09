@@ -1,5 +1,4 @@
 class Monologue::TagsController < Monologue::ApplicationController
-  caches_page :show , if: Proc.new { monologue_page_cache_enabled? }
   def show
     @tag = retrieve_tag
     if @tag

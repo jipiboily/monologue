@@ -7,12 +7,10 @@ class Monologue::Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :posts_revisions
 
-  attr_accessible :posts_revisions_attributes, :published, :tag_list
+  scope :default,  -> { includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC").references(:posts_revisions) }
+  scope :published, -> { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
-  scope :default, includes(:posts_revisions).where("posts_revision_id = monologue_posts_revisions.id").order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
-  scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
-
-  default_scope includes(:tags)
+  default_scope{includes(:tags)}
 
   validates :posts_revision_id, uniqueness: true
   validates :user_id, presence:  true
@@ -44,7 +42,7 @@ class Monologue::Post < ActiveRecord::Base
     self.reload unless self.new_record?
     # add tags
     tags_attr.map { |t| t.strip }.reject(&:blank?).map do |tag|
-      t = Monologue::Tag.find_or_create_by_name(tag)
+      t = Monologue::Tag.find_or_create_by :name => tag
       self.tags << t unless self.tags.include?(t)
     end
   end
