@@ -1,4 +1,7 @@
 class MigrateOldUrls < ActiveRecord::Migration
+  class Monologue::PostsRevision < ActiveRecord::Base
+  end
+
   def up
     mount_point = Monologue::Engine.routes.url_helpers.root_path
     Monologue::PostsRevision.all.each do |r|

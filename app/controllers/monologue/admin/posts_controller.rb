@@ -1,7 +1,7 @@
 class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   respond_to :html
   cache_sweeper Monologue::PostsSweeper, only: [:create, :update, :destroy]
-  before_filter :load_post_and_revisions, only: [:edit, :update]
+  before_filter :load_post, only: [:edit, :update]
   
   def index
     @posts = Monologue::Post.default
@@ -9,7 +9,6 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
 
   def new
     @post = Monologue::Post.new
-    @revision = @post.posts_revisions.build
   end
   
   ## Preview a post without saving.
@@ -17,9 +16,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     # mockup our models for preview.
     @post = Monologue::Post.new(params[:post])
     @post.user_id = monologue_current_user.id
-    @revision = @post.posts_revisions.first
-    @revision.post = @post
-    @revision.published_at = Time.zone.now
+    @post.published_at = Time.zone.now
     
     # render it exactly as it would display when live.
     render "/monologue/posts/show", layout: Monologue.layout || "/layouts/monologue/application"
@@ -28,7 +25,6 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   def create
     @post = Monologue::Post.new(params[:post])
     @post.user_id = monologue_current_user.id
-    @revision = @post.posts_revisions.first
     if @post.save
       prepare_flash_and_redirect_to_edit()
     else
@@ -37,13 +33,10 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   def edit
-    @revision = @post.active_revision
-    @revision.id = nil # make sure we create a new revision and not update that one. TODO: find something cleaner
   end
 
   def update
     @post.update_attributes! params[:post]
-    @revision = @post.posts_revisions.last
     if @post.save
       prepare_flash_and_redirect_to_edit()
     else
@@ -61,8 +54,8 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
 private
-  def load_post_and_revisions
-    @post = Monologue::Post.includes(:posts_revisions).find(params[:id])
+  def load_post
+    @post = Monologue::Post.find(params[:id])
   end
 
   def prepare_flash_and_redirect_to_edit

@@ -1,4 +1,4 @@
-<h1><%= t(".header") %> "<%= @post.active_revision.title %>"</h1>
+<h1><%= t(".header") %> "<%= @post.title %>"</h1>
 <%= monologue_admin_form_for ["admin", @post], method: :put do |post| %>
   <%= render partial: 'form', locals: {post: post} %>
 <% end %>
