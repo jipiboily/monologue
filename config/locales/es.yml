@@ -145,4 +145,4 @@ es:
           taken: "%{attribute} ya está en uso"
           attributes:
             password:
-              confirmation: "La contraseña no coincide con la confirmación."bootstrap-datepicker-es.js
+              confirmation: "La contraseña no coincide con la confirmación."
