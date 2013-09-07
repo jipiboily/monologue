@@ -1,0 +1,148 @@
+es:
+  monologue:
+    posts:
+      pagination:
+        older_posts: "Artículos más antiguos"
+        newer_posts: "Artículos más nuevos"
+      social_sharing:
+        tagline: "Te ha gustado el artículo? Compártelo"
+      post:
+        readmore: "Leer más"
+      "404":
+        title: "La página que estas buscando no existe."
+        message: "Compureba que has escrito bien el nombre, sino es posible que la página se haya movido"
+    sidebar:
+      categories:
+        title: "Categorias"
+      latest_posts:
+        title: "Últimos artículos"
+      latest_tweets:
+        title: "Últimos tweets"
+      tag_cloud:
+        title: "Tags"
+    tags:
+      show:
+        showing_post_with_tag: "Mostrando artículos con la etiqueta"
+        show_all_posts: "Mostrar todos los artículos"
+    admin:
+      login:
+        need_auth: "Tienes que iniciar sesión para acceder a la sección de administración"
+      users:
+        form:
+          email: "Email"
+          name: "Nombre"
+          password: "Contraseña"
+          password_confirmation: "Confirmar contraseña"
+        edit:
+          header: "Editar cuenta"
+          save: "Guardar"
+        new:
+          create: "Crear"
+          header: "Añadir un usuario"
+        create:
+          success: "Usuario creado"
+        delete:
+          removed: "Usuario '%{user}' eliminado correctamente"
+          failed: "No se ha podido eliminar al usuario'%{user}'"
+        index:
+          email: "Email"
+          name: "Nombre"
+          edit: "Editar"
+          delete: "Borrar"
+          create: "Crear"
+      posts:
+        index:
+          title: "Título"
+          edit: "Editar"
+          delete: "Borrar"
+          published: "Sí"
+          not_published: "No publicado"
+          status: "Publicado?"
+        new:
+          header: "Nuevo artículo"
+        create:
+          saved: "Artículo creado"
+          saved_with_future_date_and_cache: "Artículo creado: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
+        edit:
+          header: "Editar"
+        update:
+          saved_with_future_date_and_cache: "Artículo guardado: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
+          saved: "Artículo guardado"
+        delete:
+          removed: "Artículo eliminado"
+          fail: "Fallo al eliminar el artículo!"
+        form:
+          title: "Título"
+          content: "Contenido"
+          url:
+            caption: "URL<br/><i> Esto será rellenado por defecto con '%{default_url}'. Puedes escoger tu propia URL. No añadas '%{root}' al principio de la URL.</i>"
+            generated_title: "titulo-del-articulo"
+          published_at: "Publicado en"
+          published: "Publicado?"
+          save: "Guardar"
+          preview: "Vista previa"
+          close: "Cerrar"
+          tags: "Tags"
+      comments:
+        show:
+          recent_comments: "Comentarios recientes"
+      cache:
+        show:
+          title: "Gestioanr cache"
+          description: "Puedes borrar la cache aquí"
+          files_in_cache: "Estos son los ficheros en cache:"
+          no_files_are_cached: "No hay ningun fichero en cache"
+          delete: "Borrar la cache por completo?"
+          confirm: 'Estas seguro de que quieres borrar la cache por completo?'
+          cache_wiped: "La cache se ha borrado!"
+        how_to_enable:
+          warning: "No puedes gestionar la cache!"
+          explanations: "Hay ciertos ajustes que no estan correctamente definidos para usar la cache de Monologue. Por favor revisa la documentación de configuración"
+      sessions:
+        new:
+          title: "Iniciar sesión"
+          email: "Email"
+          password: "Contraseña"
+          button: "Iniciar sesión"
+        messages:
+          invalid: "Email o contraseña incorrecto"
+          logged_in: "Has iniciado sesión!"
+          logged_out: "Has cerrado sesión!"
+  layouts:
+    monologue:
+      admin:
+        nav_bar:
+          add_a_monologue: "Añadir un artículo"
+          list_monologues: "Lista de artículos"
+          comments: "Commentarios"
+          cache: "Gestionar cache"
+          edit_user_info: "Mi cuenta"
+          settings: "Ajustes"
+          log_out: "Cerrar sesión"
+          users: "Usuarios"
+  activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "Confirmación de contraseña"
+    errors:
+      format: "%{message}"
+    errors:
+      full_messages: "%{message}"
+    errors:
+      models:
+        full_messages: "%{message}"
+        monologue/post:
+          blank: "%{attribute} es obligatorio"
+          taken: "%{attribute} está en uso por otro artículo"
+          attributes:
+            published_at:
+              blank: "'Publicado en' es obligatorio"
+            url:
+              start_with_slash: "URL no puede empezar con '/'"
+
+        monologue/user:
+          blank: "%{attribute} es obligatorio"
+          taken: "%{attribute} ya está en uso"
+          attributes:
+            password:
+              confirmation: "La contraseña no coincide con la confirmación."
