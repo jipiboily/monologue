@@ -11,7 +11,7 @@ class Monologue::Admin::UsersController < Monologue::Admin::BaseController
   end
 
   def update
-    if @user.update_attributes(params[:user])
+    if @user.update user_params
       flash.notice = "User modified"
       redirect_to admin_users_path
     else
@@ -28,7 +28,7 @@ class Monologue::Admin::UsersController < Monologue::Admin::BaseController
   end
 
   def create
-    @user = Monologue::User.new(params[:user])
+    @user = Monologue::User.new user_params
     if @user.save
       flash.notice = I18n.t("monologue.admin.users.create.success")
       redirect_to admin_users_path
@@ -46,4 +46,7 @@ class Monologue::Admin::UsersController < Monologue::Admin::BaseController
       @user = Monologue::User.find(params[:id])
     end
 
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end

@@ -1,10 +1,5 @@
 require 'spec_helper'
 describe "tags" do
-
-  after do
-    clear_cache
-  end
-
   describe "Viewing the list of posts with tags" do
     before(:each) do
       Factory(:post_with_tags, title: "post X")

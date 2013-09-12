@@ -86,18 +86,6 @@ ro:
       comments:
         show:
           recent_comments: "Comentarii recente"
-      cache:
-        show:
-          title: "Gestionare cache"
-          description: "Aici puteti sterge cache-ul."
-          files_in_cache: "Fisiere cache-uite:"
-          no_files_are_cached: "Nu exista nici un fisier in cache."
-          delete: "Stergeti cache-ul?"
-          confirm: 'Sigur doriti sa stergeti cache-ul?'
-          cache_wiped: "Cache-ul a fost sters!"
-        how_to_enable:
-          warning: "Nu puteti gestiona cache-ul!"
-          explanations: "Anumite setari sunt incorecte pentru a putea folosi cache-ul din Monologue. Va rugam sa citit documentatia."
       sessions:
         new:
           title: "Autentificare"

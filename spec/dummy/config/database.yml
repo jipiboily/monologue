@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: monologue_development
   pool: 5
-  username: root
-  password:
+  username: david
+  password: davidsql
 
 test:
   adapter: mysql2
@@ -13,5 +13,5 @@ test:
   reconnect: false
   database: monologue_test
   pool: 5
-  username: root
-  password:
+  username: david
+  password: davidsql
