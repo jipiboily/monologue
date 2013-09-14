@@ -21,7 +21,7 @@ gem "coffee-rails"
 
 group :development, :test do
   gem "thin"
-  gem 'rails', '3.2.8'
+  gem 'rails', '3.2.14'
   gem 'pry'
 
   if RUBY_PLATFORM.downcase.include?("darwin")
