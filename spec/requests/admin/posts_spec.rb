@@ -22,7 +22,7 @@ describe "posts" do
     end
 
     it "can edit a post and then save the post" do
-      Factory(:post, title: "my title")
+      post = Factory(:post, title: "my title")
       visit admin_posts_path
       click_on "my title"
       page.should have_content "Edit \""
@@ -30,7 +30,11 @@ describe "posts" do
       fill_in "Content", with:  "New content here..."
       fill_in "Published at", with:  DateTime.now
       click_button "Save"
+
       page.should have_content "Monologue saved"
+      post.reload
+      post.content.should ==  "New content here..."
+      post.title.should ==  "This is a new title"
     end
     
     it "will output error messages if error(s) there is" do
