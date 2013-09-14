@@ -25,13 +25,8 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def tag!(tags_attr)
-    # clean tags from removed tags
-    self.tags.map { |tag| self.taggings.find_by_tag_id(tag.id).destroy unless tags_attr.include?(tag.name) }
-    self.reload unless self.new_record?
-    # add tags
-    tags_attr.map { |t| t.strip }.reject(&:blank?).map do |tag|
-      t = Monologue::Tag.find_or_create_by_name(tag)
-      self.tags << t unless self.tags.include?(t)
+    self.tags = tags_attr.map(&:strip).reject(&:blank?).map do |tag|
+      Monologue::Tag.find_or_create_by_name(tag)
     end
   end
 
@@ -47,7 +42,7 @@ class Monologue::Post < ActiveRecord::Base
     per_page = Monologue.posts_per_page || 10
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
-    offset =  p * per_page
+    offset = p * per_page
     self.limit(per_page).offset(offset)
   end
 
