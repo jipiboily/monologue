@@ -4,7 +4,6 @@ describe Monologue::Admin::PostsController do
   let(:user) { create(:user) }
   before do
     sign_in_as user
-    # before(:each) { @routes = Monologue::Engine.routes }
     @routes = Monologue::Engine.routes
   end
 
@@ -21,10 +20,11 @@ describe Monologue::Admin::PostsController do
             content: new_content,
             title: new_title
           }
+        post.reload
       end
 
-      it { expect(post.reload.content).to eq new_content }
-      it { expect(post.reload.title).to eq new_title }
+      it { expect(post.content).to eq new_content }
+      it { expect(post.title).to eq new_title }
     end
 
     # context :invalid do
