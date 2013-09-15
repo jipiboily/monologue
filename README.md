@@ -1,10 +1,14 @@
-# MONOLOGUE
+# Monologue
 Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 [![Gem Version](https://badge.fury.io/rb/monologue.png)](http://badge.fury.io/rb/monologue)
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
 [![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
+
+## Upgrade and changes
+
+To know how to upgrade, see UPGRADE.md file. If you want to know what changed since the last versions, see CHANGELOG.md.
 
 ## Questions? Problems? Documentation?
 
