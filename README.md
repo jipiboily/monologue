@@ -6,6 +6,10 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
 [![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
 
+## IMPORTANT: version
+
+This README is for Monologue 0.3.X.
+
 ## Upgrade and changes
 
 To know how to upgrade, see UPGRADE.md file. If you want to know what changed since the last versions, see CHANGELOG.md.
