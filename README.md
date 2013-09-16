@@ -12,7 +12,7 @@ This README is for Monologue 0.3.X.
 
 ## Upgrade and changes
 
-To know how to upgrade, see UPGRADE.md file. If you want to know what changed since the last versions, see CHANGELOG.md.
+To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/blob/master/UPGRADE.md) file. If you want to know what changed since the last versions, see [CHANGELOG.md](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md).
 
 ## Questions? Problems? Documentation?
 
