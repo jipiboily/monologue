@@ -27,10 +27,10 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - tags (or categories)
 - RSS
 - multiple users
-- support for Google Analytics and Gaug.es tags
+- Built-in support for Google Analytics and Gaug.es tags
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments are handled by [disqus](http://disqus.com/)
-- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
+- WILL BE REMOVE WITH RAILS 4 VERSION -> enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
 - bonus: there is a `[monologue-markdown](https://github.com/jipiboily/monologue-markdown)` extension
