@@ -1,12 +1,16 @@
 # Monologue
-Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
-
 [![Gem Version](https://badge.fury.io/rb/monologue.png)](http://badge.fury.io/rb/monologue)
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
 [![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
 
-## IMPORTANT: version
+**THIS README IS FOR THE MASTER BRANCH AND REFLECTS THE WORK CURRENTLY EXISTING ON THE MASTER BRANCH. IF YOU ARE WISHING TO USE A NON-MASTER BRANCH OF EXCEPTION NOTIFICATION, PLEASE CONSULT THAT BRANCH'S README AND NOT THIS ONE.**
+
+-
+
+Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
+
+## Version
 
 This README is for a future Monologue version, that will be 0.4.X and be Rails 4 specific. See other branches for other versions (0-3-stable being the latest stable version).
 
@@ -20,17 +24,17 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - [Issues and bugs](http://github.com/jipiboily/monologue/issues)
 - [Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
 
-## Here are a few features
+## Some features
 - Rails mountable engine (fully named spaced and mountable in an already existing app)
 - tested
 - back to basics: few features
 - tags (or categories)
 - RSS
 - multiple users
-- Built-in support for Google Analytics and Gaug.es tags
+- support for Google Analytics and Gaug.es tags
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments are handled by [disqus](http://disqus.com/)
-- WILL BE REMOVE WITH RAILS 4 VERSION -> enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
+- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
 - bonus: there is a `[monologue-markdown](https://github.com/jipiboily/monologue-markdown)` extension
