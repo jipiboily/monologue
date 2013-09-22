@@ -10,6 +10,8 @@ Once the gems has been upgraded to latest versions:
 
 Then if you have customized some views, make sure that you are not using the `Monologue::PostRevision` object that was removed in favor of the `Monologue::Post` object.
 
+IMPORTANT: Do not forget to run Deface's precompile rake task too! `bundle exec rake deface:precompile`
+
 ## from 0.1.0 to 0.1.1
  - once the gem has been upgraded to 0.1.1, run
 
