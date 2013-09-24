@@ -3,7 +3,11 @@ class MergeRevisionsIntoPosts < ActiveRecord::Migration
     attr_accessible :title, :content, :url, :published_at, :post_id
   end
 
+  class Monologue::Post < ActiveRecord::Base
+  end
+
   def up
+    Monologue::Post.reset_column_information
     add_column :monologue_posts, :title, :string
     add_column :monologue_posts, :content, :text
     add_column :monologue_posts, :url, :string
@@ -19,7 +23,7 @@ class MergeRevisionsIntoPosts < ActiveRecord::Migration
       post.content =latest_revision.content
       post.url =latest_revision.url
       post.published_at =latest_revision.published_at
-      post.save!
+      post.save(validate: false)
     end
 
     drop_table :monologue_posts_revisions
@@ -30,7 +34,7 @@ class MergeRevisionsIntoPosts < ActiveRecord::Migration
   end
 
   private
-    def latest_revision_for(post)
-      Monologue::PostsRevision.where("post_id = ?", post.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
-    end
+  def latest_revision_for(post)
+    Monologue::PostsRevision.where("post_id = ?", post.id).order("monologue_posts_revisions.updated_at DESC").limit(1).first
+  end
 end

@@ -1,18 +1,31 @@
-# MONOLOGUE
-Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
-
+# Monologue
 [![Gem Version](https://badge.fury.io/rb/monologue.png)](http://badge.fury.io/rb/monologue)
 [![Build Status](https://secure.travis-ci.org/jipiboily/monologue.png)](http://travis-ci.org/jipiboily/monologue)
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
 [![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
 
+**THIS README IS FOR THE MASTER BRANCH AND REFLECTS THE WORK CURRENTLY EXISTING ON THE MASTER BRANCH. IF YOU ARE WISHING TO USE A NON-MASTER BRANCH OF EXCEPTION NOTIFICATION, PLEASE CONSULT THAT BRANCH'S README AND NOT THIS ONE.**
+
+-
+
+Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
+
+## Version
+
+This README is for a future Monologue version, that will be 0.4.X and be Rails 4 specific. See other branches for other versions (0-3-stable being the latest stable version).
+
+## Upgrade and changes
+
+To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/blob/master/UPGRADE.md) file. If you want to know what changed since the last versions, see [CHANGELOG.md](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md).
+
 ## Questions? Problems? Documentation?
 
-- [Questions here please](http://groups.google.com/forum/#!forum/monologue-rb)
+- [Mailing list for questions](http://groups.google.com/forum/#!forum/monologue-rb)
 - [Issues and bugs](http://github.com/jipiboily/monologue/issues)
 - [Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
+- IRC channel (on Freenode): #monologue.
 
-## Here are a few features
+## Some features
 - Rails mountable engine (fully named spaced and mountable in an already existing app)
 - tested
 - back to basics: few features
@@ -25,7 +38,7 @@ Monologue is a basic mountable blogging engine in Rails built to be easily mount
 - enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
-- bonus: there is a `[monologue-markdown](https://github.com/jipiboily/monologue-markdown)` extension
+- bonus: there is a [monologue-markdown](https://github.com/jipiboily/monologue-markdown) extension
 
 ### missing features
 - see [roadmap](https://github.com/jipiboily/monologue/wiki/Roadmap)!
