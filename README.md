@@ -33,7 +33,7 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
-- bonus: there is a `[monologue-markdown](https://github.com/jipiboily/monologue-markdown)` extension
+- bonus: there is a [monologue-markdown](https://github.com/jipiboily/monologue-markdown) extension
 
 ### missing features
 - see [roadmap](https://github.com/jipiboily/monologue/wiki/Roadmap)!
