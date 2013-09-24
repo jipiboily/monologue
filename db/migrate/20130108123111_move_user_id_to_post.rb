@@ -1,6 +1,5 @@
 class MoveUserIdToPost < ActiveRecord::Migration
   class Monologue::PostsRevision < ActiveRecord::Base
-    attr_accessible :title, :content, :url, :published_at, :post_id
   end
 
   class Monologue::Post < ActiveRecord::Base
