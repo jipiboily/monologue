@@ -86,18 +86,6 @@ it:
       comments:
         show:
           recent_comments: "Commenti recenti"
-      cache:
-        show:
-          title: "Gestisci cache"
-          description: "Qui puoi eliminare completamente la cache."
-          files_in_cache: "Questi sono i file effettivamente nella cache:"
-          no_files_are_cached: "Non ci sono file nella cache."
-          delete: "Svuotare la cache completamente?"
-          confirm: "Sei sicuro di voler eliminare la cache completamente?"
-          cache_wiped: "La cache è stata svuotata!"
-        how_to_enable:
-          warning: "Non puoi gestire la cache!"
-          explanations: "Ci sono alcune configurazioni errate che non permettono l'utilizzo della cache di Monologue. Per favore riguarda la documentazione delle configurazioni."
       sessions:
         new:
           title: "Accedi"

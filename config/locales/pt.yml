@@ -86,18 +86,6 @@ pt_BR:
       comments:
         show:
           recent_comments: "Comentários recentes"
-      cache:
-        show:
-          title: "Gerenciar cache"
-          description: "Você pode limpar a cache aqui."
-          files_in_cache: "Estes são os arquivos em cache:"
-          no_files_are_cached: "Não há nenhum arquivo em cache."
-          delete: "Limpar cache?"
-          confirm: 'Você tem certeza que deseja limpar a cache?'
-          cache_wiped: "A cache foi limpa!"
-        how_to_enable:
-          warning: "Você não pode gerenciar a cache!"
-          explanations: "Existem certas configurações que estão incorretas para utilizar a cache básica do Monologue. Por favor, revise a documentação das configurações."
       sessions:
         new:
           title: "Tela administrativa do blog"

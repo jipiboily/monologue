@@ -9,7 +9,7 @@ class Monologue::ApplicationController < ApplicationController
   end
 
   def all_tags
-    @tags = Monologue::Tag.all(order: "name").select{|t| t.frequency>0}
+    @tags = Monologue::Tag.order("name").select{|t| t.frequency>0}
     #could use minmax here but it's only supported with ruby > 1.9'
     @tags_frequency_min = @tags.map{|t| t.frequency}.min
     @tags_frequency_max = @tags.map{|t| t.frequency}.max
@@ -32,9 +32,5 @@ class Monologue::ApplicationController < ApplicationController
       @monologue_current_user ||= Monologue::User.find(session[:monologue_user_id]) if session[:monologue_user_id]
     end
 
-    def monologue_page_cache_enabled?
-      monologue_current_user.nil? && Monologue::PageCache.enabled
-    end
-
-  helper_method :monologue_current_user, :monologue_page_cache_enabled?
+  helper_method :monologue_current_user
 end

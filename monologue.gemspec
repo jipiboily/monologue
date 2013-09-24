@@ -10,15 +10,15 @@ Gem::Specification.new do |s|
   s.authors     = ["Jean-Philippe Boily | @jipiboily"]
   s.email       = ["j@jipi.ca"]
   s.homepage    = "http://github.com/jipiboily/monologue"
-  s.summary     = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
-  s.description = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 3.1.X + apps"
+  s.summary     = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 4.0.X + apps"
+  s.description = "Monologue is a basic blogging engine. It is a Rails mountable engine so it can be mounted in any 4.0.X + apps"
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md", "deprecations.rb"]
 
-  s.add_dependency "rails", ">= 3.1.3"
-  s.add_dependency "bcrypt-ruby",'~> 3.0.0'
-  s.add_dependency "coffee-rails"
-  s.add_dependency "sass-rails",'~> 3.2.3'
+  s.add_dependency "rails", ">= 4.0.0"
+  s.add_dependency "bcrypt-ruby", '~> 3.0.0'
+  s.add_dependency "coffee-rails",'~> 4.0.0'
+  s.add_dependency "sass-rails",'~> 4.0.0'
   s.add_dependency "truncate_html"
   s.add_dependency "jquery-rails"
   s.add_dependency "ckeditor"
