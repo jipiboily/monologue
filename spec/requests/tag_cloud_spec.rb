@@ -1,9 +1,5 @@
 require 'spec_helper'
 describe "tag cloud" do
-  after do
-    clear_cache
-  end
-
   describe "Viewing the tag cloud" do
 
     before(:each) do

@@ -35,7 +35,6 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - support for Google Analytics and Gaug.es tags
 - few external dependencies (no Devise or Sorcery, etc…) so we don't face problem integrating with existing Rails app.([Rails mountable engines: dependency nightmare?](http://jipiboily.com/2012/rails-mountable-engines-dependency-nightmare))
 - comments are handled by [disqus](http://disqus.com/)
-- enforcing [Rails cache](http://edgeguides.rubyonrails.org/caching_with_rails.html) for better performance (only support file store for now). [Read this to enable it](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache).
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
 - bonus: there is a [monologue-markdown](https://github.com/jipiboily/monologue-markdown) extension
@@ -96,10 +95,6 @@ config.action_controller.perform_caching = false
 ### Note to users
 Monologue is using his own tables. If you want to use your own tables with monologue (for example the User table)
 this might help you to monkey patch [Monkey Patch](https://gist.github.com/jipiboily/776d907fc932640ac59a)
-
-
-## Enable caching
-[See full caching doc here.](https://github.com/jipiboily/monologue/wiki/Configure-Monologue's-cache)
 
 ## Customization
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).

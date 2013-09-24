@@ -1,9 +1,5 @@
 require 'spec_helper'
 describe "tag category" do
-  after do
-    clear_cache
-  end
-
   describe "Viewing the tag category" do
 
     before(:each) do

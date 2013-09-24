@@ -14,9 +14,6 @@ Monologue::Engine.routes.draw do
     resources :users
     get "comments" => "comments#show", as: "comments"
 
-    get "cache" => "cache#show", as: "cache"
-    delete "cache" => "cache#destroy"
-    
     match "/post/preview"=>"posts#preview", :as=>"post_preview", :via => [:put, :post]
   end
 

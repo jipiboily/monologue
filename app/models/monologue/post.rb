@@ -4,12 +4,10 @@ class Monologue::Post < ActiveRecord::Base
   before_validation :generate_url
   belongs_to :user
 
-  attr_accessible :title, :content, :url, :published, :published_at, :tag_list
+  scope :default,  -> {order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC") }
+  scope :published, -> { default.where(published: true).where("published_at <= ?", DateTime.now) }
 
-  scope :default, order("published_at DESC, monologue_posts.created_at DESC, monologue_posts.updated_at DESC")
-  scope :published, lambda { default.where(published: true).where("published_at <= ?", DateTime.now) }
-
-  default_scope includes(:tags)
+  default_scope{includes(:tags)}
 
   validates :user_id, presence: true
   validates :title, :content, :url, :published_at, presence: true
@@ -30,7 +28,7 @@ class Monologue::Post < ActiveRecord::Base
     self.reload unless self.new_record?
     # add tags
     tags_attr.map { |t| t.strip }.reject(&:blank?).map do |tag|
-      t = Monologue::Tag.find_or_create_by_name(tag)
+      t = Monologue::Tag.find_or_create_by :name => tag
       self.tags << t unless self.tags.include?(t)
     end
   end
