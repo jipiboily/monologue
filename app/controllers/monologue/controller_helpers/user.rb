@@ -1,10 +1,12 @@
+require 'active_support/concern'
+
 module Monologue
   module ControllerHelpers
     module User
-      def self.included(base)
-        base.class_eval do
-          helper_method :monologue_current_user
-        end
+      extend ActiveSupport::Concern
+
+      included do
+        helper_method :monologue_current_user
       end
 
       private

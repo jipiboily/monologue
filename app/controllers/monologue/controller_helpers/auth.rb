@@ -1,8 +1,13 @@
+require 'active_support/concern'
+
 module Monologue
   module ControllerHelpers
     module Auth
-      def self.included(base)
-        base.before_filter :authenticate_user!
+      extend ActiveSupport::Concern
+      include Monologue::ControllerHelpers::User
+
+      included do
+        before_filter :authenticate_user!
       end
 
       def authenticate_user!
