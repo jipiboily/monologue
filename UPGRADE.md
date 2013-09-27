@@ -1,5 +1,9 @@
 # Upgrade Monologue
 
+## 0.3.0 to 0.4.0
+ - Change of syntax for configuration. Please use Monologue::Config instead of the old Monologue module
+
+
 ## from 0.2.x to 0.3
 If you use `monologue-markdown`, you must upgrade it first.
 Once the gems has been upgraded to latest versions:
