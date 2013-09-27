@@ -1,8 +1,8 @@
-<% unless Monologue.google_analytics_id.nil? %>
+<% unless Monologue::Config.google_analytics_id.nil? %>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '<%= Monologue.google_analytics_id %>']);
+    _gaq.push(['_setAccount', '<%= Monologue::Config.google_analytics_id %>']);
     _gaq.push(['_trackPageview']);
 
     (function() {

@@ -11,7 +11,7 @@ module Monologue
     end
 
     def monologue_accurate_title
-      content_for?(:title) ? ((content_for :title) + " | #{Monologue.site_name}") : Monologue.site_name
+      content_for?(:title) ? ((content_for :title) + " | #{Monologue::Config.site_name}") : Monologue::Config.site_name
     end
 
     def rss_head_link
@@ -19,27 +19,27 @@ module Monologue
     end
 
     def rss_icon
-      social_icon("rss", feed_url, Monologue.show_rss_icon)
+      social_icon("rss", feed_url, Monologue::Config.show_rss_icon)
     end
 
     def github_icon
-      social_icon("github", "http://github.com/#{Monologue.github_username}", Monologue.github_username)
+      social_icon("github", "http://github.com/#{Monologue::Config.github_username}", Monologue::Config.github_username)
     end
 
     def twitter_icon
-      social_icon("twitter", "http://twitter.com/#{Monologue.twitter_username}", Monologue.twitter_username)
+      social_icon("twitter", "http://twitter.com/#{Monologue::Config.twitter_username}", Monologue::Config.twitter_username)
     end
 
     def linkedin_icon
-      social_icon("linkedin", Monologue.linkedin_url, Monologue.linkedin_url)
+      social_icon("linkedin", Monologue::Config.linkedin_url, Monologue::Config.linkedin_url)
     end
 
     def googleplus_icon
-      social_icon("google-plus", Monologue.google_plus_account_url, Monologue.google_plus_account_url)
+      social_icon("google-plus", Monologue::Config.google_plus_account_url, Monologue::Config.google_plus_account_url)
     end
 
     def facebook_icon
-      social_icon("facebook", Monologue.facebook_url, Monologue.facebook_url)
+      social_icon("facebook", Monologue::Config.facebook_url, Monologue::Config.facebook_url)
     end
 
     def absolute_image_url(url)
