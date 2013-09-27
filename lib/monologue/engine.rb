@@ -19,7 +19,7 @@ module Monologue
       Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     end
 
-    initializer "monologue.environment", :before => :load_config_initializers do |app|
+    initializer "monologue.configuration", :before => :load_config_initializers do |app|
       app.config.monologue = Monologue::Configuration.new
       Monologue::Config = app.config.monologue
     end
