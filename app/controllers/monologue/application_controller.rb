@@ -1,5 +1,5 @@
 class Monologue::ApplicationController < ApplicationController
-
+  include Monologue::ControllerHelpers::User
   layout Monologue.layout if Monologue.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
 
   before_filter :recent_posts, :all_tags
@@ -25,12 +25,4 @@ class Monologue::ApplicationController < ApplicationController
       render action: "404", status: 404, formats: [:html]
     end
   end
-
-  private
-
-    def monologue_current_user
-      @monologue_current_user ||= Monologue::User.find(session[:monologue_user_id]) if session[:monologue_user_id]
-    end
-
-  helper_method :monologue_current_user
 end
