@@ -51,67 +51,67 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate github" do
-        helper.github_icon.should eq "<a class=\"social\" href=\"http://github.com/#{Monologue.github_username}\" target=\"_blank\"><i class=\"foundicon-github\"></i></a>"
+        helper.github_icon.should eq "<a class=\"social\" href=\"http://github.com/#{Monologue::Config.github_username}\" target=\"_blank\"><i class=\"foundicon-github\"></i></a>"
       end
 
       it "generate twitter" do
-        helper.twitter_icon.should eq "<a class=\"social\" href=\"http://twitter.com/#{Monologue.twitter_username}\" target=\"_blank\"><i class=\"foundicon-twitter\"></i></a>"
+        helper.twitter_icon.should eq "<a class=\"social\" href=\"http://twitter.com/#{Monologue::Config.twitter_username}\" target=\"_blank\"><i class=\"foundicon-twitter\"></i></a>"
       end
 
       it "generate linkedin" do
-        helper.linkedin_icon.should eq "<a class=\"social\" href=\"#{Monologue.linkedin_url}\" target=\"_blank\"><i class=\"foundicon-linkedin\"></i></a>"
+        helper.linkedin_icon.should eq "<a class=\"social\" href=\"#{Monologue::Config.linkedin_url}\" target=\"_blank\"><i class=\"foundicon-linkedin\"></i></a>"
       end
 
       it "generate googleplus" do
-        helper.googleplus_icon.should eq "<a class=\"social\" href=\"#{Monologue.google_plus_account_url}\" target=\"_blank\"><i class=\"foundicon-google-plus\"></i></a>"
+        helper.googleplus_icon.should eq "<a class=\"social\" href=\"#{Monologue::Config.google_plus_account_url}\" target=\"_blank\"><i class=\"foundicon-google-plus\"></i></a>"
       end
 
       it "generate facebook" do
-        helper.facebook_icon.should eq "<a class=\"social\" href=\"#{Monologue.facebook_url}\" target=\"_blank\"><i class=\"foundicon-facebook\"></i></a>"
+        helper.facebook_icon.should eq "<a class=\"social\" href=\"#{Monologue::Config.facebook_url}\" target=\"_blank\"><i class=\"foundicon-facebook\"></i></a>"
       end
     end
 
     context "do not render if disabled" do
 
       it "do not generate rss icon" do
-        Monologue.show_rss_icon = nil
+        Monologue::Config.show_rss_icon = nil
         helper.rss_icon.should eq nil
-        Monologue.show_rss_icon = false
+        Monologue::Config.show_rss_icon = false
         helper.rss_icon.should eq nil
       end
 
       it "do not generate github" do
-        Monologue.github_username = nil
+        Monologue::Config.github_username = nil
         helper.github_icon.should eq nil
-        Monologue.github_username = false
+        Monologue::Config.github_username = false
         helper.github_icon.should eq nil
       end
 
       it "do not generate twitter" do
-        Monologue.twitter_username = nil
+        Monologue::Config.twitter_username = nil
         helper.twitter_icon.should eq nil
-        Monologue.twitter_username = false
+        Monologue::Config.twitter_username = false
         helper.twitter_icon.should eq nil
       end
 
       it "do not generate linkedin" do
-        Monologue.linkedin_url = nil
+        Monologue::Config.linkedin_url = nil
         helper.linkedin_icon.should eq nil
-        Monologue.linkedin_url = false
+        Monologue::Config.linkedin_url = false
         helper.linkedin_icon.should eq nil
       end
 
       it "do not generate googleplus" do
-        Monologue.google_plus_account_url = nil
+        Monologue::Config.google_plus_account_url = nil
         helper.googleplus_icon.should eq nil
-        Monologue.google_plus_account_url = false
+        Monologue::Config.google_plus_account_url = false
         helper.googleplus_icon.should eq nil
       end
 
       it "do not generate facebook" do
-        Monologue.facebook_url = nil
+        Monologue::Config.facebook_url = nil
         helper.facebook_icon.should eq nil
-        Monologue.facebook_url = false
+        Monologue::Config.facebook_url = false
         helper.facebook_icon.should eq nil
       end
     end

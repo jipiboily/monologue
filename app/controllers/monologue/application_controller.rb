@@ -1,6 +1,6 @@
 class Monologue::ApplicationController < ApplicationController
 
-  layout Monologue.layout if Monologue.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
+  layout Monologue::Config.layout if Monologue::Config.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
 
   before_filter :recent_posts, :all_tags
 
@@ -31,6 +31,5 @@ class Monologue::ApplicationController < ApplicationController
     def monologue_current_user
       @monologue_current_user ||= Monologue::User.find(session[:monologue_user_id]) if session[:monologue_user_id]
     end
-
-  helper_method :monologue_current_user
+    helper_method :monologue_current_user
 end
