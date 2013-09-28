@@ -1,5 +1,8 @@
 # Monologue: the changelog!
 (for upgrade information, see UPGRADE.md)
+## 0.4.0
+ - Rails 4 only
+ - Change of syntax for configuration. Please use Monologue::Config instead of the old Monologue module
 
 ## 0.3.0
  - move the user_id column from Monologue::PostRevision to Monologue::Post.
