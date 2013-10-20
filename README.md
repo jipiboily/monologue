@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/jipiboily/monologue.png)](https://codeclimate.com/github/jipiboily/monologue)
 [![Coverage Status](https://coveralls.io/repos/jipiboily/monologue/badge.png?branch=master)](https://coveralls.io/r/jipiboily/monologue?branch=master)
 
-**THIS README IS FOR THE MASTER BRANCH AND REFLECTS THE WORK CURRENTLY EXISTING ON THE MASTER BRANCH. IF YOU ARE WISHING TO USE A NON-MASTER BRANCH OF EXCEPTION NOTIFICATION, PLEASE CONSULT THAT BRANCH'S README AND NOT THIS ONE.**
+**THIS README IS FOR THE MASTER BRANCH AND REFLECTS THE WORK CURRENTLY EXISTING ON THE MASTER BRANCH. IF YOU ARE WISHING TO USE A NON-MASTER BRANCH OF MONOLOGUE, PLEASE CONSULT THAT BRANCH'S README AND NOT THIS ONE.**
 
 -
 

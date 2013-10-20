@@ -11,12 +11,12 @@ describe "main_app_integration" do
     # backup original sidebar config and restore after test
     original_sidebar_config = nil
     before do
-      original_sidebar_config = Monologue.sidebar
-      Monologue.sidebar = nil
+      original_sidebar_config = Monologue::Config.sidebar
+      Monologue::Config.sidebar = nil
     end
 
     after do
-      Monologue.sidebar = original_sidebar_config
+      Monologue::Config.sidebar = original_sidebar_config
     end
 
     it "should return HTTP 200 when viewing the root url with no sidebars" do

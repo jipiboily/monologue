@@ -1,6 +1,6 @@
 class Monologue::ApplicationController < ApplicationController
   include Monologue::ControllerHelpers::User
-  layout Monologue.layout if Monologue.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
+  layout Monologue::Config.layout if Monologue::Config.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
 
   before_filter :recent_posts, :all_tags
 

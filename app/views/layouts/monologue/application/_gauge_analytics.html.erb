@@ -1,4 +1,4 @@
-<% unless Monologue.gauge_analytics_site_id.nil? %>
+<% unless Monologue::Config.gauge_analytics_site_id.nil? %>
   <script type="text/javascript">
     var _gauges = _gauges || [];
     (function() {
@@ -6,7 +6,7 @@
       t.type  = 'text/javascript';
       t.async = true;
       t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '<%= Monologue.gauge_analytics_site_id %>');
+      t.setAttribute('data-site-id', '<%= Monologue::Config.gauge_analytics_site_id %>');
       t.src = '//secure.gaug.es/track.js';
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(t, s);

@@ -17,7 +17,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
     @post.user_id = monologue_current_user.id
     @post.published_at = Time.zone.now
     # render it exactly as it would display when live.
-    render "/monologue/posts/show", layout: Monologue.layout || "/layouts/monologue/application"
+    render "/monologue/posts/show", layout: Monologue::Config.layout || "/layouts/monologue/application"
   end
 
   def create
@@ -34,7 +34,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   def update
-    @post.update! post_params
+    @post.update post_params
     if @post.save
       prepare_flash_and_redirect_to_edit()
     else

@@ -42,7 +42,7 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def self.page p
-    per_page = Monologue.posts_per_page || 10
+    per_page = Monologue::Config.posts_per_page || 10
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
     offset =  p * per_page
