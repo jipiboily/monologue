@@ -1,4 +1,5 @@
 class Monologue::ApplicationController < ApplicationController
+  include Monologue::ControllerHelpers::User
 
   layout Monologue::Config.layout if Monologue::Config.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
 
@@ -26,10 +27,4 @@ class Monologue::ApplicationController < ApplicationController
     end
   end
 
-  private
-
-    def monologue_current_user
-      @monologue_current_user ||= Monologue::User.find(session[:monologue_user_id]) if session[:monologue_user_id]
-    end
-    helper_method :monologue_current_user
 end
