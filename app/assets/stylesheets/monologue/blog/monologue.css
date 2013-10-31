@@ -199,3 +199,32 @@ a.social {
   /*margin: 0 40px 0 40px;*/
   /*padding: 0 0 0 0;*/
 }
+
+/** archive css **/
+.archive ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archive ul li {
+  padding: 0;
+  margin: 0 0 0 10px;
+  cursor: pointer;
+}
+
+.archive ul.js-posts li {
+  margin-bottom: 10px;
+}
+
+.archive .blog-year:before, .archive .blog-month:before {
+  font-family: FontAwesome;
+  content: "\f0da";
+  padding-right: 5px;
+}
+
+.archive .blog-year.active:before, .archive .blog-month.active:before {
+  font-family: FontAwesome;
+  content: "\f0d7";
+}
