@@ -10,3 +10,6 @@ rvm:
 env:
   - DB=mysql DB_USERNAME=root
   - DB=postgresql DB_USERNAME=postgres
+matrix:
+  allow_failures:
+    - rvm: 2.0.0
