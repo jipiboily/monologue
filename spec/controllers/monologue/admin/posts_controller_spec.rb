@@ -18,13 +18,15 @@ describe Monologue::Admin::PostsController do
           id: post.id,
           post: {
             content: new_content,
-            title: new_title
+            title: new_title,
+            published: false
           }
         post.reload
       end
 
       it { expect(post.content).to eq new_content }
       it { expect(post.title).to eq new_title }
+      it { expect(post.published).to be_false }
     end
 
     # context :invalid do
