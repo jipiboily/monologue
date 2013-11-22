@@ -34,8 +34,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   def update
-    @post.update post_params
-    if @post.save
+    if @post.update(post_params)
       prepare_flash_and_redirect_to_edit()
     else
       render :edit
