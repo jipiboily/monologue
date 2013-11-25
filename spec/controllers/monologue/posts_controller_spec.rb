@@ -9,8 +9,8 @@ describe Monologue::PostsController do
 
     context "archive_posts" do
       before do
-        archive_post1 = FactoryGirl.create(:post, :published_at => Date.parse('10-10-10'), :published => true)
-        archive_post2 = FactoryGirl.create(:post, :published_at => Date.parse('11-11-11'), :published => true)
+        archive_post1 = FactoryGirl.create(:post, :published_at => Date.parse('10-10-10'))
+        archive_post2 = FactoryGirl.create(:post, :published_at => Date.parse('11-11-11'))
         archive_post2.save(:validate => false)
         get :index
       end
