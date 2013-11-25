@@ -28,4 +28,3 @@ end
 gem 'coveralls', require: false
 
 gem 'pg'
-
