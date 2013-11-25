@@ -4,7 +4,6 @@ require "select2-rails"
 require "jquery-rails"
 require "sass-rails"
 require "coffee-rails"
-require "font-awesome-rails"
 
 module Monologue
   class Engine < Rails::Engine

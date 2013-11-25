@@ -219,12 +219,10 @@ a.social {
 }
 
 .archive .blog-year:before, .archive .blog-month:before {
-  font-family: FontAwesome;
-  content: "\f0da";
+  content: "+";
   padding-right: 5px;
 }
 
 .archive .blog-year.active:before, .archive .blog-month.active:before {
-  font-family: FontAwesome;
-  content: "\f0d7";
+  content: "-";
 }

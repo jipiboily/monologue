@@ -29,5 +29,3 @@ gem 'coveralls', require: false
 
 gem 'pg'
 
-# used to add arrows to the archive
-gem "font-awesome-rails"
