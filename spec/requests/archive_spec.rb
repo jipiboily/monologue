@@ -6,7 +6,7 @@ describe "archive" do
 
   it "lists archived posts" do
     visit "/monologue"
-    within(".sidebar") do
+    within(".archive") do
       page.should have_content("post X")
     end
   end
