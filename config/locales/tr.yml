@@ -1,0 +1,136 @@
+tr:
+  monologue:
+    posts:
+      pagination:
+        older_posts: "Eski Gönderiler"
+        newer_posts: "Yeni Gönderiler"
+      social_sharing:
+        tagline: "Okuduğuna bayıldın mı? Paylaş!"
+      post:
+        readmore: "Daha fazlasını oku"
+      "404":
+        title: "Aradığınız sayfa bulunmamaktadır."
+        message: "Adresi yanlış yazmış olabilirsiniz yada aradığınız sayfanın yeri değişmiş olabilir."
+    sidebar:
+      categories:
+        title: "Kategoriler"
+      latest_posts:
+        title: "Son gönderiler"
+      latest_tweets:
+        title: "Son tweeler"
+      tag_cloud:
+        title: "Etiketler"
+    tags:
+      show:
+        showing_post_with_tag: "Bu etikete sahip gönderiler gösteriliyor"
+        show_all_posts: "Bütün göderileri göster"
+    admin:
+      login:
+        need_auth: "Admin kısmına erişmek için önce giriş yapmalısınız."
+      users:
+        form:
+          email: "Mail Adresi"
+          name: "İsim"
+          password: "Şifre"
+          password_confirmation: "Şifre onayı"
+        edit:
+          header: "Hesabını düzenle"
+          save: "Kaydet"
+        new:
+          create: "Oluştur"
+          header: "Kullanıcı ekle"
+        create:
+          success: "Kullanıcı Oluşturuldu"
+        delete:
+          removed: "#{user} adlı kullanıcı başarılı bir şekilde kaldırıldı"
+          failed: "%{user} adlı kullanıcı kaldırılamadı"
+        index:
+          email: "Mail Adresi"
+          name: "İsim"
+          edit: "Düzenle"
+          delete: "Sil"
+          create: "Oluştur"
+      posts:
+        index:
+          title: "Başlık"
+          edit: "Düzenle"
+          delete: "Sil"
+          published: "Evet"
+          not_published: "Yayınlanmadı"
+          status: "Yayınlandı mı?"
+        new:
+          header: "Yeni monolog"
+        create:
+          saved: "Monolog oluşturuldu"
+          saved_with_future_date_and_cache: "Monolog oluşturuldu: gelecek bir güne ait yayınlanma tarihi olan gönderiler önbellek aynı gün silinmediği takdirde gösterilmeyecektir.Önbellek muhtemelen bundan önce oluşturulacaktır ve otomatik olarak yenilenmeyecektir."
+        edit:
+          header: "Düzenle"
+        update:
+          saved_with_future_date_and_cache: "Monolog oluşturuldu: gelecek bir güne ait yayınlanma tarihi olan gönderiler önbellek aynı gün silinmediği takdirde gösterilmeyecektir.Önbellek muhtemelen bundan önce oluşturulacaktır ve otomatik olarak yenilenmeyecektir."
+          saved: "Monolog oluşturuldu"
+        delete:
+          removed: "Monolog kaldırıldı"
+          fail: "Monolog kaldırılamadı"
+        form:
+          title: "Başlık"
+          content: "İçerik"
+          url:
+            caption: "URL<br/><i> Bu ön değer olarak '%{default_url}'  ile doldurulacaktır. Kendi URL ini seçebilirsin. URL in başına '%{root}' ekleme.</i>"
+            generated_title: "gönder-basşlığın"
+          published_at: "Yayınlanma tarihi"
+          published: "Yayınlandı"
+          save: "Kaydet"
+          preview: "Ön izleme"
+          close: "Kapa"
+          tags: "Etiketler"
+      comments:
+        show:
+          recent_comments: "En son yorumlar"
+      sessions:
+        new:
+          title: "Giriş yap"
+          email: "Mail Adresi"
+          password: "Şifre"
+          button: "Oturum aç"
+        messages:
+          invalid: "Şifre veya mail adresi geçersiz"
+          logged_in: "Oturum açıldı!"
+          logged_out: "Çıkış yapıldı!"
+  layouts:
+    monologue:
+      admin:
+        nav_bar:
+          add_a_monologue: "Monolog ekle"
+          list_monologues: "Monolog listesi"
+          comments: "Yorumlar"
+          cache: "Ön belleği yönet"
+          edit_user_info: "Hesbım"
+          settings: "Ayarlar"
+          log_out: "Çıkış yap"
+          users: "Kullanıcılar"
+  activerecord:
+    attributes:
+      monologue/user:
+        password_digest: "Şifre onayı"
+    errors:
+      format: "%{message}"
+    errors:
+      full_messages: "%{message}"
+    errors:
+      models:
+        full_messages: "%{message}"
+        monologue/post:
+          blank: "%{attribute} gereklidir"
+          taken: "%{attribute} zaten başka bir gönderide kullanılmakta"
+          attributes:
+            published_at:
+              blank: "'Gönderi tarihi' gerekli"
+            url:
+              start_with_slash: "URL ('/') ile başlayamaz"
+
+        monologue/user:
+          blank: "%{attribute} gereklidir"
+          taken: "%{attribute} zaten kullanılmakta"
+          attributes:
+            password:
+              confirmation: "Şifre ve şifre onayı uyuşmuyor."
