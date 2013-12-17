@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'spec_helper'
 describe "tags" do
   describe "Viewing the list of posts with tags" do
@@ -9,6 +11,7 @@ describe "tags" do
       visit "/monologue"
       page.should have_link("Rails")
       page.should have_link("a great tag")
+      page.should have_link("Тест")
     end
   end
 
@@ -31,6 +34,15 @@ describe "tags" do
       post.tag!(["rails","another tag"])
       visit "/monologue"
       click_on "Rails"
+      page.should have_content("post X")
+      page.should_not have_content("we need to reach 88 miles per hour")
+    end
+
+    it "should work with non-latin tag" do
+      post = Factory(:post, title: "non-latin tag post title", published_at: DateTime.new(3000))
+      post.tag!(["rails","Тест"])
+      visit "/monologue"
+      click_on "Тест"
       page.should have_content("post X")
       page.should_not have_content("we need to reach 88 miles per hour")
     end
