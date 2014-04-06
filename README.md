@@ -44,9 +44,9 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 
 
 ## Installation
-### 1. Add the gem to your `Gemfile`
+### 1. Add the gem to your `Gemfile`. This will get the latest version compatible with Rails 4 until we release a gem
 ```ruby
-gem "monologue"
+gem 'monologue', github: 'jipiboily/monologue'
 ```
 And run `bundle install` to fetch the gem and update your 'Gemfile.lock'.
 
