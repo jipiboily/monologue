@@ -116,7 +116,3 @@ You will need to install this before running the test suite:
 ## Thanks to
 
 Zurb for the "social foundicons".
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jipiboily/monologue/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
