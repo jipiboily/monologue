@@ -3,7 +3,7 @@ class Monologue::ApplicationController < ApplicationController
 
   layout Monologue::Config.layout if Monologue::Config.layout # TODO: find a way to test that. It was asked in issue #54 (https://github.com/jipiboily/monologue/issues/54)
 
-  before_filter :recent_posts, :all_tags
+  before_filter :recent_posts, :all_tags, :archive_posts
 
   def recent_posts
     @recent_posts = Monologue::Post.published.limit(3)
@@ -24,6 +24,20 @@ class Monologue::ApplicationController < ApplicationController
          layout: false, status: 404, formats: [:html]
     else
       render action: "404", status: 404, formats: [:html]
+    end
+  end
+
+  def archive_posts
+    @archive_posts = {}
+    @first_post_year = DateTime.now.year
+
+    # limit to 100 for safety reasons
+    posts = Monologue::Post.published.limit(100)
+    if posts.length > 0
+      @archive_posts = posts.group_by {
+        |post| post.published_at.beginning_of_month.strftime("%Y %-m")
+      }
+      @first_post_year = posts.last.published_at.year
     end
   end
 
