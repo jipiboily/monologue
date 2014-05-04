@@ -37,7 +37,9 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - comments are handled by [disqus](http://disqus.com/)
 - more in the [CHANGELOG](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md)
 
-- bonus: there is a [monologue-markdown](https://github.com/jipiboily/monologue-markdown) extension
+- Available extensions
+  - [monologue-markdown](https://github.com/jipiboily/monologue-markdown)
+  - [monologue_image_upload](https://github.com/msevestre/monologue_image_upload)
 
 ### missing features
 - see [roadmap](https://github.com/jipiboily/monologue/wiki/Roadmap)!
@@ -85,12 +87,6 @@ This is all done in an initializer file, say `config/initializers/monologue.rb`.
 ### 6. Ready
 Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
-### Note to Heroku users
-1. Additionnal step: turn caching off in `config/environments/production.rb`:
-```ruby
-config.action_controller.perform_caching = false
-```
-2. If you use compiled assets, I recommend you to add `gem "tinymce-rails"` to your Gemfile otherwise you might not be able to post an article.
 
 ### Note to users
 Monologue is using his own tables. If you want to use your own tables with monologue (for example the User table)
@@ -100,7 +96,7 @@ this might help you to monkey patch [Monkey Patch](https://gist.github.com/jipib
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
 
 ## Requirements
-- Rails 3.1 +
+- Rails 4.0.4 +
 - Database: MySQL & Postgres are supported but other databases might work too.
 
 ## Authors
