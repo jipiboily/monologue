@@ -16,10 +16,10 @@ module Monologue
     config.generators.integration_tool :rspec
 
     initializer "monologue.assets.precompile" do |app|
-       app.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-       app.config.assets.precompile += %w[
-          monologue/admin/ckeditor-config.js
-          ckeditor/*
+      app.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+      app.config.assets.precompile += %w[
+        monologue/admin/ckeditor-config.js
+        ckeditor/*
       ]
     end
 
