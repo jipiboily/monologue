@@ -15,7 +15,7 @@ module Monologue
     config.generators.fixture_replacement :factory_girl
     config.generators.integration_tool :rspec
 
-    initializer "monologue.assets.precompile" do |app|
+    initializer 'monologue.assets.precompile' do |app|
       app.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
       app.config.assets.precompile += %w[
         monologue/admin/ckeditor-config.js
@@ -23,7 +23,7 @@ module Monologue
       ]
     end
 
-    initializer "monologue.configuration", :before => :load_config_initializers do |app|
+    initializer 'monologue.configuration', :before => :load_config_initializers do |app|
       app.config.monologue = Monologue::Configuration.new
       Monologue::Config = app.config.monologue
     end
