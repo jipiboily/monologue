@@ -1,7 +1,7 @@
 class Monologue::PostsController < Monologue::ApplicationController
   def index
     @page = params[:page].nil? ? 1 : params[:page]
-    @posts = Monologue::Post.published.page(@page)
+    @posts = Monologue::Post.page(@page).published
   end
 
   def show
