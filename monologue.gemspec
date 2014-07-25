@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails",'~> 4.0.0'
   s.add_dependency "truncate_html"
   s.add_dependency "jquery-rails"
-  s.add_dependency "ckeditor"
+  s.add_dependency "ckeditor",'~> 4.0.11'
   s.add_dependency 'select2-rails', '~> 3.2'
 
   s.add_development_dependency "rspec-rails", "~> 2.8"
