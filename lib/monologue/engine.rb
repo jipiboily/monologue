@@ -23,7 +23,7 @@ module Monologue
       ]
     end
 
-    initializer 'monologue.configuration', before: load_config_initializers do |app|
+    initializer 'monologue.configuration', :before => :load_config_initializers do |app|
       app.config.monologue = Monologue::Configuration.new
       Monologue::Config = app.config.monologue
     end
