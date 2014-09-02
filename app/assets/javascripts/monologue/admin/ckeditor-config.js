@@ -18,6 +18,4 @@ $(function() {
     	{ name: 'colors', items : [ 'TextColor','BGColor' ] },
     	{ name: 'tools', items : [ 'Maximize', 'ShowBlocks' ] }
     ];
-    
-    CKEDITOR.config.assets_langages = 'fr';
 });
