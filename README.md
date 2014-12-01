@@ -70,13 +70,13 @@ be available at `/monologue`.
 ### 3. Migrate Monologue's database tables
 Run these commands:
 
-1. $`bundle exec rake monologue:install:migrations`
-2. $`bundle exec rake db:create` (only if this is a new project)
-3. $`bundle exec rake db:migrate`
+1. $`bin/rake monologue:install:migrations`
+2. $`bin/rake db:create` (only if this is a new project)
+3. $`bin/rake db:migrate`
 
 
 ### 4. Create a user
-Open your development console with `rails c`, then:
+Open your development console with `bin/rails c`, then:
 ```ruby
 Monologue::User.create(name: "monologue", email:"monologue@example.com", password:"my-password", password_confirmation: "my-password")
 ```
@@ -124,9 +124,9 @@ Starting point:
 * Fork the repo
 * Clone your repo
 * Run `bundle install`
-* Run `bundle exec rake test_app` to create the test application in `spec/dummy`
+* Run `bin/rake test_app` to create the test application in `spec/dummy`
 * Make your changes
-* Ensure specs pass by running `bundle exec rspec spec`
+* Ensure specs pass by running `bin/rspec spec`
 * Submit your pull request
 
 
