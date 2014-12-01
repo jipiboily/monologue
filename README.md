@@ -26,7 +26,7 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 - IRC channel (on Freenode): #monologue.
 
 ## Some features
-- Rails mountable engine (fully named spaced and mountable in an already existing app)
+- Rails mountable engine (fully namespaced and mountable in an already existing app)
 - tested
 - back to basics: few features
 - tags (or categories)
