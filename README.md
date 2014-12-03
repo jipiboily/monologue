@@ -8,7 +8,7 @@
 
 -
 
-Monologue is a basic mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
+Monologue is a basic, mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
 ## Version
 
@@ -16,7 +16,7 @@ This README is for a future Monologue version, that will be 0.4.X and be Rails 4
 
 ## Upgrade and changes
 
-To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/blob/master/UPGRADE.md) file. If you want to know what changed since the last versions, see [CHANGELOG.md](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md).
+To learn how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/blob/master/UPGRADE.md) file. If you want to learn what changed since the last versions, see [CHANGELOG.md](https://github.com/jipiboily/monologue/blob/master/CHANGELOG.md).
 
 ## Questions? Problems? Documentation?
 
@@ -46,9 +46,9 @@ To know how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue/
 
 
 ## Installation
-### 1. Add the gem to your `Gemfile`. This will get the latest version compatible with Rails 4 until we release a gem
+### 1. Add the gem to your `Gemfile`.
 ```ruby
-gem 'monologue', github: 'jipiboily/monologue'
+gem 'monologue'
 ```
 And run `bundle install` to fetch the gem and update your 'Gemfile.lock'.
 
@@ -82,15 +82,15 @@ Monologue::User.create(name: "monologue", email:"monologue@example.com", passwor
 ```
 
 ### 5. Configure Monologue.
-This is all done in an initializer file, say `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
+This is all done in an initializer file, typically `config/initializers/monologue.rb`. More on this in the [Wiki - Configuration](https://github.com/jipiboily/monologue/wiki/Configuration).
 
 ### 6. Ready
-Start your server and head on [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
+Start your server and go to [http://localhost:3000/monologue](http://localhost:3000/monologue) to log in the admin section.
 
 
 ### Note to users
-Monologue is using his own tables. If you want to use your own tables with monologue (for example the User table)
-this might help you to monkey patch [Monkey Patch](https://gist.github.com/jipiboily/776d907fc932640ac59a)
+Monologue is using its own tables. If you want to use your own tables with monologue (for example the User table)
+this might help you to [monkey patch](https://gist.github.com/jipiboily/776d907fc932640ac59a).
 
 ## Customization
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
