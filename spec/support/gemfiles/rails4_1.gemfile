@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+
+gemspec :path => "../../../"
+
+group :development, :test do
+  gem "thin"
+  gem 'rails', '>= 4.1.0'
+  gem 'pry'
+
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
+end
+
+gem 'coveralls', require: false
+
+gem 'pg'
