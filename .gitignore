@@ -15,3 +15,7 @@ coverage/
 .idea/**/*
 
 Gemfile.lock
+
+.ruby-version
+.rbenv-version
+.rvmrc
