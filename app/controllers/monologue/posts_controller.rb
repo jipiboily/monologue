@@ -17,5 +17,9 @@ class Monologue::PostsController < Monologue::ApplicationController
 
   def feed
     @posts = Monologue::Post.published.limit(25)
+    if params[:tags].present?
+      tags = Monologue::Tag.where(name: params[:tags].split(',')).pluck(:id)
+      @posts = @posts.joins(:taggings).where('monologue_taggings.tag_id in (?)', tags)
+    end
   end
 end
