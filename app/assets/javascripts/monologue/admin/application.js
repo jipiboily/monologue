@@ -11,7 +11,6 @@
 //= require monologue/bootstrap/bootstrap-datepicker-fr
 //= require monologue/bootstrap/bootstrap-datepicker-pt
 //= require monologue/bootstrap/bootstrap-datepicker-es
-//= require ckeditor/override
 //= require ckeditor/init
 //= require monologue/admin/ckeditor-config
 //= require monologue/admin/posts
