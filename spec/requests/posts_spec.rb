@@ -35,7 +35,7 @@ describe "posts" do
   end
 
   it "should not show an unpublished post" do
-    Factory(:post, published:false, title: "I am Marty McFly")
+    Factory(:post, published: false, title: "I am Marty McFly")
     visit root_path
     page.should_not have_content "I am Marty McFly"
   end
