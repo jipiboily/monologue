@@ -124,7 +124,8 @@ Starting point:
 * Fork the repo
 * Clone your repo
 * Run `bundle install`
-* Run `bin/rake test_app` to create the test application in `spec/dummy`
+* Run `bundle exec rake db:migrate`
+* Run `bundle exec rake db:setup`
 * Make your changes
 * Ensure specs pass by running `bin/rspec spec`
 * Submit your pull request
