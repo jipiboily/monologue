@@ -2,7 +2,7 @@
   <h1><%= link_to post.title, post.full_url %></h1>
   <div class="posted">
     <span data-monologue="time">
-      <time datetime="<%= post.published_at %>">
+      <time datetime="<%= post.published_at.iso8601 %>">
         <%= I18n.localize(post.published_at.to_date, format: :long) %>
       </time>
     </span>
