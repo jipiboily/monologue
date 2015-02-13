@@ -1,1 +1,1 @@
-<span class='tag'><%=link_to tag.name, tag_url(tag) %></span>
+<span class='tag tag-<%= tag.name.parameterize %>'><%=link_to tag.name, tag_url(tag) %></span>
