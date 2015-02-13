@@ -27,6 +27,7 @@ module Monologue
 
                     :admin_force_ssl,
                     :posts_per_page,
+                    :admin_posts_per_page,
                     :google_analytics_id,
                     :gauge_analytics_site_id,
                     :layout,
