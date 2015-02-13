@@ -44,7 +44,7 @@ class Monologue::Post < ActiveRecord::Base
     self.limit(per_page).offset(offset)
   end
 
-  def self.listing_page p
+  def self.listing_page(p)
     per_page = Monologue::Config.admin_posts_per_page || 50
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
