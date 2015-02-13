@@ -10,6 +10,14 @@ describe "posts" do
       visit admin_posts_path
       page.should have_content "Add a monologue"
     end
+
+    it "can access post's admin with pagination" do
+      Factory(:post, title: "my first title")
+      Factory(:post, title: "my second title")
+      Monologue::Config.admin_posts_per_page = 1
+      visit admin_posts_page_path page: 1
+      page.should have_content "Older Posts"
+    end
     
     it "can create new post" do
       visit new_admin_post_path
