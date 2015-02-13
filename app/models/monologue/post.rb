@@ -37,19 +37,11 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def self.page p
-    per_page = Monologue::Config.posts_per_page || 10
-    set_total_pages(per_page)
-    p = (p.nil? ? 0 : p.to_i - 1)
-    offset =  p * per_page
-    self.limit(per_page).offset(offset)
+    paged_results(p, Monologue::Config.posts_per_page || 10, false)
   end
 
   def self.listing_page(p)
-    per_page = Monologue::Config.admin_posts_per_page || 50
-    set_total_pages(per_page)
-    p = (p.nil? ? 0 : p.to_i - 1)
-    offset =  p * per_page
-    default.limit(per_page).offset(offset)
+    paged_results(p, Monologue::Config.admin_posts_per_page || 50, true)
   end
 
   def self.total_pages
@@ -62,6 +54,17 @@ class Monologue::Post < ActiveRecord::Base
 
   private
 
+  def self.paged_results(p, per_page, admin)
+    set_total_pages(per_page)
+    p = (p.nil? ? 0 : p.to_i - 1)
+    offset =  p * per_page
+    if admin
+      default.limit(per_page).offset(offset)
+    else
+      limit(per_page).offset(offset)
+    end
+  end
+
   def generate_url
     return unless self.url.blank?
     year = self.published_at.class == ActiveSupport::TimeWithZone ? self.published_at.year : DateTime.now.year
@@ -71,5 +74,4 @@ class Monologue::Post < ActiveRecord::Base
   def url_do_not_start_with_slash
     errors.add(:url, I18n.t("activerecord.errors.models.monologue/post.attributes.url.start_with_slash")) if self.url.start_with?("/")
   end
-
 end
