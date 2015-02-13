@@ -3,7 +3,8 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   before_filter :load_post, only: [:edit, :update]
   
   def index
-    @posts = Monologue::Post.default
+    @page = params[:page].nil? ? 1 : params[:page]
+    @posts = Monologue::Post.listing_page(@page)
   end
 
   def new
