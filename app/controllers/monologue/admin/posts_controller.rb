@@ -4,7 +4,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   
   def index
     @page = params[:page].nil? ? 1 : params[:page]
-    @posts = Monologue::Post.listing_page(@page)
+    @posts = Monologue::Post.listing_page(@page).includes(:user)
   end
 
   def new

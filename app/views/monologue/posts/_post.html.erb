@@ -1,4 +1,4 @@
-<section>
+<section data-tags="<%= post.tags.map(&:name).join(' ') %>">
   <%= render partial: 'monologue/posts/post_header', locals: {post: post} %>
 
   <div class="content" data-monologue="content">
