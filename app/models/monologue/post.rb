@@ -49,7 +49,7 @@ class Monologue::Post < ActiveRecord::Base
     set_total_pages(per_page)
     p = (p.nil? ? 0 : p.to_i - 1)
     offset =  p * per_page
-    self.default.limit(per_page).offset(offset)
+    default.limit(per_page).offset(offset)
   end
 
   def self.total_pages
