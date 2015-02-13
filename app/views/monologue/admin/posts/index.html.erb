@@ -20,3 +20,7 @@
     <% end %>
   </tbody>
 </table>
+
+<% if @page %>
+  <%= render partial: "pagination" %>
+<% end %>
