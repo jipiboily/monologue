@@ -3,7 +3,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   before_filter :load_post, only: [:edit, :update]
   
   def index
-    @posts = Monologue::Post.default
+    @posts = Monologue::Post.default.includes(:user)
   end
 
   def new
