@@ -58,6 +58,7 @@ it:
           published: "Sì"
           not_published: "Non pubblicato"
           status: "Pubblicato ?"
+          author: "Autore"
         new:
           header: "Nuovo monologue"
         create:

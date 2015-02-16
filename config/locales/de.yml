@@ -58,6 +58,7 @@ de:
           published: "Yes"
           not_published: "Nicht veröffentlicht"
           status: "Veröffentlichen ?"
+          author: "Autor"
         new:
           header: "Neuer Monologue"
         create:
@@ -127,7 +128,6 @@ de:
               blank: "'Veröffentlichen am' wird benötigt"
             url:
               start_with_slash: "URL darf nicht mit einem Schrägstrich anfangen ('/')"
-
         monologue/user:
           blank: "%{attribute} wird benötigt"
           taken: "%{attribute} wurde schon benutzt"
