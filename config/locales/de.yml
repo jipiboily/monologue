@@ -128,6 +128,7 @@ de:
               blank: "'Veröffentlichen am' wird benötigt"
             url:
               start_with_slash: "URL darf nicht mit einem Schrägstrich anfangen ('/')"
+              unique: "URL wird bereits von einem anderen Beitrag verwendet"
         monologue/user:
           blank: "%{attribute} wird benötigt"
           taken: "%{attribute} wurde schon benutzt"

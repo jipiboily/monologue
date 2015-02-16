@@ -39,6 +39,8 @@ fr:
         new:
           create: "Ajouter"
           header: "Ajouter un utilisateur"
+        create:
+          success: "L'utilisateur créé avec succès"
         delete:
           removed: "L'utilisateur '%{user}' a été supprimé"
           failed: "L'utilisateur '%{user}' n'a pas pu être supprimé"

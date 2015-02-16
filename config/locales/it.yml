@@ -122,6 +122,7 @@ it:
         full_messages: "%{message}"
         monologue/posts_revision:
           blank: "%{attribute} è richiesto"
+          taken: "%{attribute} è già utilizzato da un altro post"
           attributes:
             published_at:
               blank: "'Pubblicato il' è richiesto"

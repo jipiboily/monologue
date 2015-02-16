@@ -37,19 +37,19 @@ pt_BR:
           header: "Editar configurações de usuário"
           save: "Salvar"
         new:
-          create: "TODO Create"
-          header: "TODO Add a user"
+          create: "Criar"
+          header: "Adicionar um usuárior"
         create:
-          success: "TODO User created"
+          success: "Usuário criado"
         delete:
-          removed: "TODO User '%{user}' removed successfully"
-          failed: "TODO Could not remove user '%{user}'"
+          removed: "Usuário '%{user}' removido com sucesso"
+          failed: "Não poderia remover o usuário '%{user}'"
         index:
           email: "Email"
           name: "Nome"
           edit: "Editar"
           delete: "Deletar"
-          create: "TODO Create"
+          create: "Criar"
       posts:
         index:
           title: "Título"
@@ -108,11 +108,11 @@ pt_BR:
           edit_user_info: "Minha conta"
           settings: "Configurações"
           log_out: "Sair"
-          users: "TODO Users"
+          users: "Usuários"
   activerecord:
     attributes:
       monologue/user:
-        password_digest: "TODO Password confirmation"
+        password_digest: "Confirmação de senha"
     errors:
       format: "%{message}"
     errors:
@@ -128,9 +128,10 @@ pt_BR:
               blank: "'Data de publicação' é obrigatório"
             url:
               start_with_slash: "URL não pode começar com '/'"
+              unique: "URL já é utilizado por outro post"
         monologue/user:
           blank: "%{attribute} é obrigatório"
-          taken: "TODO %{attribute} has already been taken"
+          taken: "%{attribute} já utilizada por outro post"
           attributes:
             password:
               confirmation: "Senha e confirmação diferem."
