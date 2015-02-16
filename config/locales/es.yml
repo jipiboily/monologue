@@ -87,6 +87,18 @@ es:
       comments:
         show:
           recent_comments: "Comentarios recientes"
+      cache:
+        show:
+          title: "Gestioanr cache"
+          description: "Puedes borrar la cache aquí"
+          files_in_cache: "Estos son los ficheros en cache:"
+          no_files_are_cached: "No hay ningun fichero en cache"
+          delete: "Borrar la cache por completo?"
+          confirm: 'Estas seguro de que quieres borrar la cache por completo?'
+          cache_wiped: "La cache se ha borrado!"
+        how_to_enable:
+          warning: "No puedes gestionar la cache!"
+          explanations: "Hay ciertos ajustes que no estan correctamente definidos para usar la cache de Monologue. Por favor revisa la documentación de configuración"
       sessions:
         new:
           title: "Iniciar sesión"
@@ -128,7 +140,6 @@ es:
               blank: "'Publicado en' es obligatorio"
             url:
               start_with_slash: "URL no puede empezar con '/'"
-              unique: "URL está en uso por otro artículo"
         monologue/user:
           blank: "%{attribute} es obligatorio"
           taken: "%{attribute} ya está en uso"

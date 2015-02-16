@@ -37,19 +37,19 @@ ro:
           header: "Modificare cont"
           save: "Salvati"
         new:
-          create: "Crea"
-          header: "Adăugați un utilizator"
+          create: "TODO Create"
+          header: "TODO Add a user"
         create:
-          success: "Utilizatorul a fost creat."
+          success: "TODO User created"
         delete:
-          removed: "Utilizatorul '%{user}' a fost eliminat cu succes."
-          failed: "Nu a putut fi elimina utilizatorul '%{user}'"
+          removed: "TODO User '%{user}' removed successfully"
+          failed: "TODO Could not remove user '%{user}'"
         index:
           email: "Email"
           name: "Nume"
           edit: "Modificati"
           delete: "Stergeti"
-          create: "Crea"
+          create: "TODO Create"
       posts:
         index:
           title: "Titlu"
@@ -108,11 +108,11 @@ ro:
           edit_user_info: "Contul meu"
           settings: "Preferinte"
           log_out: "Iesire"
-          users: "Utilizatorii"
+          users: "TODO Users"
   activerecord:
     attributes:
       monologue/user:
-        password_digest: "Confirmarea parolei"
+        password_digest: "TODO Password confirmation"
     errors:
       format: "%{message}"
     errors:
@@ -128,10 +128,9 @@ ro:
               blank: "'Published at' este necesar"
             url:
               start_with_slash: "URL-ul nu poate incepe cu slash ('/')"
-              unique: "URL-ul este deja utilizat de un alt post"
         monologue/user:
           blank: "%{attribute} este necesar"
-          taken: "%{attribute} a fost deja luată"
+          taken: "TODO %{attribute} has already been taken"
           attributes:
             password:
               confirmation: "Parola si confirmarea acesteia nu sunt identice."

@@ -128,7 +128,6 @@ en:
               blank: "'Published at' is required"
             url:
               start_with_slash: "URL can't start with a slash ('/')"
-              unique: "URL is already used by another post"
         monologue/user:
           blank: "%{attribute} is required"
           taken: "%{attribute} has already been taken"

@@ -128,7 +128,7 @@ tr:
               blank: "'Gönderi tarihi' gerekli"
             url:
               start_with_slash: "URL ('/') ile başlayamaz"
-              unique: "URL zaten başka bir yazı tarafından kullanılan"
+
         monologue/user:
           blank: "%{attribute} gereklidir"
           taken: "%{attribute} zaten kullanılmakta"
