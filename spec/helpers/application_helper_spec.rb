@@ -43,7 +43,8 @@ describe Monologue::ApplicationHelper do
   describe "social icons+links" do
     context "render if enabled" do
       it "generate rss <link> tag for <head>" do
-        helper.rss_head_link.should have_css("link",
+        helper.rss_head_link.should have_css(
+          "link",
           href: "http://test.host/feed",
           rel: "alternate",
           title: "RSS",
@@ -52,7 +53,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate rss icon" do
-        helper.rss_icon.should have_css("a",
+        helper.rss_icon.should have_css(
+          "a",
           href: "http://test.host/feed",
           class: "social",
           target: "_blank"
@@ -62,7 +64,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate github" do
-        helper.github_icon.should have_css("a",
+        helper.github_icon.should have_css(
+          "a",
           href: "http://github.com/#{Monologue::Config.github_username}",
           class: "social",
           target: "_blank"
@@ -72,7 +75,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate twitter" do
-        helper.twitter_icon.should have_css("a",
+        helper.twitter_icon.should have_css(
+          "a",
           href: "http://twitter.com/#{Monologue::Config.twitter_username}",
           class: "social",
           target: "_blank"
@@ -82,7 +86,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate linkedin" do
-        helper.linkedin_icon.should have_css("a",
+        helper.linkedin_icon.should have_css(
+          "a",
           href: "#{Monologue::Config.linkedin_url}",
           class: "social",
           target: "_blank"
@@ -92,7 +97,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate googleplus" do
-        helper.googleplus_icon.should have_css("a",
+        helper.googleplus_icon.should have_css(
+          "a",
           href: "#{Monologue::Config.google_plus_account_url}",
           class: "social",
           target: "_blank"
@@ -102,7 +108,8 @@ describe Monologue::ApplicationHelper do
       end
 
       it "generate facebook" do
-        helper.facebook_icon.should have_css("a",
+        helper.facebook_icon.should have_css(
+          "a",
           href: "#{Monologue::Config.facebook_url}",
           class: "social",
           target: "_blank"
