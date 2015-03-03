@@ -17,6 +17,7 @@ gemspec
 group :development, :test do
   gem "thin"
   gem 'rails', '>= 4.0.4'
+  gem 'responders', '~> 2.0'
   gem 'pry'
 
   if RUBY_PLATFORM.downcase.include?("darwin")
