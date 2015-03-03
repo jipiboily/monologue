@@ -43,48 +43,70 @@ describe Monologue::ApplicationHelper do
   describe "social icons+links" do
     context "render if enabled" do
       it "generate rss <link> tag for <head>" do
-        helper.rss_head_link.should have_css("link", href: "http://test.host/feed", rel: "alternate",
-          title: "RSS", type: "application/rss+xml")
+        helper.rss_head_link.should have_css("link",
+          href: "http://test.host/feed",
+          rel: "alternate",
+          title: "RSS",
+          type: "application/rss+xml"
+        )
       end
 
       it "generate rss icon" do
-        helper.rss_icon.should have_css("a", href: "http://test.host/feed", class: "social",
-          target: "_blank")
+        helper.rss_icon.should have_css("a",
+          href: "http://test.host/feed",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.rss_icon.should have_css("i", class: "foundicon-rss")
       end
 
       it "generate github" do
         helper.github_icon.should have_css("a",
-          href: "http://github.com/#{Monologue::Config.github_username}", class: "social", target: "_blank")
+          href: "http://github.com/#{Monologue::Config.github_username}",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.github_icon.should have_css("i", class: "foundicon-github")
       end
 
       it "generate twitter" do
         helper.twitter_icon.should have_css("a",
-          href: "http://twitter.com/#{Monologue::Config.twitter_username}", class: "social", target: "_blank")
+          href: "http://twitter.com/#{Monologue::Config.twitter_username}",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.twitter_icon.should have_css("i", class: "foundicon-twitter")
       end
 
       it "generate linkedin" do
-        helper.linkedin_icon.should have_css("a", href: "#{Monologue::Config.linkedin_url}", class: "social",
-          target: "_blank")
+        helper.linkedin_icon.should have_css("a",
+          href: "#{Monologue::Config.linkedin_url}",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.linkedin_icon.should have_css("i", class: "foundicon-linkedin")
       end
 
       it "generate googleplus" do
-        helper.googleplus_icon.should have_css("a", href: "#{Monologue::Config.google_plus_account_url}",
-          class: "social", target: "_blank")
+        helper.googleplus_icon.should have_css("a",
+          href: "#{Monologue::Config.google_plus_account_url}",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.googleplus_icon.should have_css("i", class: "foundicon-google-plus")
       end
 
       it "generate facebook" do
-        helper.facebook_icon.should have_css("a", href: "#{Monologue::Config.facebook_url}", class: "social",
-          target: "_blank")
+        helper.facebook_icon.should have_css("a",
+          href: "#{Monologue::Config.facebook_url}",
+          class: "social",
+          target: "_blank"
+        )
 
         helper.facebook_icon.should have_css("i", class: "foundicon-facebook")
       end
