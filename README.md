@@ -54,7 +54,7 @@ And run `bundle install` to fetch the gem and update your 'Gemfile.lock'.
 
 ### 2. Route to Monologue
 
-Add this to your route file (`config/route.rb`)
+Add this to your route file (`config/routes.rb`)
 ```ruby
 # This line mounts Monologue's routes at the root of your application.
 # This means, any requests to URLs such as /my-post, will go to Monologue::PostsController.
