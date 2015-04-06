@@ -1,4 +1,4 @@
-require 'rails/generators/base'
+require "rails/generators/base"
 
 module Monologue
   module Generators
@@ -16,7 +16,7 @@ module Monologue
       protected
 
       def view_directory(name)
-        directory name.to_s,"#{target_path}/#{name}" 
+        directory name.to_s, "#{target_path}/#{name}"
       end
 
       def target_path
