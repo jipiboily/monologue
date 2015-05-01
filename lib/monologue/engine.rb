@@ -21,6 +21,7 @@ module Monologue
       app.config.assets.precompile += %w[
         monologue/admin/ckeditor-config.js
         ckeditor/*
+        *.eot* *.woff *.ttf
       ]
     end
 
