@@ -1,0 +1,9 @@
+<div id="pagination">
+  <% if @posts.total_pages > 1 && @posts.total_pages != @page.to_i %>
+    <%= link_to t(".older_posts"), admin_posts_page_path(@page.to_i+1), class: "older_posts" %>
+  <% end %>
+
+  <% if @posts.total_pages > 1 && @page.to_i > 1 %>
+    <%= link_to t(".newer_posts"), admin_posts_page_path(@page.to_i-1), class: "newer_posts" %>
+  <% end %>
+</div>
