@@ -17,5 +17,6 @@ class Monologue::PostsController < Monologue::ApplicationController
 
   def feed
     @posts = Monologue::Post.published.limit(25)
+    render 'feed', layout: false
   end
 end
