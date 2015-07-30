@@ -56,6 +56,7 @@ fr:
           published: "Oui"
           not_published: "Non publié"
           status: "Publié ?"
+          author: "Auteur"
         new:
           header: "Nouveau monologue"
         create:

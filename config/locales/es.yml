@@ -58,6 +58,7 @@ es:
           published: "Sí"
           not_published: "No publicado"
           status: "Publicado?"
+          author: "Autor"
         new:
           header: "Nuevo artículo"
         create:
@@ -139,7 +140,6 @@ es:
               blank: "'Publicado en' es obligatorio"
             url:
               start_with_slash: "URL no puede empezar con '/'"
-
         monologue/user:
           blank: "%{attribute} es obligatorio"
           taken: "%{attribute} ya está en uso"

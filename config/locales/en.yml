@@ -58,6 +58,7 @@ en:
           published: "Yes"
           not_published: "Not published"
           status: "Published ?"
+          author: "Author"
         new:
           header: "New monologue"
         create:
@@ -127,7 +128,6 @@ en:
               blank: "'Published at' is required"
             url:
               start_with_slash: "URL can't start with a slash ('/')"
-
         monologue/user:
           blank: "%{attribute} is required"
           taken: "%{attribute} has already been taken"

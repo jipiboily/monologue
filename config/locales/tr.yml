@@ -58,6 +58,7 @@ tr:
           published: "Evet"
           not_published: "Yayınlanmadı"
           status: "Yayınlandı mı?"
+          author: "Yazar"
         new:
           header: "Yeni monolog"
         create:

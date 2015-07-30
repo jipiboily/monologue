@@ -58,6 +58,7 @@ pt_BR:
           published: "Sim"
           not_published: "Não publicado"
           status: "Publicado?"
+          author: "Autor"
         new:
           header: "Novo blog post"
         create:

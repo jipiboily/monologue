@@ -58,6 +58,7 @@ ro:
           published: "Da"
           not_published: "Nu e publicat"
           status: "Publicat ?"
+          author: "Autor"
         new:
           header: "Articol nou"
         create:
