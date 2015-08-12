@@ -4,6 +4,7 @@ require "select2-rails"
 require "jquery-rails"
 require "sass-rails"
 require "coffee-rails"
+require "responders"
 
 module Monologue
   class Engine < Rails::Engine
@@ -20,6 +21,7 @@ module Monologue
       app.config.assets.precompile += %w[
         monologue/admin/ckeditor-config.js
         ckeditor/*
+        *.eot* *.woff *.ttf
       ]
     end
 
