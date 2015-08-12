@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ckeditor",'~> 4.1.1'
   s.add_dependency 'select2-rails', '~> 3.2'
   s.add_dependency "sass-rails",'~> 5.0.0'
-  s.add_dependency "responders", '~> 2.0.0'
+  s.add_dependency "responders", '~> 2.1.0'
 
   s.add_development_dependency "rspec-rails", "~> 2.8"
   s.add_development_dependency 'factory_girl_rails', '~> 1.4.0'
