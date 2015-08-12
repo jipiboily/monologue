@@ -17,9 +17,12 @@ module Monologue
                   :facebook_like_locale,
                   :facebook_url,
                   :facebook_logo, #used in the open graph protocol to display an image when a post is liked
+                  :facebook_app_id,
 
                   :google_plus_account_url,
                   :google_plusone_locale,
+
+                  :use_pinterest, #display pinterest?
 
                   :linkedin_url,
 
@@ -32,7 +35,6 @@ module Monologue
                   :gauge_analytics_site_id,
                   :layout,
                   :sidebar
-
   end
 
   def self.config(&block)

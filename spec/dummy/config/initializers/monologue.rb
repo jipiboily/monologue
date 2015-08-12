@@ -29,6 +29,8 @@ Monologue.config do |c|
   c.twitter_username = "jipiboily"
   c.facebook_url = "https://www.facebook.com/jipiboily"
   c.facebook_logo = 'logo.png'
+  c.facebook_app_id="123465"
+  c.use_pinterest= true
   c.google_plus_account_url = "https://plus.google.com/u/1/115273180419164295760/posts"
   c.linkedin_url = "http://www.linkedin.com/in/jipiboily"
   c.github_username = "jipiboily"
