@@ -95,6 +95,10 @@ this might help you to [monkey patch](https://gist.github.com/jipiboily/776d907f
 ## Customization
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
 
+## Copy views
+copy views like devise `rails g monologue:views`
+or use scope: `rails g monologue:views blog`
+
 ## Requirements
 - Rails 4.0.4 +
 - Database: MySQL & Postgres are supported but other databases might work too.
