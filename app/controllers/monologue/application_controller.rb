@@ -10,7 +10,7 @@ class Monologue::ApplicationController < ApplicationController
   end
 
   def all_tags
-    @tags  =  Monologue::Tag.with_frequency.order("name")
+    @tags = Monologue::Tag.order("name").select{|t| t.frequency>0}
     #could use minmax here but it's only supported with ruby > 1.9'
     @tags_frequency_min = @tags.map{|t| t.frequency}.min
     @tags_frequency_max = @tags.map{|t| t.frequency}.max
