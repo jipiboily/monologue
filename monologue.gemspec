@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 4.0.4"
   s.add_dependency "bcrypt", '~> 3.1.7'
-  s.add_dependency "coffee-rails",'~> 4.0.0'
+  s.add_dependency "coffee-rails",'>= 4.0.0'
   s.add_dependency "truncate_html"
   s.add_dependency "jquery-rails"
   s.add_dependency 'rails-i18n'
