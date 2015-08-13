@@ -12,7 +12,7 @@ Monologue is a basic, mountable blogging engine in Rails built to be easily moun
 
 ## Version
 
-This README is for a future Monologue version, that will be 0.4.X and be Rails 4 specific. See other branches for other versions (0-3-stable being the latest stable version).
+This README is for a future Monologue version, that will be 0.4.2 and be compatible with Rails 4.2.x. See other branches for other versions (0-4-stable being the latest stable version).
 
 ## Upgrade and changes
 
@@ -100,7 +100,7 @@ copy views like devise `rails g monologue:views`
 or use scope: `rails g monologue:views blog`
 
 ## Requirements
-- Rails 4.0.4 +
+- Rails 4.2.1 +
 - Database: MySQL & Postgres are supported but other databases might work too.
 
 ## Authors
