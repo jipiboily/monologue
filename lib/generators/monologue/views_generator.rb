@@ -20,7 +20,7 @@ module Monologue
       end
 
       def target_path
-        @target_path ||= "app/views/#{scope || :monologue}"
+        @target_path ||= "app/views/#{scope || ''}"
       end
     end
   end
