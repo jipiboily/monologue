@@ -34,7 +34,13 @@ module Monologue
                   :google_analytics_id,
                   :gauge_analytics_site_id,
                   :layout,
-                  :sidebar
+                  :sidebar,
+                  :preview_size
+
+    def initialize
+      @preview_size = 1000;
+    end
+
   end
 
   def self.config(&block)
