@@ -1,4 +1,7 @@
 # Upgrade Monologue
+## 0.4.0 to 0.5.0
+ - No update required
+
 
 ## 0.3.0 to 0.4.0
  - Change of syntax for configuration. Please use Monologue::Config instead of the old Monologue module

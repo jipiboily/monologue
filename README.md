@@ -12,7 +12,7 @@ Monologue is a basic, mountable blogging engine in Rails built to be easily moun
 
 ## Version
 
-This README is for a future Monologue version, that will be 0.4.2 and be compatible with Rails 4.2.x. See other branches for other versions (0-4-stable being the latest stable version).
+This README is for the latest version of Monologue (0-5-stable being the latest stable version).
 
 ## Upgrade and changes
 
