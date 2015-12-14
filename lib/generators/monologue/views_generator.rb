@@ -24,4 +24,5 @@ module Monologue
       end
     end
   end
+
 end

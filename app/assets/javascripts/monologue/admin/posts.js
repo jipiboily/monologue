@@ -1,8 +1,8 @@
 $(document).ready (function(){
-   
+
    var preview = {
       el: null,
-      
+
       // initialize - bind events, etc.
       init: function(selector) {
          this.el = $(selector);
@@ -10,7 +10,7 @@ $(document).ready (function(){
          $(this.el.attr("data-trigger")).click(this, this.open);
          this.el.find("[data-dismiss='post-preview']").click(this, this.close);
       },
-      
+
       // open preview
       open: function(e) {
          var el = e.data.el;
@@ -29,7 +29,7 @@ $(document).ready (function(){
             doc.open();
             doc.writeln(data);
             doc.close();
-            $(doc).keydown(e.data, e.data.keydown);   
+            $(doc).keydown(e.data, e.data.keydown);
          });
 
          // show preview & hide scrollbars
@@ -39,14 +39,14 @@ $(document).ready (function(){
          // look for esc
          $(document).on("keydown.post-preview", e.data, e.data.keydown);
       },
-      
+
       // close preview on esc key.
       keydown: function(e) {
          if (e.keyCode==27) {
             e.data.close();
          }
       },
-      
+
       // close preview
       close: function(e) {
          var el = (e==undefined)? this.el: e.data.el;
@@ -55,8 +55,7 @@ $(document).ready (function(){
          $(document).off("keydown.post-preview");
       }
    }
-   
-   
+
    // initialize preview.
    preview.init("[data-toggle='post-preview']");
 })

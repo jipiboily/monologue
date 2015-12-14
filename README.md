@@ -128,7 +128,7 @@ Starting point:
 * Fork the repo
 * Clone your repo
 * Run `bundle install`
-* Run `bundle exec rake db:migrate`
+* Run `bundle exec rake db:create db:migrate`
 * Run `bundle exec rake db:setup`
 * Make your changes
 * Ensure specs pass by running `bin/rspec spec`
