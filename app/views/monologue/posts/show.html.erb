@@ -9,10 +9,10 @@
 <article>
   <%= render partial: 'monologue/posts/post_header', locals: {post: @post }%>
   <div class="content" data-monologue="content">
-    <%= raw @post.content %>
+    <%= @post.content.html_safe %>
   </div>
 
-	<div class="tags" data-monologue="tags">
+  <div class="tags" data-monologue="tags">
     <%= render @post.tags %>
   </div>
 

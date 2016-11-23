@@ -6,13 +6,14 @@
   <%= javascript_include_tag "monologue/admin/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body> 
+<body>
   <% if monologue_current_user %>
     <%= render "layouts/monologue/admin/nav_bar" %>
   <% end %>
   <div class="container">
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}", class: (name == 'notice' ? "alert alert-info" : "alert alert-error") %>
+      <%= content_tag :div, msg, id: "flash_#{name}",
+       class: (name == 'notice' ? "alert alert-info" : "alert alert-error") %>
     <% end %>
 
     <%= yield %>
