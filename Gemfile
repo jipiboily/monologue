@@ -27,5 +27,5 @@ group :development, :test do
 end
 
 gem 'coveralls', require: false
-
 gem 'pg'
+gem 'turbolinks'
