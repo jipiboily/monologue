@@ -137,7 +137,7 @@ Starting point:
 * Run `bundle exec rake db:migrate`
 * Run `bundle exec rake db:setup`
 * Make your changes
-* Ensure specs pass by running `bin/rspec spec`
+* Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
 
