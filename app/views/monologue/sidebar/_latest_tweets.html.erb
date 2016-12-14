@@ -1,8 +1,0 @@
-<% unless Monologue::Config.twitter_username.nil? %>
-  <%= sidebar_section_for(t(".title")) do %>
-    <ul id="latest_tweets">
-      <li id="tweet_template" style="display:none;">{{text}}</li>
-    </ul>
-    <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline/<%= Monologue::Config.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
-  <% end %>
-<% end %>
