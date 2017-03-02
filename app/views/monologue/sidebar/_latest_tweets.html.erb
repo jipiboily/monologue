@@ -3,6 +3,6 @@
     <ul id="latest_tweets">
       <li id="tweet_template" style="display:none;">{{text}}</li>
     </ul>
-    <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline/<%= Monologue::Config.twitter_username %>.json?callback=TwitterWidget.callback&amp;count=5"></script>
+    <a class="twitter-timeline" data-tweet-limit="3" href="https://twitter.com/<%= Monologue::Config.twitter_username %>">Tweets by <%= Monologue::Config.twitter_username %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   <% end %>
 <% end %>
