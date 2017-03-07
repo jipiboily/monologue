@@ -29,7 +29,6 @@ To learn how to upgrade, see [UPGRADE.md](https://github.com/jipiboily/monologue
 - [Mailing list for questions](http://groups.google.com/forum/#!forum/monologue-rb)
 - [Issues and bugs](http://github.com/jipiboily/monologue/issues)
 - [Wiki](https://github.com/jipiboily/monologue/wiki/_pages)
-- IRC channel (on Freenode): #monologue.
 
 ## Some features
 - Rails mountable engine (fully namespaced and mountable in an already existing app)
