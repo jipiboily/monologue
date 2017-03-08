@@ -6,6 +6,9 @@
 
 **THIS README IS FOR THE MASTER BRANCH AND REFLECTS THE WORK CURRENTLY EXISTING ON THE MASTER BRANCH. IF YOU ARE WISHING TO USE A NON-MASTER BRANCH OF MONOLOGUE, PLEASE CONSULT THAT BRANCH'S README AND NOT THIS ONE.**
 
+
+** LOOKING FOR HELP TO UPGRADE TO RAILS 5 AND FIX EVERYTHING ** See issue https://github.com/jipiboily/monologue/issues/314. Happy to pay $100 to get back on track and get it working with Rails 5 and clean.
+
 -
 
 Monologue is a basic, mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
