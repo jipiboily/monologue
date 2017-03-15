@@ -7,9 +7,9 @@ before_script:
   - bundle exec rake db:create db:migrate
 
 rvm:
-  - 2.0.0
-  - 2.1.0
-
+  - 2.2.6
+  - 2.3.2
+  
 gemfile:
   - spec/support/gemfiles/rails4_0.gemfile
   - spec/support/gemfiles/rails4_1.gemfile
