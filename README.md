@@ -13,12 +13,6 @@
 
 Monologue is a basic, mountable blogging engine in Rails built to be easily mounted in an already existing Rails app, but it can also be used alone.
 
-## Sponsor
-
-[ButterCMS](https://buttercms.com/?utm_source=github&utm_medium=sponsorship-link&utm_campaign=monologue) is an API-based CMS and blogging platform built for developers:
-
-[![ButterCMS](https://dl.dropboxusercontent.com/u/598519/buttercms-banners/b-on-y.png)](https://buttercms.com/?utm_source=github&utm_medium=sponsorship-banner&utm_campaign=monologue)
-
 ## Version
 
 This README is for the latest version of Monologue (0-5-stable being the latest stable version).
