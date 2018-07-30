@@ -9,8 +9,6 @@
     <span data-monologue="user">
       <%= post.user.name %>
     </span>
-    <span data-monologue="disqus">
-      <a href="<%= post.full_url + "#disqus_thread" %>"></a>
-    </span>
+    <%= disqus_comments_count_for(post.full_url) %>
   </div>
 </header>

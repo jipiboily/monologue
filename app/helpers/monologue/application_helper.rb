@@ -54,5 +54,14 @@ module Monologue
         end
       end
     end
+
+    def disqus_comments_count_for url
+      return if Monologue::Config.disqus_shortname.blank?
+
+      content_tag :span, data: {monologue: 'disqus'} do
+        content_tag :a, href: "#{url}#disqus_thread" do
+        end
+      end
+    end
   end
 end
