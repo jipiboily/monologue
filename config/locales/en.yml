@@ -95,6 +95,7 @@ en:
           button: "Log in"
         messages:
           invalid: "Invalid email or password"
+          already_authenticated: "You are already signed in."
           logged_in: "Logged in!"
           logged_out: "Logged out!"
   layouts:
